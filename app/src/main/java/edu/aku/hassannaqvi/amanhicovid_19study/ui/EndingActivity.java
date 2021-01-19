@@ -25,13 +25,14 @@ public class EndingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_ending);
+        bi.setCallback(this);
+
         //bi.setForm(MainApp.form);
 /*
         setupSkips();
 */
 
         boolean check = getIntent().getBooleanExtra("complete", false);
-
 
         if (check) {
             bi.istatusa.setEnabled(true);
@@ -42,6 +43,9 @@ public class EndingActivity extends AppCompatActivity {
             bi.istatusf.setEnabled(false);
             bi.istatus96.setEnabled(false);
         } else {
+
+            Toast.makeText(this, "i m false ending", Toast.LENGTH_SHORT).show();
+
             bi.istatusa.setEnabled(false);
             bi.istatusb.setEnabled(true);
             bi.istatusc.setEnabled(true);
@@ -58,6 +62,9 @@ public class EndingActivity extends AppCompatActivity {
     public void BtnEnd() {
         if (!formValidation()) return;
         //SaveDraft();
+
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
 
         //TODO: needs to work on updateDB
         if (/*UpdateDB()*/ true) {
