@@ -34,7 +34,7 @@ public class Section02cmActivity extends AppCompatActivity {
     }
 
 
-    public void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
+    private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
         rg.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(vg);
             vg.setVisibility(View.VISIBLE);
