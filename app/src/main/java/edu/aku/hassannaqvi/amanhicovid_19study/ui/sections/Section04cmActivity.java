@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection04cmBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form;
 
@@ -69,8 +70,8 @@ public class Section04cmActivity extends AppCompatActivity {
         if (!formValidation()) return;
         SaveDraft();
         if (UpdateDB()) {
-            startActivity(new Intent(this, Section03cmActivity.class));
             finish();
+            startActivity(new Intent(this, Section05cmActivity.class));
         }
     }
 
@@ -81,7 +82,8 @@ public class Section04cmActivity extends AppCompatActivity {
 
 
     public void BtnEnd() {
-
+        finish();
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
