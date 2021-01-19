@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -10,12 +12,20 @@
             type="edu.aku.hassannaqvi.amanhicovid_19study.ui.MainActivity" />
     </data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".ui.MainActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextColor="#ffff" />
 
         <TextView
             android:id="@+id/text1"
@@ -79,7 +89,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:onClick="openForm"
-                        android:text="01-HH" />
+                        android:text="Sec 01" />
 
                     <Button
                         android:id="@+id/btn02"
@@ -89,7 +99,7 @@
                         android:layout_margin="8dp"
                         android:onClick="openForm"
 
-                        android:text="02-CB" />
+                        android:text="Sec 02" />
 
                     <Button
                         android:id="@+id/btn03"
@@ -98,16 +108,8 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:onClick="openForm"
-                        android:text="03-CS" />
+                        android:text="Sec 03" />
 
-                    <Button
-                        android:id="@+id/btn04"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:onClick="openForm"
-                        android:text="04-im" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -119,6 +121,15 @@
                     android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/btn04"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:onClick="openForm"
+                        android:text="Sec 04" />
+
+                    <Button
                         android:id="@+id/btn05"
 
                         style="?android:attr/buttonBarButtonStyle"
@@ -126,7 +137,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:onClick="openForm"
-                        android:text="05-pd" />
+                        android:text="Sec 05" />
 
                     <Button
                         android:id="@+id/btn06"
@@ -136,26 +147,9 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:onClick="openForm"
-                        android:text="06-fb" />
+                        android:text="Sec 06" />
 
-                    <Button
-                        android:id="@+id/btn07"
 
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:onClick="openForm"
-                        android:text="07-cv" />
-
-                    <Button
-                        android:id="@+id/btn08"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:onClick="openForm"
-                        android:text="08-se" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

@@ -1,8 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <data>
-
         <import type="android.view.View" />
         <!--<variable
             name="form"
@@ -12,11 +10,10 @@
             type="edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section02cmActivity" />
     </data>
 
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent"
+        android:padding="24dp">
 
         <LinearLayout
             android:id="@+id/GrpName"
@@ -185,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/red_overlay"
-                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:onClick="BtnEnd"
                     android:text="Cancel"
                     android:textColor="@color/white" />
 
@@ -195,7 +192,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:background="@color/green_overlay"
-                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:onClick="BtnContinue"
                     android:text="Save"
                     android:textColor="@color/white" />
 
