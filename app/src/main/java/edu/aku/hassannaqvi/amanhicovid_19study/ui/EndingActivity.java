@@ -55,7 +55,7 @@ public class EndingActivity extends AppCompatActivity {
     }
 
 
-    public void BtnEnd(View view) {
+    public void BtnEnd() {
         if (!formValidation()) return;
         //SaveDraft();
 
