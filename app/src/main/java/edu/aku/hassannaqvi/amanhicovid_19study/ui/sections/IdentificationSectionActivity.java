@@ -1,16 +1,12 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
 import android.content.Intent;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,7 +18,6 @@ import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityIdentificationSectionBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
-import edu.aku.hassannaqvi.amanhicovid_19study.ui.MainActivity;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form;
 
@@ -130,12 +125,7 @@ public class IdentificationSectionActivity extends AppCompatActivity {
 
     public void BtnEnd() {
         finish();
-
-        Intent intent = new Intent(this, EndingActivity.class);
-        intent.putExtra("complete", iscomplete);
-        iscomplete = false;
-
-        startActivity(intent);
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
     public void BtnContinue() {
@@ -165,16 +155,5 @@ public class IdentificationSectionActivity extends AppCompatActivity {
             return false;
         }
     }
-
-    /*private boolean UpdateDB() {
-        DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S02, form.s02toString());
-        if (updcount == 1) {
-            return true;
-        } else {
-            Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }*/
 
 }

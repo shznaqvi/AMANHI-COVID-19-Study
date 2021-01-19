@@ -1,8 +1,5 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
@@ -22,8 +22,6 @@ import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection04cmBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
-
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form;
 
@@ -68,7 +66,7 @@ public class Section04cmActivity extends AppCompatActivity {
     }
 
 
-    public void BtnContinue() {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
         SaveDraft();
         if (UpdateDB()) {
@@ -147,7 +145,7 @@ public class Section04cmActivity extends AppCompatActivity {
 
     }
 
-    public void BtnEnd() {
+    public void BtnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }

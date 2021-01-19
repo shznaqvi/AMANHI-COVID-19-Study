@@ -66,7 +66,7 @@ public class Section06cmActivity extends AppCompatActivity {
     }
 
 
-    public void BtnContinue() {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
         SaveDraft();
         if (UpdateDB()) {
@@ -102,7 +102,7 @@ public class Section06cmActivity extends AppCompatActivity {
     }
 
 
-    public void BtnEnd() {
+    public void BtnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
