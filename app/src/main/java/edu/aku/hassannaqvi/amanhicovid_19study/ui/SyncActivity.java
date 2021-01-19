@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -24,23 +25,32 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS;
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
+import edu.aku.hassannaqvi.amanhicovid_19study.adapters.SyncListAdapter;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySyncBinding;
-
 import edu.aku.hassannaqvi.amanhicovid_19study.models.SyncModel;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.workers.DataDownWorkerALL;
-import edu.aku.hassannaqvi.amanhicovid_19study.adapters.SyncListAdapter;
 
-import static edu.aku.hassannaqvi.amanhicovid_19study.utils.AppUtilsKt.dbBackup;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper.DB_NAME;
+import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.DATABASE_NAME;
 
 
 public class SyncActivity extends AppCompatActivity {
@@ -54,6 +64,7 @@ public class SyncActivity extends AppCompatActivity {
     List<SyncModel> downloadTables;
     Boolean listActivityCreated;
     Boolean uploadlistActivityCreated;
+    private String DirectoryName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +91,7 @@ public class SyncActivity extends AppCompatActivity {
         sharedPref = getSharedPreferences("src", MODE_PRIVATE);
         editor = sharedPref.edit();
         db = new DatabaseHelper(this);
-        dbBackup(this);
+        dbBackup();
 
         boolean sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
     }
@@ -400,5 +411,63 @@ public class SyncActivity extends AppCompatActivity {
 
 
     public void uploadPhotos(View view) {
+    }
+
+    public void dbBackup() {
+
+        sharedPref = getSharedPreferences("dss01", MODE_PRIVATE);
+        editor = sharedPref.edit();
+
+        if (sharedPref.getBoolean("flag", false)) {
+
+            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
+
+            if (!dt.equals(new SimpleDateFormat("dd-MM-yy").format(new Date()))) {
+                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
+                editor.apply();
+            }
+
+            File folder = new File(Environment.getExternalStorageDirectory() + File.separator + PROJECT_NAME);
+            boolean success = true;
+            if (!folder.exists()) {
+                success = folder.mkdirs();
+            }
+            if (success) {
+
+                DirectoryName = folder.getPath() + File.separator + sharedPref.getString("dt", "");
+                folder = new File(DirectoryName);
+                if (!folder.exists()) {
+                    success = folder.mkdirs();
+                }
+                if (success) {
+
+                    try {
+                        File dbFile = new File(this.getDatabasePath(DATABASE_NAME).getPath());
+                        FileInputStream fis = new FileInputStream(dbFile);
+                        String outFileName = DirectoryName + File.separator + DB_NAME;
+                        // Open the empty db as the output stream
+                        OutputStream output = new FileOutputStream(outFileName);
+
+                        // Transfer bytes from the inputfile to the outputfile
+                        byte[] buffer = new byte[1024];
+                        int length;
+                        while ((length = fis.read(buffer)) > 0) {
+                            output.write(buffer, 0, length);
+                        }
+                        // Close the streams
+                        output.flush();
+                        output.close();
+                        fis.close();
+                    } catch (IOException e) {
+                        Log.e("dbBackup:", Objects.requireNonNull(e.getMessage()));
+                    }
+
+                }
+
+            } else {
+                Toast.makeText(this, "Not create folder", Toast.LENGTH_SHORT).show();
+            }
+        }
+
     }
 }
