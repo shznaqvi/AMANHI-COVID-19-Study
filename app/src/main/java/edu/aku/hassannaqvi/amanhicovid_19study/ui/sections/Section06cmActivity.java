@@ -77,13 +77,12 @@ public class Section06cmActivity extends AppCompatActivity {
 
 
     private void SaveDraft() {
-        finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
     public void BtnEnd() {
-
+        finish();
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
