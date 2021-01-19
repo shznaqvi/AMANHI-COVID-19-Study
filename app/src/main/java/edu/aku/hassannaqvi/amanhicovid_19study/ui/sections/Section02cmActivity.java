@@ -1,20 +1,29 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Clear;
+import com.validatorcrawler.aliazaz.Validator;
 
 import org.jetbrains.annotations.NotNull;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
+import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection02cmBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
+
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form;
 
 public class Section02cmActivity extends AppCompatActivity {
 
@@ -45,12 +54,40 @@ public class Section02cmActivity extends AppCompatActivity {
     }
 
 
-    public void BtnEnd() {
-
+    private boolean UpdateDB() {
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S02, form.s02toString());
+        if (updcount == 1) {
+            return true;
+        } else {
+            Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
-    public void BtnContinue() {
 
+    public void BtnContinue() {
+        if (!formValidation()) return;
+        SaveDraft();
+        if (UpdateDB()) {
+            finish();
+            startActivity(new Intent(this, Section03cmActivity.class));
+        }
+    }
+
+
+    private void SaveDraft() {
+    }
+
+
+    public void BtnEnd() {
+        finish();
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+    }
+
+
+    private boolean formValidation() {
+        return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
 
