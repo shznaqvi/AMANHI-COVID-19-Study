@@ -7,7 +7,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.naunehal.ui.MainActivity" />
+            type="edu.aku.hassannaqvi.amanhicovid_19study.ui.MainActivity" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

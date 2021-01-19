@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/labels</item>
     </style>
 
 
@@ -58,5 +59,42 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
+
+    <!--Card View Start-->
+    <style name="cardView">
+        <!--
+                <item name="android:background">@color/white</item>
+        -->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:background">@color/grayLight</item>
+        <!--<item name="android:layout_marginRight">10dp</item>-->
+        <!--<item name="android:layout_marginLeft">10dp</item>-->
+        <item name="cardCornerRadius">7dp</item>
+        <item name="cardElevation">1dp</item>
+    </style>
+
+
+    <style name="labels" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/grayLight</item>
+        <!--
+                            <item name="android:background">@color/colorPrimary_overlay</item>
+            -->
+    </style>
+
 
 </resources>

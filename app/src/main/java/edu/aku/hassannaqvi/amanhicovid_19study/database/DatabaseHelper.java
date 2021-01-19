@@ -8,13 +8,18 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form;
-import edu.aku.hassannaqvi.naunehal.utils.CreateTable;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
+import edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable;
 
 /**
  * @author hassan.naqvi on 11/30/2016.
@@ -31,13 +36,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
-        db.execSQL(CreateTable.SQL_CREATE_DISTRICTS);
-        db.execSQL(CreateTable.SQL_CREATE_UCS);
-        db.execSQL(CreateTable.SQL_CREATE_CLUSTERS);
+        //db.execSQL(CreateTable.SQL_CREATE_DISTRICTS);
+        ///db.execSQL(CreateTable.SQL_CREATE_UCS);
+        //db.execSQL(CreateTable.SQL_CREATE_CLUSTERS);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
-        db.execSQL(CreateTable.SQL_CREATE_CHILD_INFO);
-        db.execSQL(CreateTable.SQL_CREATE_CHILD);
-        db.execSQL(CreateTable.SQL_CREATE_IMMUNIZATION);
+        //db.execSQL(CreateTable.SQL_CREATE_CHILD_INFO);
+        //db.execSQL(CreateTable.SQL_CREATE_CHILD);
+        //db.execSQL(CreateTable.SQL_CREATE_IMMUNIZATION);
         db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
     }
 
@@ -64,14 +69,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsContract.FormsTable.COLUMN_UID, form.getUid());
         values.put(FormsContract.FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsContract.FormsTable.COLUMN_SYSDATE, form.getSysDate());
-        values.put(FormsContract.FormsTable.COLUMN_S01HH, form.getS01HH());
+        values.put(FormsContract.FormsTable.COLUMN_S02, form.getS02());
+
+        /*values.put(FormsContract.FormsTable.COLUMN_S01HH, form.getS01HH());
         values.put(FormsContract.FormsTable.COLUMN_S02CB, form.getS02CB());
         values.put(FormsContract.FormsTable.COLUMN_S03CS, form.getS03CS());
         values.put(FormsContract.FormsTable.COLUMN_S04IM, form.getS04IM());
         values.put(FormsContract.FormsTable.COLUMN_S05PD, form.getS05PD());
         values.put(FormsContract.FormsTable.COLUMN_S06BF, form.getS06BF());
         values.put(FormsContract.FormsTable.COLUMN_S07CV, form.getS07CV());
-        values.put(FormsContract.FormsTable.COLUMN_S08SE, form.getS08SE());
+        values.put(FormsContract.FormsTable.COLUMN_S08SE, form.getS08SE());*/
 
         values.put(FormsContract.FormsTable.COLUMN_ISTATUS, form.getIStatus());
         values.put(FormsContract.FormsTable.COLUMN_ISTATUS96x, form.getIStatus96x());
@@ -96,21 +103,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                UsersTable.COLUMN_ID,
-                UsersTable.COLUMN_USERNAME,
-                UsersTable.COLUMN_PASSWORD,
-                UsersTable.COLUMN_FULLNAME,
+                Users.UsersTable.COLUMN_ID,
+                Users.UsersTable.COLUMN_USERNAME,
+                Users.UsersTable.COLUMN_PASSWORD,
+                Users.UsersTable.COLUMN_FULLNAME,
         };
-        String whereClause = UsersTable.COLUMN_USERNAME + "=? AND " + UsersTable.COLUMN_PASSWORD + "=?";
+        String whereClause = Users.UsersTable.COLUMN_USERNAME + "=? AND " + Users.UsersTable.COLUMN_PASSWORD + "=?";
         String[] whereArgs = {username, password};
         String groupBy = null;
         String having = null;
-        String orderBy = UsersTable.COLUMN_ID + " ASC";
+        String orderBy = Users.UsersTable.COLUMN_ID + " ASC";
 
         Users allForms = null;
         try {
             c = db.query(
-                    UsersTable.TABLE_NAME,  // The table to query
+                    Users.UsersTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -407,7 +414,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    /*   *//*
+    /*
+
+     * *//*
      * Download data functions
      * *//*
     public int syncDistricts(JSONArray Districtslist) {
@@ -495,23 +504,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return insertCount;
     }
+*/
 
     public int syncVersionApp(JSONObject VersionList) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(VersionAppTable.TABLE_NAME, null, null);
+        db.delete(VersionApp.VersionAppTable.TABLE_NAME, null, null);
         long count = 0;
         try {
-            JSONObject jsonObjectCC = ((JSONArray) VersionList.get(VersionAppTable.COLUMN_VERSION_PATH)).getJSONObject(0);
+            JSONObject jsonObjectCC = ((JSONArray) VersionList.get(VersionApp.VersionAppTable.COLUMN_VERSION_PATH)).getJSONObject(0);
             VersionApp Vc = new VersionApp();
             Vc.sync(jsonObjectCC);
 
             ContentValues values = new ContentValues();
 
-            values.put(VersionAppTable.COLUMN_PATH_NAME, Vc.getPathname());
-            values.put(VersionAppTable.COLUMN_VERSION_CODE, Vc.getVersioncode());
-            values.put(VersionAppTable.COLUMN_VERSION_NAME, Vc.getVersionname());
+            values.put(VersionApp.VersionAppTable.COLUMN_PATH_NAME, Vc.getPathname());
+            values.put(VersionApp.VersionAppTable.COLUMN_VERSION_CODE, Vc.getVersioncode());
+            values.put(VersionApp.VersionAppTable.COLUMN_VERSION_NAME, Vc.getVersionname());
 
-            count = db.insert(VersionAppTable.TABLE_NAME, null, values);
+            count = db.insert(VersionApp.VersionAppTable.TABLE_NAME, null, values);
             if (count > 0) count = 1;
 
         } catch (Exception ignored) {
@@ -524,7 +534,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public int syncUser(JSONArray userList) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(UsersTable.TABLE_NAME, null, null);
+        db.delete(Users.UsersTable.TABLE_NAME, null, null);
         int insertCount = 0;
         try {
             for (int i = 0; i < userList.length(); i++) {
@@ -535,10 +545,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 user.sync(jsonObjectUser);
                 ContentValues values = new ContentValues();
 
-                values.put(UsersTable.COLUMN_USERNAME, user.getUserName());
-                values.put(UsersTable.COLUMN_PASSWORD, user.getPassword());
-                values.put(UsersTable.COLUMN_FULLNAME, user.getFullname());
-                long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
+                values.put(Users.UsersTable.COLUMN_USERNAME, user.getUserName());
+                values.put(Users.UsersTable.COLUMN_PASSWORD, user.getPassword());
+                values.put(Users.UsersTable.COLUMN_FULLNAME, user.getFullname());
+                long rowID = db.insert(Users.UsersTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
 
@@ -550,6 +560,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return insertCount;
     }
-*/
 
 }

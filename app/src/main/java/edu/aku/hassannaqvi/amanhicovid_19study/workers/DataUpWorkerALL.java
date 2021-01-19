@@ -26,10 +26,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-import edu.aku.hassannaqvi.naunehal.R;
-import edu.aku.hassannaqvi.naunehal.core.MainApp;
+import edu.aku.hassannaqvi.amanhicovid_19study.R;
+import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 
-import static edu.aku.hassannaqvi.naunehal.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
 
 
 public class DataUpWorkerALL extends Worker {

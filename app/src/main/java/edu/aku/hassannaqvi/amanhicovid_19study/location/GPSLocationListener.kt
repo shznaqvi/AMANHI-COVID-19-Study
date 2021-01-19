@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.naunehal.location
+package edu.aku.hassannaqvi.amanhicovid_19study.location
 
 import android.content.Context
 import android.content.SharedPreferences

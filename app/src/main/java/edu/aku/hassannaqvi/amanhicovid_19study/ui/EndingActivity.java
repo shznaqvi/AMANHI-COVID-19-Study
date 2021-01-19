@@ -25,7 +25,7 @@ public class EndingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_ending);
-        bi.setForm(MainApp.form);
+        //bi.setForm(MainApp.form);
 /*
         setupSkips();
 */

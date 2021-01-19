@@ -113,8 +113,8 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_gravity="center_horizontal"
-
                                     android:background="@color/white"
+
                                     android:drawableStart="@drawable/ic_username"
                                     android:drawablePadding="8dp"
                                     android:elevation="1dp"
@@ -130,6 +130,7 @@
                                     android:paddingBottom="8dp"
                                     android:radius="2dp"
                                     android:singleLine="true"
+                                    android:text="dmu@aku"
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="18sp" />
 
@@ -170,6 +171,7 @@
                                         android:paddingBottom="8dp"
                                         android:radius="2dp"
                                         android:singleLine="true"
+                                        android:text="aku?dmu"
                                         android:textColor="@color/colorPrimary"
                                         android:textSize="18sp" />
 

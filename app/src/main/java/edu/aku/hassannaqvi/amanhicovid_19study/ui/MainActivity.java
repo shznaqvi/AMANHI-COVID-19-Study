@@ -11,18 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import edu.aku.hassannaqvi.naunehal.R;
-import edu.aku.hassannaqvi.naunehal.core.AndroidDatabaseManager;
-import edu.aku.hassannaqvi.naunehal.core.MainApp;
-import edu.aku.hassannaqvi.naunehal.databinding.ActivityMainBinding;
-import edu.aku.hassannaqvi.naunehal.ui.sections.Section01HHActivity;
-import edu.aku.hassannaqvi.naunehal.ui.sections.Section02CBActivity;
-import edu.aku.hassannaqvi.naunehal.ui.sections.Section03CSActivity;
-import edu.aku.hassannaqvi.naunehal.ui.sections.Section04IMActivity;
-import edu.aku.hassannaqvi.naunehal.ui.sections.Section05PDActivity;
-import edu.aku.hassannaqvi.naunehal.ui.sections.Section06BFActivity;
-import edu.aku.hassannaqvi.naunehal.ui.sections.Section07CVActivity;
-import edu.aku.hassannaqvi.naunehal.ui.sections.Section081SEActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.R;
+import edu.aku.hassannaqvi.amanhicovid_19study.core.AndroidDatabaseManager;
+import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
+import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSectionActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bi.setCallback(this);
-
-
     }
 
     @Override
@@ -77,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
         Intent oF = null;
         switch (view.getId()) {
             case R.id.startInterview:
+                oF = new Intent(this, IdentificationSectionActivity.class);
+                break;
+
+            /*case R.id.startInterview:
                 oF = new Intent(this, Section01HHActivity.class);
                 break;
             case R.id.btn01:
@@ -102,7 +98,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn08:
                 oF = new Intent(this, Section081SEActivity.class);
-                break;
+                break;*/
+
+
          /*   case R.id.formI:
                 oF = new Intent(this, SectionI1Activity.class);
                 break;
@@ -110,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 oF = new Intent(this, SectionJ1Activity.class);
                 break;*/
         }
+
         startActivity(oF);
     }
 }

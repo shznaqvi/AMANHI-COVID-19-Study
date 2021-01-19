@@ -28,7 +28,7 @@ import java.net.URL;
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 
-import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.PROJECT_NAME;
+import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.PROJECT_NAME;
 
 
 public class DataDownWorkerALL extends Worker {

@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.naunehal.utils
+package edu.aku.hassannaqvi.amanhicovid_19study.utils
 
 import org.json.JSONException
 import org.json.JSONObject

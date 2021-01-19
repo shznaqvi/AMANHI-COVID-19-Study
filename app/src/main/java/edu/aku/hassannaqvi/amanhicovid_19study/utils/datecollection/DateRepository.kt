@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.naunehal.utils.datecollection
+package edu.aku.hassannaqvi.amanhicovid_19study.utils.datecollection
 
 import org.threeten.bp.DateTimeException
 import org.threeten.bp.LocalDate

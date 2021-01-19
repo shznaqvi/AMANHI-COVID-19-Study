@@ -29,20 +29,18 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.aku.hassannaqvi.naunehal.CONSTANTS;
-import edu.aku.hassannaqvi.naunehal.R;
-import edu.aku.hassannaqvi.naunehal.adapters.SyncListAdapter;
-import edu.aku.hassannaqvi.naunehal.database.DatabaseHelper;
-import edu.aku.hassannaqvi.naunehal.databinding.ActivitySyncBinding;
-import edu.aku.hassannaqvi.naunehal.models.Clusters;
-import edu.aku.hassannaqvi.naunehal.models.Districts;
-import edu.aku.hassannaqvi.naunehal.models.SyncModel;
-import edu.aku.hassannaqvi.naunehal.models.UCs;
-import edu.aku.hassannaqvi.naunehal.models.Users;
-import edu.aku.hassannaqvi.naunehal.models.VersionApp;
-import edu.aku.hassannaqvi.naunehal.workers.DataDownWorkerALL;
+import edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS;
+import edu.aku.hassannaqvi.amanhicovid_19study.R;
+import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
+import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySyncBinding;
 
-import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.dbBackup;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.SyncModel;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
+import edu.aku.hassannaqvi.amanhicovid_19study.workers.DataDownWorkerALL;
+import edu.aku.hassannaqvi.amanhicovid_19study.adapters.SyncListAdapter;
+
+import static edu.aku.hassannaqvi.amanhicovid_19study.utils.AppUtilsKt.dbBackup;
 
 
 public class SyncActivity extends AppCompatActivity {
@@ -68,9 +66,9 @@ public class SyncActivity extends AppCompatActivity {
         // Set tables to DOWNLOAD
         downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
         downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
-        downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
-        downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
-        downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
+        //downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
+        //downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
+        //downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
 
         // Set tables to UPLOAD
         uploadTables.add(new SyncModel("Forms"));
@@ -192,7 +190,7 @@ public class SyncActivity extends AppCompatActivity {
                                             insertCount = db.syncVersionApp(new JSONObject(result));
                                             if (insertCount == 1) jsonArray.put("1");
                                             break;
-                                        case UCs.TableUCs.TABLE_NAME:
+                                        /*case UCs.TableUCs.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncUCs(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
@@ -206,7 +204,7 @@ public class SyncActivity extends AppCompatActivity {
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncCluster(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
-                                            break;
+                                            break;*/
 
                                     }
 

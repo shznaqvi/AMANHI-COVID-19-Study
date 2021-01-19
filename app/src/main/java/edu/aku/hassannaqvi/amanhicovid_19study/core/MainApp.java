@@ -6,18 +6,18 @@ import android.view.View;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form;
-import edu.aku.hassannaqvi.naunehal.core.AppInfo;
+import edu.aku.hassannaqvi.amanhicovid_19study.core.AppInfo;
 
 
 public class MainApp extends Application {
 
-    public static final String PROJECT_NAME = "Naunehal Baseline Survey";
+    public static final String PROJECT_NAME = "amanhicovid_19study Baseline Survey";
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
     //public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
     public static final String _IP = "http://f38158";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
-    public static final String _HOST_URL = MainApp._IP + "/naunehal/api/";// .TEST server;
+    public static final String _HOST_URL = MainApp._IP + "/amanhicovid_19study/api/";// .TEST server;
     public static final String _SERVER_URL = "sync.php";
     public static final String _SERVER_GET_URL = "getData.php";
     public static final String _PHOTO_UPLOAD_URL = MainApp._IP + _HOST_URL + "uploads.php";

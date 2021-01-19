@@ -11,28 +11,25 @@ import android.provider.BaseColumns;
 
 public class FormsContract {
 
-    public static String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.naunehal";
+    public static String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.amanhicovid_19study";
 
     public static abstract class FormsTable implements BaseColumns {
         public static final String TABLE_NAME = "Forms";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
-        public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_ID = "id";
+        public static final String COLUMN_UID = "uid";
+        public static final String COLUMN_UUID = "uuid";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_DCODE = "districtCode";
         public static final String COLUMN_UCODE = "ucCode";
         public static final String COLUMN_CLUSTER = "clusterno";
         public static final String COLUMN_HHNO = "hhno";
-        public static final String COLUMN_S01HH = "s01HH";
-        public static final String COLUMN_S02CB = "s02CB";
-        public static final String COLUMN_S03CS = "s03CS";
-        public static final String COLUMN_S04IM = "s04IM";
-        public static final String COLUMN_S05PD = "s05PD";
-        public static final String COLUMN_S06BF = "s06BF";
-        public static final String COLUMN_S07CV = "s07CV";
-        public static final String COLUMN_S08SE = "s08SE";
+        public static final String COLUMN_DSSID = "dssid";
+        public static final String COLUMN_STUDYID = "studyid";
+        public static final String COLUMN_WEEK = "week";
+        public static final String COLUMN_S02 = "s02";
 
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS96x = "istatus96x";

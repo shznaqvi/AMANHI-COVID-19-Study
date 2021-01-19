@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.sections.IdentificationSectionActivity"></activity>
+        <activity android:name=".ui.sections.Section06cmActivity" />
+        <activity android:name=".ui.sections.Section05cmActivity" />
+        <activity android:name=".ui.sections.Section04cmActivity" />
+        <activity android:name=".ui.sections.Section03cmActivity" />
+        <activity android:name=".ui.sections.Section02cmActivity" />
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

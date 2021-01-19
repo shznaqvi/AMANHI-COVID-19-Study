@@ -46,17 +46,16 @@ import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityLoginBinding;
-import edu.aku.hassannaqvi.naunehal.core.AppInfo;
+import edu.aku.hassannaqvi.amanhicovid_19study.core.AppInfo;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.MINIMUM_DISTANCE_CHANGE_FOR_UPDATES;
 import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.MINIMUM_TIME_BETWEEN_UPDATES;
 import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_CONTACTS;
 import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_PHONE_STATE;
 import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.TWO_MINUTES;
-import static edu.aku.hassannaqvi.naunehal.utils.AppUtilsKt.getPermissionsList;
-import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_COPY;
-import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.DATABASE_NAME;
-import static edu.aku.hassannaqvi.naunehal.utils.CreateTable.PROJECT_NAME;
+import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.DATABASE_COPY;
+import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.DATABASE_NAME;
+import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.PROJECT_NAME;
 import static java.lang.Thread.sleep;
 
 public class LoginActivity extends AppCompatActivity {
@@ -82,16 +81,16 @@ public class LoginActivity extends AppCompatActivity {
                     context.getContentResolver(),
                     Settings.Secure.ANDROID_ID);
         } else {
-            final TelephonyManager mTelephony = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+           /* final TelephonyManager mTelephony = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             if (mTelephony.getDeviceId() != null) {
                 deviceId = mTelephony.getDeviceId();
             } else {
                 deviceId = Settings.Secure.getString(
                         context.getContentResolver(),
                         Settings.Secure.ANDROID_ID);
-            }
+            }*/
         }
-        return deviceId;
+        return "deviceId";
     }
 
   /*  private void callUsersWorker() {
@@ -234,11 +233,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean checkAndRequestPermissions() {
-        if (!getPermissionsList(this).isEmpty()) {
+      /*  if (!getPermissionsList(this).isEmpty()) {
             ActivityCompat.requestPermissions(this, getPermissionsList(this).toArray(new String[getPermissionsList(this).size()]),
                     MY_PERMISSIONS_REQUEST_READ_CONTACTS);
             return false;
-        }
+        }*/
 
         return true;
     }
@@ -484,13 +483,13 @@ public class LoginActivity extends AppCompatActivity {
                             // for ActivityCompat#requestPermissions for more details.
                             return;
                         }
-                        locationManager.requestLocationUpdates(
+                    /*    locationManager.requestLocationUpdates(
                                 LocationManager.GPS_PROVIDER,
                                 MINIMUM_TIME_BETWEEN_UPDATES,
                                 MINIMUM_DISTANCE_CHANGE_FOR_UPDATES,
                                 new GPSLocationListener()// Implement this class from code
 
-                        );
+                        );*/
                     }
                     break;
                 case Manifest.permission.WRITE_EXTERNAL_STORAGE:
@@ -555,7 +554,7 @@ public class LoginActivity extends AppCompatActivity {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+       /* Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
         if (location != null) {
             String message = String.format(
@@ -565,7 +564,7 @@ public class LoginActivity extends AppCompatActivity {
             //Toast.makeText(getApplicationContext(), message,
             //Toast.LENGTH_SHORT).show();
         }
-
+*/
     }
 
     protected boolean isBetterLocation(Location location, Location currentBestLocation) {
@@ -775,7 +774,7 @@ public class LoginActivity extends AppCompatActivity {
             if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                 DatabaseHelper db = new DatabaseHelper(LoginActivity.this);
                 if ((musername.equals("dmu@aku") && mPassword.equals("aku?dmu")) ||
-                        (musername.equals("guest@aku") && mPassword.equals("aku1234")) || db.Login(musername, mPassword)
+                        (musername.equals("guest@aku") && mPassword.equals("aku1234")) /*|| db.Login(musername, mPassword)*/
                         || (musername.equals("test1234") && mPassword.equals("test1234"))) {
                     MainApp.userName = musername;
                     MainApp.admin = musername.contains("@");

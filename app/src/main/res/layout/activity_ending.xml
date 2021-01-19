@@ -8,8 +8,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="form"
-            type="edu.aku.hassannaqvi.naunehal.models.Form" />
+            name="callback"
+            type="edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity" />
     </data>
 
     <ScrollView
@@ -67,56 +67,42 @@
                             android:id="@+id/istatusa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.hh26.equals(`1`)}"
-                            android:onClick="@{()->form.setHh26(`1`)}"
                             android:text="@string/hh2601" />
 
                         <RadioButton
                             android:id="@+id/istatusb"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.hh26.equals(`2`)}"
-                            android:onClick="@{()->form.setHh26(`2`)}"
                             android:text="@string/hh2602" />
 
                         <RadioButton
                             android:id="@+id/istatusc"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.hh26.equals(`3`)}"
-                            android:onClick="@{()->form.setHh26(`3`)}"
                             android:text="@string/hh2603" />
 
                         <RadioButton
                             android:id="@+id/istatusd"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.hh26.equals(`4`)}"
-                            android:onClick="@{()->form.setHh26(`4`)}"
                             android:text="@string/hh2604" />
 
                         <RadioButton
                             android:id="@+id/istatuse"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.hh26.equals(`5`)}"
-                            android:onClick="@{()->form.setHh26(`5`)}"
                             android:text="@string/hh2605" />
 
                         <RadioButton
                             android:id="@+id/istatusf"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.hh26.equals(`6`)}"
-                            android:onClick="@{()->form.setHh26(`6`)}"
                             android:text="@string/hh2606" />
 
                         <RadioButton
                             android:id="@+id/istatus96"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.hh26.equals(`96`)}"
-                            android:onClick="@{()->form.setHh26(`96`)}"
                             android:text="@string/hh2696" />
 
                         <!--<EditText

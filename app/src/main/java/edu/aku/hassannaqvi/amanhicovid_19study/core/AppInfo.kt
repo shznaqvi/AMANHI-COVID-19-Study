@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.naunehal.core
+package edu.aku.hassannaqvi.amanhicovid_19study.core
 
 import android.content.Context
 import android.content.pm.PackageManager
