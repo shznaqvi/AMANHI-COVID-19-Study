@@ -25,7 +25,7 @@
 
             <!-- status Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVstatus"
+                android:id="@+id/cvstatus"
                 style="@style/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
