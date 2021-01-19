@@ -77,6 +77,22 @@ public class Section02cmActivity extends AppCompatActivity {
 
 
     private void SaveDraft() {
+
+        form.setCm0201(bi.cm020111.isChecked() ? "11"
+                : bi.cm020112.isChecked() ? "12"
+                : "-1");
+
+        form.setCm0202(bi.cm020211.isChecked() ? "11"
+                : bi.cm020212.isChecked() ? "12"
+                : bi.cm020213.isChecked() ? "13"
+                : bi.cm020214.isChecked() ? "14"
+                : bi.cm020215.isChecked() ? "15"
+                : bi.cm020216.isChecked() ? "16"
+                : bi.cm020277.isChecked() ? "77"
+                : "-1");
+
+        form.setCm020277x(bi.cm020277x.getText().toString());
+
     }
 
 
