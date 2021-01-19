@@ -71,7 +71,9 @@ public class Section02cmActivity extends AppCompatActivity {
         SaveDraft();
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, Section03cmActivity.class));
+            if (bi.cm020112.isChecked()) {
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            } else startActivity(new Intent(this, Section03cmActivity.class));
         }
     }
 
