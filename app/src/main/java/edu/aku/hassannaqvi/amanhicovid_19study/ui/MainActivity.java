@@ -84,6 +84,30 @@ public class MainActivity extends AppCompatActivity {
                 oF = new Intent(this, AndroidDatabaseManager.class);
                 break;
 
+            case R.id.btn01:
+                oF = new Intent(this, IdentificationSectionActivity.class);
+                break;
+
+            case R.id.btn02:
+                oF = new Intent(this, Section02cmActivity.class);
+                break;
+
+            case R.id.btn03:
+                oF = new Intent(this, Section03cmActivity.class);
+                break;
+
+            case R.id.btn04:
+                oF = new Intent(this, Section04cmActivity.class);
+                break;
+
+            case R.id.btn05:
+                oF = new Intent(this, Section05cmActivity.class);
+                break;
+
+            case R.id.btn06:
+                oF = new Intent(this, Section06cmActivity.class);
+                break;
+
             /*case R.id.startInterview:
                 oF = new Intent(this, Section01HHActivity.class);
                 break;

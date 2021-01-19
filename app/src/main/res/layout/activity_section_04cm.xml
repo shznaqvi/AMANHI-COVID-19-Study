@@ -655,6 +655,8 @@
                         android:hint="@string/cm04012"
                         android:inputType="date"
                         android:maxLength="10"
+                        android:text='@{cm0401101.checked ? cm04012.getText().toString() : ""}'
+                        android:visibility='@{cm0401101.checked? View.VISIBLE : View.GONE}'
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

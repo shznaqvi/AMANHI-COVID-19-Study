@@ -112,7 +112,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:onClick="openForm"
-                        android:text="Sec 01" />
+                        android:text="Sec 02" />
 
                     <Button
                         android:id="@+id/btn02"
