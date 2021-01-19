@@ -72,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 oF = new Intent(this, IdentificationSectionActivity.class);
                 break;
 
+            case R.id.showdb:
+                oF = new Intent(this, AndroidDatabaseManager.class);
+                break;
+
             /*case R.id.startInterview:
                 oF = new Intent(this, Section01HHActivity.class);
                 break;

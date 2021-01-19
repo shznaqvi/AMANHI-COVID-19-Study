@@ -46,6 +46,7 @@ public class MainApp extends Application {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
 
+
     @Override
     public void onCreate() {
         super.onCreate();

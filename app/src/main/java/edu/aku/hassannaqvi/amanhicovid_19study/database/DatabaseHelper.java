@@ -69,6 +69,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsContract.FormsTable.COLUMN_UID, form.getUid());
         values.put(FormsContract.FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsContract.FormsTable.COLUMN_SYSDATE, form.getSysDate());
+        values.put(FormsContract.FormsTable.COLUMN_STUDYID, form.getStudyID());
+
+
         values.put(FormsContract.FormsTable.COLUMN_S02, form.getS02());
 
         /*values.put(FormsContract.FormsTable.COLUMN_S01HH, form.getS01HH());
@@ -366,7 +369,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = FormsContract.FormsTable._ID + " =? ";
+        String selection = FormsContract.FormsTable.COLUMN_ID + " =? ";
         String[] selectionArgs = {String.valueOf(MainApp.form.getId())};
 
         return db.update(FormsContract.FormsTable.TABLE_NAME,

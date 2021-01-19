@@ -12,6 +12,9 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
@@ -79,6 +82,16 @@ public class IdentificationSectionActivity extends AppCompatActivity {
 
         MainApp.form = new Form();
 
+        MainApp.form.setStudyID(bi.cmsid.getText().toString());
+        MainApp.form.setUid(MainApp.form.getUid());
+        MainApp.form.setDeviceId(MainApp.appInfo.getDeviceID());
+        MainApp.form.setAppver(MainApp.appInfo.getAppVersion());
+        MainApp.form.setDeviceTag(MainApp.appInfo.getTagName());
+        MainApp.form.setSysDate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
+        MainApp.form.setUserName(MainApp.userName);
+        MainApp.form.setGps("");
+
+
         form.setCmsid(bi.cmsid.getText().toString());
 
         form.setCm0101(bi.cm0101.getText().toString());
@@ -145,6 +158,7 @@ public class IdentificationSectionActivity extends AppCompatActivity {
         if (updcount > 0) {
             MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
             db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, MainApp.form.getUid());
+            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S02, form.s02toString());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

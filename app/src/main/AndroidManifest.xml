@@ -15,6 +15,7 @@
         <activity android:name=".ui.sections.Section04cmActivity" />
         <activity android:name=".ui.sections.Section03cmActivity" />
         <activity android:name=".ui.sections.Section02cmActivity" />
+        <activity android:name=".core.AndroidDatabaseManager" />
         <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.LoginActivity">
             <intent-filter>

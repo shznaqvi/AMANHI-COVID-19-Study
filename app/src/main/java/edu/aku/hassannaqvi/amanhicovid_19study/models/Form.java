@@ -31,6 +31,7 @@ public class Form extends BaseObservable {
     private String dcode = "";
     private String ucode = "";
     private String cluster = "";
+    private String studyid = "";
     private String hhno = "";
     private String deviceId = "";
     private String deviceTag = "";
@@ -208,6 +209,17 @@ public class Form extends BaseObservable {
         this.id = id;
 
     }
+
+
+    @Bindable
+    public String getStudyID() {
+        return studyid;
+    }
+
+    public void setStudyID(String studyid) {
+        this.studyid = studyid;
+    }
+
 
     @Bindable
     public String getUid() {

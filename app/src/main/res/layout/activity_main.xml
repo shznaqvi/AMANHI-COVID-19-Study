@@ -58,6 +58,29 @@
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
+
+            <Button
+                android:id="@+id/showdb"
+                style="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/action_button"
+                android:drawableStart="@drawable/ic_open_form"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/roboto"
+                android:letterSpacing="0.2"
+                android:minWidth="64dp"
+                android:minHeight="36dp"
+                android:onClick="openForm"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:shadowRadius="24"
+                android:text="Show DB"
+                android:textAppearance="@style/Widget.AppCompat.ActionButton"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:id="@+id/admin"
                 android:layout_width="match_parent"
