@@ -57,7 +57,7 @@
                 android:drawablePadding="12dp"
                 android:fontFamily="@font/roboto"
                 android:letterSpacing="0.2"
-                android:minWidth="64dp"
+                android:minWidth="170dp"
                 android:minHeight="36dp"
                 android:onClick="openForm"
                 android:paddingStart="16dp"
@@ -80,7 +80,7 @@
                 android:drawablePadding="12dp"
                 android:fontFamily="@font/roboto"
                 android:letterSpacing="0.2"
-                android:minWidth="64dp"
+                android:minWidth="170dp"
                 android:minHeight="36dp"
                 android:onClick="openForm"
                 android:paddingStart="16dp"
@@ -112,7 +112,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:onClick="openForm"
-                        android:text="Sec 02" />
+                        android:text="Sec 01" />
 
                     <Button
                         android:id="@+id/btn02"
@@ -121,7 +121,6 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:onClick="openForm"
-
                         android:text="Sec 02" />
 
                     <Button
