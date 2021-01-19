@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection05cmBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form;
 
@@ -69,19 +70,117 @@ public class Section05cmActivity extends AppCompatActivity {
         if (!formValidation()) return;
         SaveDraft();
         if (UpdateDB()) {
-            startActivity(new Intent(this, Section03cmActivity.class));
             finish();
+            startActivity(new Intent(this, Section06cmActivity.class));
         }
     }
 
 
     private void SaveDraft() {
 
+        form.setCm0501(bi.cm050101.isChecked() ? "1"
+                : bi.cm050102.isChecked() ? "2"
+                : bi.cm050108.isChecked() ? "8"
+                : bi.cm050109.isChecked() ? "9"
+                : "-1");
+
+        form.setCm0502(bi.cm050201.isChecked() ? "1"
+                : bi.cm050202.isChecked() ? "2"
+                : bi.cm050208.isChecked() ? "8"
+                : bi.cm050209.isChecked() ? "9"
+                : "-1");
+
+        form.setCm0503(bi.cm050301.isChecked() ? "1"
+                : bi.cm050302.isChecked() ? "2"
+                : bi.cm050308.isChecked() ? "8"
+                : bi.cm050309.isChecked() ? "9"
+                : "-1");
+
+        form.setCm0504(bi.cm050401.isChecked() ? "1"
+                : bi.cm050402.isChecked() ? "2"
+                : bi.cm050408.isChecked() ? "8"
+                : bi.cm050409.isChecked() ? "9"
+                : "-1");
+
+        form.setCm0505(bi.cm050501.isChecked() ? "1"
+                : bi.cm050502.isChecked() ? "2"
+                : bi.cm050508.isChecked() ? "8"
+                : bi.cm050509.isChecked() ? "9"
+                : "-1");
+
+        form.setCm0506(bi.cm0506.getText().toString());
+
+        form.setCm0507(bi.cm050701.isChecked() ? "1"
+                : bi.cm050702.isChecked() ? "2"
+                : bi.cm050708.isChecked() ? "8"
+                : bi.cm050709.isChecked() ? "9"
+                : "-1");
+
+        form.setCm0508(bi.cm050801.isChecked() ? "1"
+                : bi.cm050802.isChecked() ? "2"
+                : bi.cm050808.isChecked() ? "8"
+                : bi.cm050809.isChecked() ? "9"
+                : "-1");
+
+        form.setCm0509(bi.cm050901.isChecked() ? "1"
+                : bi.cm050902.isChecked() ? "2"
+                : bi.cm050908.isChecked() ? "8"
+                : bi.cm050909.isChecked() ? "9"
+                : "-1");
+
+        form.setCm050901x(bi.cm050901x.getText().toString());
+        form.setCm05011(bi.cm0501101.isChecked() ? "1"
+                : bi.cm0501102.isChecked() ? "2"
+                : bi.cm0501108.isChecked() ? "8"
+                : bi.cm0501109.isChecked() ? "9"
+                : "-1");
+
+        form.setCm05012(bi.cm0501201.isChecked() ? "1"
+                : bi.cm0501202.isChecked() ? "2"
+                : bi.cm0501208.isChecked() ? "8"
+                : bi.cm0501209.isChecked() ? "9"
+                : "-1");
+
+        form.setCm05013(bi.cm0501301.isChecked() ? "1"
+                : bi.cm0501302.isChecked() ? "2"
+                : bi.cm0501308.isChecked() ? "8"
+                : bi.cm0501309.isChecked() ? "9"
+                : "-1");
+
+        form.setCm0501301x(bi.cm0501301x.getText().toString());
+        form.setCm05015(bi.cm0501501.isChecked() ? "1"
+                : bi.cm0501502.isChecked() ? "2"
+                : bi.cm0501508.isChecked() ? "8"
+                : bi.cm0501509.isChecked() ? "9"
+                : "-1");
+
+        form.setCm05016(bi.cm0501601.isChecked() ? "1"
+                : bi.cm0501602.isChecked() ? "2"
+                : bi.cm0501608.isChecked() ? "8"
+                : bi.cm0501609.isChecked() ? "9"
+                : "-1");
+
+        form.setCm0501601x(bi.cm0501601x.getText().toString());
+        form.setCm05018(bi.cm0501801.isChecked() ? "1"
+                : bi.cm0501802.isChecked() ? "2"
+                : bi.cm0501808.isChecked() ? "8"
+                : bi.cm0501809.isChecked() ? "9"
+                : "-1");
+
+        form.setCm0501801x(bi.cm0501801x.getText().toString());
+        form.setCm05020(bi.cm0502001.isChecked() ? "1"
+                : bi.cm0502002.isChecked() ? "2"
+                : bi.cm0502008.isChecked() ? "8"
+                : bi.cm0502009.isChecked() ? "9"
+                : "-1");
+
+
     }
 
 
     public void BtnEnd() {
-
+        finish();
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 

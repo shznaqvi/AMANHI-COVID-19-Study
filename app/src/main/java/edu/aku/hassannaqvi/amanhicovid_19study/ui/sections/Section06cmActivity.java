@@ -21,6 +21,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection06cmBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form;
 
@@ -69,19 +70,41 @@ public class Section06cmActivity extends AppCompatActivity {
         if (!formValidation()) return;
         SaveDraft();
         if (UpdateDB()) {
-            startActivity(new Intent(this, Section03cmActivity.class));
             finish();
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         }
     }
 
 
     private void SaveDraft() {
 
+        form.setCm0601(bi.cm060101.isChecked() ? "1"
+                : bi.cm060102.isChecked() ? "2"
+                : "-1");
+
+        form.setCm0602(bi.cm060201.isChecked() ? "1"
+                : bi.cm060202.isChecked() ? "2"
+                : bi.cm060208.isChecked() ? "8"
+                : bi.cm060209.isChecked() ? "9"
+                : "-1");
+
+        form.setCm0603(bi.cm060301.isChecked() ? "1"
+                : bi.cm060302.isChecked() ? "2"
+                : "-1");
+
+        form.setCm0604(bi.cm060401.isChecked() ? "1"
+                : bi.cm060402.isChecked() ? "2"
+                : "-1");
+
+        form.setCm0605(bi.cm0605.getText().toString());
+
+
     }
 
 
     public void BtnEnd() {
-
+        finish();
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
