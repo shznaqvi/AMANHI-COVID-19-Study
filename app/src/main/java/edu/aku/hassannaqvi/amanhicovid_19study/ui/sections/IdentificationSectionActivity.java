@@ -1,16 +1,12 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
 import android.content.Intent;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
@@ -19,7 +15,6 @@ import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityIdentificationSectionBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
-import edu.aku.hassannaqvi.amanhicovid_19study.ui.MainActivity;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form;
 
@@ -115,6 +110,7 @@ public class IdentificationSectionActivity extends AppCompatActivity {
 
     }
 
+
     public void BtnEnd() {
         finish();
 
@@ -125,6 +121,7 @@ public class IdentificationSectionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     public void BtnContinue() {
         if (!formValidation()) return;
         SaveDraft();
@@ -133,6 +130,7 @@ public class IdentificationSectionActivity extends AppCompatActivity {
             startActivity(new Intent(this, Section02cmActivity.class));
         }
     }
+
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
