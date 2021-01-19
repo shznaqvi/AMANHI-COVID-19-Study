@@ -1,6 +1,5 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -25,7 +24,7 @@
 
             <!-- cm0301  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm0301"
+                android:id="@+id/cvcm0301"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -86,7 +85,7 @@
 
             <!-- cm0301a  Title   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm0301a"
+                android:id="@+id/cvcm0301a"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -103,7 +102,7 @@
 
             <!-- cm0302  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm0302"
+                android:id="@+id/cvcm0302"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -164,7 +163,7 @@
 
             <!-- cm0303  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm0303"
+                android:id="@+id/cvcm0303"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -206,7 +205,7 @@
 
             <!-- cm0304  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm0304"
+                android:id="@+id/cvcm0304"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -267,7 +266,7 @@
 
             <!-- cm0305  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm0305"
+                android:id="@+id/cvcm0305"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -309,7 +308,7 @@
 
             <!-- cm0306  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm0306"
+                android:id="@+id/cvcm0306"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -370,7 +369,7 @@
 
             <!-- cm0307  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm0307"
+                android:id="@+id/cvcm0307"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -412,7 +411,7 @@
 
             <!-- cm0308  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm0308"
+                android:id="@+id/cvcm0308"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -473,7 +472,7 @@
 
             <!-- cm0309  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm0309"
+                android:id="@+id/cvcm0309"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -515,7 +514,7 @@
 
             <!-- cm03010  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03010"
+                android:id="@+id/cvcm03010"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -576,7 +575,7 @@
 
             <!-- cm03011  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03011"
+                android:id="@+id/cvcm03011"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -618,7 +617,7 @@
 
             <!-- cm03012  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03012"
+                android:id="@+id/cvcm03012"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -679,7 +678,7 @@
 
             <!-- cm03013  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03013"
+                android:id="@+id/cvcm03013"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -721,7 +720,7 @@
 
             <!-- cm03014  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03014"
+                android:id="@+id/cvcm03014"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -782,7 +781,7 @@
 
             <!-- cm03015  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03015"
+                android:id="@+id/cvcm03015"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -824,7 +823,7 @@
 
             <!-- cm03016  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03016"
+                android:id="@+id/cvcm03016"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -885,7 +884,7 @@
 
             <!-- cm03017  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03017"
+                android:id="@+id/cvcm03017"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -927,7 +926,7 @@
 
             <!-- cm03018  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03018"
+                android:id="@+id/cvcm03018"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -988,7 +987,7 @@
 
             <!-- cm03019  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03019"
+                android:id="@+id/cvcm03019"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1030,7 +1029,7 @@
 
             <!-- cm03020  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03020"
+                android:id="@+id/cvcm03020"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1091,7 +1090,7 @@
 
             <!-- cm03021  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03021"
+                android:id="@+id/cvcm03021"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1133,7 +1132,7 @@
 
             <!-- cm03022  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03022"
+                android:id="@+id/cvcm03022"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1194,7 +1193,7 @@
 
             <!-- cm03023  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03023"
+                android:id="@+id/cvcm03023"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1236,7 +1235,7 @@
 
             <!-- cm03024  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03024"
+                android:id="@+id/cvcm03024"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1297,7 +1296,7 @@
 
             <!-- cm03025  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03025"
+                android:id="@+id/cvcm03025"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1339,7 +1338,7 @@
 
             <!-- cm03026  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03026"
+                android:id="@+id/cvcm03026"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1400,7 +1399,7 @@
 
             <!-- cm03027  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03027"
+                android:id="@+id/cvcm03027"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1442,7 +1441,7 @@
 
             <!-- cm03028  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03028"
+                android:id="@+id/cvcm03028"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1503,7 +1502,7 @@
 
             <!-- cm03029  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03029"
+                android:id="@+id/cvcm03029"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1545,7 +1544,7 @@
 
             <!-- cm03030  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03030"
+                android:id="@+id/cvcm03030"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1606,7 +1605,7 @@
 
             <!-- cm03031  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03031"
+                android:id="@+id/cvcm03031"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1648,7 +1647,7 @@
 
             <!-- cm03032  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03032"
+                android:id="@+id/cvcm03032"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1709,7 +1708,7 @@
 
             <!-- cm03033  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03033"
+                android:id="@+id/cvcm03033"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1751,7 +1750,7 @@
 
             <!-- cm03034  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03034"
+                android:id="@+id/cvcm03034"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1812,7 +1811,7 @@
 
             <!-- cm03035  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03035"
+                android:id="@+id/cvcm03035"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1854,7 +1853,7 @@
 
             <!-- cm03036  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03036"
+                android:id="@+id/cvcm03036"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1915,7 +1914,7 @@
 
             <!-- cm03037  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03037"
+                android:id="@+id/cvcm03037"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -1957,7 +1956,7 @@
 
             <!-- cm03038  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03038"
+                android:id="@+id/cvcm03038"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2018,7 +2017,7 @@
 
             <!-- cm03039  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03039"
+                android:id="@+id/cvcm03039"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2060,7 +2059,7 @@
 
             <!-- cm03040  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03040"
+                android:id="@+id/cvcm03040"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2121,7 +2120,7 @@
 
             <!-- cm03041  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03041"
+                android:id="@+id/cvcm03041"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2163,7 +2162,7 @@
 
             <!-- cm03042  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03042"
+                android:id="@+id/cvcm03042"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2224,7 +2223,7 @@
 
             <!-- cm03043  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03043"
+                android:id="@+id/cvcm03043"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2266,7 +2265,7 @@
 
             <!-- cm03044  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03044"
+                android:id="@+id/cvcm03044"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2327,7 +2326,7 @@
 
             <!-- cm03045  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03045"
+                android:id="@+id/cvcm03045"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2369,7 +2368,7 @@
 
             <!-- cm03046  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03046"
+                android:id="@+id/cvcm03046"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2430,7 +2429,7 @@
 
             <!-- cm03047  Input   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03047"
+                android:id="@+id/cvcm03047"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2467,7 +2466,7 @@
 
             <!-- cm03048  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03048"
+                android:id="@+id/cvcm03048"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2509,7 +2508,7 @@
 
             <!-- cm03049  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03049"
+                android:id="@+id/cvcm03049"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2570,7 +2569,7 @@
 
             <!-- cm03050  Input   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03050"
+                android:id="@+id/cvcm03050"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -2607,7 +2606,7 @@
 
             <!-- cm03051  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm03051"
+                android:id="@+id/cvcm03051"
                 style="@style/cardView">
 
                 <LinearLayout

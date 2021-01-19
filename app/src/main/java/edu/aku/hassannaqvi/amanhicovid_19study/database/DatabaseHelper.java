@@ -21,6 +21,8 @@ import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable;
 
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
+
 /**
  * @author hassan.naqvi on 11/30/2016.
  * @update ali azaz on 01/07/21
@@ -28,6 +30,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private final String TAG = "DatabaseHelper";
+    public static String DB_NAME = PROJECT_NAME + "_copy.db";
 
     public DatabaseHelper(Context context) {
         super(context, CreateTable.DATABASE_NAME, null, CreateTable.DATABASE_VERSION);

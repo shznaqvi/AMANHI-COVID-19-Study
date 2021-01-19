@@ -11,12 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSectionActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section02cmActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section03cmActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section04cmActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section05cmActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section06cmActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bi.setCallback(this);
+        setSupportActionBar(bi.toolbar);
+        setTitle(getString(R.string.app_name) + " :: " + getString(R.string.main_menu));
+
     }
 
     @Override
@@ -68,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     public void openForm(View view) {
         Intent oF = null;
         switch (view.getId()) {
+
             case R.id.startInterview:
                 oF = new Intent(this, IdentificationSectionActivity.class);
                 break;
@@ -80,24 +88,24 @@ public class MainActivity extends AppCompatActivity {
                 oF = new Intent(this, Section01HHActivity.class);
                 break;
             case R.id.btn01:
-                oF = new Intent(this, Section01HHActivity.class);
+                oF = new Intent(this, IdentificationSectionActivity.class);
                 break;
             case R.id.btn02:
-                oF = new Intent(this, Section02CBActivity.class);
+                oF = new Intent(this, Section02cmActivity.class);
                 break;
             case R.id.btn03:
-                oF = new Intent(this, Section03CSActivity.class);
+                oF = new Intent(this, Section03cmActivity.class);
                 break;
             case R.id.btn04:
-                oF = new Intent(this, Section04IMActivity.class);
+                oF = new Intent(this, Section04cmActivity.class);
                 break;
             case R.id.btn05:
-                oF = new Intent(this, Section05PDActivity.class);
+                oF = new Intent(this, Section05cmActivity.class);
                 break;
             case R.id.btn06:
-                oF = new Intent(this, Section06BFActivity.class);
+                oF = new Intent(this, Section06cmActivity.class);
                 break;
-            case R.id.btn07:
+      /*      case R.id.btn07:
                 oF = new Intent(this, Section07CVActivity.class);
                 break;
             case R.id.btn08:
