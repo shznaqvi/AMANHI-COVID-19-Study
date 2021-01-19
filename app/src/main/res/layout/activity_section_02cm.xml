@@ -1,8 +1,8 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
 
     <data>
+
         <import type="android.view.View" />
         <!--<variable
             name="form"
@@ -12,9 +12,11 @@
             type="edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section02cmActivity" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
@@ -22,9 +24,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <!-- cm0201  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm0201"
+                android:id="@+id/cvcm0201"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -45,10 +48,10 @@
                             android:text="@string/Q_cm0201" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/cm0201" />
+
                     </LinearLayout>
 
                     <RadioGroup
@@ -67,13 +70,17 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cm020112" />
+
                     </RadioGroup>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
 
             <!-- cm0202  Radio   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcm0202"
+                android:id="@+id/cvcm0202"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -94,10 +101,10 @@
                             android:text="@string/Q_cm0202" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
                             android:text="@string/cm0202" />
+
                     </LinearLayout>
 
                     <RadioGroup
@@ -156,9 +163,15 @@
                             android:tag="cm020277"
                             android:text='@{cm020277.checked ? cm020277x.getText().toString() : ""}'
                             android:visibility='@{cm020277.checked? View.VISIBLE : View.GONE}' />
+
                     </RadioGroup>
+
                 </LinearLayout>
-            </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--EndButton LinearLayout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -185,7 +198,13 @@
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="Save"
                     android:textColor="@color/white" />
+
             </LinearLayout>
+            <!--EndButton LinearLayout-->
+
+
         </LinearLayout>
+
     </ScrollView>
+
 </layout>
