@@ -1436,12 +1436,12 @@
     <string name="cm03018">Convulsions / fits </string>
     <string name="cm0301801">YES</string>
     <string name="cm0301802">NO</string>
-    <string name="cm0301808"> DK</string>
+    <string name="cm0301808">DK</string>
     <string name="cm0301809">NA</string>
     <string name="cm03019">If yes, number of days of Convulsions / fits (xx, 88=DK, 99=NA</string>
     <string name="cm03020">Jaundice</string>
     <string name="cm0302001">YES </string>
-    <string name="cm0302002"> NO</string>
+    <string name="cm0302002">NO</string>
     <string name="cm0302008">DK</string>
     <string name="cm0302009">NA</string>
     <string name="cm03021">If yes, number of days of Jaundice (xx, 88=DK, 99=NA</string>
@@ -1454,13 +1454,13 @@
     <string name="cm03024">Nausea/ vomiting</string>
     <string name="cm0302401">YES</string>
     <string name="cm0302402">NO</string>
-    <string name="cm0302408"> DK</string>
+    <string name="cm0302408">DK</string>
     <string name="cm0302409">NA</string>
     <string name="cm03025">If yes, number of days of Nausea/ vomiting (xx, 88=DK, 99=NA)</string>
     <string name="cm03026">Diarrhoea</string>
     <string name="cm0302601">YES </string>
     <string name="cm0302602">NO</string>
-    <string name="cm0302608"> DK</string>
+    <string name="cm0302608">DK</string>
     <string name="cm0302609">NA</string>
     <string name="cm03027">If yes, number of days of Diarrhoea (xx, 88=DK, 99=NA)</string>
     <string name="cm03028">Abdominal cramps or pain</string>
@@ -1478,7 +1478,7 @@
     <string name="cm03032">Loss of sense of taste/ageusia</string>
     <string name="cm0303201">YES </string>
     <string name="cm0303202">NO</string>
-    <string name="cm0303208"> DK</string>
+    <string name="cm0303208">DK</string>
     <string name="cm0303209">NA</string>
     <string name="cm03033">If yes, number of days of Loss of sense of taste/ageusia (xx, 88=DK, 99=NA)</string>
     <string name="cm03034">Delirium/confusion </string>
@@ -1490,7 +1490,7 @@
     <string name="cm03036">Hallucinations </string>
     <string name="cm0303601">YES </string>
     <string name="cm0303602">NO</string>
-    <string name="cm0303608"> DK</string>
+    <string name="cm0303608">DK</string>
     <string name="cm0303609">NA</string>
     <string name="cm03037"> If yes, number of days of Hallucinations (xx, 88=DK, 99=NA)</string>
     <string name="cm03038">Skin rashes</string>
@@ -1508,9 +1508,9 @@
     <string name="cm03042">Body aches</string>
     <string name="cm03043"> If yes, number of days of Body aches (xx, 88=DK, 99=NA</string>
     <string name="cm0304201">YES </string>
-    <string name="cm0304202"> NO</string>
+    <string name="cm0304202">NO</string>
     <string name="cm0304208">DK</string>
-    <string name="cm0304209"> NA</string>
+    <string name="cm0304209">NA</string>
     <string name="cm03044">Malaria (site specific)</string>
     <string name="cm0304401">YES </string>
     <string name="cm0304402">NO</string>
@@ -1557,19 +1557,19 @@
     <string name="cm040508">DK</string>
     <string name="cm040509">NA</string>
     <string name="cm0407">If you did not take your child to a hospital/health facility, did you seek care for him/her from other sources?</string>
-    <string name="cm040601">did not seek care </string>
+    <string name="cm040601">Did not seek care </string>
     <string name="cm040701">YES</string>
-    <string name="cm040602">sought care elsewhere </string>
+    <string name="cm040602">Sought Care elsewhere </string>
     <string name="cm040702">NO</string>
     <string name="cm040609">NA</string>
     <string name="cm040708">DK</string>
     <string name="cm040709">NA</string>
     <string name="cm0408">What source? please specify</string>
-    <string name="cm0408011">community health worker</string>
-    <string name="cm0408012">traditional healer</string>
-    <string name="cm0408013">pharmacy/druggist</string>
+    <string name="cm0408011">Community Health Worker</string>
+    <string name="cm0408012">Traditional Healer</string>
+    <string name="cm0408013">Pharmacy/Druggist</string>
     <string name="cm0408099">NA</string>
-    <string name="cm0408015">other</string>
+    <string name="cm0408015">Other</string>
     <string name="cm04010">Did you/your family call the national coronavirus hotline number since the last time we contacted you?</string>
     <string name="cm0401001">YES</string>
     <string name="cm0401002">NO</string>

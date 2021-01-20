@@ -32,6 +32,8 @@ public class Form extends BaseObservable {
     private String ucode = "";
     private String cluster = "";
     private String studyid = "";
+    private String dssid = "";
+    private String week = "";
     private String hhno = "";
     private String deviceId = "";
     private String deviceTag = "";
@@ -218,6 +220,26 @@ public class Form extends BaseObservable {
 
     public void setStudyID(String studyid) {
         this.studyid = studyid;
+    }
+
+
+    @Bindable
+    public String getDssID() {
+        return dssid;
+    }
+
+    public void setDssID(String dssid) {
+        this.dssid = dssid;
+    }
+
+
+    @Bindable
+    public String getWeek() {
+        return week;
+    }
+
+    public void setWeek(String week) {
+        this.week = week;
     }
 
 
@@ -1351,6 +1373,12 @@ public class Form extends BaseObservable {
         this.hhno = jsonObject.getString(FormsContract.FormsTable.COLUMN_HHNO);
         this.deviceId = jsonObject.getString(FormsContract.FormsTable.COLUMN_DEVICEID);
         this.deviceTag = jsonObject.getString(FormsContract.FormsTable.COLUMN_DEVICETAGID);
+
+        this.studyid = jsonObject.getString(FormsContract.FormsTable.COLUMN_STUDYID);
+        this.dssid = jsonObject.getString(FormsContract.FormsTable.COLUMN_DSSID);
+        this.week = jsonObject.getString(FormsContract.FormsTable.COLUMN_WEEK);
+
+
         this.appver = jsonObject.getString(FormsContract.FormsTable.COLUMN_APPVERSION);
         this.gps = jsonObject.getString(FormsContract.FormsTable.COLUMN_GPS);
         this.endTime = jsonObject.getString(FormsContract.FormsTable.COLUMN_ENDINGDATETIME);
@@ -1377,6 +1405,12 @@ public class Form extends BaseObservable {
         this.ucode = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_UCODE));
         this.cluster = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_CLUSTER));
         this.hhno = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_HHNO));
+
+        this.studyid = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_STUDYID));
+        this.dssid = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_DSSID));
+        this.week = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_WEEK));
+
+
         this.deviceId = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_DEVICETAGID));
         this.appver = cursor.getString(cursor.getColumnIndex(FormsContract.FormsTable.COLUMN_APPVERSION));
@@ -1536,6 +1570,12 @@ public class Form extends BaseObservable {
             json.put(FormsContract.FormsTable.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
             json.put(FormsContract.FormsTable.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
             json.put(FormsContract.FormsTable.COLUMN_DEVICETAGID, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
+
+            json.put(FormsContract.FormsTable.COLUMN_STUDYID, this.studyid == null ? JSONObject.NULL : this.studyid);
+            json.put(FormsContract.FormsTable.COLUMN_DSSID, this.dssid == null ? JSONObject.NULL : this.dssid);
+            json.put(FormsContract.FormsTable.COLUMN_WEEK, this.week == null ? JSONObject.NULL : this.week);
+
+
             json.put(FormsContract.FormsTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
             json.put(FormsContract.FormsTable.COLUMN_GPS, this.gps == null ? JSONObject.NULL : this.gps);
             json.put(FormsContract.FormsTable.COLUMN_ENDINGDATETIME, this.endTime == null ? JSONObject.NULL : this.endTime);

@@ -44,8 +44,6 @@ public class EndingActivity extends AppCompatActivity {
             bi.istatus96.setEnabled(false);
         } else {
 
-            Toast.makeText(this, "i m false ending", Toast.LENGTH_SHORT).show();
-
             bi.istatusa.setEnabled(false);
             bi.istatusb.setEnabled(true);
             bi.istatusc.setEnabled(true);

@@ -32,6 +32,8 @@ object CreateTable {
             + FormsContract.FormsTable.COLUMN_CLUSTER + " TEXT,"
             + FormsContract.FormsTable.COLUMN_HHNO + " TEXT,"
             + FormsContract.FormsTable.COLUMN_STUDYID + " TEXT,"
+            + FormsContract.FormsTable.COLUMN_DSSID + " TEXT,"
+            + FormsContract.FormsTable.COLUMN_WEEK + " TEXT,"
             + FormsContract.FormsTable.COLUMN_S02 + " TEXT"
             + " );")
 
