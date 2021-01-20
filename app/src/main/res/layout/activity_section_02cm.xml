@@ -1,5 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <data>
         <import type="android.view.View" />
         <!--<variable
@@ -10,10 +11,12 @@
             type="edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section02cmActivity" />
     </data>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="24dp">
+
 
         <LinearLayout
             android:id="@+id/GrpName"
