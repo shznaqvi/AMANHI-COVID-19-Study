@@ -12,8 +12,8 @@
 
 
             <item
-                android:id="@+id/action_settings"
-                android:title="@string/action_settings" />
+                android:id="@+id/action_database"
+                android:title="Open Database Manager" />
             <item
                 android:id="@+id/action_data_sync"
                 android:title="@string/action_data_sync" />
