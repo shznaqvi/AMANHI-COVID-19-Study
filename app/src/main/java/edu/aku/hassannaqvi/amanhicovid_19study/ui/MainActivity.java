@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
 
-            case R.id.action_settings:
+            case R.id.action_database:
                 startActivity(new Intent(this, AndroidDatabaseManager.class));
                 break;
             case R.id.action_data_sync:
@@ -80,9 +80,6 @@ public class MainActivity extends AppCompatActivity {
                 oF = new Intent(this, IdentificationSectionActivity.class);
                 break;
 
-            case R.id.showdb:
-                oF = new Intent(this, AndroidDatabaseManager.class);
-                break;
 
             case R.id.btn01:
                 oF = new Intent(this, IdentificationSectionActivity.class);
