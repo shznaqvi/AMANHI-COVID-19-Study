@@ -15,12 +15,18 @@ import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSecMActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSectionActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section02cmActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section02mmActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section03cmActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section03mmActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section04cmActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section04mmActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section05cmActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section05mmActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section06cmActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section06mmActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -84,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
                 oF = new Intent(this, AndroidDatabaseManager.class);
                 break;
 
+            case R.id.btnChildMorb:
+                oF = new Intent(this, IdentificationSecMActivity.class);
+                break;
+
             case R.id.btn01:
                 oF = new Intent(this, IdentificationSectionActivity.class);
                 break;
@@ -107,6 +117,32 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn06:
                 oF = new Intent(this, Section06cmActivity.class);
                 break;
+
+
+            case R.id.btn07:
+                oF = new Intent(this, IdentificationSecMActivity.class);
+                break;
+
+            case R.id.btn08:
+                oF = new Intent(this, Section02mmActivity.class);
+                break;
+
+            case R.id.btn09:
+                oF = new Intent(this, Section03mmActivity.class);
+                break;
+
+            case R.id.btn10:
+                oF = new Intent(this, Section04mmActivity.class);
+                break;
+
+            case R.id.btn11:
+                oF = new Intent(this, Section05mmActivity.class);
+                break;
+
+            case R.id.btn12:
+                oF = new Intent(this, Section06mmActivity.class);
+                break;
+
 
             /*case R.id.startInterview:
                 oF = new Intent(this, Section01HHActivity.class);

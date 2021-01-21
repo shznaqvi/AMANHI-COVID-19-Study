@@ -63,11 +63,32 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="8dp"
                 android:shadowRadius="24"
-                android:text="Open New Form"
+                android:text="Open New Form (Mother Mobidity)"
                 android:textAppearance="@style/Widget.AppCompat.ActionButton"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/btnChildMorb"
+                style="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/action_button"
+                android:drawableStart="@drawable/ic_open_form"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/roboto"
+                android:letterSpacing="0.2"
+                android:minWidth="170dp"
+                android:minHeight="36dp"
+                android:onClick="openForm"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:shadowRadius="24"
+                android:text="Open New Form (Child Mobidity)"
+                android:textAppearance="@style/Widget.AppCompat.ActionButton"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/showdb"
@@ -97,6 +118,12 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="24dp"
                 android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtviewc"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Child Morbidity"></TextView>
 
                 <LinearLayout
                     style="?android:attr/buttonBarStyle"
@@ -139,7 +166,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-
                     android:orientation="horizontal">
 
                     <Button
@@ -153,7 +179,6 @@
 
                     <Button
                         android:id="@+id/btn05"
-
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -163,7 +188,6 @@
 
                     <Button
                         android:id="@+id/btn06"
-
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -173,6 +197,94 @@
 
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/admin1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtview"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Mother Morbidity"></TextView>
+
+                    <LinearLayout
+                        style="?android:attr/buttonBarStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn07"
+                            style="?android:attr/buttonBarButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:onClick="openForm"
+                            android:text="Sec 01" />
+
+                        <Button
+                            android:id="@+id/btn08"
+                            style="?android:attr/buttonBarButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:onClick="openForm"
+                            android:text="Sec 02" />
+
+                        <Button
+                            android:id="@+id/btn09"
+                            style="?android:attr/buttonBarButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:onClick="openForm"
+                            android:text="Sec 03" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="?android:attr/buttonBarStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn10"
+                            style="?android:attr/buttonBarButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:onClick="openForm"
+                            android:text="Sec 04" />
+
+                        <Button
+                            android:id="@+id/btn11"
+                            style="?android:attr/buttonBarButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:onClick="openForm"
+                            android:text="Sec 05" />
+
+                        <Button
+                            android:id="@+id/btn12"
+                            style="?android:attr/buttonBarButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:onClick="openForm"
+                            android:text="Sec 06" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
 

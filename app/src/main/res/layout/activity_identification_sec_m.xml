@@ -1,5 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -9,7 +10,7 @@
             type="edu.aku.hassannaqvi.amanhi.models.Form" />-->
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSectionActivity" />
+            type="edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSecMActivity" />
     </data>
 
     <ScrollView
@@ -22,9 +23,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- cmtitle  Title   -->
+            <!-- mm01title  Title   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcmtitle"
+                android:id="@+id/fldGrpCVmm01title"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -35,13 +36,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/cmtitle" />
+                        android:text="@string/mm01title" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- cmsid  Input-Numeric   -->
+            <!-- mmsid  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcmsid"
+                android:id="@+id/fldGrpCVmmsid"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -59,29 +60,28 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cmsid" />
+                            android:text="@string/Q_mmsid" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/cmsid" />
+                            android:text="@string/mmsid" />
                     </LinearLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cmsid"
+                        android:id="@+id/mmsid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="17-#####-#"
                         android:inputType="number"
                         app:mask="17-#####-#" />
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- cm0101  Input-Numeric   -->
+            <!-- mm0101  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0101"
+                android:id="@+id/fldGrpCVmm0101"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -99,27 +99,28 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cm0101" />
+                            android:text="@string/Q_mm0101" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/cm0101" />
+                            android:text="@string/mm0101" />
                     </LinearLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cm0101"
+                        android:id="@+id/mm0101"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cm0101"
-                        android:inputType="text" />
+                        android:hint="@string/mm0101"
+                        android:inputType="text"
+                        android:maxLength="15" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!--&lt;!&ndash; cm0102  Input   &ndash;&gt;
+            <!--&lt;!&ndash; mm0102  Input   &ndash;&gt;
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0102"
+                android:id="@+id/fldGrpCVmm0102"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -137,26 +138,26 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cm0102" />
+                            android:text="@string/Q_mm0102" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/cm0102" />
+                            android:text="@string/mm0102" />
                     </LinearLayout>
 
                     <EditText
-                        android:id="@+id/cm0102"
+                        android:id="@+id/mm0102"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cm0102" />
+                        android:hint="@string/mm0102" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            &lt;!&ndash; cm0102a  Input-Numeric   &ndash;&gt;
+            &lt;!&ndash; mm0102a  Input-Numeric   &ndash;&gt;
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0102a"
+                android:id="@+id/fldGrpCVmm0102a"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -174,31 +175,30 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cm0102a" />
+                            android:text="@string/Q_mm0102a" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/cm0102a" />
+                            android:text="@string/mm0102a" />
                     </LinearLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cm0102a"
+                        android:id="@+id/mm0102a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cm0102a"
+                        android:hint="@string/mm0102a"
                         android:inputType="number"
-                        android:maxLength="3"
-                        app:maxValue="999"
-                        app:minValue="1"
+
+
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>-->
 
-            <!-- cm0103  Input-Numeric   -->
+            <!-- mm0103  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0103"
+                android:id="@+id/fldGrpCVmm0103"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -216,28 +216,29 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cm0103" />
+                            android:text="@string/Q_mm0103" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/cm0103" />
+                            android:text="@string/mm0103" />
                     </LinearLayout>
 
                     <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
-                        android:id="@+id/cm0103"
+                        android:id="@+id/mm0103"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cm0103"
+                        android:hint="@string/mm0103"
+                        android:inputType="date"
                         app:maxDate="CR_DATE"
                         app:minDate="01/11/2020" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- cm0104  Input-Numeric   -->
+            <!-- mm0104  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0104"
+                android:id="@+id/fldGrpCVmm0104"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -255,20 +256,20 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cm0104" />
+                            android:text="@string/Q_mm0104" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/cm0104" />
+                            android:text="@string/mm0104" />
                     </LinearLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cm0104"
+                        android:id="@+id/mm0104"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cm0104"
+                        android:hint="@string/mm0104"
                         android:inputType="number"
                         android:maxLength="2"
                         app:maxValue="99"
@@ -277,9 +278,9 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- cm0105  Input-Numeric   -->
+            <!-- mm0105  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0105"
+                android:id="@+id/fldGrpCVmm0105"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -297,17 +298,17 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cm0105" />
+                            android:text="@string/Q_mm0105" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/cm0105" />
+                            android:text="@string/mm0105" />
                     </LinearLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cm0105"
+                        android:id="@+id/mm0105"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="17-#####-#"
@@ -316,9 +317,9 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- cm0106  Input-Numeric   -->
+            <!-- mm0106  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0106"
+                android:id="@+id/fldGrpCVmm0106"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -336,17 +337,17 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cm0106" />
+                            android:text="@string/Q_mm0106" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/cm0106" />
+                            android:text="@string/mm0106" />
                     </LinearLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cm0106"
+                        android:id="@+id/mm0106"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="17-#####-#"
@@ -355,9 +356,9 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- cm0107  Input-Numeric   -->
+            <!-- mm0107  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0107"
+                android:id="@+id/fldGrpCVmm0107"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -375,17 +376,17 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cm0107" />
+                            android:text="@string/Q_mm0107" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/cm0107" />
+                            android:text="@string/mm0107" />
                     </LinearLayout>
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cm0107"
+                        android:id="@+id/mm0107"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="17-#####-#"
@@ -394,9 +395,9 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- cm0108  Input-Numeric   -->
+            <!-- mm0108  Input-Numeric   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0108"
+                android:id="@+id/fldGrpCVmm0108"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -414,27 +415,28 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cm0108" />
+                            android:text="@string/Q_mm0108" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/cm0108" />
+                            android:text="@string/mm0108" />
                     </LinearLayout>
 
-                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
-                        android:id="@+id/cm0108"
+                    <com.edittextpicker.aliazaz.EditTextPicker
+                        android:id="@+id/mm0108"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cm0108"
-                        app:maxDate="CR_DATE" />
+                        android:hint="17-#####-#"
+                        android:inputType="number"
+                        app:mask="17-#####-#" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- cm0109  Radio   -->
+            <!-- mm0108a  Input   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0109"
+                android:id="@+id/fldGrpCVmm0108a"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -452,145 +454,26 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cm0109" />
+                            android:text="@string/Q_mm0108a" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/cm0109" />
-                    </LinearLayout>
-
-                    <RadioGroup
-                        android:id="@+id/cm0109"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <RadioButton
-                            android:id="@+id/cm0109m"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cm0109m" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/cm0109mx"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/cm0109m"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:tag="cm0109m"
-                            android:text='@{cm0109m.checked ? cm0109mx.getText().toString() : ""}'
-                            android:visibility='@{cm0109m.checked? View.VISIBLE : View.GONE}'
-                            app:maxValue="10"
-                            app:minValue="1"
-                            app:type="range" />
-
-                        <RadioButton
-                            android:id="@+id/cm010988"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cm010988" />
-
-                        <RadioButton
-                            android:id="@+id/cm010999"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cm010999" />
-                    </RadioGroup>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- cm0110  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0110"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_cm0110" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/cm0110" />
-                    </LinearLayout>
-
-                    <RadioGroup
-                        android:id="@+id/cm0110"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <RadioButton
-                            android:id="@+id/cm01101"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cm01101" />
-
-                        <RadioButton
-                            android:id="@+id/cm01102"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cm01102" />
-                    </RadioGroup>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- cm0111  Input   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0111"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_cm0111" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/cm0111" />
+                            android:text="@string/mm0108a" />
                     </LinearLayout>
 
                     <EditText
-                        android:id="@+id/cm0111"
+                        android:id="@+id/mm0108a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cm0111"
-                        android:maxLength="80" />
+                        android:hint="@string/mm0108a" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- cm0112  Input   -->
+            <!-- mm0108b  Input   -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm0112"
+                android:id="@+id/fldGrpCVmm0108b"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -608,21 +491,20 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cm0112" />
+                            android:text="@string/Q_mm0108b" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/cm0112" />
+                            android:text="@string/mm0108b" />
                     </LinearLayout>
 
                     <EditText
-                        android:id="@+id/cm0112"
+                        android:id="@+id/mm0108b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cm0112"
-                        android:maxLength="80" />
+                        android:hint="@string/mm0108b" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
             <LinearLayout
