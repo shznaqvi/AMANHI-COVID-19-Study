@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.utils
 
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Form4MContract
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users
 import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp
@@ -35,6 +36,34 @@ object CreateTable {
             + FormsContract.FormsTable.COLUMN_DSSID + " TEXT,"
             + FormsContract.FormsTable.COLUMN_WEEK + " TEXT,"
             + FormsContract.FormsTable.COLUMN_S02 + " TEXT"
+            + " );")
+
+
+    const val SQL_CREATE_FORMS4M = ("CREATE TABLE "
+            + Form4MContract.Forms4MTable.TABLE_NAME + "("
+            + Form4MContract.Forms4MTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + Form4MContract.Forms4MTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_UID + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_USERNAME + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_SYSDATE + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_ISTATUS + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_ISTATUS96x + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_ENDINGDATETIME + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_GPS + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_DEVICEID + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_DEVICETAGID + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_SYNCED + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_APPVERSION + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_CHILD_RESPONDENT + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_DCODE + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_UCODE + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_CLUSTER + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_HHNO + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_STUDYID + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_DSSID + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_WEEK + " TEXT,"
+            + Form4MContract.Forms4MTable.COLUMN_S02 + " TEXT"
             + " );")
 
 

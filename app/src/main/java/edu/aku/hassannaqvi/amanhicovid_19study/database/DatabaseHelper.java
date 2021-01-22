@@ -14,9 +14,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Date;
 
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Form4MContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4MModel;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable;
@@ -43,6 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ///db.execSQL(CreateTable.SQL_CREATE_UCS);
         //db.execSQL(CreateTable.SQL_CREATE_CLUSTERS);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
+        db.execSQL(CreateTable.SQL_CREATE_FORMS4M);
         //db.execSQL(CreateTable.SQL_CREATE_CHILD_INFO);
         //db.execSQL(CreateTable.SQL_CREATE_CHILD);
         //db.execSQL(CreateTable.SQL_CREATE_IMMUNIZATION);
@@ -101,6 +104,54 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 FormsContract.FormsTable.TABLE_NAME,
                 FormsContract.FormsTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+
+    /*
+     * Addition in DB
+     * */
+    public Long addForm4M(Form4MModel form) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+// Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(FormsContract.FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
+        values.put(FormsContract.FormsTable.COLUMN_UID, form.getUid());
+        values.put(FormsContract.FormsTable.COLUMN_USERNAME, form.getUserName());
+        values.put(FormsContract.FormsTable.COLUMN_SYSDATE, form.getSysDate());
+        values.put(FormsContract.FormsTable.COLUMN_STUDYID, form.getStudyID());
+        values.put(FormsContract.FormsTable.COLUMN_DSSID, form.getDssID());
+        values.put(FormsContract.FormsTable.COLUMN_WEEK, form.getWeek());
+
+        values.put(FormsContract.FormsTable.COLUMN_S02, form.getS02());
+
+        /*values.put(FormsContract.FormsTable.COLUMN_S01HH, form.getS01HH());
+        values.put(FormsContract.FormsTable.COLUMN_S02CB, form.getS02CB());
+        values.put(FormsContract.FormsTable.COLUMN_S03CS, form.getS03CS());
+        values.put(FormsContract.FormsTable.COLUMN_S04IM, form.getS04IM());
+        values.put(FormsContract.FormsTable.COLUMN_S05PD, form.getS05PD());
+        values.put(FormsContract.FormsTable.COLUMN_S06BF, form.getS06BF());
+        values.put(FormsContract.FormsTable.COLUMN_S07CV, form.getS07CV());
+        values.put(FormsContract.FormsTable.COLUMN_S08SE, form.getS08SE());*/
+
+        values.put(FormsContract.FormsTable.COLUMN_ISTATUS, form.getIStatus());
+        values.put(FormsContract.FormsTable.COLUMN_ISTATUS96x, form.getIStatus96x());
+        values.put(FormsContract.FormsTable.COLUMN_ENDINGDATETIME, form.getEndTime());
+        values.put(FormsContract.FormsTable.COLUMN_GPS, form.getGps());
+
+        values.put(FormsContract.FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
+        values.put(FormsContract.FormsTable.COLUMN_DEVICEID, form.getDeviceId());
+        values.put(FormsContract.FormsTable.COLUMN_APPVERSION, form.getAppver());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                Form4MContract.Forms4MTable.TABLE_NAME,
+                Form4MContract.Forms4MTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }

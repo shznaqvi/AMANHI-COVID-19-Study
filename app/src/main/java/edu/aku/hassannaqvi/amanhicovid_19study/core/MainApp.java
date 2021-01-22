@@ -7,6 +7,7 @@ import com.jakewharton.threetenabp.AndroidThreeTen;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.AppInfo;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4MModel;
 
 
 public class MainApp extends Application {
@@ -24,6 +25,7 @@ public class MainApp extends Application {
     public static final String _UPDATE_URL = MainApp._IP + "/nns/app/";
     public static String IMEI;
     public static Form form;
+    public static Form4MModel form4m;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
     // public static Users user;
