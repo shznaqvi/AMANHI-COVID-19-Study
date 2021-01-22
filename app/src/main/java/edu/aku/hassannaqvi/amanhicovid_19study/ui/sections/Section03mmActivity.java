@@ -237,30 +237,9 @@ public class Section03mmActivity extends AppCompatActivity {
     }
 
     private void setupSkips() {
-        /*rgListener(bi.cm0302, bi.cm030201, bi.cvcm0303);
-        rgListener(bi.cm0304, bi.cm30401, bi.cvcm0305);
-        rgListener(bi.cm0306, bi.cm030601, bi.cvcm0307);
-        rgListener(bi.cm0308, bi.cm030801, bi.cvcm0309);
-        rgListener(bi.cm03010, bi.cm0301001, bi.cvcm03011);
-        rgListener(bi.cm03012, bi.cm0301201, bi.cvcm03013);
-        rgListener(bi.cm03014, bi.cm0301401, bi.cvcm03015);
-        rgListener(bi.cm03016, bi.cm0301601, bi.cvcm03017);
-        rgListener(bi.cm03018, bi.cm0301801, bi.cvcm03019);
-        rgListener(bi.cm03020, bi.cm0302001, bi.cvcm03021);
-        rgListener(bi.cm03022, bi.cm0302201, bi.cvcm03023);
-        rgListener(bi.cm03024, bi.cm0302401, bi.cvcm03025);
-        rgListener(bi.cm03026, bi.cm0302601, bi.cvcm03027);
-        rgListener(bi.cm03028, bi.cm0302801, bi.cvcm03029);
-        rgListener(bi.cm03030, bi.cm0303001, bi.cvcm03031);
-        rgListener(bi.cm03032, bi.cm0303201, bi.cvcm03033);
-        rgListener(bi.cm03034, bi.cm0303401, bi.cvcm03035);
-        rgListener(bi.cm03036, bi.cm0303601, bi.cvcm03037);
-        rgListener(bi.cm03038, bi.cm0303801, bi.cvcm03039);
-        rgListener(bi.cm03040, bi.cm0304001, bi.cvcm03041);
-        rgListener(bi.cm03042, bi.cm0304201, bi.cvcm03043);
-        rgListener(bi.cm03044, bi.cm0304401, bi.cvcm03045);
-        rgListener(bi.cm03046, bi.cm0304601, bi.llcm03046);
-        rgListener(bi.cm03049, bi.cm0304901, bi.llcm03049);*/
+        rgListener(bi.mm0302, bi.mm030201, bi.fldGrpCVmm0303);
+        rgListener(bi.mm0304, bi.mm030401, bi.fldGrpCVmm0305);
+        rgListener(bi.mm0304, bi.mm030401, bi.fldGrpCVmm0305);
     }
 
 
