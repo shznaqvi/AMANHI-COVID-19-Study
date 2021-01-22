@@ -1,8 +1,5 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
@@ -20,7 +20,6 @@ import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
-import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection02mmBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection03mmBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
 
@@ -239,7 +238,29 @@ public class Section03mmActivity extends AppCompatActivity {
     private void setupSkips() {
         rgListener(bi.mm0302, bi.mm030201, bi.fldGrpCVmm0303);
         rgListener(bi.mm0304, bi.mm030401, bi.fldGrpCVmm0305);
-        rgListener(bi.mm0304, bi.mm030401, bi.fldGrpCVmm0305);
+        rgListener(bi.mm0306, bi.mm030601, bi.fldGrpCVmm0307);
+        rgListener(bi.mm0308, bi.mm030801, bi.fldGrpCVmm0309);
+        rgListener(bi.mm03010, bi.mm0301001, bi.fldGrpCVmm03011);
+        rgListener(bi.mm03012, bi.mm0301201, bi.fldGrpCVmm03013);
+        rgListener(bi.mm03014, bi.mm0301401, bi.fldGrpCVmm03015);
+        rgListener(bi.mm03016, bi.mm0301601, bi.fldGrpCVmm03017);
+        rgListener(bi.mm03018, bi.mm0301801, bi.fldGrpCVmm03019);
+        rgListener(bi.mm03020, bi.mm0302001, bi.fldGrpCVmm03021);
+        rgListener(bi.mm03022, bi.mm0302201, bi.fldGrpCVmm03023);
+        rgListener(bi.mm03024, bi.mm0302401, bi.fldGrpCVmm03025);
+        rgListener(bi.mm03026, bi.mm0302601, bi.fldGrpCVmm03027);
+        rgListener(bi.mm03028, bi.mm0302801, bi.fldGrpCVmm03029);
+        rgListener(bi.mm03030, bi.mm0303001, bi.fldGrpCVmm03031);
+        rgListener(bi.mm03032, bi.mm0303201, bi.fldGrpCVmm03033);
+        rgListener(bi.mm03034, bi.mm0303401, bi.fldGrpCVmm03035);
+        rgListener(bi.mm03036, bi.mm0303601, bi.fldGrpCVmm03037);
+        rgListener(bi.mm03038, bi.mm0303801, bi.fldGrpCVmm03039);
+        rgListener(bi.mm03040, bi.mm0304001, bi.fldGrpCVmm03041);
+        rgListener(bi.mm03042, bi.mm0304201, bi.fldGrpCVmm03043);
+        rgListener(bi.mm03044, bi.mm0304401, bi.llmm03045);
+        rgListener(bi.mm03047, bi.mm0304701, bi.llmm03047);
+
+
     }
 
 

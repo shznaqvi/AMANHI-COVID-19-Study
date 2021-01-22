@@ -13,7 +13,9 @@
         <activity android:name=".ui.sections.Section06mmActivity"></activity>
         <activity android:name=".ui.sections.Section05mmActivity" />
         <activity android:name=".ui.sections.Section04mmActivity" />
-        <activity android:name=".ui.sections.Section03mmActivity" />
+        <activity android:name=".ui.sections.Section03mmActivity">
+
+        </activity>
         <activity android:name=".ui.sections.Section02mmActivity" />
         <activity android:name=".ui.sections.IdentificationSecMActivity" />
         <activity android:name=".ui.sections.IdentificationSectionActivity" />
