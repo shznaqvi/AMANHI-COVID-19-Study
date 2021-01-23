@@ -15,8 +15,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Date;
 
-import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Form4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
@@ -45,8 +45,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //db.execSQL(CreateTable.SQL_CREATE_DISTRICTS);
         ///db.execSQL(CreateTable.SQL_CREATE_UCS);
         //db.execSQL(CreateTable.SQL_CREATE_CLUSTERS);
-        db.execSQL(CreateTable.SQL_CREATE_FORMS);
-        db.execSQL(CreateTable.SQL_CREATE_FORMS4M);
+        db.execSQL(CreateTable.SQL_CREATE_FORMS21CM);
+        db.execSQL(CreateTable.SQL_CREATE_FORMS4MM);
         //db.execSQL(CreateTable.SQL_CREATE_CHILD_INFO);
         //db.execSQL(CreateTable.SQL_CREATE_CHILD);
         //db.execSQL(CreateTable.SQL_CREATE_IMMUNIZATION);
@@ -72,15 +72,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(Forms21cmContract.FormsTable.COLUMN_PROJECT_NAME, form21cm.getProjectName());
-        values.put(Forms21cmContract.FormsTable.COLUMN_UID, form21cm.getUid());
-        values.put(Forms21cmContract.FormsTable.COLUMN_USERNAME, form21cm.getUserName());
-        values.put(Forms21cmContract.FormsTable.COLUMN_SYSDATE, form21cm.getSysDate());
-        values.put(Forms21cmContract.FormsTable.COLUMN_STUDYID, form21cm.getStudyID());
-        values.put(Forms21cmContract.FormsTable.COLUMN_DSSID, form21cm.getDssID());
-        values.put(Forms21cmContract.FormsTable.COLUMN_WEEK, form21cm.getWeek());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_PROJECT_NAME, form21cm.getProjectName());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_UID, form21cm.getUid());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_USERNAME, form21cm.getUserName());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_SYSDATE, form21cm.getSysDate());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_STUDYID, form21cm.getStudyID());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_DSSID, form21cm.getDssID());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_WEEK, form21cm.getWeek());
 
-        values.put(Forms21cmContract.FormsTable.COLUMN_S02, form21cm.getS02());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_S02, form21cm.getS02());
 
         /*values.put(FormsContract.FormsTable.COLUMN_S01HH, form.getS01HH());
         values.put(FormsContract.FormsTable.COLUMN_S02CB, form.getS02CB());
@@ -91,20 +91,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsContract.FormsTable.COLUMN_S07CV, form.getS07CV());
         values.put(FormsContract.FormsTable.COLUMN_S08SE, form.getS08SE());*/
 
-        values.put(Forms21cmContract.FormsTable.COLUMN_ISTATUS, form21cm.getIStatus());
-        values.put(Forms21cmContract.FormsTable.COLUMN_ISTATUS96x, form21cm.getIStatus96x());
-        values.put(Forms21cmContract.FormsTable.COLUMN_ENDINGDATETIME, form21cm.getEndTime());
-        values.put(Forms21cmContract.FormsTable.COLUMN_GPS, form21cm.getGps());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS, form21cm.getIStatus());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS96x, form21cm.getIStatus96x());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_ENDINGDATETIME, form21cm.getEndTime());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_GPS, form21cm.getGps());
 
-        values.put(Forms21cmContract.FormsTable.COLUMN_DEVICETAGID, form21cm.getDeviceTag());
-        values.put(Forms21cmContract.FormsTable.COLUMN_DEVICEID, form21cm.getDeviceId());
-        values.put(Forms21cmContract.FormsTable.COLUMN_APPVERSION, form21cm.getAppver());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_DEVICETAGID, form21cm.getDeviceTag());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_DEVICEID, form21cm.getDeviceId());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_APPVERSION, form21cm.getAppver());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                Forms21cmContract.FormsTable.TABLE_NAME,
-                Forms21cmContract.FormsTable.COLUMN_NAME_NULLABLE,
+                Forms21cmContract.Forms21cmTable.TABLE_NAME,
+                Forms21cmContract.Forms21cmTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -120,15 +120,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(Forms21cmContract.FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
-        values.put(Forms21cmContract.FormsTable.COLUMN_UID, form.getUid());
-        values.put(Forms21cmContract.FormsTable.COLUMN_USERNAME, form.getUserName());
-        values.put(Forms21cmContract.FormsTable.COLUMN_SYSDATE, form.getSysDate());
-        values.put(Forms21cmContract.FormsTable.COLUMN_STUDYID, form.getStudyID());
-        values.put(Forms21cmContract.FormsTable.COLUMN_DSSID, form.getDssID());
-        values.put(Forms21cmContract.FormsTable.COLUMN_WEEK, form.getWeek());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_PROJECT_NAME, form.getProjectName());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_UID, form.getUid());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_USERNAME, form.getUserName());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_SYSDATE, form.getSysDate());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_STUDYID, form.getStudyID());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_DSSID, form.getDssID());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_WEEK, form.getWeek());
 
-        values.put(Forms21cmContract.FormsTable.COLUMN_S02, form.getS02());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_S02, form.getS02());
 
         /*values.put(FormsContract.FormsTable.COLUMN_S01HH, form.getS01HH());
         values.put(FormsContract.FormsTable.COLUMN_S02CB, form.getS02CB());
@@ -139,20 +139,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsContract.FormsTable.COLUMN_S07CV, form.getS07CV());
         values.put(FormsContract.FormsTable.COLUMN_S08SE, form.getS08SE());*/
 
-        values.put(Forms21cmContract.FormsTable.COLUMN_ISTATUS, form.getIStatus());
-        values.put(Forms21cmContract.FormsTable.COLUMN_ISTATUS96x, form.getIStatus96x());
-        values.put(Forms21cmContract.FormsTable.COLUMN_ENDINGDATETIME, form.getEndTime());
-        values.put(Forms21cmContract.FormsTable.COLUMN_GPS, form.getGps());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS, form.getIStatus());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS96x, form.getIStatus96x());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_ENDINGDATETIME, form.getEndTime());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_GPS, form.getGps());
 
-        values.put(Forms21cmContract.FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
-        values.put(Forms21cmContract.FormsTable.COLUMN_DEVICEID, form.getDeviceId());
-        values.put(Forms21cmContract.FormsTable.COLUMN_APPVERSION, form.getAppver());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_DEVICETAGID, form.getDeviceTag());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_DEVICEID, form.getDeviceId());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_APPVERSION, form.getAppver());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                Form4mmContract.Forms4MTable.TABLE_NAME,
-                Form4mmContract.Forms4MTable.COLUMN_NAME_NULLABLE,
+                Forms4mmContract.Forms4MMTable.TABLE_NAME,
+                Forms4mmContract.Forms4MMTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -249,25 +249,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                Forms21cmContract.FormsTable._ID,
-                Forms21cmContract.FormsTable.COLUMN_UID,
-                Forms21cmContract.FormsTable.COLUMN_SYSDATE,
-                Forms21cmContract.FormsTable.COLUMN_USERNAME,
-                Forms21cmContract.FormsTable.COLUMN_ISTATUS,
-                Forms21cmContract.FormsTable.COLUMN_ISTATUS96x,
-                Forms21cmContract.FormsTable.COLUMN_ENDINGDATETIME,
-                Forms21cmContract.FormsTable.COLUMN_SYNCED,
+                Forms21cmContract.Forms21cmTable._ID,
+                Forms21cmContract.Forms21cmTable.COLUMN_UID,
+                Forms21cmContract.Forms21cmTable.COLUMN_SYSDATE,
+                Forms21cmContract.Forms21cmTable.COLUMN_USERNAME,
+                Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS,
+                Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS96x,
+                Forms21cmContract.Forms21cmTable.COLUMN_ENDINGDATETIME,
+                Forms21cmContract.Forms21cmTable.COLUMN_SYNCED,
 
         };
-        String whereClause = Forms21cmContract.FormsTable.COLUMN_SYSDATE + " Like ? ";
+        String whereClause = Forms21cmContract.Forms21cmTable.COLUMN_SYSDATE + " Like ? ";
         String[] whereArgs = new String[]{"%" + sysdate + " %"};
         String groupBy = null;
         String having = null;
-        String orderBy = Forms21cmContract.FormsTable.COLUMN_ID + " ASC";
+        String orderBy = Forms21cmContract.Forms21cmTable.COLUMN_ID + " ASC";
         ArrayList<Form21cm> allForm21cms = new ArrayList<>();
         try {
             c = db.query(
-                    Forms21cmContract.FormsTable.TABLE_NAME,  // The table to query
+                    Forms21cmContract.Forms21cmTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -277,10 +277,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 Form21cm forms = new Form21cm();
-                forms.setId(c.getString(c.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_ID)));
-                forms.setUid(c.getString(c.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_UID)));
-                forms.setSysDate(c.getString(c.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_SYSDATE)));
-                forms.setUserName(c.getString(c.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_USERNAME)));
+                forms.setId(c.getString(c.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_ID)));
+                forms.setUid(c.getString(c.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_UID)));
+                forms.setSysDate(c.getString(c.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_SYSDATE)));
+                forms.setUserName(c.getString(c.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_USERNAME)));
                 allForm21cms.add(forms);
             }
         } finally {
@@ -471,10 +471,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = Forms21cmContract.FormsTable.COLUMN_ID + " =? ";
+        String selection = Forms21cmContract.Forms21cmTable.COLUMN_ID + " =? ";
         String[] selectionArgs = {String.valueOf(MainApp.form21cm.getId())};
 
-        return db.update(Forms21cmContract.FormsTable.TABLE_NAME,
+        return db.update(Forms21cmContract.Forms21cmTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -487,24 +487,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(column, value);
 
-        String selection = Forms21cmContract.FormsTable.COLUMN_ID + " =? ";
+        String selection = Forms21cmContract.Forms21cmTable.COLUMN_ID + " =? ";
         String[] selectionArgs = {String.valueOf(MainApp.form4m.getId())};
 
-        return db.update(Form4mmContract.Forms4MTable.TABLE_NAME,
+        return db.update(Forms4mmContract.Forms4MMTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
     }
 
     //Synced functions
-    public JSONArray getUnsyncedForms() {
+    public JSONArray getUnsyncedForms21cm() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                Forms21cmContract.FormsTable._ID,
-                Forms21cmContract.FormsTable.COLUMN_UID,
-                Forms21cmContract.FormsTable.COLUMN_USERNAME,
-                Forms21cmContract.FormsTable.COLUMN_SYSDATE,
+                Forms21cmContract.Forms21cmTable._ID,
+                Forms21cmContract.Forms21cmTable.COLUMN_UID,
+                Forms21cmContract.Forms21cmTable.COLUMN_USERNAME,
+                Forms21cmContract.Forms21cmTable.COLUMN_SYSDATE,
 /*                 FormsContract.FormsTable.COLUMN_COUNTRY_CODE,
                 FormsContract.FormsTable.COLUMN_COUNTRY,
                 FormsContract.FormsTable.COLUMN_DISTRICT_CODE,
@@ -561,29 +561,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_CR28E,
                 FormsTable.COLUMN_CR28F,
                 FormsTable.COLUMN_CR28FX,*/
-                Forms21cmContract.FormsTable.COLUMN_ISTATUS,
-                Forms21cmContract.FormsTable.COLUMN_ISTATUS96x,
-                Forms21cmContract.FormsTable.COLUMN_ENDINGDATETIME,
-                Forms21cmContract.FormsTable.COLUMN_GPS,
-                Forms21cmContract.FormsTable.COLUMN_DEVICETAGID,
-                Forms21cmContract.FormsTable.COLUMN_DEVICEID,
-                Forms21cmContract.FormsTable.COLUMN_APPVERSION,
+                Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS,
+                Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS96x,
+                Forms21cmContract.Forms21cmTable.COLUMN_ENDINGDATETIME,
+                Forms21cmContract.Forms21cmTable.COLUMN_GPS,
+                Forms21cmContract.Forms21cmTable.COLUMN_DEVICETAGID,
+                Forms21cmContract.Forms21cmTable.COLUMN_DEVICEID,
+                Forms21cmContract.Forms21cmTable.COLUMN_APPVERSION,
         };
 
         String whereClause;
         String[] whereArgs;
 
-        whereClause = Forms21cmContract.FormsTable.COLUMN_SYNCED + " is null OR " + Forms21cmContract.FormsTable.COLUMN_SYNCED + " = ''";
+        whereClause = Forms21cmContract.Forms21cmTable.COLUMN_SYNCED + " is null OR " + Forms21cmContract.Forms21cmTable.COLUMN_SYNCED + " = ''";
         whereArgs = null;
 
         String groupBy = null;
         String having = null;
-        String orderBy = Forms21cmContract.FormsTable.COLUMN_ID + " ASC";
+        String orderBy = Forms21cmContract.Forms21cmTable.COLUMN_ID + " ASC";
 
         JSONArray allForms = new JSONArray();
         try {
             c = db.query(
-                    Forms21cmContract.FormsTable.TABLE_NAME,  // The table to query
+                    Forms21cmContract.Forms21cmTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -592,7 +592,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                Log.d(TAG, "getUnsyncedForms: " + c.getCount());
+                Log.d(TAG, "getUnsyncedForms21cm: " + c.getCount());
                 Form21cm form21cm = new Form21cm();
                 allForms.put(form21cm.Hydrate(c).toJSONObject());
             }
@@ -606,20 +606,133 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allForms;
     }
+
+
+    //Synced functions
+    public JSONArray getUnsyncedForms4mm() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                Forms4mmContract.Forms4MMTable._ID,
+                Forms4mmContract.Forms4MMTable.COLUMN_UID,
+                Forms4mmContract.Forms4MMTable.COLUMN_USERNAME,
+                Forms4mmContract.Forms4MMTable.COLUMN_SYSDATE,
+/*                 FormsContract.FormsTable.COLUMN_COUNTRY_CODE,
+                FormsContract.FormsTable.COLUMN_COUNTRY,
+                FormsContract.FormsTable.COLUMN_DISTRICT_CODE,
+                FormsContract.FormsTable.COLUMN_DISTRICT,
+                FormsContract.FormsTable.COLUMN_UC_CODE,
+                FormsContract.FormsTable.COLUMN_UC,
+                FormsContract.FormsTable.COLUMN_VILLAGE_CODE,
+                FormsContract.FormsTable.COLUMN_VILLAGE,
+                FormsContract.FormsTable.COLUMN_SA,
+               FormsTable.COLUMN_CR01,
+                FormsTable.COLUMN_CR02,
+                FormsTable.COLUMN_CR03,
+                FormsTable.COLUMN_CR04,
+                FormsTable.COLUMN_CR05,
+                FormsTable.COLUMN_CR06,
+                FormsTable.COLUMN_CR06X,
+                FormsTable.COLUMN_CR07,
+                FormsTable.COLUMN_CR08D,
+                FormsTable.COLUMN_CR08M,
+                FormsTable.COLUMN_CR08Y,
+                FormsTable.COLUMN_CR09,
+                FormsTable.COLUMN_CR10,
+                FormsTable.COLUMN_CR11,
+                FormsTable.COLUMN_CR12,
+                FormsTable.COLUMN_CR13,
+                FormsTable.COLUMN_CR14D,
+                FormsTable.COLUMN_CR14M,
+                FormsTable.COLUMN_CR14Y,
+                FormsTable.COLUMN_CR15M,
+                FormsTable.COLUMN_CR15Y,
+                FormsTable.COLUMN_CR16,
+                FormsTable.COLUMN_CR17,
+                FormsTable.COLUMN_CR18,
+                FormsTable.COLUMN_CR19,
+                FormsTable.COLUMN_CR20,
+                FormsTable.COLUMN_CR21,
+                FormsTable.COLUMN_CR22,
+                FormsTable.COLUMN_CR23,
+                FormsTable.COLUMN_CR24A,
+                FormsTable.COLUMN_CR24B,
+                FormsTable.COLUMN_CR24C,
+                FormsTable.COLUMN_CR24D,
+                FormsTable.COLUMN_CR24E,
+                FormsTable.COLUMN_CR24F,
+                FormsTable.COLUMN_CR25,
+                FormsTable.COLUMN_CR26,
+                FormsTable.COLUMN_CR27A,
+                FormsTable.COLUMN_CR27B,
+                FormsTable.COLUMN_CR27C,
+                FormsTable.COLUMN_CR28A,
+                FormsTable.COLUMN_CR28B,
+                FormsTable.COLUMN_CR28C,
+                FormsTable.COLUMN_CR28D,
+                FormsTable.COLUMN_CR28E,
+                FormsTable.COLUMN_CR28F,
+                FormsTable.COLUMN_CR28FX,*/
+                Forms4mmContract.Forms4MMTable.COLUMN_ISTATUS,
+                Forms4mmContract.Forms4MMTable.COLUMN_ISTATUS96x,
+                Forms4mmContract.Forms4MMTable.COLUMN_ENDINGDATETIME,
+                Forms4mmContract.Forms4MMTable.COLUMN_GPS,
+                Forms4mmContract.Forms4MMTable.COLUMN_DEVICETAGID,
+                Forms4mmContract.Forms4MMTable.COLUMN_DEVICEID,
+                Forms4mmContract.Forms4MMTable.COLUMN_APPVERSION,
+        };
+
+        String whereClause;
+        String[] whereArgs;
+
+        whereClause = Forms4mmContract.Forms4MMTable.COLUMN_SYNCED + " is null OR " + Forms4mmContract.Forms4MMTable.COLUMN_SYNCED + " = ''";
+        whereArgs = null;
+
+        String groupBy = null;
+        String having = null;
+        String orderBy = Forms4mmContract.Forms4MMTable.COLUMN_ID + " ASC";
+
+        JSONArray allForms = new JSONArray();
+        try {
+            c = db.query(
+                    Forms4mmContract.Forms4MMTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Log.d(TAG, "getUnsyncedForms21cm: " + c.getCount());
+                Form4mm form4mm = new Form4mm();
+                allForms.put(form4mm.Hydrate(c).toJSONObject());
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allForms;
+    }
+
     public void updateSyncedForms(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
         ContentValues values = new ContentValues();
-        values.put(Forms21cmContract.FormsTable.COLUMN_SYNCED, true);
-        values.put(Forms21cmContract.FormsTable.COLUMN_SYNCED_DATE, new Date().toString());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_SYNCED, true);
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_SYNCED_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = Forms21cmContract.FormsTable.COLUMN_ID + " = ?";
+        String where = Forms21cmContract.Forms21cmTable.COLUMN_ID + " = ?";
         String[] whereArgs = {id};
 
         int count = db.update(
-                Forms21cmContract.FormsTable.TABLE_NAME,
+                Forms21cmContract.Forms21cmTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -630,15 +743,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // New value for one column
         ContentValues values = new ContentValues();
-        values.put(Forms21cmContract.FormsTable.COLUMN_ISTATUS, MainApp.form21cm.getIStatus());
-        values.put(Forms21cmContract.FormsTable.COLUMN_ISTATUS96x, MainApp.form21cm.getIStatus96x());
-        values.put(Forms21cmContract.FormsTable.COLUMN_ENDINGDATETIME, MainApp.form21cm.getEndTime());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS, MainApp.form21cm.getIStatus());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS96x, MainApp.form21cm.getIStatus96x());
+        values.put(Forms21cmContract.Forms21cmTable.COLUMN_ENDINGDATETIME, MainApp.form21cm.getEndTime());
 
         // Which row to update, based on the ID
-        String selection = Forms21cmContract.FormsTable.COLUMN_ID + " =? ";
+        String selection = Forms21cmContract.Forms21cmTable.COLUMN_ID + " =? ";
         String[] selectionArgs = {String.valueOf(MainApp.form21cm.getId())};
 
-        return db.update(Forms21cmContract.FormsTable.TABLE_NAME,
+        return db.update(Forms21cmContract.Forms21cmTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
