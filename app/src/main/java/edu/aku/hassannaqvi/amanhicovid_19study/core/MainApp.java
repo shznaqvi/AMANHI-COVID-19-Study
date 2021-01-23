@@ -5,9 +5,8 @@ import android.view.View;
 
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
-import edu.aku.hassannaqvi.amanhicovid_19study.models.Form;
-import edu.aku.hassannaqvi.amanhicovid_19study.core.AppInfo;
-import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4MModel;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
 
 
 public class MainApp extends Application {
@@ -22,10 +21,10 @@ public class MainApp extends Application {
     public static final String _SERVER_URL = "sync.php";
     public static final String _SERVER_GET_URL = "getData.php";
     public static final String _PHOTO_UPLOAD_URL = MainApp._IP + _HOST_URL + "uploads.php";
-    public static final String _UPDATE_URL = MainApp._IP + "/nns/app/";
+    public static final String _UPDATE_URL = MainApp._IP + "/amanhicovid_19study/app/";
     public static String IMEI;
-    public static Form form;
-    public static Form4MModel form4m;
+    public static Form21cm form21cm;
+    public static Form4mm form4m;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
     // public static Users user;

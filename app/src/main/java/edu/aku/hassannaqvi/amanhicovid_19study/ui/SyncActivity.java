@@ -61,6 +61,7 @@ public class SyncActivity extends AppCompatActivity {
     SyncListAdapter syncListAdapter;
     ActivitySyncBinding bi;
     List<SyncModel> uploadTables;
+    List<JSONArray> uploadData;
     List<SyncModel> downloadTables;
     Boolean listActivityCreated;
     Boolean uploadlistActivityCreated;
@@ -71,18 +72,11 @@ public class SyncActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_sync);
         bi.setCallback(this);
+        db = new DatabaseHelper(this);
+
         uploadTables = new ArrayList<>();
         downloadTables = new ArrayList<>();
 
-        // Set tables to DOWNLOAD
-        downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
-        downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
-        //downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
-        //downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
-        //downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
-
-        // Set tables to UPLOAD
-        uploadTables.add(new SyncModel("Forms"));
 
         //bi.noItem.setVisibility(View.VISIBLE);
         bi.noDataItem.setVisibility(View.VISIBLE);
@@ -90,7 +84,6 @@ public class SyncActivity extends AppCompatActivity {
         uploadlistActivityCreated = true;
         sharedPref = getSharedPreferences("src", MODE_PRIVATE);
         editor = sharedPref.edit();
-        db = new DatabaseHelper(this);
         dbBackup();
 
         boolean sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
@@ -124,10 +117,23 @@ public class SyncActivity extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.btnUpload:
+
+                // Set tables to UPLOAD
+                uploadTables.add(new SyncModel("Forms"));
+                uploadData.add(db.getUnsyncedForms());
+
+
                 setAdapter(uploadTables);
-                //BeginUpload();
+                BeginUpload();
                 break;
             case R.id.btnSync:
+                // Set tables to DOWNLOAD
+                downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
+                downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
+                //downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
+                //downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
+                //downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
+
                 setAdapter(downloadTables);
                 BeginDownload();
                 break;
@@ -144,15 +150,18 @@ public class SyncActivity extends AppCompatActivity {
         List<OneTimeWorkRequest> workRequests = new ArrayList<>();
 
         for (int i = 0; i < downloadTables.size(); i++) {
-            Data data = new Data.Builder()
+            Data.Builder data = new Data.Builder()
                     .putString("table", downloadTables.get(i).gettableName())
                     .putInt("position", i)
                     //.putString("columns", "_id, sysdate")
                     // .putString("where", where)
-                    .build();
+                    ;
+    /*        if (downloadTables.get(i).gettableName().equals(BLRandom.TableRandom.TABLE_NAME)) {
+                data.putString("where", BLRandom.TableRandom.COLUMN_DIST_CODE + "='" + distCode + "'");
+            }*/
             OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(DataDownWorkerALL.class)
                     .addTag(String.valueOf(i))
-                    .setInputData(data).build();
+                    .setInputData(data.build()).build();
             workRequests.add(workRequest);
 
         }
@@ -201,7 +210,7 @@ public class SyncActivity extends AppCompatActivity {
                                             insertCount = db.syncVersionApp(new JSONObject(result));
                                             if (insertCount == 1) jsonArray.put("1");
                                             break;
-                                        /*case UCs.TableUCs.TABLE_NAME:
+                               /*         case UCs.TableUCs.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncUCs(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
@@ -214,6 +223,11 @@ public class SyncActivity extends AppCompatActivity {
                                         case Clusters.TableClusters.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncCluster(jsonArray);
+                                            Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
+                                            break;
+                                        case BLRandom.TableRandom.TABLE_NAME:
+                                            jsonArray = new JSONArray(result);
+                                            insertCount = db.syncBLRandom(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
                                             break;*/
 
@@ -274,6 +288,8 @@ public class SyncActivity extends AppCompatActivity {
             Data data = new Data.Builder()
                     .putString("table", downloadTables.get(i).gettableName())
                     .putInt("position", i)
+                    .putString("data", uploadData.get(i).toString())
+
                     //.putString("columns", "_id, sysdate")
                     // .putString("where", where)
                     .build();
@@ -337,7 +353,18 @@ public class SyncActivity extends AppCompatActivity {
 
                             Method method = null;
                             for (Method method1 : db.getClass().getDeclaredMethods()) {
-                                if (method1.getName().equals("insert" + tableName)) {
+
+
+                                /**
+                                 * MAKE SURE TABLE_NAME = <table> IS SAME AS getUnsynced<table> :
+                                 *
+                                 *      -   public static final String TABLE_NAME = "<table>";  // in Contract
+                                 *      -   public JSONArray getUnsynced<table>() {              // in DatabaseHelper
+                                 *
+                                 *      e.g: Forms and getUnsyncedForms
+                                 *
+                                 */
+                                if (method1.getName().equals("getUnsynced" + tableName)) {
                                     method = method1;
                                     break;
                                 }

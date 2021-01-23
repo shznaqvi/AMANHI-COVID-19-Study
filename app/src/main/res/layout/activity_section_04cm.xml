@@ -5,7 +5,7 @@
 
         <import type="android.view.View" />
         <!--<variable
-            name="form"
+            name="form21cm"
             type="edu.aku.hassannaqvi.amanhi.models.Form" />-->
         <variable
             name="callback"

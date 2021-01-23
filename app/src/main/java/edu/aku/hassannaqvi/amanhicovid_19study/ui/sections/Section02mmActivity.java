@@ -1,8 +1,5 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,13 +8,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.jetbrains.annotations.NotNull;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
-import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Form4MContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Form4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection02mmBinding;
@@ -71,7 +71,7 @@ public class Section02mmActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesForm4MColumn(Form4MContract.Forms4MTable.COLUMN_S02, form4m.s02toString());
+        int updcount = db.updatesForm4MColumn(Form4mmContract.Forms4MTable.COLUMN_S02, form4m.s02toString());
         if (updcount == 1) {
             return true;
         } else {

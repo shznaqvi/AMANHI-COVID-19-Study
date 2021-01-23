@@ -111,9 +111,9 @@
                             android:hint="@string/specify"
                             android:maxLength="40"
                             android:tag="istatus96"
-                            android:text="@={form.i}"
+                            android:text="@={form21cm.i}"
                             android:text='@={istatus96.checked ? istatus96x.getText().toString(): ""}'
-                            android:visibility='@{form.hh26.equals(`96`)? View.VISIBLE : View.GONE}' />-->
+                            android:visibility='@{form21cm.hh26.equals(`96`)? View.VISIBLE : View.GONE}' />-->
 
                     </RadioGroup>
                 </LinearLayout>

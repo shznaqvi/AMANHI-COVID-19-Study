@@ -17,13 +17,13 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.jetbrains.annotations.NotNull;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
-import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection02cmBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
 
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
 public class Section02cmActivity extends AppCompatActivity {
 
@@ -56,7 +56,7 @@ public class Section02cmActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S02, form.s02toString());
+        int updcount = db.updatesFormColumn(Forms21cmContract.FormsTable.COLUMN_S02, form21cm.s02toString());
         if (updcount == 1) {
             return true;
         } else {
@@ -80,11 +80,11 @@ public class Section02cmActivity extends AppCompatActivity {
 
     private void SaveDraft() {
 
-        form.setCm0201(bi.cm020111.isChecked() ? "11"
+        form21cm.setCm0201(bi.cm020111.isChecked() ? "11"
                 : bi.cm020112.isChecked() ? "12"
                 : "-1");
 
-        form.setCm0202(bi.cm020211.isChecked() ? "11"
+        form21cm.setCm0202(bi.cm020211.isChecked() ? "11"
                 : bi.cm020212.isChecked() ? "12"
                 : bi.cm020213.isChecked() ? "13"
                 : bi.cm020214.isChecked() ? "14"
@@ -93,7 +93,7 @@ public class Section02cmActivity extends AppCompatActivity {
                 : bi.cm020277.isChecked() ? "77"
                 : "-1");
 
-        form.setCm020277x(bi.cm020277x.getText().toString());
+        form21cm.setCm020277x(bi.cm020277x.getText().toString());
 
     }
 

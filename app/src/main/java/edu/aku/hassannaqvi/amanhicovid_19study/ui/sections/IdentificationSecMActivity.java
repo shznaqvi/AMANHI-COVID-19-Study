@@ -1,11 +1,11 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -13,11 +13,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
-import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Form4MContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Form4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityIdentificationSecMBinding;
-import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4MModel;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
@@ -101,7 +101,7 @@ public class IdentificationSecMActivity extends AppCompatActivity {
 
     private void SaveDraft() {
 
-        MainApp.form4m = new Form4MModel();
+        MainApp.form4m = new Form4mm();
 
         MainApp.form4m.setStudyID(bi.mmsid.getText().toString());
         MainApp.form4m.setDssID(bi.mm0101.getText().toString());
@@ -133,8 +133,8 @@ public class IdentificationSecMActivity extends AppCompatActivity {
         MainApp.form4m.setId(String.valueOf(updcount));
         if (updcount > 0) {
             MainApp.form4m.setUid(MainApp.form4m.getDeviceId() + MainApp.form4m.getId());
-            db.updatesForm4MColumn(Form4MContract.Forms4MTable.COLUMN_UID, MainApp.form4m.getUid());
-            db.updatesForm4MColumn(Form4MContract.Forms4MTable.COLUMN_S02, form4m.s02toString());
+            db.updatesForm4MColumn(Form4mmContract.Forms4MTable.COLUMN_UID, MainApp.form4m.getUid());
+            db.updatesForm4MColumn(Form4mmContract.Forms4MTable.COLUMN_S02, form4m.s02toString());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

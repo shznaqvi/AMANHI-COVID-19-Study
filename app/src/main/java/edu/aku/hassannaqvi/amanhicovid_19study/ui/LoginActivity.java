@@ -13,12 +13,13 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.text.method.PasswordTransformationMethod;
@@ -29,9 +30,16 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
+import androidx.work.Constraints;
+import androidx.work.NetworkType;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.WorkInfo;
+import androidx.work.WorkManager;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,15 +50,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
+import edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS;
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
+import edu.aku.hassannaqvi.amanhicovid_19study.core.AppInfo;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityLoginBinding;
-import edu.aku.hassannaqvi.amanhicovid_19study.core.AppInfo;
+import edu.aku.hassannaqvi.amanhicovid_19study.workers.DataDownWorkerALL;
 
-import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.MINIMUM_DISTANCE_CHANGE_FOR_UPDATES;
-import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.MINIMUM_TIME_BETWEEN_UPDATES;
-import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_CONTACTS;
 import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_PHONE_STATE;
 import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.TWO_MINUTES;
 import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.DATABASE_COPY;
@@ -93,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
         return "deviceId";
     }
 
-  /*  private void callUsersWorker() {
+    private void callUsersWorker() {
 
 
         Constraints mConstraints = new Constraints
@@ -102,21 +109,21 @@ public class LoginActivity extends AppCompatActivity {
                 .build();
 
         final OneTimeWorkRequest usersWorkRequest1 = new OneTimeWorkRequest
-                .Builder(FetchUsersWorker.class)
+                .Builder(DataDownWorkerALL.class)
                 .setConstraints(mConstraints)
                 .build();
 
-        WorkManager.getInstance(this).enqueue(usersWorkRequest1);
+        //WorkManager.getInstance(this).enqueue(usersWorkRequest1);
 
 
-        WorkManager.getInstance(this).getWorkInfoByIdLiveData(usersWorkRequest1.getId())
+/*        WorkManager.getInstance(this).getWorkInfoByIdLiveData(usersWorkRequest1.getId())
                 .observe(this, new Observer<WorkInfo>() {
                             @Override
                             public void onChanged(WorkInfo workInfo) {
 
                             }
                         }
-                );*//*
+                );*/
 
         WorkManager.getInstance(this).getWorkInfoByIdLiveData(usersWorkRequest1.getId())
                 .observe(this, new Observer<WorkInfo>() {
@@ -124,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onChanged(@Nullable WorkInfo workInfo) {
 
 
-                       *//* WorkManager.getInstance().enqueue(usersWorkRequest1);
+               /*     WorkManager.getInstance().enqueue(usersWorkRequest1);
 
                         WorkManager.getInstance().getWorkInfoByIdLiveData(WorkRequest.getId())
                                 .observe(this, new Observer<WorkInfo>() {
@@ -151,7 +158,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                             }
                                         }
-                                );*//*
+                                );*/
 
                         if (workInfo.getState() != null &&
                                 workInfo.getState() == WorkInfo.State.SUCCEEDED) {
@@ -178,7 +185,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
-    }*/
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -300,13 +307,23 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-   /* public void onSyncDataClick(View view) {
-        callUsersWorker();
-    }*/
+    public void onSyncDataClick(View view) {
+        //callUsersWorker();
 
-/*    private void populateAutoComplete() {
-        getLoaderManager().initLoader(0, null, this);
-    }*/
+        ConnectivityManager connMgr = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {
+            startActivity(new Intent(this, SyncActivity.class).putExtra(CONSTANTS.SYNC_LOGIN, true));
+        } else {
+            Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void populateAutoComplete() {
+        //TODO: this
+        //   getLoaderManager().initLoader(0, null, this);
+    }
 
     private void attemptLogin() {
 

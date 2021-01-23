@@ -9,12 +9,12 @@ import android.provider.BaseColumns;
  * Created by hassan.naqvi on 11/30/2016.
  */
 
-public class FormsContract {
+public class Forms21cmContract {
 
     public static String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.amanhicovid_19study";
 
     public static abstract class FormsTable implements BaseColumns {
-        public static final String TABLE_NAME = "Forms";
+        public static final String TABLE_NAME = "Forms21cm";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "id";
@@ -41,7 +41,7 @@ public class FormsContract {
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
         public static final String COLUMN_CHILD_RESPONDENT = "childrespondent";
-        public static String PATH = "forms";
+        public static String PATH = "forms21cm";
         public static final String CONTENT_TYPE =
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH;
         public static final String CONTENT_ITEM_TYPE =

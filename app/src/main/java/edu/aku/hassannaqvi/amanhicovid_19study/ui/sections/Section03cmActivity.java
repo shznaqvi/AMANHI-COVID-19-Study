@@ -17,13 +17,13 @@ import com.validatorcrawler.aliazaz.Validator;
 import org.jetbrains.annotations.NotNull;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
-import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection03cmBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
 
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
 public class Section03cmActivity extends AppCompatActivity {
 
@@ -79,7 +79,7 @@ public class Section03cmActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S02, form.s02toString());
+        int updcount = db.updatesFormColumn(Forms21cmContract.FormsTable.COLUMN_S02, form21cm.s02toString());
         if (updcount == 1) {
             return true;
         } else {
@@ -101,207 +101,207 @@ public class Section03cmActivity extends AppCompatActivity {
 
     private void SaveDraft() {
 
-        form.setCm0301(bi.cm030101.isChecked() ? "1"
+        form21cm.setCm0301(bi.cm030101.isChecked() ? "1"
                 : bi.cm030102.isChecked() ? "2"
                 : bi.cm030108.isChecked() ? "8"
                 : bi.cm030109.isChecked() ? "9"
                 : "-1");
 
-        form.setCm0302(bi.cm030201.isChecked() ? "1"
+        form21cm.setCm0302(bi.cm030201.isChecked() ? "1"
                 : bi.cm030202.isChecked() ? "2"
                 : bi.cm030208.isChecked() ? "8"
                 : bi.cm030209.isChecked() ? "9"
                 : "-1");
 
-        form.setCm0303(bi.cm0303.getText().toString());
+        form21cm.setCm0303(bi.cm0303.getText().toString());
 
-        form.setCm0304(bi.cm30401.isChecked() ? "1"
+        form21cm.setCm0304(bi.cm30401.isChecked() ? "1"
                 : bi.cm30402.isChecked() ? "2"
                 : bi.cm30408.isChecked() ? "8"
                 : bi.cm30409.isChecked() ? "9"
                 : "-1");
 
-        form.setCm0305(bi.cm0305.getText().toString());
+        form21cm.setCm0305(bi.cm0305.getText().toString());
 
-        form.setCm0306(bi.cm030601.isChecked() ? "1"
+        form21cm.setCm0306(bi.cm030601.isChecked() ? "1"
                 : bi.cm030602.isChecked() ? "2"
                 : bi.cm030608.isChecked() ? "8"
                 : bi.cm030609.isChecked() ? "9"
                 : "-1");
 
-        form.setCm0307(bi.cm0307.getText().toString());
+        form21cm.setCm0307(bi.cm0307.getText().toString());
 
-        form.setCm0308(bi.cm030801.isChecked() ? "1"
+        form21cm.setCm0308(bi.cm030801.isChecked() ? "1"
                 : bi.cm030802.isChecked() ? "2"
                 : bi.cm030808.isChecked() ? "8"
                 : bi.cm030809.isChecked() ? "9"
                 : "-1");
 
-        form.setCm0309(bi.cm0309.getText().toString());
+        form21cm.setCm0309(bi.cm0309.getText().toString());
 
-        form.setCm03010(bi.cm0301001.isChecked() ? "1"
+        form21cm.setCm03010(bi.cm0301001.isChecked() ? "1"
                 : bi.cm0301002.isChecked() ? "2"
                 : bi.cm0301008.isChecked() ? "8"
                 : bi.cm0301009.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03011(bi.cm03011.getText().toString());
+        form21cm.setCm03011(bi.cm03011.getText().toString());
 
-        form.setCm03012(bi.cm0301201.isChecked() ? "1"
+        form21cm.setCm03012(bi.cm0301201.isChecked() ? "1"
                 : bi.cm0301202.isChecked() ? "2"
                 : bi.cm0301208.isChecked() ? "8"
                 : bi.cm0301209.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03013(bi.cm03013.getText().toString());
+        form21cm.setCm03013(bi.cm03013.getText().toString());
 
-        form.setCm03014(bi.cm0301401.isChecked() ? "1"
+        form21cm.setCm03014(bi.cm0301401.isChecked() ? "1"
                 : bi.cm0301402.isChecked() ? "2"
                 : bi.cm0301408.isChecked() ? "8"
                 : bi.cm0301408.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03015(bi.cm03015.getText().toString());
+        form21cm.setCm03015(bi.cm03015.getText().toString());
 
-        form.setCm03016(bi.cm0301601.isChecked() ? "1"
+        form21cm.setCm03016(bi.cm0301601.isChecked() ? "1"
                 : bi.cm0301602.isChecked() ? "2"
                 : bi.cm0301608.isChecked() ? "8"
                 : bi.cm0301609.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03017(bi.cm03017.getText().toString());
+        form21cm.setCm03017(bi.cm03017.getText().toString());
 
-        form.setCm03018(bi.cm0301801.isChecked() ? "1"
+        form21cm.setCm03018(bi.cm0301801.isChecked() ? "1"
                 : bi.cm0301802.isChecked() ? "2"
                 : bi.cm0301808.isChecked() ? "8"
                 : bi.cm0301809.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03019(bi.cm03019.getText().toString());
+        form21cm.setCm03019(bi.cm03019.getText().toString());
 
-        form.setCm03020(bi.cm0302001.isChecked() ? "1"
+        form21cm.setCm03020(bi.cm0302001.isChecked() ? "1"
                 : bi.cm0302002.isChecked() ? "2"
                 : bi.cm0302008.isChecked() ? "8"
                 : bi.cm0302009.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03021(bi.cm03021.getText().toString());
+        form21cm.setCm03021(bi.cm03021.getText().toString());
 
-        form.setCm03022(bi.cm0302201.isChecked() ? "1"
+        form21cm.setCm03022(bi.cm0302201.isChecked() ? "1"
                 : bi.cm0302202.isChecked() ? "2"
                 : bi.cm0302208.isChecked() ? "8"
                 : bi.cm0302209.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03023(bi.cm03023.getText().toString());
+        form21cm.setCm03023(bi.cm03023.getText().toString());
 
-        form.setCm03024(bi.cm0302401.isChecked() ? "1"
+        form21cm.setCm03024(bi.cm0302401.isChecked() ? "1"
                 : bi.cm0302402.isChecked() ? "2"
                 : bi.cm0302408.isChecked() ? "8"
                 : bi.cm0302409.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03025(bi.cm03025.getText().toString());
+        form21cm.setCm03025(bi.cm03025.getText().toString());
 
-        form.setCm03026(bi.cm0302601.isChecked() ? "1"
+        form21cm.setCm03026(bi.cm0302601.isChecked() ? "1"
                 : bi.cm0302602.isChecked() ? "2"
                 : bi.cm0302608.isChecked() ? "8"
                 : bi.cm0302609.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03027(bi.cm03027.getText().toString());
+        form21cm.setCm03027(bi.cm03027.getText().toString());
 
-        form.setCm03028(bi.cm0302801.isChecked() ? "1"
+        form21cm.setCm03028(bi.cm0302801.isChecked() ? "1"
                 : bi.cm0302802.isChecked() ? "2"
                 : bi.cm0302808.isChecked() ? "8"
                 : bi.cm0302809.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03029(bi.cm03029.getText().toString());
+        form21cm.setCm03029(bi.cm03029.getText().toString());
 
-        form.setCm03030(bi.cm0303001.isChecked() ? "1"
+        form21cm.setCm03030(bi.cm0303001.isChecked() ? "1"
                 : bi.cm0303001.isChecked() ? "2"
                 : bi.cm0303008.isChecked() ? "8"
                 : bi.cm0303009.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03031(bi.cm03031.getText().toString());
+        form21cm.setCm03031(bi.cm03031.getText().toString());
 
-        form.setCm03032(bi.cm0303201.isChecked() ? "1"
+        form21cm.setCm03032(bi.cm0303201.isChecked() ? "1"
                 : bi.cm0303202.isChecked() ? "2"
                 : bi.cm0303208.isChecked() ? "8"
                 : bi.cm0303209.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03033(bi.cm03033.getText().toString());
+        form21cm.setCm03033(bi.cm03033.getText().toString());
 
-        form.setCm03034(bi.cm0303401.isChecked() ? "1"
+        form21cm.setCm03034(bi.cm0303401.isChecked() ? "1"
                 : bi.cm0303402.isChecked() ? "2"
                 : bi.cm0303408.isChecked() ? "8"
                 : bi.cm0303409.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03035(bi.cm03035.getText().toString());
+        form21cm.setCm03035(bi.cm03035.getText().toString());
 
-        form.setCm03036(bi.cm0303601.isChecked() ? "1"
+        form21cm.setCm03036(bi.cm0303601.isChecked() ? "1"
                 : bi.cm0303602.isChecked() ? "2"
                 : bi.cm0303608.isChecked() ? "8"
                 : bi.cm0303609.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03037(bi.cm03037.getText().toString());
+        form21cm.setCm03037(bi.cm03037.getText().toString());
 
-        form.setCm03038(bi.cm0303801.isChecked() ? "1"
+        form21cm.setCm03038(bi.cm0303801.isChecked() ? "1"
                 : bi.cm0303802.isChecked() ? "2"
                 : bi.cm0303808.isChecked() ? "8"
                 : bi.cm0303809.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03039(bi.cm03039.getText().toString());
+        form21cm.setCm03039(bi.cm03039.getText().toString());
 
-        form.setCm03040(bi.cm0304001.isChecked() ? "1"
+        form21cm.setCm03040(bi.cm0304001.isChecked() ? "1"
                 : bi.cm0304002.isChecked() ? "2"
                 : bi.cm0304008.isChecked() ? "8"
                 : bi.cm0304009.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03041(bi.cm03041.getText().toString());
+        form21cm.setCm03041(bi.cm03041.getText().toString());
 
-        form.setCm03042(bi.cm0304201.isChecked() ? "1"
+        form21cm.setCm03042(bi.cm0304201.isChecked() ? "1"
                 : bi.cm0304202.isChecked() ? "2"
                 : bi.cm0304208.isChecked() ? "8"
                 : bi.cm0304209.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03043(bi.cm03043.getText().toString());
+        form21cm.setCm03043(bi.cm03043.getText().toString());
 
-        form.setCm03044(bi.cm0304401.isChecked() ? "1"
+        form21cm.setCm03044(bi.cm0304401.isChecked() ? "1"
                 : bi.cm0304402.isChecked() ? "2"
                 : bi.cm0304408.isChecked() ? "8"
                 : bi.cm0304409.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03045(bi.cm03045.getText().toString());
+        form21cm.setCm03045(bi.cm03045.getText().toString());
 
-        form.setCm03046(bi.cm0304601.isChecked() ? "1"
+        form21cm.setCm03046(bi.cm0304601.isChecked() ? "1"
                 : bi.cm0304602.isChecked() ? "2"
                 : bi.cm0304608.isChecked() ? "8"
                 : bi.cm0304609.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03047(bi.cm03047.getText().toString());
+        form21cm.setCm03047(bi.cm03047.getText().toString());
 
-        form.setCm03048(bi.cm03048.getText().toString());
+        form21cm.setCm03048(bi.cm03048.getText().toString());
 
-        form.setCm03049(bi.cm0304901.isChecked() ? "1"
+        form21cm.setCm03049(bi.cm0304901.isChecked() ? "1"
                 : bi.cm0304902.isChecked() ? "2"
                 : bi.cm0304908.isChecked() ? "8"
                 : bi.cm0304909.isChecked() ? "9"
                 : "-1");
 
-        form.setCm03050(bi.cm03050.getText().toString());
+        form21cm.setCm03050(bi.cm03050.getText().toString());
 
-        form.setCm03051(bi.cm03051.getText().toString());
+        form21cm.setCm03051(bi.cm03051.getText().toString());
 
 
     }

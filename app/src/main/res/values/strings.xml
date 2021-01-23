@@ -1369,9 +1369,9 @@
     <string name="cm020111">Yes</string>
     <string name="cm020112">NO</string>
     <string name="cm0202">If visit is not successful, what was the reason</string>
-    <string name="cm020211">Died (Complete a censorship form)</string>
-    <string name="cm020212">Permanently moved (Complete a censorship form)</string>
-    <string name="cm020213">Withdrawal of participation (Complete a censorship form)</string>
+    <string name="cm020211">Died (Complete a censorship form21cm)</string>
+    <string name="cm020212">Permanently moved (Complete a censorship form21cm)</string>
+    <string name="cm020213">Withdrawal of participation (Complete a censorship form21cm)</string>
     <string name="cm020214">Could not be contacted despite trying 3 times</string>
     <string name="cm020215">Refused of this visit</string>
     <string name="cm020216">Not living with mother</string>
@@ -1575,7 +1575,7 @@
     <string name="cm0401002">NO</string>
     <string name="cm0401008">DK</string>
     <string name="cm0401009">NA</string>
-    <string name="cm04011">Was your child tested for coronavirus since the last time we contacted you? (If YES, then also fill test report form)</string>
+    <string name="cm04011">Was your child tested for coronavirus since the last time we contacted you? (If YES, then also fill test report form21cm)</string>
     <string name="cm0401101">YES</string>
     <string name="cm0401102">NO</string>
     <string name="cm0401108">DK</string>
@@ -1710,9 +1710,9 @@
     <string name="mm0201011">Yes</string>
     <string name="mm0201012">NO</string>
     <string name="mm202">If visit is not successful, what was the reason</string>
-    <string name="mm202011">Died (Complete a censorship form)</string>
-    <string name="mm202012">Permanently moved (Complete a censorship form)</string>
-    <string name="mm202013">Withdrawal of participation (Complete a censorship form)</string>
+    <string name="mm202011">Died (Complete a censorship form21cm)</string>
+    <string name="mm202012">Permanently moved (Complete a censorship form21cm)</string>
+    <string name="mm202013">Withdrawal of participation (Complete a censorship form21cm)</string>
     <string name="mm202014">Could not be contacted despite trying 3 times</string>
     <string name="mm202015">Refused of this visit</string>
     <string name="mm202077">Other </string>
@@ -1939,7 +1939,7 @@
     <string name="mm050402">NO</string>
     <string name="mm050408">DK</string>
     <string name="mm050409">NA</string>
-    <string name="mm0505">Were you admitted to hospital/health facility (If yes, hospitalization form needs to be filled) ?</string>
+    <string name="mm0505">Were you admitted to hospital/health facility (If yes, hospitalization form21cm needs to be filled) ?</string>
     <string name="mm050501">YES</string>
     <string name="mm050502">NO</string>
     <string name="mm050508">DK</string>
@@ -1964,7 +1964,7 @@
     <string name="mm0501002">NO</string>
     <string name="mm0501008">DK</string>
     <string name="mm0501009">NA</string>
-    <string name="mm05011">Were you tested for coronavirus since the last time we contacted you? (If YES, then also fill test report form)</string>
+    <string name="mm05011">Were you tested for coronavirus since the last time we contacted you? (If YES, then also fill test report form21cm)</string>
     <string name="mm0501101">YES</string>
     <string name="mm0501102">NO</string>
     <string name="mm0501108">DK</string>

@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AndroidDatabaseManager.class));
                 break;
             case R.id.action_data_sync:
-                //startActivity(new Intent(this, SyncActivity.class));
+                startActivity(new Intent(this, SyncActivity.class));
                 break;
 
         }

@@ -12,14 +12,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
-import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityIdentificationSectionBinding;
-import edu.aku.hassannaqvi.amanhicovid_19study.models.Form;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
 
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
 
 /*** IDENTIFICATION SECTION  --No DataBinding in this section.
@@ -75,53 +75,53 @@ public class IdentificationSectionActivity extends AppCompatActivity {
 
     private void SaveDraft() {
 
-        MainApp.form = new Form();
+        MainApp.form21cm = new Form21cm();
 
-        MainApp.form.setStudyID(bi.cmsid.getText().toString());
-        MainApp.form.setDssID(bi.cm0101.getText().toString());
-        MainApp.form.setWeek(bi.cm0104.getText().toString());
-        MainApp.form.setUid(MainApp.form.getUid());
-        MainApp.form.setDeviceId(MainApp.appInfo.getDeviceID());
-        MainApp.form.setAppver(MainApp.appInfo.getAppVersion());
-        MainApp.form.setDeviceTag(MainApp.appInfo.getTagName());
-        MainApp.form.setSysDate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
-        MainApp.form.setUserName(MainApp.userName);
-        MainApp.form.setGps("");
+        MainApp.form21cm.setStudyID(bi.cmsid.getText().toString());
+        MainApp.form21cm.setDssID(bi.cm0101.getText().toString());
+        MainApp.form21cm.setWeek(bi.cm0104.getText().toString());
+        MainApp.form21cm.setUid(MainApp.form21cm.getUid());
+        MainApp.form21cm.setDeviceId(MainApp.appInfo.getDeviceID());
+        MainApp.form21cm.setAppver(MainApp.appInfo.getAppVersion());
+        MainApp.form21cm.setDeviceTag(MainApp.appInfo.getTagName());
+        MainApp.form21cm.setSysDate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
+        MainApp.form21cm.setUserName(MainApp.userName);
+        MainApp.form21cm.setGps("");
 
 
-        form.setCmsid(bi.cmsid.getText().toString());
+        form21cm.setCmsid(bi.cmsid.getText().toString());
 
-        form.setCm0101(bi.cm0101.getText().toString());
+        form21cm.setCm0101(bi.cm0101.getText().toString());
 
         //form.setCm0102(bi.cm0102.getText().toString());
 
         //form.setCm0102a(bi.cm0102a.getText().toString());
 
-        form.setCm0103(bi.cm0103.getText().toString());
+        form21cm.setCm0103(bi.cm0103.getText().toString());
 
-        form.setCm0104(bi.cm0104.getText().toString());
+        form21cm.setCm0104(bi.cm0104.getText().toString());
 
-        form.setCm0105(bi.cm0105.getText().toString());
+        form21cm.setCm0105(bi.cm0105.getText().toString());
 
-        form.setCm0106(bi.cm0106.getText().toString());
+        form21cm.setCm0106(bi.cm0106.getText().toString());
 
-        form.setCm0107(bi.cm0107.getText().toString());
+        form21cm.setCm0107(bi.cm0107.getText().toString());
 
-        form.setCm0108(bi.cm0108.getText().toString());
+        form21cm.setCm0108(bi.cm0108.getText().toString());
 
-        form.setCm0109(bi.cm0109m.isChecked() ? ""
+        form21cm.setCm0109(bi.cm0109m.isChecked() ? ""
                 : bi.cm010988.isChecked() ? "88"
                 : bi.cm010999.isChecked() ? "99"
                 : "-1");
 
-        form.setCm0109mx(bi.cm0109mx.getText().toString());
-        form.setCm0110(bi.cm01101.isChecked() ? "11"
+        form21cm.setCm0109mx(bi.cm0109mx.getText().toString());
+        form21cm.setCm0110(bi.cm01101.isChecked() ? "11"
                 : bi.cm01102.isChecked() ? "12"
                 : "-1");
 
-        form.setCm0111(bi.cm0111.getText().toString());
+        form21cm.setCm0111(bi.cm0111.getText().toString());
 
-        form.setCm0112(bi.cm0112.getText().toString());
+        form21cm.setCm0112(bi.cm0112.getText().toString());
 
     }
 
@@ -177,12 +177,12 @@ public class IdentificationSectionActivity extends AppCompatActivity {
 
 
     private boolean UpdateDB() {
-        long updcount = db.addForm(form);
-        MainApp.form.setId(String.valueOf(updcount));
+        long updcount = db.addForm(form21cm);
+        MainApp.form21cm.setId(String.valueOf(updcount));
         if (updcount > 0) {
-            MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_UID, MainApp.form.getUid());
-            db.updatesFormColumn(FormsContract.FormsTable.COLUMN_S02, form.s02toString());
+            MainApp.form21cm.setUid(MainApp.form21cm.getDeviceId() + MainApp.form21cm.getId());
+            db.updatesFormColumn(Forms21cmContract.FormsTable.COLUMN_UID, MainApp.form21cm.getUid());
+            db.updatesFormColumn(Forms21cmContract.FormsTable.COLUMN_S02, form21cm.s02toString());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
