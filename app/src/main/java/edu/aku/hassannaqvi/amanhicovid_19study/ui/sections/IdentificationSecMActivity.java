@@ -14,15 +14,12 @@ import java.util.Date;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Form4MContract;
-import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityIdentificationSecMBinding;
-import edu.aku.hassannaqvi.amanhicovid_19study.models.Form;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4MModel;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
 
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form;
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
 
 public class IdentificationSecMActivity extends AppCompatActivity {
@@ -56,14 +53,14 @@ public class IdentificationSecMActivity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-        if (!bi.mmsid.getText().equals("")) {
+        if (!bi.mmsid.getText().toString().isEmpty()) {
             if (bi.mmsid.getText().length() != 10) {
                 Toast.makeText(this, "Study ID must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }
 
-        if (!bi.mm0105.getText().equals("")) {
+        if (!bi.mm0105.getText().toString().isEmpty()) {
             if (bi.mm0105.getText().length() != 10) {
                 Toast.makeText(this, "Amanhi Woman ID must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
@@ -71,29 +68,33 @@ public class IdentificationSecMActivity extends AppCompatActivity {
         }
 
 
-        if (!bi.mm0106.getText().equals("")) {
+        if (!bi.mm0106.getText().toString().isEmpty()) {
             if (bi.mm0106.getText().length() != 10) {
-                Toast.makeText(this, "Amanhi ID for child must be 10 digits ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Woman Pregnancy ID 1 must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
+            } else {
+                if (bi.mm0106.getText().toString().equals("17-99999-9")) {
+                    Toast.makeText(this, "Invalid Woman Pregnancy ID 1 ", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
             }
         }
 
 
-        if (!bi.mm0107.getText().equals("")) {
+        if (!bi.mm0107.getText().toString().isEmpty()) {
             if (bi.mm0107.getText().length() != 10) {
-                Toast.makeText(this, "Child ID must be 10 digits ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Woman Pregnancy ID 2 must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }
 
 
-        if (!bi.mm0106.getText().equals("")) {
-            if (bi.mm0106.getText().length() != 10) {
-                Toast.makeText(this, "Child ID must be 10 digits ", Toast.LENGTH_SHORT).show();
+        if (!bi.mm0108.getText().toString().isEmpty()) {
+            if (bi.mm0108.getText().length() != 10) {
+                Toast.makeText(this, "Woman Pregnancy ID 3 must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }
-
 
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
@@ -129,11 +130,11 @@ public class IdentificationSecMActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         long updcount = db.addForm4M(form4m);
-        MainApp.form.setId(String.valueOf(updcount));
+        MainApp.form4m.setId(String.valueOf(updcount));
         if (updcount > 0) {
-            MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
-            db.updatesFormColumn(Form4MContract.Forms4MTable.COLUMN_UID, MainApp.form.getUid());
-            db.updatesFormColumn(Form4MContract.Forms4MTable.COLUMN_S02, form.s02toString());
+            MainApp.form4m.setUid(MainApp.form4m.getDeviceId() + MainApp.form4m.getId());
+            db.updatesForm4MColumn(Form4MContract.Forms4MTable.COLUMN_UID, MainApp.form4m.getUid());
+            db.updatesForm4MColumn(Form4MContract.Forms4MTable.COLUMN_S02, form4m.s02toString());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

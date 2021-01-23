@@ -86,9 +86,12 @@ public class MainActivity extends AppCompatActivity {
                 oF = new Intent(this, IdentificationSectionActivity.class);
                 break;
 
-
             case R.id.btnChildMorb:
                 oF = new Intent(this, IdentificationSecMActivity.class);
+                break;
+
+            case R.id.showdb:
+                oF = new Intent(this, AndroidDatabaseManager.class);
                 break;
 
             case R.id.btn01:

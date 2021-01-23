@@ -141,14 +141,14 @@ public class IdentificationSectionActivity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-        if (!bi.cmsid.getText().equals("")) {
+        if (!bi.cmsid.getText().toString().isEmpty()) {
             if (bi.cmsid.getText().length() != 10) {
                 Toast.makeText(this, "Study ID must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }
 
-        if (!bi.cm0105.getText().equals("")) {
+        if (!bi.cm0105.getText().toString().isEmpty()) {
             if (bi.cm0105.getText().length() != 10) {
                 Toast.makeText(this, "Amanhi Woman ID must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
@@ -156,7 +156,7 @@ public class IdentificationSectionActivity extends AppCompatActivity {
         }
 
 
-        if (!bi.cm0106.getText().equals("")) {
+        if (!bi.cm0106.getText().toString().isEmpty()) {
             if (bi.cm0106.getText().length() != 10) {
                 Toast.makeText(this, "Amanhi ID for child must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
@@ -164,16 +164,8 @@ public class IdentificationSectionActivity extends AppCompatActivity {
         }
 
 
-        if (!bi.cm0107.getText().equals("")) {
+        if (!bi.cm0107.getText().toString().isEmpty()) {
             if (bi.cm0107.getText().length() != 10) {
-                Toast.makeText(this, "Child ID must be 10 digits ", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        }
-
-
-        if (!bi.cm0106.getText().equals("")) {
-            if (bi.cm0106.getText().length() != 10) {
                 Toast.makeText(this, "Child ID must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
             }

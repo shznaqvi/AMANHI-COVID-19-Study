@@ -1700,8 +1700,8 @@
     <string name="mm0104">Study (Follow-up) Week (mandatory)</string>
     <string name="mm0105">AMANHI Woman ID (unique for every woman)</string>
     <string name="mm0106">Woman’s Pregnancy ID – 1 (Mandatory)</string>
-    <string name="mm0107">Woman’s Pregnancy ID – 2 (if applicable)</string>
-    <string name="mm0108">Woman’s Pregnancy ID – 3 (if applicable)</string>
+    <string name="mm0107">Woman’s Pregnancy ID – 2 (if applicable) (99-99999-9 - NA)</string>
+    <string name="mm0108">Woman’s Pregnancy ID – 3 (if applicable) (99-99999-9 - NA)</string>s
     <string name="mm0108a">Woman Name</string>
     <string name="mm0108b">Husband Name</string>
 
@@ -1828,10 +1828,10 @@
     <string name="mm03036">Hallucinations </string>
     <string name="mm0303601">YES</string>
     <string name="mm0303602">NO</string>
-    <string name="mm0303608"> DK</string>
+    <string name="mm0303608">DK</string>
     <string name="mm0303609">NA</string>
-    <string name="mm03037">Skin rashes</string>
-    <string name="mm0303709">If yes, number of days of Hallucinations (xx, 88=DK, 99=NA</string>
+    <string name="mm03037">If yes, number of days of Hallucinations (xx, 88=DK, 99=NA</string>
+    <!--<string name="mm0303709">If yes, number of days of Hallucinations (xx, 88=DK, 99=NA</string>-->
     <string name="mm03038">Skin rashes</string>
     <string name="mm0303801">YES</string>
     <string name="mm0303802">NO</string>
@@ -1846,19 +1846,19 @@
     <string name="mm03041">If yes, number of days of Dizziness or fainting (xx, 88=DK, 99=NA)</string>
     <string name="mm03042">Body aches</string>
     <string name="mm0304201">YES </string>
-    <string name="mm0304202"> NO</string>
+    <string name="mm0304202">NO</string>
     <string name="mm0304208">DK</string>
-    <string name="mm0304209"> NA</string>
+    <string name="mm0304209">NA</string>
     <string name="mm03043">If yes, number of days of Body aches (xx, 88=DK, 99=NA</string>
     <string name="mm03044">Other symptoms1 </string>
-    <string name="mm0304401">YES </string>
+    <string name="mm0304401">YES</string>
     <string name="mm0304402">NO</string>
     <string name="mm0304408">DK</string>
     <string name="mm0304409">NA</string>
     <string name="mm03045">Other1 (specify):</string>
     <string name="mm03046">If yes for OTHER symptoms 1 number of days</string>
     <string name="mm03047">Other symptoms2 </string>
-    <string name="mm0304701"> YES </string>
+    <string name="mm0304701">YES</string>
     <string name="mm0304702">NO</string>
     <string name="mm0304708">DK</string>
     <string name="mm0304709">NA</string>
@@ -1945,8 +1945,8 @@
     <string name="mm050508">DK</string>
     <string name="mm050509">NA</string>
     <string name="mm0506">If you were not admitted, what did you do?</string>
-    <string name="mm050601">did not seek care </string>
-    <string name="mm050602">sought care elsewhere </string>
+    <string name="mm050601">Did not seek care </string>
+    <string name="mm050602">Sought Care elsewhere </string>
     <string name="mm050609">NA</string>
     <string name="mm0507">If you did not go to a hospital/health facility, did you seek care from other sources?</string>
     <string name="mm050701">YES</string>
