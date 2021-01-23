@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@color/white"
+                android:background="@color/whiteOverlay"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -58,7 +58,7 @@
                     android:gravity="center"
                     android:text="@string/app_name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryLight"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
@@ -70,7 +70,7 @@
                     android:padding="0dp"
                     android:text="SIGN IN"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorPrimaryLight"
                     android:textStyle="bold" />
 
                 <LinearLayout
