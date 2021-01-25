@@ -22,6 +22,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection03mmBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.utils.ValidateEditTextKt;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
 
@@ -276,6 +277,29 @@ public class Section03mmActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
+
+        ValidateEditTextKt.txtWatch(bi.mm0303);
+        ValidateEditTextKt.txtWatch(bi.mm0305);
+        ValidateEditTextKt.txtWatch(bi.mm0307);
+        ValidateEditTextKt.txtWatch(bi.mm0309);
+        ValidateEditTextKt.txtWatch(bi.mm03011);
+        ValidateEditTextKt.txtWatch(bi.mm03013);
+        ValidateEditTextKt.txtWatch(bi.mm03015);
+        ValidateEditTextKt.txtWatch(bi.mm03017);
+        ValidateEditTextKt.txtWatch(bi.mm03019);
+        ValidateEditTextKt.txtWatch(bi.mm03021);
+        ValidateEditTextKt.txtWatch(bi.mm03023);
+        ValidateEditTextKt.txtWatch(bi.mm03025);
+        ValidateEditTextKt.txtWatch(bi.mm03027);
+        ValidateEditTextKt.txtWatch(bi.mm03029);
+        ValidateEditTextKt.txtWatch(bi.mm03031);
+        ValidateEditTextKt.txtWatch(bi.mm03033);
+        ValidateEditTextKt.txtWatch(bi.mm03035);
+        ValidateEditTextKt.txtWatch(bi.mm03037);
+        ValidateEditTextKt.txtWatch(bi.mm03039);
+        ValidateEditTextKt.txtWatch(bi.mm03041);
+        ValidateEditTextKt.txtWatch(bi.mm03043);
+
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 

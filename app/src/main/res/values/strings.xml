@@ -1693,7 +1693,7 @@
 
     <string name="mm01title">یہ فارم آمنہی اسٹیڈی کی تمام ایکٹو خواتین کے لیےپورے مطالعے میں ہر ہفتے  فون کے ذریعے/ ہوم وزٹ بھرا جائیں گا</string>
     <string name="mmsid">Study ID</string>
-    <string name="mm0101">Country,Study Site,Para Code,Block No,Structure,Family No</string>
+    <string name="mm0101">Study Site,Para Code,Block No,Structure,Family No</string>
     <string name="mm0102">INTERVIEWER NAME</string>
     <string name="mm0102a">INTERVIEWER CODE</string>
     <string name="mm0103"> DATE OF VISIT </string>

@@ -60,13 +60,6 @@ public class IdentificationSecMActivity extends AppCompatActivity {
             }
         }
 
-        if (!bi.mm0105.getText().toString().isEmpty()) {
-            if (bi.mm0105.getText().length() != 10) {
-                Toast.makeText(this, "Amanhi Woman ID must be 10 digits ", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        }
-
 
         if (!bi.mm0106.getText().toString().isEmpty()) {
             if (bi.mm0106.getText().length() != 10) {
@@ -119,7 +112,7 @@ public class IdentificationSecMActivity extends AppCompatActivity {
         form4m.setMm0101(bi.mm0101.getText().toString());
         form4m.setMm0103(bi.mm0103.getText().toString());
         form4m.setMm0104(bi.mm0104.getText().toString());
-        form4m.setMm0105(bi.mm0105.getText().toString());
+        //form4m.setMm0105(bi.mm0105.getText().toString());
         form4m.setMm0106(bi.mm0106.getText().toString());
         form4m.setMm0107(bi.mm0107.getText().toString());
         form4m.setMm0108(bi.mm0108.getText().toString());

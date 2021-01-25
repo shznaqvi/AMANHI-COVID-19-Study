@@ -229,7 +229,8 @@
                         android:id="@+id/cm0103"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cm0103"
+                        android:hint="DD-MM-YYYY"
+                        app:dateFormat="dd-MM-yyyy"
                         app:maxDate="CR_DATE"
                         app:minDate="01/11/2020" />
                 </LinearLayout>
@@ -271,13 +272,13 @@
                         android:hint="@string/cm0104"
                         android:inputType="number"
                         android:maxLength="2"
-                        app:maxValue="99"
+                        app:maxValue="70"
                         app:minValue="1"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- cm0105  Input-Numeric   -->
+            <!--&lt;!&ndash; cm0105  Input-Numeric   &ndash;&gt;
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvcm0105"
                 style="@style/cardView">
@@ -314,7 +315,7 @@
                         android:inputType="number"
                         app:mask="17-#####-#" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>-->
 
             <!-- cm0106  Input-Numeric   -->
             <androidx.cardview.widget.CardView
@@ -427,7 +428,8 @@
                         android:id="@+id/cm0108"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cm0108"
+                        android:hint="DD-MM-YYYY"
+                        app:dateFormat="dd-MM-yyyy"
                         app:maxDate="CR_DATE" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -482,7 +484,7 @@
                             android:tag="cm0109m"
                             android:text='@{cm0109m.checked ? cm0109mx.getText().toString() : ""}'
                             android:visibility='@{cm0109m.checked? View.VISIBLE : View.GONE}'
-                            app:maxValue="10"
+                            app:maxValue="90"
                             app:minValue="1"
                             app:type="range" />
 
@@ -583,6 +585,7 @@
                         android:id="@+id/cm0111"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                         android:hint="@string/cm0111"
                         android:maxLength="80" />
                 </LinearLayout>
@@ -621,6 +624,7 @@
                         android:id="@+id/cm0112"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                         android:hint="@string/cm0112"
                         android:maxLength="80" />
                 </LinearLayout>

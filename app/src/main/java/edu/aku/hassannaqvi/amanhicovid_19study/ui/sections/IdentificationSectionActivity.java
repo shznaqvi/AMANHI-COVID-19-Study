@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
 import android.content.Intent;
+import android.text.format.DateUtils;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityIdentificationSectionBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.utils.DateUtilsKt;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
@@ -39,6 +41,7 @@ public class IdentificationSectionActivity extends AppCompatActivity {
     static boolean iscomplete = false;
     ActivityIdentificationSectionBinding bi;
     private DatabaseHelper db;
+
 
     @Override
     protected void onCreate(android.os.Bundle savedInstanceState) {
@@ -101,7 +104,7 @@ public class IdentificationSectionActivity extends AppCompatActivity {
 
         form21cm.setCm0104(bi.cm0104.getText().toString());
 
-        form21cm.setCm0105(bi.cm0105.getText().toString());
+        //form21cm.setCm0105(bi.cm0105.getText().toString());
 
         form21cm.setCm0106(bi.cm0106.getText().toString());
 
@@ -139,18 +142,12 @@ public class IdentificationSectionActivity extends AppCompatActivity {
         }
     }
 
+
     private boolean formValidation() {
 
         if (!bi.cmsid.getText().toString().isEmpty()) {
             if (bi.cmsid.getText().length() != 10) {
                 Toast.makeText(this, "Study ID must be 10 digits ", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        }
-
-        if (!bi.cm0105.getText().toString().isEmpty()) {
-            if (bi.cm0105.getText().length() != 10) {
-                Toast.makeText(this, "Amanhi Woman ID must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
             }
         }
@@ -171,6 +168,30 @@ public class IdentificationSectionActivity extends AppCompatActivity {
             }
         }
 
+
+        if (!bi.cm0103.getText().toString().isEmpty() && !bi.cm0108.getText().toString().isEmpty()) {
+
+            long mm = DateUtilsKt.dobDiff(DateUtilsKt.getDate(bi.cm0108.getText().toString()), DateUtilsKt.getDate(bi.cm0103.getText().toString()));
+
+            if (mm < 0) {
+                Toast.makeText(this, "Date of birth cannot be greater than visit date ", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
+
+        if (!bi.cm0109mx.getText().toString().isEmpty() && !bi.cm0103.getText().toString().isEmpty() && !bi.cm0108.getText().toString().isEmpty()) {
+
+            if (bi.cm0109mx.getText().toString() != "88" && bi.cm0109mx.getText().toString() != "99") {
+
+                long mm = DateUtilsKt.dobDiff(DateUtilsKt.getDate(bi.cm0108.getText().toString()), DateUtilsKt.getDate(bi.cm0103.getText().toString()));
+
+                if (!bi.cm0109mx.getText().toString().equals(String.valueOf(mm))) {
+                    Toast.makeText(this, "Incorrect number of months ", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            }
+        }
 
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }

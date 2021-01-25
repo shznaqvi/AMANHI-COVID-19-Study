@@ -658,6 +658,7 @@
                         android:text='@{cm0401101.checked ? cm04012.getText().toString() : ""}'
                         android:visibility='@{cm0401101.checked? View.VISIBLE : View.GONE}'
                         app:maxDate="CR_DATE"
+                        app:minDate="01/07/2020"
                         app:type="range" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
