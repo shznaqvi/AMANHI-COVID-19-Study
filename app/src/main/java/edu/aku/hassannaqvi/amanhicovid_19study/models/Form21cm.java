@@ -25,16 +25,11 @@ public class Form21cm extends BaseObservable {
     // APP VARIABLES
     private String id = "";
     private String uid = "";
-    private String uuid = "";
     private String userName = "";
     private String sysDate = "";
-    private String dcode = "";
-    private String ucode = "";
-    private String cluster = "";
     private String studyid = "";
     private String dssid = "";
     private String week = "";
-    private String hhno = "";
     private String deviceId = "";
     private String deviceTag = "";
     private String appver = "";
@@ -44,7 +39,6 @@ public class Form21cm extends BaseObservable {
     private String iStatus96x = "";
     private String synced = "";
     private String syncDate = "";
-    private String childrespondent = "";
     private String s02 = "";
 
     private String cmsid = "";
@@ -176,13 +170,9 @@ public class Form21cm extends BaseObservable {
         this.localDate = localDate;
     }
 
-    public void setForm(String userName, String sysDate, String dcode, String ucode, String cluster, String hhno, String deviceId, String deviceTag, String appver, String gps) {
+    public void setForm(String userName, String sysDate, String deviceId, String deviceTag, String appver, String gps) {
         this.userName = userName;
         this.sysDate = sysDate;
-        this.dcode = dcode;
-        this.ucode = ucode;
-        this.cluster = cluster;
-        this.hhno = hhno;
         this.deviceId = deviceId;
         this.deviceTag = deviceTag;
         this.appver = appver;
@@ -255,66 +245,12 @@ public class Form21cm extends BaseObservable {
 
 
     @Bindable
-    public String getUuid() {
-        return uuid;
-    }
-
-    public Form21cm setUuid(String uuid) {
-        this.uuid = uuid;
-        return this;
-    }
-
-    @Bindable
     public String getUserName() {
         return userName;
     }
 
     public Form21cm setUserName(String userName) {
         this.userName = userName;
-        return this;
-    }
-
-
-    @Bindable
-    public String getDcode() {
-        return dcode;
-    }
-
-    public Form21cm setDcode(String dcode) {
-        this.dcode = dcode;
-        return this;
-    }
-
-
-    @Bindable
-    public String getUcode() {
-        return ucode;
-    }
-
-    public Form21cm setUcode(String ucode) {
-        this.ucode = ucode;
-        return this;
-    }
-
-
-    @Bindable
-    public String getCluster() {
-        return cluster;
-    }
-
-    public Form21cm setCluster(String cluster) {
-        this.cluster = cluster;
-        return this;
-    }
-
-
-    @Bindable
-    public String getHhno() {
-        return hhno;
-    }
-
-    public Form21cm setHhno(String hhno) {
-        this.hhno = hhno;
         return this;
     }
 
@@ -397,16 +333,6 @@ public class Form21cm extends BaseObservable {
 
     public Form21cm setSyncDate(String syncDate) {
         this.syncDate = syncDate;
-        return this;
-    }
-
-
-    public String getChildrespondent() {
-        return childrespondent;
-    }
-
-    public Form21cm setChildrespondent(String childrespondent) {
-        this.childrespondent = childrespondent;
         return this;
     }
 
@@ -1364,13 +1290,8 @@ public class Form21cm extends BaseObservable {
     public Form21cm Sync(JSONObject jsonObject) throws JSONException {
         this.id = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_ID);
         this.uid = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_UID);
-        this.uuid = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_UUID);
         this.userName = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_USERNAME);
         this.sysDate = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_SYSDATE);
-        this.dcode = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_DCODE);
-        this.ucode = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_UCODE);
-        this.cluster = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_CLUSTER);
-        this.hhno = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_HHNO);
         this.deviceId = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_DEVICEID);
         this.deviceTag = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_DEVICETAGID);
 
@@ -1387,7 +1308,6 @@ public class Form21cm extends BaseObservable {
         this.iStatus96x = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_ISTATUS96x);
         this.synced = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_SYNCED);
         this.syncDate = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_SYNCED_DATE);
-        this.childrespondent = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_CHILD_RESPONDENT);
 
         this.s02 = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_S02);
 
@@ -1401,10 +1321,6 @@ public class Form21cm extends BaseObservable {
         this.uid = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_UID));
         this.userName = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_SYSDATE));
-        this.dcode = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_DCODE));
-        this.ucode = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_UCODE));
-        this.cluster = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_CLUSTER));
-        this.hhno = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_HHNO));
 
         this.studyid = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_STUDYID));
         this.dssid = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_DSSID));
@@ -1420,7 +1336,6 @@ public class Form21cm extends BaseObservable {
         this.iStatus96x = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_ISTATUS96x));
         this.synced = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_SYNCED_DATE));
-        this.childrespondent = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_CHILD_RESPONDENT));
 
         //For childCount
         this.s02 = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_S02));
@@ -1564,10 +1479,6 @@ public class Form21cm extends BaseObservable {
             json.put(Forms21cmContract.FormsTable.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
             json.put(Forms21cmContract.FormsTable.COLUMN_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
             json.put(Forms21cmContract.FormsTable.COLUMN_SYSDATE, this.sysDate == null ? JSONObject.NULL : this.sysDate);
-            json.put(Forms21cmContract.FormsTable.COLUMN_DCODE, this.dcode == null ? JSONObject.NULL : this.dcode);
-            json.put(Forms21cmContract.FormsTable.COLUMN_UCODE, this.ucode == null ? JSONObject.NULL : this.ucode);
-            json.put(Forms21cmContract.FormsTable.COLUMN_CLUSTER, this.cluster == null ? JSONObject.NULL : this.cluster);
-            json.put(Forms21cmContract.FormsTable.COLUMN_HHNO, this.hhno == null ? JSONObject.NULL : this.hhno);
             json.put(Forms21cmContract.FormsTable.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
             json.put(Forms21cmContract.FormsTable.COLUMN_DEVICETAGID, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
 
@@ -1583,7 +1494,6 @@ public class Form21cm extends BaseObservable {
             json.put(Forms21cmContract.FormsTable.COLUMN_ISTATUS96x, this.iStatus96x == null ? JSONObject.NULL : this.iStatus96x);
             json.put(Forms21cmContract.FormsTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
             json.put(Forms21cmContract.FormsTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
-            json.put(Forms21cmContract.FormsTable.COLUMN_CHILD_RESPONDENT, this.childrespondent == null ? JSONObject.NULL : this.childrespondent);
 
             json.put(Forms21cmContract.FormsTable.COLUMN_S02, new JSONObject(s02toString()));
 

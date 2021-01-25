@@ -501,10 +501,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                Forms21cmContract.FormsTable._ID,
+                Forms21cmContract.FormsTable.COLUMN_ID,
                 Forms21cmContract.FormsTable.COLUMN_UID,
                 Forms21cmContract.FormsTable.COLUMN_USERNAME,
                 Forms21cmContract.FormsTable.COLUMN_SYSDATE,
+                Forms21cmContract.FormsTable.COLUMN_PROJECT_NAME,
+                Forms21cmContract.FormsTable.COLUMN_STUDYID,
+                Forms21cmContract.FormsTable.COLUMN_DSSID,
+                Forms21cmContract.FormsTable.COLUMN_WEEK,
+                Forms21cmContract.FormsTable.COLUMN_S02,
+                Forms21cmContract.FormsTable.COLUMN_SYNCED,
+                Forms21cmContract.FormsTable.COLUMN_SYNCED_DATE,
+
 /*                 FormsContract.FormsTable.COLUMN_COUNTRY_CODE,
                 FormsContract.FormsTable.COLUMN_COUNTRY,
                 FormsContract.FormsTable.COLUMN_DISTRICT_CODE,
@@ -567,7 +575,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Forms21cmContract.FormsTable.COLUMN_GPS,
                 Forms21cmContract.FormsTable.COLUMN_DEVICETAGID,
                 Forms21cmContract.FormsTable.COLUMN_DEVICEID,
-                Forms21cmContract.FormsTable.COLUMN_APPVERSION,
+                Forms21cmContract.FormsTable.COLUMN_APPVERSION
         };
 
         String whereClause;
@@ -606,6 +614,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allForms;
     }
+
     public void updateSyncedForms(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 

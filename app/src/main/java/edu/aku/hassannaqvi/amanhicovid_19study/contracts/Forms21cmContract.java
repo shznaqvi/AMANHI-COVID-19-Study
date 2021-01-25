@@ -19,13 +19,8 @@ public class Forms21cmContract {
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "id";
         public static final String COLUMN_UID = "uid";
-        public static final String COLUMN_UUID = "uuid";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_DCODE = "districtCode";
-        public static final String COLUMN_UCODE = "ucCode";
-        public static final String COLUMN_CLUSTER = "clusterno";
-        public static final String COLUMN_HHNO = "hhno";
         public static final String COLUMN_DSSID = "dssid";
         public static final String COLUMN_STUDYID = "studyid";
         public static final String COLUMN_WEEK = "week";
@@ -40,7 +35,6 @@ public class Forms21cmContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
-        public static final String COLUMN_CHILD_RESPONDENT = "childrespondent";
         public static String PATH = "forms21cm";
         public static final String CONTENT_TYPE =
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH;

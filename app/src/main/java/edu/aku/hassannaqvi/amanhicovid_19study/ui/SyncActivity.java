@@ -77,6 +77,15 @@ public class SyncActivity extends AppCompatActivity {
         uploadTables = new ArrayList<>();
         downloadTables = new ArrayList<>();
 
+        // Set tables to DOWNLOAD
+        downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
+        //downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
+        //downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
+        //downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
+        //downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
+
+        // Set tables to UPLOAD
+        uploadTables.add(new SyncModel("Forms"));
 
         //bi.noItem.setVisibility(View.VISIBLE);
         bi.noDataItem.setVisibility(View.VISIBLE);
