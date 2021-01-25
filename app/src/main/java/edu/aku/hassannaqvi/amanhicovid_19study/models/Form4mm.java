@@ -1113,29 +1113,29 @@ public class Form4mm extends BaseObservable {
 
 
     public Form4mm Sync(JSONObject jsonObject) throws JSONException {
-        this.id = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_ID);
-        this.uid = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_UID);
+        this.id = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_ID);
+        this.uid = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_UID);
 
-        this.userName = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_USERNAME);
-        this.sysDate = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_SYSDATE);
-        this.deviceId = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_DEVICEID);
-        this.deviceTag = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_DEVICETAGID);
+        this.userName = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_USERNAME);
+        this.sysDate = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_SYSDATE);
+        this.deviceId = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_DEVICEID);
+        this.deviceTag = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_DEVICETAGID);
 
-        this.studyid = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_STUDYID);
-        this.dssid = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_DSSID);
-        this.week = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_WEEK);
+        this.studyid = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_STUDYID);
+        this.dssid = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_DSSID);
+        this.week = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_WEEK);
 
 
-        this.appver = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_APPVERSION);
-        this.gps = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_GPS);
-        this.endTime = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_ENDINGDATETIME);
-        this.iStatus = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_ISTATUS);
-        this.iStatus96x = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_ISTATUS96x);
-        this.iStatus96x = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_ISTATUS96x);
-        this.synced = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_SYNCED);
-        this.syncDate = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_SYNCED_DATE);
+        this.appver = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_APPVERSION);
+        this.gps = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_GPS);
+        this.endTime = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_ENDINGDATETIME);
+        this.iStatus = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS);
+        this.iStatus96x = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS96x);
+        this.iStatus96x = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS96x);
+        this.synced = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_SYNCED);
+        this.syncDate = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_SYNCED_DATE);
 
-        this.s02 = jsonObject.getString(Forms21cmContract.FormsTable.COLUMN_S02);
+        this.s02 = jsonObject.getString(Forms21cmContract.Forms21cmTable.COLUMN_S02);
 
         return this;
 
@@ -1143,30 +1143,30 @@ public class Form4mm extends BaseObservable {
 
 
     public Form4mm Hydrate(Cursor cursor) {
-        this.id = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_UID));
-        this.userName = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_SYSDATE));
+        this.id = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_SYSDATE));
 
-        this.studyid = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_STUDYID));
-        this.dssid = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_DSSID));
-        this.week = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_WEEK));
+        this.studyid = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_STUDYID));
+        this.dssid = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_DSSID));
+        this.week = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_WEEK));
 
 
-        this.deviceId = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_APPVERSION));
-        this.gps = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_GPS));
-        this.endTime = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_ENDINGDATETIME));
-        this.iStatus = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_ISTATUS));
-        this.iStatus96x = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_ISTATUS96x));
-        this.synced = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_SYNCED_DATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_APPVERSION));
+        this.gps = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_GPS));
+        this.endTime = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_ENDINGDATETIME));
+        this.iStatus = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS));
+        this.iStatus96x = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS96x));
+        this.synced = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_SYNCED_DATE));
 
         //For childCount
-        this.s02 = cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_S02));
+        this.s02 = cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_S02));
 
-        s02Hydrate(cursor.getString(cursor.getColumnIndex(Forms21cmContract.FormsTable.COLUMN_S02)));
+        s02Hydrate(cursor.getString(cursor.getColumnIndex(Forms21cmContract.Forms21cmTable.COLUMN_S02)));
 
         return this;
     }
@@ -1287,31 +1287,31 @@ public class Form4mm extends BaseObservable {
         JSONObject json = new JSONObject();
 
         try {
-            json.put(Forms21cmContract.FormsTable.COLUMN_ID, this.id == null ? JSONObject.NULL : this.id);
-            json.put(Forms21cmContract.FormsTable.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
-            json.put(Forms21cmContract.FormsTable.COLUMN_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
-            json.put(Forms21cmContract.FormsTable.COLUMN_SYSDATE, this.sysDate == null ? JSONObject.NULL : this.sysDate);
-            json.put(Forms21cmContract.FormsTable.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
-            json.put(Forms21cmContract.FormsTable.COLUMN_DEVICETAGID, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_ID, this.id == null ? JSONObject.NULL : this.id);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_UID, this.uid == null ? JSONObject.NULL : this.uid);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_USERNAME, this.userName == null ? JSONObject.NULL : this.userName);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_SYSDATE, this.sysDate == null ? JSONObject.NULL : this.sysDate);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_DEVICEID, this.deviceId == null ? JSONObject.NULL : this.deviceId);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_DEVICETAGID, this.deviceTag == null ? JSONObject.NULL : this.deviceTag);
 
-            json.put(Forms21cmContract.FormsTable.COLUMN_STUDYID, this.studyid == null ? JSONObject.NULL : this.studyid);
-            json.put(Forms21cmContract.FormsTable.COLUMN_DSSID, this.dssid == null ? JSONObject.NULL : this.dssid);
-            json.put(Forms21cmContract.FormsTable.COLUMN_WEEK, this.week == null ? JSONObject.NULL : this.week);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_STUDYID, this.studyid == null ? JSONObject.NULL : this.studyid);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_DSSID, this.dssid == null ? JSONObject.NULL : this.dssid);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_WEEK, this.week == null ? JSONObject.NULL : this.week);
 
 
-            json.put(Forms21cmContract.FormsTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
-            json.put(Forms21cmContract.FormsTable.COLUMN_GPS, this.gps == null ? JSONObject.NULL : this.gps);
-            json.put(Forms21cmContract.FormsTable.COLUMN_ENDINGDATETIME, this.endTime == null ? JSONObject.NULL : this.endTime);
-            json.put(Forms21cmContract.FormsTable.COLUMN_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
-            json.put(Forms21cmContract.FormsTable.COLUMN_ISTATUS96x, this.iStatus96x == null ? JSONObject.NULL : this.iStatus96x);
-            json.put(Forms21cmContract.FormsTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
-            json.put(Forms21cmContract.FormsTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_GPS, this.gps == null ? JSONObject.NULL : this.gps);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_ENDINGDATETIME, this.endTime == null ? JSONObject.NULL : this.endTime);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS, this.iStatus == null ? JSONObject.NULL : this.iStatus);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS96x, this.iStatus96x == null ? JSONObject.NULL : this.iStatus96x);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_SYNCED_DATE, this.syncDate == null ? JSONObject.NULL : this.syncDate);
 
-            json.put(Forms21cmContract.FormsTable.COLUMN_S02, new JSONObject(s02toString()));
+            json.put(Forms21cmContract.Forms21cmTable.COLUMN_S02, new JSONObject(s02toString()));
 
 
             if (this.s02 != null && !this.s02.equals("")) {
-                json.put(Forms21cmContract.FormsTable.COLUMN_S02, new JSONObject(this.s02));
+                json.put(Forms21cmContract.Forms21cmTable.COLUMN_S02, new JSONObject(this.s02));
             }
 
 

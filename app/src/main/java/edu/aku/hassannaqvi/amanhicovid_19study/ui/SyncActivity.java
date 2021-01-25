@@ -80,7 +80,7 @@ public class SyncActivity extends AppCompatActivity {
         downloadTables = new ArrayList<>();
 
         // Set tables to DOWNLOAD
-        downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
+        //downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
         //downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
         //downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
         //downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
