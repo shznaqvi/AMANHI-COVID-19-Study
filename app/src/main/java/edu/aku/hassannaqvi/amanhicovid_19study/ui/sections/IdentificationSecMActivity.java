@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
-import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Form4mmContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityIdentificationSecMBinding;
@@ -133,8 +133,8 @@ public class IdentificationSecMActivity extends AppCompatActivity {
         MainApp.form4m.setId(String.valueOf(updcount));
         if (updcount > 0) {
             MainApp.form4m.setUid(MainApp.form4m.getDeviceId() + MainApp.form4m.getId());
-            db.updatesForm4MColumn(Form4mmContract.Forms4MTable.COLUMN_UID, MainApp.form4m.getUid());
-            db.updatesForm4MColumn(Form4mmContract.Forms4MTable.COLUMN_S02, form4m.s02toString());
+            db.updatesForm4MColumn(Forms4mmContract.Forms4MMTable.COLUMN_UID, MainApp.form4m.getUid());
+            db.updatesForm4MColumn(Forms4mmContract.Forms4MMTable.COLUMN_S02, form4m.s02toString());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

@@ -5,11 +5,11 @@ import android.content.ContentUris;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
-public class Form4mmContract {
+public class Forms4mmContract {
 
     public static String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.amanhicovid_19study";
 
-    public static abstract class Forms4MTable implements BaseColumns {
+    public static abstract class Forms4MMTable implements BaseColumns {
         public static final String TABLE_NAME = "Forms4mm";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";

@@ -181,8 +181,8 @@ public class IdentificationSectionActivity extends AppCompatActivity {
         MainApp.form21cm.setId(String.valueOf(updcount));
         if (updcount > 0) {
             MainApp.form21cm.setUid(MainApp.form21cm.getDeviceId() + MainApp.form21cm.getId());
-            db.updatesFormColumn(Forms21cmContract.FormsTable.COLUMN_UID, MainApp.form21cm.getUid());
-            db.updatesFormColumn(Forms21cmContract.FormsTable.COLUMN_S02, form21cm.s02toString());
+            db.updatesFormColumn(Forms21cmContract.Forms21cmTable.COLUMN_UID, MainApp.form21cm.getUid());
+            db.updatesFormColumn(Forms21cmContract.Forms21cmTable.COLUMN_S02, form21cm.s02toString());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

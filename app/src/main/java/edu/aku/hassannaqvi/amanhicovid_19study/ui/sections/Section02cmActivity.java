@@ -56,7 +56,7 @@ public class Section02cmActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(Forms21cmContract.FormsTable.COLUMN_S02, form21cm.s02toString());
+        int updcount = db.updatesFormColumn(Forms21cmContract.Forms21cmTable.COLUMN_S02, form21cm.s02toString());
         if (updcount == 1) {
             return true;
         } else {

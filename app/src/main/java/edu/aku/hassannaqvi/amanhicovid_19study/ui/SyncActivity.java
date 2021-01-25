@@ -41,6 +41,8 @@ import java.util.Objects;
 import edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS;
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.adapters.SyncListAdapter;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.SyncModel;
@@ -128,8 +130,10 @@ public class SyncActivity extends AppCompatActivity {
             case R.id.btnUpload:
 
                 // Set tables to UPLOAD
-                uploadTables.add(new SyncModel("Forms"));
-                uploadData.add(db.getUnsyncedForms());
+                uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME));
+                uploadData.add(db.getUnsyncedForms4mm());
+                uploadTables.add(new SyncModel(Forms21cmContract.Forms21cmTable.TABLE_NAME));
+                uploadData.add(db.getUnsyncedForms21cm());
 
 
                 setAdapter(uploadTables);

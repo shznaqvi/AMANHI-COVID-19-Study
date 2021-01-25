@@ -13,7 +13,7 @@ public class Forms21cmContract {
 
     public static String CONTENT_AUTHORITY = "edu.aku.hassannaqvi.amanhicovid_19study";
 
-    public static abstract class FormsTable implements BaseColumns {
+    public static abstract class Forms21cmTable implements BaseColumns {
         public static final String TABLE_NAME = "Forms21cm";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
