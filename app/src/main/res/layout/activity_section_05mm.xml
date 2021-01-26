@@ -653,7 +653,10 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/mm05012"
                         android:inputType="date"
-                        app:maxDate="CR_DATE" />
+                        android:text='@{mm0501101.checked ? mm05012.getText().toString() : ""}'
+                        android:visibility='@{mm0501101.checked? View.VISIBLE : View.GONE}'
+                        app:maxDate="CR_DATE"
+                        app:minDate="27/02/2020" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

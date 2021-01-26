@@ -301,7 +301,8 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/mm0405"
                         android:inputType="date"
-                        app:maxDate="CR_DATE" />
+                        app:maxDate="CR_DATE"
+                        app:minDate="27/02/2020" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

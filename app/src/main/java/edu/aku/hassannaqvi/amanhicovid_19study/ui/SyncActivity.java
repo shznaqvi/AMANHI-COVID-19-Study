@@ -45,6 +45,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySyncBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.SyncModel;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
@@ -87,7 +88,7 @@ public class SyncActivity extends AppCompatActivity {
         //downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
 
         // Set tables to UPLOAD
-        uploadTables.add(new SyncModel("Forms"));
+        //uploadTables.add(new SyncModel("Forms21cm"));
 
         //bi.noItem.setVisibility(View.VISIBLE);
         bi.noDataItem.setVisibility(View.VISIBLE);
@@ -130,10 +131,11 @@ public class SyncActivity extends AppCompatActivity {
             case R.id.btnUpload:
 
                 // Set tables to UPLOAD
-                uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME));
-                uploadData.add(db.getUnsyncedForms4mm());
                 uploadTables.add(new SyncModel(Forms21cmContract.Forms21cmTable.TABLE_NAME));
                 uploadData.add(db.getUnsyncedForms21cm());
+
+                //uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME));
+                //uploadData.add(db.getUnsyncedForms4mm());
 
 
                 setAdapter(uploadTables);
@@ -143,6 +145,7 @@ public class SyncActivity extends AppCompatActivity {
                 // Set tables to DOWNLOAD
                 downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
                 downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
+                downloadTables.add(new SyncModel(FollowUp21cm.FollowUpTable21cm.TABLE_NAME));
                 //downloadTables.add(new SyncModel(Districts.TableDistricts.TABLE_NAME));
                 //downloadTables.add(new SyncModel(UCs.TableUCs.TABLE_NAME));
                 //downloadTables.add(new SyncModel(Clusters.TableClusters.TABLE_NAME));
@@ -222,6 +225,10 @@ public class SyncActivity extends AppCompatActivity {
                                         case VersionApp.VersionAppTable.TABLE_NAME:
                                             insertCount = db.syncVersionApp(new JSONObject(result));
                                             if (insertCount == 1) jsonArray.put("1");
+                                            break;
+                                        case FollowUp21cm.FollowUpTable21cm.TABLE_NAME:
+                                            jsonArray = new JSONArray(result);
+                                            insertCount = db.syncFollowUp21cm(jsonArray);
                                             break;
                                /*         case UCs.TableUCs.TABLE_NAME:
                                             jsonArray = new JSONArray(result);

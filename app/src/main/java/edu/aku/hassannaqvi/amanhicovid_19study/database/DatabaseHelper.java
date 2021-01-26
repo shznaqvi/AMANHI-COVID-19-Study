@@ -18,6 +18,7 @@ import java.util.Date;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
@@ -42,6 +43,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
+        db.execSQL(CreateTable.SQL_CREATE_FUP21CM);
+        db.execSQL(CreateTable.SQL_CREATE_FUP4MM);
         //db.execSQL(CreateTable.SQL_CREATE_DISTRICTS);
         ///db.execSQL(CreateTable.SQL_CREATE_UCS);
         //db.execSQL(CreateTable.SQL_CREATE_CLUSTERS);
@@ -892,6 +895,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return (int) count;
     }
+
+
+    public int syncFollowUp21cm(JSONArray fupList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(FollowUp21cm.FollowUpTable21cm.TABLE_NAME, null, null);
+        int insertCount = 0;
+        try {
+            for (int i = 0; i < fupList.length(); i++) {
+
+                JSONObject jsonObjectUser = fupList.getJSONObject(i);
+
+                FollowUp21cm fup21cm = new FollowUp21cm();
+                fup21cm.sync(jsonObjectUser);
+                ContentValues values = new ContentValues();
+
+                values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_DSSID, fup21cm.getDSSID());
+                values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_ID, fup21cm.getCOLID());
+                values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID, fup21cm.getSTUDYID());
+                values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT, fup21cm.getFUPDT());
+                values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK, fup21cm.getFUPWEEK());
+                long rowID = db.insert(FollowUp21cm.FollowUpTable21cm.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncUser(e): " + e);
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
 
     public int syncUser(JSONArray userList) {
         SQLiteDatabase db = this.getWritableDatabase();

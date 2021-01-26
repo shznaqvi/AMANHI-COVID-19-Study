@@ -2,6 +2,8 @@ package edu.aku.hassannaqvi.amanhicovid_19study.utils
 
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users
 import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp
 
@@ -63,6 +65,24 @@ object CreateTable {
             + Users.UsersTable.COLUMN_PASSWORD + " TEXT,"
             + Users.UsersTable.COLUMN_FULLNAME + " TEXT"
             + " );")
+
+
+    const val SQL_CREATE_FUP21CM = ("CREATE TABLE " + FollowUp21cm.FollowUpTable21cm.TABLE_NAME + "("
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_DSSID + " TEXT,"
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + " TEXT,"
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT + " TEXT"
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK + " TEXT"
+            + " );")
+
+    const val SQL_CREATE_FUP4MM = ("CREATE TABLE " + FollowUp4mm.FollowUpTable4mm.TABLE_NAME + "("
+            + FollowUp4mm.FollowUpTable4mm.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + FollowUp4mm.FollowUpTable4mm.COLUMN_DSSID + " TEXT,"
+            + FollowUp4mm.FollowUpTable4mm.COLUMN_STUDYID + " TEXT,"
+            + FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT + " TEXT"
+            + FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK + " TEXT"
+            + " );")
+
 
     /*const val SQL_CREATE_DISTRICTS = ("CREATE TABLE " + Districts.TableDistricts.TABLE_NAME + "("
             + Districts.TableDistricts.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"

@@ -157,6 +157,11 @@ public class IdentificationSectionActivity extends AppCompatActivity {
             if (bi.cm0106.getText().length() != 10) {
                 Toast.makeText(this, "Amanhi ID for child must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
+            } else {
+                if (bi.cm0106.getText().toString().equals("17-99999-9")) {
+                    Toast.makeText(this, "Amanhi ID for child cannot be 17-99999-9 ", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
             }
         }
 
@@ -165,6 +170,11 @@ public class IdentificationSectionActivity extends AppCompatActivity {
             if (bi.cm0107.getText().length() != 10) {
                 Toast.makeText(this, "Child ID must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
+            } else {
+                if (bi.cm0107.getText().toString().equals("17-99999-9")) {
+                    Toast.makeText(this, "Child ID cannot be 17-99999-9 ", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
             }
         }
 

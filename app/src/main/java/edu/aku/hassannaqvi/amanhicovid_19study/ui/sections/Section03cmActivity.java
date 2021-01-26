@@ -36,6 +36,30 @@ public class Section03cmActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_03cm);
         bi.setCallback(this);
         setupSkips();
+
+        ValidateEditTextKt.txtWatch(bi.cm0303);
+        ValidateEditTextKt.txtWatch(bi.cm0305);
+        ValidateEditTextKt.txtWatch(bi.cm0307);
+        ValidateEditTextKt.txtWatch(bi.cm0309);
+        ValidateEditTextKt.txtWatch(bi.cm03011);
+        ValidateEditTextKt.txtWatch(bi.cm03013);
+        ValidateEditTextKt.txtWatch(bi.cm03015);
+        ValidateEditTextKt.txtWatch(bi.cm03017);
+        ValidateEditTextKt.txtWatch(bi.cm03019);
+        ValidateEditTextKt.txtWatch(bi.cm03021);
+        ValidateEditTextKt.txtWatch(bi.cm03023);
+        ValidateEditTextKt.txtWatch(bi.cm03025);
+        ValidateEditTextKt.txtWatch(bi.cm03027);
+        ValidateEditTextKt.txtWatch(bi.cm03029);
+        ValidateEditTextKt.txtWatch(bi.cm03031);
+        ValidateEditTextKt.txtWatch(bi.cm03033);
+        ValidateEditTextKt.txtWatch(bi.cm03035);
+        ValidateEditTextKt.txtWatch(bi.cm03037);
+        ValidateEditTextKt.txtWatch(bi.cm03039);
+        ValidateEditTextKt.txtWatch(bi.cm03041);
+        ValidateEditTextKt.txtWatch(bi.cm03043);
+        ValidateEditTextKt.txtWatch(bi.cm03045);
+
     }
 
 
@@ -315,30 +339,6 @@ public class Section03cmActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-
-        ValidateEditTextKt.txtWatch(bi.cm0303);
-        ValidateEditTextKt.txtWatch(bi.cm0305);
-        ValidateEditTextKt.txtWatch(bi.cm0307);
-        ValidateEditTextKt.txtWatch(bi.cm0309);
-        ValidateEditTextKt.txtWatch(bi.cm03011);
-        ValidateEditTextKt.txtWatch(bi.cm03013);
-        ValidateEditTextKt.txtWatch(bi.cm03015);
-        ValidateEditTextKt.txtWatch(bi.cm03017);
-        ValidateEditTextKt.txtWatch(bi.cm03019);
-        ValidateEditTextKt.txtWatch(bi.cm03021);
-        ValidateEditTextKt.txtWatch(bi.cm03023);
-        ValidateEditTextKt.txtWatch(bi.cm03025);
-        ValidateEditTextKt.txtWatch(bi.cm03027);
-        ValidateEditTextKt.txtWatch(bi.cm03029);
-        ValidateEditTextKt.txtWatch(bi.cm03031);
-        ValidateEditTextKt.txtWatch(bi.cm03033);
-        ValidateEditTextKt.txtWatch(bi.cm03035);
-        ValidateEditTextKt.txtWatch(bi.cm03037);
-        ValidateEditTextKt.txtWatch(bi.cm03039);
-        ValidateEditTextKt.txtWatch(bi.cm03041);
-        ValidateEditTextKt.txtWatch(bi.cm03043);
-        ValidateEditTextKt.txtWatch(bi.cm03045);
-
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 

@@ -1515,7 +1515,6 @@ public class Form21cm extends BaseObservable {
             try {
                 JSONObject json = null;
                 json = new JSONObject(string);
-                this.cm0102a = json.getString("cm0102a");
                 this.cm0103 = json.getString("cm0103");
                 this.cm0104 = json.getString("cm0104");
                 this.cm0105 = json.getString("cm0105");

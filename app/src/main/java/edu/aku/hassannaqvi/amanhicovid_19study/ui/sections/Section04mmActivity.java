@@ -22,6 +22,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection04mmBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.utils.ValidateEditTextKt;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
 
@@ -34,22 +35,28 @@ public class Section04mmActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_04mm);
         bi.setCallback(this);
+
+        setupSkips();
     }
-
-
 
 
     private void setupSkips() {
         //rgListener(bi.cm0201, bi.cm020111, bi.cvcm0202);
+        rgListener(bi.mm0403, bi.mm040301, bi.fldGrpCVmm0404, bi.fldGrpCVmm0405);
     }
 
 
-    private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
+    private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg, ViewGroup vg1) {
         rg.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(vg);
             vg.setVisibility(View.VISIBLE);
-            if (i == rb.getId()) {
+
+            Clear.clearAllFields(vg1);
+            vg1.setVisibility(View.VISIBLE);
+
+            if (i != rb.getId()) {
                 vg.setVisibility(View.GONE);
+                vg1.setVisibility(View.GONE);
             }
         });
     }
@@ -136,6 +143,8 @@ public class Section04mmActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
+        ValidateEditTextKt.txtWatch(bi.mm0408);
+
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
