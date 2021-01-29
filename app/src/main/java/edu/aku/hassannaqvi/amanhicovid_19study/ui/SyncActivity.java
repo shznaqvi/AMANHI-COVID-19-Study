@@ -284,6 +284,7 @@ public class SyncActivity extends AppCompatActivity {
     }
 
 
+
     private void BeginUpload() {
 
         Constraints constraints = new Constraints.Builder()
