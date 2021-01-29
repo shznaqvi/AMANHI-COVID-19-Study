@@ -35,7 +35,7 @@ public class Forms21cmContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APPVERSION = "appversion";
-        public static String PATH = "forms21cm";
+        public static String PATH = "Forms21cm";
         public static final String CONTENT_TYPE =
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH;
         public static final String CONTENT_ITEM_TYPE =

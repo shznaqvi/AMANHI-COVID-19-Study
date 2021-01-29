@@ -59,6 +59,8 @@ public class Section03cmActivity extends AppCompatActivity {
         ValidateEditTextKt.txtWatch(bi.cm03041);
         ValidateEditTextKt.txtWatch(bi.cm03043);
         ValidateEditTextKt.txtWatch(bi.cm03045);
+        ValidateEditTextKt.txtWatch(bi.cm03048);
+        ValidateEditTextKt.txtWatch(bi.cm03051);
 
     }
 

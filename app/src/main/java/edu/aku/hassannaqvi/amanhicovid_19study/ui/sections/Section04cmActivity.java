@@ -39,16 +39,25 @@ public class Section04cmActivity extends AppCompatActivity {
 
 
     private void setupSkips() {
-        //rgListener(bi.cm0201, bi.cm020111, bi.cvcm0202);
+        rgListener(bi.cm0402, bi.cm040201, bi.cvcm0403, bi.cvcm0404, bi.cvcm0405);
     }
 
 
-    private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
+    private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg, ViewGroup vg1, ViewGroup vg2) {
         rg.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(vg);
             vg.setVisibility(View.VISIBLE);
-            if (i == rb.getId()) {
+
+            Clear.clearAllFields(vg1);
+            vg1.setVisibility(View.VISIBLE);
+
+            Clear.clearAllFields(vg2);
+            vg2.setVisibility(View.VISIBLE);
+
+            if (i != rb.getId()) {
                 vg.setVisibility(View.GONE);
+                vg1.setVisibility(View.GONE);
+                vg2.setVisibility(View.GONE);
             }
         });
     }

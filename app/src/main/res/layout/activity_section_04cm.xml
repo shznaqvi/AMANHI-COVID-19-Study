@@ -178,7 +178,9 @@
                         android:id="@+id/cm0403"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cm0403" />
+                        android:hint="@string/cm0403"
+                        android:text='@{cm040201.checked ? cm0403.getText().toString() : ""}'
+                        android:visibility='@{cm040201.checked? View.VISIBLE : View.GONE}' />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

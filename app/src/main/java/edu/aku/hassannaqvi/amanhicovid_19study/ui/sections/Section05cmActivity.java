@@ -108,7 +108,7 @@ public class Section05cmActivity extends AppCompatActivity {
                 : bi.cm050509.isChecked() ? "9"
                 : "-1");
 
-        form21cm.setCm0506(bi.cm0506.getText().toString());
+        //form21cm.setCm0506(bi.cm0506.getText().toString());
 
         form21cm.setCm0507(bi.cm050701.isChecked() ? "1"
                 : bi.cm050702.isChecked() ? "2"

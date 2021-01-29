@@ -5,8 +5,14 @@ import android.view.View;
 
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
+import org.json.JSONArray;
+
+import java.io.File;
+import java.util.List;
+
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
 
 
 public class MainApp extends Application {
@@ -24,10 +30,12 @@ public class MainApp extends Application {
     public static final String _UPDATE_URL = MainApp._IP + "/amanhicovid_19study/app/";
     public static String IMEI;
     public static Form21cm form21cm;
+    public static File sdDir;
     public static Form4mm form4m;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
-    // public static Users user;
+    public static List<JSONArray> uploadData;
+    public static Users user;
     public static Boolean admin = false;
     public static String userName;
 

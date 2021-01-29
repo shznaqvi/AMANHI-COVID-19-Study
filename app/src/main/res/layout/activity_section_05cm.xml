@@ -376,11 +376,11 @@
                         android:background="@drawable/bottom"
                         android:orientation="horizontal">
 
-                        <TextView
+                        <!--<TextView
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_cm0506" />
+                            android:text="@string/Q_cm0506" />-->
 
                         <TextView
                             android:layout_width="0dp"
@@ -389,13 +389,13 @@
                             android:text="@string/cm0506" />
                     </LinearLayout>
 
-                    <EditText
+                    <!--<EditText
                         android:id="@+id/cm0506"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/cm0506"
                         android:text='@{cm050501.checked ? cm0506.getText().toString() : ""}'
-                        android:visibility='@{cm050501.checked? View.VISIBLE : View.GONE}' />
+                        android:visibility='@{cm050501.checked? View.VISIBLE : View.GONE}' />-->
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -592,6 +592,24 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
+            <!-- cm05title2  Title -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvcm05title2"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cm05title2" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
             <!-- cm05011  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvcm05011"
@@ -653,22 +671,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- cm05title2  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvcm05title2"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/cm05title2" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
             <!-- cm5title3  Title   -->
             <androidx.cardview.widget.CardView

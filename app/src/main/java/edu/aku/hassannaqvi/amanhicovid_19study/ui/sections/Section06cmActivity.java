@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -39,15 +40,59 @@ public class Section06cmActivity extends AppCompatActivity {
 
 
     private void setupSkips() {
-        //rgListener(bi.cm0201, bi.cm020111, bi.cvcm0202);
+        //rgListener(bi.cm0601, bi.cm060102, bi.cm060201, bi.cm060209, bi.cvcm0603);
+
+        bi.cm0601.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.cvcm0605);
+            bi.cvcm0605.setVisibility(View.VISIBLE);
+
+            if (bi.cm060102.isChecked() && bi.cm060209.isChecked()
+                    || bi.cm060102.isChecked() && bi.cm060202.isChecked()
+                    || bi.cm060102.isChecked() && bi.cm060208.isChecked()
+                    || bi.cm060101.isChecked() && bi.cm060201.isChecked()
+                    || bi.cm060101.isChecked() && bi.cm060209.isChecked()) {
+
+                bi.cvcm0605.setVisibility(View.GONE);
+
+            } else if (bi.cm060101.isChecked() && bi.cm060202.isChecked()
+                    || bi.cm060101.isChecked() && bi.cm060208.isChecked()
+            ) {
+
+                bi.cvcm0605.setVisibility(View.VISIBLE);
+
+            }
+
+        });
+
+
+        bi.cm0602.setOnCheckedChangeListener((radioGroup, i) -> {
+
+            if (bi.cm060102.isChecked() && bi.cm060209.isChecked()
+                    || bi.cm060102.isChecked() && bi.cm060202.isChecked()
+                    || bi.cm060102.isChecked() && bi.cm060208.isChecked()
+                    || bi.cm060101.isChecked() && bi.cm060201.isChecked()
+                    || bi.cm060101.isChecked() && bi.cm060209.isChecked()) {
+
+                bi.cvcm0605.setVisibility(View.GONE);
+
+            } else if (bi.cm060101.isChecked() && bi.cm060202.isChecked()
+                    || bi.cm060101.isChecked() && bi.cm060208.isChecked()) {
+
+                bi.cvcm0605.setVisibility(View.VISIBLE);
+
+            }
+
+        });
+
     }
 
 
-    private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg) {
+    private void rgListener(@NotNull RadioGroup rg, RadioButton rb1, RadioButton rb2, RadioButton rb3, ViewGroup vg) {
         rg.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(vg);
             vg.setVisibility(View.VISIBLE);
-            if (i == rb.getId()) {
+
+            if (i == rb1.getId() && i == rb3.getId()) {
                 vg.setVisibility(View.GONE);
             }
         });

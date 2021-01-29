@@ -26,9 +26,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
-
+import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
 
 
