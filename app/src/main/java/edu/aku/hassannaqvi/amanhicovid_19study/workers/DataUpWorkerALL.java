@@ -40,24 +40,29 @@ public class DataUpWorkerALL extends Worker {
     private final Context mContext;
     private final String uploadTable;
     HttpURLConnection urlConnection;
-    private JSONObject uploadData;
-    private URL serverURL = null;
+    private final JSONArray uploadData;
+    private final URL serverURL = null;
     private ProgressDialog pd;
     private int length;
     private Data data;
-    private String nTitle = "Enrolment";
+    private final String nTitle = "AMANHICOVID: Data Upload";
+    private final int position;
+    private final String uploadWhere;
 
     public DataUpWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mContext = context;
         uploadTable = workerParams.getInputData().getString("table");
-        try {
-            uploadData = new JSONObject(workerParams.getInputData().getString("data"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        position = workerParams.getInputData().getInt("position", -2);
+        uploadData = MainApp.uploadData.get(position);
 
 
+        Log.d(TAG, "Upload Begins uploadData.length(): " + uploadData.length());
+        Log.d(TAG, "Upload Begins uploadData: " + uploadData);
+
+        Log.d(TAG, "DataDownWorkerALL: position " + position);
+        //uploadColumns = workerParams.getInputData().getString("columns");
+        uploadWhere = workerParams.getInputData().getString("where");
     }
 
     /*
@@ -74,6 +79,14 @@ public class DataUpWorkerALL extends Worker {
     @Override
     public Result doWork() {
 
+        if (uploadData.length() == 0) {
+            data = new Data.Builder()
+                    .putString("error", "No new records to upload")
+                    .putInt("position", this.position)
+                    .build();
+
+            return Result.failure(data);
+        }
         Log.d(TAG, "doWork: Starting");
         displayNotification(nTitle, "Starting upload");
 
@@ -107,15 +120,19 @@ public class DataUpWorkerALL extends Worker {
             JSONArray jsonParam = new JSONArray();
 
             jsonTable.put("table", uploadTable);
-            jsonSync.put(uploadData);
+            Log.d(TAG, "doWork: " + uploadData);
+            System.out.print("doWork: " + uploadData);
+            //jsonSync.put(uploadData);
             jsonParam
                     .put(jsonTable)
-                    .put(jsonSync);
+                    .put(uploadData);
 
+            Log.d(TAG, "Upload Begins Length: " + jsonParam.length());
             Log.d(TAG, "Upload Begins: " + jsonParam);
 
 
-            wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
+            //wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
+            wr.writeBytes(jsonParam.toString());
             wr.flush();
             wr.close();
 
@@ -144,21 +161,27 @@ public class DataUpWorkerALL extends Worker {
                 Log.d(TAG, "Connection Response (Server Failure): " + urlConnection.getResponseCode());
 
                 data = new Data.Builder()
-                        .putString("error", String.valueOf(urlConnection.getResponseCode())).build();
+                        .putString("error", String.valueOf(urlConnection.getResponseCode()))
+                        .putInt("position", this.position)
+                        .build();
                 return Result.failure(data);
             }
         } catch (java.net.SocketTimeoutException e) {
             Log.d(TAG, "doWork (Timeout): " + e.getMessage());
             displayNotification(nTitle, "Timeout Error: " + e.getMessage());
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage())).build();
+                    .putString("error", String.valueOf(e.getMessage()))
+                    .putInt("position", this.position)
+                    .build();
             return Result.failure(data);
 
         } catch (IOException | JSONException e) {
             Log.d(TAG, "doWork (IO Error): " + e.getMessage());
             displayNotification(nTitle, "IO Error: " + e.getMessage());
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage())).build();
+                    .putString("error", String.valueOf(e.getMessage()))
+                    .putInt("position", this.position)
+                    .build();
 
             return Result.failure(data);
 
@@ -182,11 +205,15 @@ public class DataUpWorkerALL extends Worker {
             ///BE CAREFULL DATA.BUILDER CAN HAVE ONLY 1024O BYTES. EACH CHAR HAS 8 BYTES
             if (result.toString().length() > 10240) {
                 data = new Data.Builder()
-                        .putString("message", String.valueOf(result).substring(0, (10240 - 1) / 8)).build();
+                        .putString("message", String.valueOf(result).substring(0, (10240 - 1) / 8))
+                        .putInt("position", this.position)
+                        .build();
             } else {
 
                 data = new Data.Builder()
-                        .putString("message", String.valueOf(result)).build();
+                        .putString("message", String.valueOf(result))
+                        .putInt("position", this.position)
+                        .build();
             }
 
             displayNotification(nTitle, "Uploaded successfully");
@@ -194,7 +221,9 @@ public class DataUpWorkerALL extends Worker {
 
         } else {
             data = new Data.Builder()
-                    .putString("error", String.valueOf(result)).build();
+                    .putString("error", String.valueOf(result))
+                    .putInt("position", this.position)
+                    .build();
             displayNotification(nTitle, "Error Received");
             return Result.failure(data);
         }

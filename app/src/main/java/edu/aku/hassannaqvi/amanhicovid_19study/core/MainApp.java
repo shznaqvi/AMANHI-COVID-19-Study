@@ -31,6 +31,7 @@ public class MainApp extends Application {
     public static String IMEI;
     public static Form21cm form21cm;
     public static File sdDir;
+    public static String[] downloadData;
     public static Form4mm form4m;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;

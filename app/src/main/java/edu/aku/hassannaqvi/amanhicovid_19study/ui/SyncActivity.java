@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS;
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.adapters.SyncListAdapter;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySyncBinding;
@@ -64,6 +66,10 @@ public class SyncActivity extends AppCompatActivity {
     Boolean listActivityCreated;
     Boolean uploadlistActivityCreated;
     String distCode;
+    final Handler handler = new Handler();
+    private int totalFiles;
+    private long tStart;
+    private String progress;
     // List<JSONArray> uploadData;
 
     @Override
@@ -86,8 +92,6 @@ public class SyncActivity extends AppCompatActivity {
 
         db = new DatabaseHelper(this);
         dbBackup(this);
-
-
     }
 
 
@@ -113,7 +117,6 @@ public class SyncActivity extends AppCompatActivity {
         finish();
     }
 
-
     @SuppressLint("NonConstantResourceId")
     public void ProcessStart(View view) {
 
@@ -125,40 +128,40 @@ public class SyncActivity extends AppCompatActivity {
             case R.id.btnUpload:
                 //bi.dataLayout.setVisibility(View.VISIBLE);
                 //bi.mTextViewS.setVisibility(View.GONE);
-
+                ///bi.pBar.setVisibility(View.GONE);
                 uploadTables.clear();
                 MainApp.uploadData.clear();
-                // Set tables to UPLOAD
-                // Forms
+
+
                 uploadTables.add(new SyncModel(Forms21cmContract.Forms21cmTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedForms21cm());
 
+                uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedForms4mm());
 
                 setAdapter(uploadTables);
                 BeginUpload();
                 break;
+
             case R.id.btnSync:
+                MainApp.downloadData = new String[0];
                 //bi.dataLayout.setVisibility(View.VISIBLE);
-                //bi.photoLayout.setVisibility(View.GONE);
                 //bi.mTextViewS.setVisibility(View.GONE);
-
-
+                //bi.pBar.setVisibility(View.GONE);
                 downloadTables.clear();
-                boolean sync_flag = getIntent().getBooleanExtra(CONSTANTS.SYNC_LOGIN, false);
-                if (sync_flag) {
-                    //distCode = getIntent().getStringExtra(CONSTANTS.SYNC_DISTRICTID_LOGIN);
-                    //downloadTables.add(new SyncModel(BLRandom.TableRandom.TABLE_NAME));
-                } else {
-                    // Set tables to DOWNLOAD
-                    downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(FollowUp21cm.FollowUpTable21cm.TABLE_NAME));
-                }
 
+                // Set tables to DOWNLOAD
+                downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
+                downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
+                downloadTables.add(new SyncModel(FollowUp21cm.FollowUpTable21cm.TABLE_NAME));
+
+                MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);
                 BeginDownload();
                 break;
 
+            default:
+                throw new IllegalStateException("Unexpected value: " + view.getId());
         }
     }
 
@@ -215,10 +218,13 @@ public class SyncActivity extends AppCompatActivity {
                     if (workInfo.getState() != null &&
                             workInfo.getState() == WorkInfo.State.SUCCEEDED) {
 
-                        String result = workInfo.getOutputData().getString("data");
+                        //String result = workInfo.getOutputData().getString("data");
+                        String result = MainApp.downloadData[position];
 //Do something with the JSON string
                         if (result != null) {
                             if (result.length() > 0) {
+                                Log.d(TAG, "onChanged: result " + result);
+                                System.out.println("SYSTEM onChanged: result" + result);
                                 DatabaseHelper db = new DatabaseHelper(SyncActivity.this);
                                 try {
                                     JSONArray jsonArray = new JSONArray();
@@ -232,12 +238,11 @@ public class SyncActivity extends AppCompatActivity {
                                             insertCount = db.syncVersionApp(new JSONObject(result));
                                             if (insertCount == 1) jsonArray.put("1");
                                             break;
-                                        case Forms21cmContract.Forms21cmTable.TABLE_NAME:
+                                        case FollowUp21cm.FollowUpTable21cm.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
-                                            insertCount = db.syncFollowUp21cm(jsonArray);
+                                            //insertCount = db.syncUCs(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
                                             break;
-
                                     }
 
                                     downloadTables.get(position).setmessage("Received: " + jsonArray.length() + ", Saved: " + insertCount);
@@ -281,8 +286,8 @@ public class SyncActivity extends AppCompatActivity {
                 }
             }
         });
-    }
 
+    }
 
 
     private void BeginUpload() {
@@ -297,6 +302,7 @@ public class SyncActivity extends AppCompatActivity {
                     .putString("table", uploadTables.get(i).gettableName())
                     .putInt("position", i)
                     //    .putString("data", uploadData.get(i).toString())
+
                     //.putString("columns", "_id, sysdate")
                     // .putString("where", where)
                     .build();
@@ -408,7 +414,7 @@ public class SyncActivity extends AppCompatActivity {
                                             syncListAdapter.updatesyncList(uploadTables);
                                         }
                                     } else {
-                                        uploadTables.get(position).setmessage("Method not found: getUnsynced" + tableName);
+                                        uploadTables.get(position).setmessage("Method not found: updateSynced" + tableName);
                                         uploadTables.get(position).setstatus("Process Failed");
                                         uploadTables.get(position).setstatusID(1);
                                         syncListAdapter.updatesyncList(uploadTables);

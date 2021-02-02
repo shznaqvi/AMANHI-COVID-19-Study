@@ -40,14 +40,14 @@ public class DataDownWorkerALL extends Worker {
     private final Context mContext;
     private final int position;
     HttpURLConnection urlConnection;
-    private String uploadTable;
+    private final String uploadTable;
     private String uploadColumns;
-    private String uploadWhere;
-    private URL serverURL = null;
+    private final String uploadWhere;
+    private final URL serverURL = null;
     private ProgressDialog pd;
     private int length;
     private Data data;
-    private String nTitle = "Enrolment";
+    private final String nTitle = "AMANHICOVID: Data Download";
 
     public DataDownWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
@@ -57,8 +57,6 @@ public class DataDownWorkerALL extends Worker {
         Log.d(TAG, "DataDownWorkerALL: position " + position);
         //uploadColumns = workerParams.getInputData().getString("columns");
         uploadWhere = workerParams.getInputData().getString("where");
-
-
     }
 
     /*
@@ -200,19 +198,15 @@ public class DataDownWorkerALL extends Worker {
 
 
             //JSONObject jsonObjectCC = jsonArray.getJSONObject(0);
-            ///BE CAREFULL DATA.BUILDER CAN HAVE ONLY 1024O BYTES. EACH CHAR HAS 8 BYTES
-            if (result.toString().length() > 10240) {
-                data = new Data.Builder()
-                        .putString("data", String.valueOf(result).substring(0, (10240 - 1) / 8))
-                        .putInt("position", this.position)
-                        .build();
-            } else {
+            ///BE CAREFULL DATA.BUILDER CAN HAVE ONLY 1024O BYTES. EACH CHAR HAS 8 bits
 
-                data = new Data.Builder()
-                        .putString("data", String.valueOf(result))
-                        .putInt("position", this.position)
-                        .build();
-            }
+            MainApp.downloadData[this.position] = String.valueOf(result);
+
+            data = new Data.Builder()
+                    //     .putString("data", String.valueOf(result))
+                    .putInt("position", this.position)
+                    .build();
+
 
             //displayNotification(nTitle, "Uploaded successfully");
             Log.d(TAG, "doWork: " + result);
@@ -227,7 +221,6 @@ public class DataDownWorkerALL extends Worker {
             //displayNotification(nTitle, "Error Received");
             return Result.failure(data);
         }
-
 
     }
 

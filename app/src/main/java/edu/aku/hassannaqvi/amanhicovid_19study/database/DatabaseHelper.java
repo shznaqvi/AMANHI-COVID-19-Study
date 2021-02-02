@@ -26,6 +26,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
 /**
  * @author hassan.naqvi on 11/30/2016.
@@ -503,92 +504,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public JSONArray getUnsyncedForms21cm() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
-        String[] columns = {
-                Forms21cmContract.Forms21cmTable.COLUMN_ID,
-                Forms21cmContract.Forms21cmTable.COLUMN_UID,
-                Forms21cmContract.Forms21cmTable.COLUMN_USERNAME,
-                Forms21cmContract.Forms21cmTable.COLUMN_SYSDATE,
-                Forms21cmContract.Forms21cmTable.COLUMN_PROJECT_NAME,
-                Forms21cmContract.Forms21cmTable.COLUMN_STUDYID,
-                Forms21cmContract.Forms21cmTable.COLUMN_DSSID,
-                Forms21cmContract.Forms21cmTable.COLUMN_WEEK,
-                Forms21cmContract.Forms21cmTable.COLUMN_S02,
-                Forms21cmContract.Forms21cmTable.COLUMN_SYNCED,
-                Forms21cmContract.Forms21cmTable.COLUMN_SYNCED_DATE,
-
-/*                 FormsContract.FormsTable.COLUMN_COUNTRY_CODE,
-                FormsContract.FormsTable.COLUMN_COUNTRY,
-                FormsContract.FormsTable.COLUMN_DISTRICT_CODE,
-                FormsContract.FormsTable.COLUMN_DISTRICT,
-                FormsContract.FormsTable.COLUMN_UC_CODE,
-                FormsContract.FormsTable.COLUMN_UC,
-                FormsContract.FormsTable.COLUMN_VILLAGE_CODE,
-                FormsContract.FormsTable.COLUMN_VILLAGE,
-                FormsContract.FormsTable.COLUMN_SA,
-               FormsTable.COLUMN_CR01,
-                FormsTable.COLUMN_CR02,
-                FormsTable.COLUMN_CR03,
-                FormsTable.COLUMN_CR04,
-                FormsTable.COLUMN_CR05,
-                FormsTable.COLUMN_CR06,
-                FormsTable.COLUMN_CR06X,
-                FormsTable.COLUMN_CR07,
-                FormsTable.COLUMN_CR08D,
-                FormsTable.COLUMN_CR08M,
-                FormsTable.COLUMN_CR08Y,
-                FormsTable.COLUMN_CR09,
-                FormsTable.COLUMN_CR10,
-                FormsTable.COLUMN_CR11,
-                FormsTable.COLUMN_CR12,
-                FormsTable.COLUMN_CR13,
-                FormsTable.COLUMN_CR14D,
-                FormsTable.COLUMN_CR14M,
-                FormsTable.COLUMN_CR14Y,
-                FormsTable.COLUMN_CR15M,
-                FormsTable.COLUMN_CR15Y,
-                FormsTable.COLUMN_CR16,
-                FormsTable.COLUMN_CR17,
-                FormsTable.COLUMN_CR18,
-                FormsTable.COLUMN_CR19,
-                FormsTable.COLUMN_CR20,
-                FormsTable.COLUMN_CR21,
-                FormsTable.COLUMN_CR22,
-                FormsTable.COLUMN_CR23,
-                FormsTable.COLUMN_CR24A,
-                FormsTable.COLUMN_CR24B,
-                FormsTable.COLUMN_CR24C,
-                FormsTable.COLUMN_CR24D,
-                FormsTable.COLUMN_CR24E,
-                FormsTable.COLUMN_CR24F,
-                FormsTable.COLUMN_CR25,
-                FormsTable.COLUMN_CR26,
-                FormsTable.COLUMN_CR27A,
-                FormsTable.COLUMN_CR27B,
-                FormsTable.COLUMN_CR27C,
-                FormsTable.COLUMN_CR28A,
-                FormsTable.COLUMN_CR28B,
-                FormsTable.COLUMN_CR28C,
-                FormsTable.COLUMN_CR28D,
-                FormsTable.COLUMN_CR28E,
-                FormsTable.COLUMN_CR28F,
-                FormsTable.COLUMN_CR28FX,*/
-                Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS,
-                Forms21cmContract.Forms21cmTable.COLUMN_ISTATUS96x,
-                Forms21cmContract.Forms21cmTable.COLUMN_ENDINGDATETIME,
-                Forms21cmContract.Forms21cmTable.COLUMN_GPS,
-                Forms21cmContract.Forms21cmTable.COLUMN_DEVICETAGID,
-                Forms21cmContract.Forms21cmTable.COLUMN_DEVICEID,
-                Forms21cmContract.Forms21cmTable.COLUMN_APPVERSION
-        };
+        String[] columns = null;
 
         String whereClause;
-        String[] whereArgs;
+        whereClause = Forms21cmContract.Forms21cmTable.COLUMN_SYNCED + " is null ";
 
-        whereClause = Forms21cmContract.Forms21cmTable.COLUMN_SYNCED + " is null OR " + Forms21cmContract.Forms21cmTable.COLUMN_SYNCED + " = ''";
-        whereArgs = null;
-
+        String[] whereArgs = null;
         String groupBy = null;
         String having = null;
+
         String orderBy = Forms21cmContract.Forms21cmTable.COLUMN_ID + " ASC";
 
         JSONArray allForms = new JSONArray();
@@ -603,9 +527,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
+                /** WorkManager Upload
+                 /*Form fc = new Form();
+                 allFC.add(fc.Hydrate(c));*/
                 Log.d(TAG, "getUnsyncedForms: " + c.getCount());
-                Form21cm form21cm = new Form21cm();
-                allForms.put(form21cm.Hydrate(c).toJSONObject());
+                Form21cm form = new Form21cm();
+                allForms.put(form.Hydrate(c).toJSONObject());
+
+
             }
         } finally {
             if (c != null) {
@@ -615,6 +544,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
+        Log.d(TAG, "getUnsyncedForms: " + allForms.toString().length());
+        Log.d(TAG, "getUnsyncedForms: " + allForms);
         return allForms;
     }
 
@@ -623,92 +554,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public JSONArray getUnsyncedForms4mm() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
-        String[] columns = {
-                Forms4mmContract.Forms4MMTable.COLUMN_ID,
-                Forms4mmContract.Forms4MMTable.COLUMN_UID,
-                Forms4mmContract.Forms4MMTable.COLUMN_USERNAME,
-                Forms4mmContract.Forms4MMTable.COLUMN_SYSDATE,
-                Forms4mmContract.Forms4MMTable.COLUMN_PROJECT_NAME,
-                Forms4mmContract.Forms4MMTable.COLUMN_STUDYID,
-                Forms4mmContract.Forms4MMTable.COLUMN_DSSID,
-                Forms4mmContract.Forms4MMTable.COLUMN_WEEK,
-                Forms4mmContract.Forms4MMTable.COLUMN_S02,
-                Forms4mmContract.Forms4MMTable.COLUMN_SYNCED,
-                Forms4mmContract.Forms4MMTable.COLUMN_SYNCED_DATE,
-
-/*                 FormsContract.FormsTable.COLUMN_COUNTRY_CODE,
-                FormsContract.FormsTable.COLUMN_COUNTRY,
-                FormsContract.FormsTable.COLUMN_DISTRICT_CODE,
-                FormsContract.FormsTable.COLUMN_DISTRICT,
-                FormsContract.FormsTable.COLUMN_UC_CODE,
-                FormsContract.FormsTable.COLUMN_UC,
-                FormsContract.FormsTable.COLUMN_VILLAGE_CODE,
-                FormsContract.FormsTable.COLUMN_VILLAGE,
-                FormsContract.FormsTable.COLUMN_SA,
-               FormsTable.COLUMN_CR01,
-                FormsTable.COLUMN_CR02,
-                FormsTable.COLUMN_CR03,
-                FormsTable.COLUMN_CR04,
-                FormsTable.COLUMN_CR05,
-                FormsTable.COLUMN_CR06,
-                FormsTable.COLUMN_CR06X,
-                FormsTable.COLUMN_CR07,
-                FormsTable.COLUMN_CR08D,
-                FormsTable.COLUMN_CR08M,
-                FormsTable.COLUMN_CR08Y,
-                FormsTable.COLUMN_CR09,
-                FormsTable.COLUMN_CR10,
-                FormsTable.COLUMN_CR11,
-                FormsTable.COLUMN_CR12,
-                FormsTable.COLUMN_CR13,
-                FormsTable.COLUMN_CR14D,
-                FormsTable.COLUMN_CR14M,
-                FormsTable.COLUMN_CR14Y,
-                FormsTable.COLUMN_CR15M,
-                FormsTable.COLUMN_CR15Y,
-                FormsTable.COLUMN_CR16,
-                FormsTable.COLUMN_CR17,
-                FormsTable.COLUMN_CR18,
-                FormsTable.COLUMN_CR19,
-                FormsTable.COLUMN_CR20,
-                FormsTable.COLUMN_CR21,
-                FormsTable.COLUMN_CR22,
-                FormsTable.COLUMN_CR23,
-                FormsTable.COLUMN_CR24A,
-                FormsTable.COLUMN_CR24B,
-                FormsTable.COLUMN_CR24C,
-                FormsTable.COLUMN_CR24D,
-                FormsTable.COLUMN_CR24E,
-                FormsTable.COLUMN_CR24F,
-                FormsTable.COLUMN_CR25,
-                FormsTable.COLUMN_CR26,
-                FormsTable.COLUMN_CR27A,
-                FormsTable.COLUMN_CR27B,
-                FormsTable.COLUMN_CR27C,
-                FormsTable.COLUMN_CR28A,
-                FormsTable.COLUMN_CR28B,
-                FormsTable.COLUMN_CR28C,
-                FormsTable.COLUMN_CR28D,
-                FormsTable.COLUMN_CR28E,
-                FormsTable.COLUMN_CR28F,
-                FormsTable.COLUMN_CR28FX,*/
-                Forms4mmContract.Forms4MMTable.COLUMN_ISTATUS,
-                Forms4mmContract.Forms4MMTable.COLUMN_ISTATUS96x,
-                Forms4mmContract.Forms4MMTable.COLUMN_ENDINGDATETIME,
-                Forms4mmContract.Forms4MMTable.COLUMN_GPS,
-                Forms4mmContract.Forms4MMTable.COLUMN_DEVICETAGID,
-                Forms4mmContract.Forms4MMTable.COLUMN_DEVICEID,
-                Forms4mmContract.Forms4MMTable.COLUMN_APPVERSION
-        };
+        String[] columns = null;
 
         String whereClause;
-        String[] whereArgs;
+        whereClause = Forms4mmContract.Forms4MMTable.COLUMN_SYNCED + " is null ";
 
-        whereClause = Forms4mmContract.Forms4MMTable.COLUMN_SYNCED + " is null OR " + Forms4mmContract.Forms4MMTable.COLUMN_SYNCED + " = ''";
-        whereArgs = null;
-
+        String[] whereArgs = null;
         String groupBy = null;
         String having = null;
+
         String orderBy = Forms4mmContract.Forms4MMTable.COLUMN_ID + " ASC";
 
         JSONArray allForms = new JSONArray();
@@ -723,9 +577,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
+                /** WorkManager Upload
+                 /*Form fc = new Form();
+                 allFC.add(fc.Hydrate(c));*/
                 Log.d(TAG, "getUnsyncedForms: " + c.getCount());
-                Form4mm form4mm = new Form4mm();
-                allForms.put(form4mm.Hydrate(c).toJSONObject());
+                Form4mm form = new Form4mm();
+                allForms.put(form.Hydrate(c).toJSONObject());
+
+
             }
         } finally {
             if (c != null) {
@@ -735,11 +594,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
+        Log.d(TAG, "getUnsyncedForms: " + allForms.toString().length());
+        Log.d(TAG, "getUnsyncedForms: " + allForms);
+
         return allForms;
     }
 
 
-    public void updateSyncedForms(String id) {
+    public void updateSyncedForms4mm(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(Forms4mmContract.Forms4MMTable.COLUMN_SYNCED, true);
+        values.put(Forms4mmContract.Forms4MMTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = Forms4mmContract.Forms4MMTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                Forms4mmContract.Forms4MMTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+
+    public void updateSyncedForms21cm(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
@@ -757,6 +639,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 where,
                 whereArgs);
     }
+
 
     public int updateEnding() {
         SQLiteDatabase db = this.getReadableDatabase();
