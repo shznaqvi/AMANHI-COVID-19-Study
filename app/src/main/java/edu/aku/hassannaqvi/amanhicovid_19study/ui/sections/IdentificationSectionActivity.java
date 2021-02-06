@@ -80,7 +80,13 @@ public class IdentificationSectionActivity extends AppCompatActivity {
 
         MainApp.form21cm = new Form21cm();
 
-        MainApp.form21cm.setStudyID(bi.cmsid.getText().toString());
+        if (bi.cmsid.getText().toString().indexOf('-') != -1) {
+            String[] str = bi.cmsid.getText().toString().split("-");
+            MainApp.form21cm.setStudyID(str[0] + str[1] + str[2]);
+        } else {
+            MainApp.form21cm.setStudyID(bi.cmsid.getText().toString());
+        }
+
         MainApp.form21cm.setDssID(bi.cm0101.getText().toString());
         MainApp.form21cm.setWeek(bi.cm0104.getText().toString());
         MainApp.form21cm.setUid(MainApp.form21cm.getUid());

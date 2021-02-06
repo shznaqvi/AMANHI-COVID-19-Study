@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
@@ -485,6 +486,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public int updateSyncedtest21cm(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = Forms21cmContract.Forms21cmTable.COLUMN_ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.form21cm.getId())};
+
+        return db.update(Forms21cmContract.Forms21cmTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
     public int updatesForm4MColumn(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -794,7 +810,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ContentValues values = new ContentValues();
 
                 values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_DSSID, fup21cm.getDSSID());
-                values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_ID, fup21cm.getCOLID());
                 values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID, fup21cm.getSTUDYID());
                 values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT, fup21cm.getFUPDT());
                 values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK, fup21cm.getFUPWEEK());
@@ -803,7 +818,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
 
         } catch (Exception e) {
-            Log.d(TAG, "syncUser(e): " + e);
+            Log.d(TAG, "syncFollow21cm(e): " + e);
             db.close();
         } finally {
             db.close();
@@ -839,6 +854,57 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
         return insertCount;
+    }
+
+
+    public Collection<FollowUp21cm> getChildrenByStudyId(String studyid) {
+
+        // String sysdate =  spDateT.substring(0, 8).trim()
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID,
+                FollowUp21cm.FollowUpTable21cm.COLUMN_DSSID,
+                FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT,
+                FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK
+        };
+
+        String whereClause = FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + " = ? ";
+        String[] whereArgs = new String[]{studyid};
+//        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+        String groupBy = null;
+        String having = null;
+        String orderBy = null;
+
+        Collection<FollowUp21cm> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    FollowUp21cm.FollowUpTable21cm.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FollowUp21cm fc = new FollowUp21cm();
+                fc.setSTUDYID(c.getString(c.getColumnIndex(FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID)));
+                fc.setDSSID(c.getString(c.getColumnIndex(FollowUp21cm.FollowUpTable21cm.COLUMN_DSSID)));
+                fc.setFUPDT(c.getString(c.getColumnIndex(FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT)));
+                fc.setFUPWEEK(c.getString(c.getColumnIndex(FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK)));
+
+                allFC.add(fc);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
     }
 
 

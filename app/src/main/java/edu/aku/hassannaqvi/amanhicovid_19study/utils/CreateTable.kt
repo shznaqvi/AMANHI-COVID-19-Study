@@ -71,7 +71,7 @@ object CreateTable {
             + FollowUp21cm.FollowUpTable21cm.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FollowUp21cm.FollowUpTable21cm.COLUMN_DSSID + " TEXT,"
             + FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + " TEXT,"
-            + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT + " TEXT"
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT + " TEXT,"
             + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK + " TEXT"
             + " );")
 

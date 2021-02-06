@@ -176,13 +176,15 @@ public class SyncActivity extends AppCompatActivity {
         for (int i = 0; i < downloadTables.size(); i++) {
             Data.Builder data = new Data.Builder()
                     .putString("table", downloadTables.get(i).gettableName())
-                    .putInt("position", i)
-                    //.putString("columns", "_id, sysdate")
-                    // .putString("where", where)
-                    ;
-            /*if (downloadTables.get(i).gettableName().equals(BLRandom.TableRandom.TABLE_NAME)) {
-                data.putString("where", BLRandom.TableRandom.COLUMN_DIST_CODE + "='" + distCode + "'");
-            }*/
+                    .putInt("position", i);
+                    /*.putString("columns", "studyid")
+                    .putString("columns", "dssid")
+                    .putString("columns", "convert(varchar(13), fupdt, 103) fupdt")
+                    .putString("columns", "fupweek");*/
+
+            if (downloadTables.get(i).gettableName().equals(FollowUp21cm.FollowUpTable21cm.TABLE_NAME)) {
+                data.putString("where", FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT + " between convert(date, dateadd(d, -2, getdate()), 101) and convert(date, dateadd(d, 2, getdate()), 101) ");
+            }
 
             OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(DataDownWorkerALL.class)
                     .addTag(String.valueOf(i))
@@ -240,7 +242,7 @@ public class SyncActivity extends AppCompatActivity {
                                             break;
                                         case FollowUp21cm.FollowUpTable21cm.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
-                                            //insertCount = db.syncUCs(jsonArray);
+                                            insertCount = db.syncFollowUp21cm(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
                                             break;
                                     }

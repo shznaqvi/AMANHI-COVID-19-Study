@@ -94,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
                 oF = new Intent(this, AndroidDatabaseManager.class);
                 break;
 
+            case R.id.searchchild:
+                oF = new Intent(this, SearchRecord.class);
+                break;
+
             case R.id.btn01:
                 oF = new Intent(this, IdentificationSectionActivity.class);
                 break;

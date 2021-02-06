@@ -6,7 +6,7 @@ import org.json.JSONObject
 
 class FollowUp21cm {
 
-    var COLID: Long = 0
+    var ID: Long = 0
     var DSSID: String = ""
     var STUDYID: String = ""
     var FUPDT: String = ""
@@ -16,15 +16,8 @@ class FollowUp21cm {
         // Default Constructor
     }
 
-    constructor(dssid: String, studyid: String) {
-        DSSID = dssid
-        STUDYID = studyid
-    }
-
-
     @Throws(JSONException::class)
     fun sync(jsonObject: JSONObject): FollowUp21cm {
-        COLID = jsonObject.getLong(FollowUpTable21cm.COLUMN_ID)
         DSSID = jsonObject.getString(FollowUpTable21cm.COLUMN_DSSID)
         STUDYID = jsonObject.getString(FollowUpTable21cm.COLUMN_STUDYID)
         FUPDT = jsonObject.getString(FollowUpTable21cm.COLUMN_FUPDT)
@@ -33,7 +26,7 @@ class FollowUp21cm {
     }
 
     fun hydrate(cursor: Cursor): FollowUp21cm {
-        COLID = cursor.getLong(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_ID))
+        ID = cursor.getLong(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_ID))
         DSSID = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_DSSID))
         STUDYID = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_STUDYID))
         FUPDT = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_FUPDT))
@@ -43,9 +36,10 @@ class FollowUp21cm {
 
     object FollowUpTable21cm {
         const val TABLE_NAME = "fupwk21cm"
+        const val COLUMN_NAME_NULLABLE = "nullColumnHack"
         const val COLUMN_ID = "_id"
-        const val COLUMN_DSSID = "dssid"
         const val COLUMN_STUDYID = "studyid"
+        const val COLUMN_DSSID = "dssid"
         const val COLUMN_FUPDT = "fupdt"
         const val COLUMN_FUPWEEK = "fupweek"
     }

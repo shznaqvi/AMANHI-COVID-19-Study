@@ -12,7 +12,6 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.location.gps" />
@@ -38,6 +37,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="adjustResize">
+        <activity android:name=".ui.SearchRecord"></activity>
+        <activity android:name=".ui.activity_children_list" />
         <activity
             android:name=".ui.sections.Section06mmActivity"
             android:theme="@style/AppThemeUrdu" />
@@ -50,8 +51,6 @@
         <activity
             android:name=".ui.sections.Section03mmActivity"
             android:theme="@style/AppThemeUrdu" />
-
-
         <activity
             android:name=".ui.sections.Section02mmActivity"
             android:theme="@style/AppThemeUrdu"

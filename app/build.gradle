@@ -56,6 +56,9 @@ dependencies {
     //GSON
     implementation 'com.google.code.gson:gson:2.8.6'
 
+    //SDP
+    implementation 'com.intuit.sdp:sdp-android:1.0.5'
+
     //Ali mask
     implementation 'com.github.AliAzaz:Edittext-Library:2.0.0'
     implementation 'com.github.AliAzaz:AndroidValidatorCrawler:1.0.3'
