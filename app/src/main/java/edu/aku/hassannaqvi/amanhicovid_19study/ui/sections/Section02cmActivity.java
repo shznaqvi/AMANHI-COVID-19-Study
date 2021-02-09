@@ -21,7 +21,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection02cmBinding;
-import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
@@ -72,7 +72,7 @@ public class Section02cmActivity extends AppCompatActivity {
         if (UpdateDB()) {
             finish();
             if (bi.cm020112.isChecked()) {
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                startActivity(new Intent(this, EndingActivityForm21cm.class).putExtra("complete", true));
             } else startActivity(new Intent(this, Section03cmActivity.class));
         }
     }
@@ -100,7 +100,7 @@ public class Section02cmActivity extends AppCompatActivity {
 
     public void BtnEnd() {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, EndingActivityForm21cm.class).putExtra("complete", false));
     }
 
 

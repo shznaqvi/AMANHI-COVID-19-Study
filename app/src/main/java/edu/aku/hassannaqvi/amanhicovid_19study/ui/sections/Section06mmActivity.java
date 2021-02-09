@@ -14,7 +14,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection06mmBinding;
-import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm4mm;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
 
@@ -40,6 +40,37 @@ public class Section06mmActivity extends AppCompatActivity {
                 : bi.mm060208.isChecked() ? "8"
                 : bi.mm060209.isChecked() ? "9"
                 : "-1");
+
+
+        form4m.setMm0603(bi.mm060301.isChecked() ? "1"
+                : bi.mm060302.isChecked() ? "2"
+                : bi.mm060308.isChecked() ? "8"
+                : bi.mm060309.isChecked() ? "9"
+                : "-1");
+
+
+        form4m.setMm0604(bi.mm060401.isChecked() ? "1"
+                : bi.mm060402.isChecked() ? "2"
+                : bi.mm060408.isChecked() ? "8"
+                : bi.mm060409.isChecked() ? "9"
+                : "-1");
+
+
+        form4m.setMm0701(bi.mm070101.isChecked() ? "1"
+                : bi.mm070102.isChecked() ? "2"
+                : bi.mm070108.isChecked() ? "8"
+                : bi.mm070109.isChecked() ? "9"
+                : "-1");
+
+
+        form4m.setMm0702(bi.mm0702.getText().toString());
+
+
+        form4m.setMm0703(bi.mm070101.isChecked() ? "11"
+                : bi.mm070302.isChecked() ? "12"
+                : bi.mm070308.isChecked() ? "88"
+                : bi.mm070309.isChecked() ? "99"
+                : "-1");
     }
 
     private boolean UpdateDB() {
@@ -55,7 +86,7 @@ public class Section06mmActivity extends AppCompatActivity {
 
     public void BtnEnd() {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, EndingActivityForm4mm.class).putExtra("complete", false));
     }
 
     public void BtnContinue() {
@@ -63,7 +94,7 @@ public class Section06mmActivity extends AppCompatActivity {
         SaveDraft();
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, EndingActivityForm4mm.class).putExtra("complete", true));
         }
     }
 

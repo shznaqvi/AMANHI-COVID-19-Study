@@ -37,8 +37,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="adjustResize">
-        <activity android:name=".ui.SearchRecord"></activity>
-        <activity android:name=".ui.activity_children_list" />
+        <activity android:name=".ui.EndingActivityForm4mm"></activity>
+        <activity android:name=".ui.SearchRecord" />
         <activity
             android:name=".ui.sections.Section06mmActivity"
             android:theme="@style/AppThemeUrdu" />
@@ -84,7 +84,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ui.EndingActivity"
+            android:name=".ui.EndingActivityForm21cm"
             android:theme="@style/AppThemeUrdu" />
         <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.LoginActivity">

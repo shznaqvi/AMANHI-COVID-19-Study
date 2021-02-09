@@ -657,7 +657,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public int updateEnding() {
+    public int updateEndingForm21cm() {
         SQLiteDatabase db = this.getReadableDatabase();
 
         // New value for one column
@@ -671,6 +671,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.form21cm.getId())};
 
         return db.update(Forms21cmContract.Forms21cmTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+
+    public int updateEndingForm4mm() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(Forms4mmContract.Forms4MMTable.COLUMN_ISTATUS, MainApp.form4m.getIStatus());
+        values.put(Forms4mmContract.Forms4MMTable.COLUMN_ISTATUS96x, MainApp.form4m.getIStatus96x());
+        values.put(Forms4mmContract.Forms4MMTable.COLUMN_ENDINGDATETIME, MainApp.form4m.getEndTime());
+
+        // Which row to update, based on the ID
+        String selection = Forms4mmContract.Forms4MMTable.COLUMN_ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.form4m.getId())};
+
+        return db.update(Forms4mmContract.Forms4MMTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);

@@ -1987,6 +1987,32 @@
     <string name="mm060208">DK</string>
     <string name="mm060209">NA</string>
 
+    <string name="mm0603">Did the woman go to the health facility for testing ?</string>
+    <string name="mm060301">YES</string>
+    <string name="mm060302">NO</string>
+    <string name="mm060308">DK</string>
+    <string name="mm060309">NA</string>
+
+    <string name="mm0604">Did anyone conducted COVID-19 test for woman in the health facility ?</string>
+    <string name="mm060401">YES</string>
+    <string name="mm060402">NO</string>
+    <string name="mm060408">DK</string>
+    <string name="mm060409">NA</string>
+
+    <string name="mm0701">Did you have menstruel period in last 5 weeks ?</string>
+    <string name="mm070101">YES</string>
+    <string name="mm070102">NO</string>
+    <string name="mm070108">DK</string>
+    <string name="mm070109">NA</string>
+
+
+    <string name="mm0702">What is your LMP date ?</string>
+    <string name="mm0703">Are you currently pregnant ?</string>
+    <string name="mm070301">Yes I am pregnant</string>
+    <string name="mm070302">No I am not pregnant</string>
+    <string name="mm070308">DK</string>
+    <string name="mm070309">NA</string>
+
 
     <!-- END MOTHER MOBIDITY  !-->
 
@@ -2136,6 +2162,11 @@
     <string name='Q_mm0508'>mm0508</string>
     <string name='Q_mm0601'>mm0601</string>
     <string name='Q_mm0602'>mm0602</string>
+    <string name='Q_mm0603'>mm0603</string>
+    <string name='Q_mm0604'>mm0604</string>
+    <string name='Q_mm0701'>mm0701</string>
+    <string name='Q_mm0702'>mm0702</string>
+    <string name='Q_mm0703'>mm0703</string>
     <string name='Q_mm202'>mm202</string>
     <string name='Q_mmsid'>mmsid</string>
     <string name='Q_s3q1'>s3q1</string>

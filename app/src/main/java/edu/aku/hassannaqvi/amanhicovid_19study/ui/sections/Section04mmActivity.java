@@ -21,7 +21,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection04mmBinding;
-import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.ValidateEditTextKt;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
@@ -150,7 +150,7 @@ public class Section04mmActivity extends AppCompatActivity {
 
     public void BtnEnd() {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, EndingActivityForm4mm.class).putExtra("complete", false));
     }
 
     public void BtnContinue() {

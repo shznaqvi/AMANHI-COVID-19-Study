@@ -18,7 +18,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityIdentificationSecMBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
-import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm4mm;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
 
@@ -137,7 +137,7 @@ public class IdentificationSecMActivity extends AppCompatActivity {
 
     public void BtnEnd() {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, EndingActivityForm4mm.class).putExtra("complete", false));
     }
 
     public void BtnContinue() {

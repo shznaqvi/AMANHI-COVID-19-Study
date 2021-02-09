@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="edu.aku.hassannaqvi.smk_pwd.ui.other.EndingActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -9,7 +8,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity" />
+            type="edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm" />
     </data>
 
     <ScrollView
@@ -105,15 +104,14 @@
                             android:layout_height="wrap_content"
                             android:text="@string/hh2696" />
 
-                        <!--<EditText
+                        <EditText
                             android:id="@+id/istatus96x"
                             style="@style/EditTextAlpha"
                             android:hint="@string/specify"
                             android:maxLength="40"
                             android:tag="istatus96"
-                            android:text="@={form21cm.i}"
-                            android:text='@={istatus96.checked ? istatus96x.getText().toString(): ""}'
-                            android:visibility='@{form21cm.hh26.equals(`96`)? View.VISIBLE : View.GONE}' />-->
+                            android:text='@{istatus96.checked ? istatus96x.getText().toString(): ""}'
+                            android:visibility='@{istatus96.checked ? View.VISIBLE : View.GONE}' />
 
                     </RadioGroup>
                 </LinearLayout>

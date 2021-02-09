@@ -21,7 +21,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection05cmBinding;
-import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
@@ -180,7 +180,7 @@ public class Section05cmActivity extends AppCompatActivity {
 
     public void BtnEnd() {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, EndingActivityForm21cm.class).putExtra("complete", false));
     }
 
 

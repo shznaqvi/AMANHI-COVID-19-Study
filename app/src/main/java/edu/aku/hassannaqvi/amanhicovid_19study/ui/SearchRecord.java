@@ -50,8 +50,7 @@ public class SearchRecord extends AppCompatActivity {
     }
 
 
-    private void SkipPattern()
-    {
+    private void SkipPattern() {
         bi.txtStudyid.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -79,34 +78,40 @@ public class SearchRecord extends AppCompatActivity {
 
         if (!bi.txtStudyid.getText().toString().equals("")) {
 
-            String[] arr = bi.txtStudyid.getText().toString().split("-");
-            String studyid = arr[0] + arr[1] + arr[2];
-
-            List<FollowUp21cm> followUp21cms = (List<FollowUp21cm>) db.getChildrenByStudyId(studyid);
-
-            if (followUp21cms.size() == 0) {
-
-                bi.cvstudyid.setVisibility(View.GONE);
-                bi.cvdssid.setVisibility(View.GONE);
-                bi.cvfupdt.setVisibility(View.GONE);
-                bi.cvfupwk.setVisibility(View.GONE);
-                bi.cvnextbutton.setVisibility(View.GONE);
-
-                Toast.makeText(this, "Child does not exist", Toast.LENGTH_LONG).show();
+            if (bi.txtStudyid.getText().length() != 10) {
+                Toast.makeText(this, "Study ID must be 10 digits ", Toast.LENGTH_SHORT).show();
                 bi.txtStudyid.requestFocus();
-
             } else {
 
-                bi.lblstudyid.setText(followUp21cms.get(0).getSTUDYID());
-                bi.lbldssid.setText(followUp21cms.get(0).getDSSID());
-                bi.lblfupdt.setText(followUp21cms.get(0).getFUPDT());
-                bi.lblfupwk.setText(followUp21cms.get(0).getFUPWEEK());
+                String[] arr = bi.txtStudyid.getText().toString().split("-");
+                String studyid = arr[0] + arr[1] + arr[2];
 
-                bi.cvstudyid.setVisibility(View.VISIBLE);
-                bi.cvdssid.setVisibility(View.VISIBLE);
-                bi.cvfupdt.setVisibility(View.VISIBLE);
-                bi.cvfupwk.setVisibility(View.VISIBLE);
-                bi.cvnextbutton.setVisibility(View.VISIBLE);
+                List<FollowUp21cm> followUp21cms = (List<FollowUp21cm>) db.getChildrenByStudyId(studyid);
+
+                if (followUp21cms.size() == 0) {
+
+                    bi.cvstudyid.setVisibility(View.GONE);
+                    bi.cvdssid.setVisibility(View.GONE);
+                    bi.cvfupdt.setVisibility(View.GONE);
+                    bi.cvfupwk.setVisibility(View.GONE);
+                    bi.cvnextbutton.setVisibility(View.GONE);
+
+                    Toast.makeText(this, "Child does not exist", Toast.LENGTH_LONG).show();
+                    bi.txtStudyid.requestFocus();
+
+                } else {
+
+                    bi.lblstudyid.setText(followUp21cms.get(0).getSTUDYID());
+                    bi.lbldssid.setText(followUp21cms.get(0).getDSSID());
+                    bi.lblfupdt.setText(followUp21cms.get(0).getFUPDT());
+                    bi.lblfupwk.setText(followUp21cms.get(0).getFUPWEEK());
+
+                    bi.cvstudyid.setVisibility(View.VISIBLE);
+                    bi.cvdssid.setVisibility(View.VISIBLE);
+                    bi.cvfupdt.setVisibility(View.VISIBLE);
+                    bi.cvfupwk.setVisibility(View.VISIBLE);
+                    bi.cvnextbutton.setVisibility(View.VISIBLE);
+                }
             }
 
         } else {

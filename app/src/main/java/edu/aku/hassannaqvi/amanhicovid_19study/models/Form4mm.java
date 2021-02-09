@@ -131,6 +131,11 @@ public class Form4mm extends BaseObservable {
     private String mm05013 = "";
     private String mm0601 = "";
     private String mm0602 = "";
+    private String mm0603 = "";
+    private String mm0604 = "";
+    private String mm0701 = "";
+    private String mm0702 = "";
+    private String mm0703 = "";
 
     //Not saving in DB
     private LocalDate localDate = null;
@@ -198,6 +203,47 @@ public class Form4mm extends BaseObservable {
 
     public void setDssID(String dssid) {
         this.dssid = dssid;
+    }
+
+
+    public String getMm0603() {
+        return mm0603;
+    }
+
+    public void setMm0603(String mm0603) {
+        this.mm0603 = mm0603;
+    }
+
+    public String getMm0604() {
+        return mm0604;
+    }
+
+    public void setMm0604(String mm0604) {
+        this.mm0604 = mm0604;
+    }
+
+    public String getMm0701() {
+        return mm0701;
+    }
+
+    public void setMm0701(String mm0701) {
+        this.mm0701 = mm0701;
+    }
+
+    public String getMm0702() {
+        return mm0702;
+    }
+
+    public void setMm0702(String mm0702) {
+        this.mm0702 = mm0702;
+    }
+
+    public String getMm0703() {
+        return mm0703;
+    }
+
+    public void setMm0703(String mm0703) {
+        this.mm0703 = mm0703;
     }
 
 
@@ -359,21 +405,6 @@ public class Form4mm extends BaseObservable {
         this.dssid = dssid;
     }
 
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-    }
 
     public String getS02() {
         return s02;
@@ -1272,7 +1303,12 @@ public class Form4mm extends BaseObservable {
                     .put("mm05012", mm05012)
                     .put("mm05013", mm05013)
                     .put("mm0601", mm0601)
-                    .put("mm0602", mm0602);
+                    .put("mm0602", mm0602)
+                    .put("mm0603", mm0603)
+                    .put("mm0604", mm0604)
+                    .put("mm0701", mm0701)
+                    .put("mm0702", mm0702)
+                    .put("mm0703", mm0703);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -1420,6 +1456,12 @@ public class Form4mm extends BaseObservable {
                 this.mm05013 = json.getString("mm05013");
                 this.mm0601 = json.getString("mm0601");
                 this.mm0602 = json.getString("mm0602");
+                this.mm0603 = json.getString("mm0603");
+                this.mm0604 = json.getString("mm0604");
+                this.mm0701 = json.getString("mm0701");
+                this.mm0702 = json.getString("mm0702");
+                this.mm0703 = json.getString("mm0703");
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

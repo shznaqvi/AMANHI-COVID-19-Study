@@ -40,6 +40,7 @@ public class MainApp extends Application {
     public static Boolean admin = false;
     public static String userName;
 
+
     public static void hideSystemUI(View decorView) {
         // Enables regular immersive mode.
         // For "lean back" mode, remove SYSTEM_UI_FLAG_IMMERSIVE.

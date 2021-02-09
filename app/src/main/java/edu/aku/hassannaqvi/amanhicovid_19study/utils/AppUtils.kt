@@ -23,7 +23,7 @@ import androidx.databinding.DataBindingUtil
 import edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS
 import edu.aku.hassannaqvi.amanhicovid_19study.R
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp
-import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivity
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.MainActivity
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.DATABASE_COPY
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.DATABASE_NAME
