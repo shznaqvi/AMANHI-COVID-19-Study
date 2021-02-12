@@ -35,7 +35,8 @@ class FollowUp21cm {
     }
 
     object FollowUpTable21cm {
-        const val TABLE_NAME = "fupwk21cm"
+        //const val TABLE_NAME = "fupwk21cm"  // actual table
+        const val TABLE_NAME = "vu_childfup21cm" // view
         const val COLUMN_NAME_NULLABLE = "nullColumnHack"
         const val COLUMN_ID = "_id"
         const val COLUMN_STUDYID = "studyid"

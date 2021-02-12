@@ -7,7 +7,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.amanhicovid_19study.ui.SearchRecord" />
+            type="edu.aku.hassannaqvi.amanhicovid_19study.ui.SearchMoth4mmActivity" />
     </data>
 
 
@@ -31,6 +31,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNumFUP"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="50dp"
+                            android:text="Search Mother" />
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -69,6 +84,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
+                            android:layout_marginBottom="30dp"
                             android:onClick="@{() -> callback.BtnCancel()}"
                             android:text="Cancel" />
 
@@ -90,10 +106,11 @@
             </androidx.cardview.widget.CardView>
 
 
-            <!-- cvstudyid  Radio   -->
+            <!-- cvstudyid  Radio !-->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvstudyid"
-                style="@style/cardView">
+                style="@style/cardView"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -110,7 +127,6 @@
                             style="@style/quesNumFUP"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="Study ID : " />
 
                         <TextView
@@ -183,14 +199,14 @@
                             style="@style/quesNumFUP"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="Follow Up Dt : " />
+                            android:text="Due Date : " />
 
                         <TextView
                             android:id="@+id/lblfupdt"
                             style="@style/quesNumVal"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="Follow Up Dt" />
+                            android:text="Due Date" />
 
                     </LinearLayout>
 
@@ -219,14 +235,14 @@
                             style="@style/quesNumFUP"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="Fup WEEK : " />
+                            android:text="Follow Week : " />
 
                         <TextView
                             android:id="@+id/lblfupwk"
                             style="@style/quesNumVal"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="Fup WEEK" />
+                            android:text="Follow Week" />
 
                     </LinearLayout>
 
@@ -257,8 +273,9 @@
                             style="@style/btnSave"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
                             android:onClick="@{() -> callback.BtnNext()}"
-                            android:text="Fill Child Form"
+                            android:text="Fill Mother Form"
                             android:textColor="@color/white" />
 
                     </LinearLayout>

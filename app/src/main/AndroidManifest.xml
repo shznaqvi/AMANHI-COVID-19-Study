@@ -37,8 +37,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="adjustResize">
-        <activity android:name=".ui.EndingActivityForm4mm"></activity>
-        <activity android:name=".ui.SearchRecord" />
+        <activity android:name=".ui.SearchMoth4mmActivity"></activity>
+        <activity android:name=".ui.EndingActivityForm4mm" />
+        <activity android:name=".ui.SearchRecord21cm" />
         <activity
             android:name=".ui.sections.Section06mmActivity"
             android:theme="@style/AppThemeUrdu" />

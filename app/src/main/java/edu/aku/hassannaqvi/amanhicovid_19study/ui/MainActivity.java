@@ -95,7 +95,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.searchchild:
-                oF = new Intent(this, SearchRecord.class);
+                oF = new Intent(this, SearchRecord21cm.class);
+                break;
+
+            case R.id.searchmother:
+                oF = new Intent(this, SearchMoth4mmActivity.class);
                 break;
 
             case R.id.btn01:

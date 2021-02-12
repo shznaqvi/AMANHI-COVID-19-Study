@@ -35,6 +35,17 @@ public class IdentificationSecMActivity extends AppCompatActivity {
 
         db = MainApp.appInfo.getDbHelper();
 
+        if (getIntent().getExtras() != null) {
+
+            bi.mmsid.setText(getIntent().getStringExtra("studyid").toString());
+            bi.mm0101.setText(getIntent().getStringExtra("dssid").toString());
+            bi.mm0104.setText(getIntent().getStringExtra("week").toString());
+
+            bi.mmsid.setEnabled(false);
+            bi.mm0101.setEnabled(false);
+            bi.mm0104.setEnabled(false);
+        }
+
     }
 
     @Override
@@ -54,7 +65,7 @@ public class IdentificationSecMActivity extends AppCompatActivity {
     private boolean formValidation() {
 
         if (!bi.mmsid.getText().toString().isEmpty()) {
-            if (bi.mmsid.getText().length() != 10) {
+            if (bi.mmsid.getText().length() != 10 && bi.mmsid.getText().toString().indexOf("-") != -1) {
                 Toast.makeText(this, "Study ID must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
             }

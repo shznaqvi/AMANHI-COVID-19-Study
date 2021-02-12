@@ -147,6 +147,28 @@
                     android:textAppearance="@style/Widget.AppCompat.ActionButton"
                     android:textColor="@color/white" />
 
+
+                <Button
+                    android:id="@+id/searchmother"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/action_button"
+                    android:drawableStart="@drawable/ic_open_form"
+                    android:drawablePadding="12dp"
+                    android:fontFamily="@font/open_sans_condensed_light"
+                    android:letterSpacing="0.2"
+                    android:minWidth="170dp"
+                    android:minHeight="56dp"
+                    android:onClick="openForm"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="8dp"
+                    android:shadowRadius="24"
+                    android:text="Search Mother"
+                    android:textAppearance="@style/Widget.AppCompat.ActionButton"
+                    android:textColor="@color/white" />
+
                 <LinearLayout
                     android:id="@+id/admin"
                     android:layout_width="match_parent"

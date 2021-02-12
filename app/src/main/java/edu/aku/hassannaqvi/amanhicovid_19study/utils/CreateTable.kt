@@ -79,8 +79,9 @@ object CreateTable {
             + FollowUp4mm.FollowUpTable4mm.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FollowUp4mm.FollowUpTable4mm.COLUMN_DSSID + " TEXT,"
             + FollowUp4mm.FollowUpTable4mm.COLUMN_STUDYID + " TEXT,"
-            + FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT + " TEXT"
-            + FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK + " TEXT"
+            + FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT + " TEXT,"
+            + FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK + " TEXT,"
+            + FollowUp4mm.FollowUpTable4mm.COLUMN_ISPREG + " TEXT"
             + " );")
 
 

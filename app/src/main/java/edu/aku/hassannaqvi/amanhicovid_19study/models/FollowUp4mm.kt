@@ -11,6 +11,7 @@ class FollowUp4mm {
     var STUDYID: String = ""
     var FUPDT: String = ""
     var FUPWEEK: String = ""
+    var ISPREG: String = ""
 
     constructor() {
         // Default Constructor
@@ -28,6 +29,8 @@ class FollowUp4mm {
         STUDYID = jsonObject.getString(FollowUpTable4mm.COLUMN_STUDYID)
         FUPDT = jsonObject.getString(FollowUpTable4mm.COLUMN_FUPDT)
         FUPWEEK = jsonObject.getString(FollowUpTable4mm.COLUMN_FUPWEEK)
+        ISPREG = jsonObject.getString(FollowUpTable4mm.COLUMN_ISPREG)
+
         return this
     }
 
@@ -37,16 +40,21 @@ class FollowUp4mm {
         STUDYID = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_STUDYID))
         FUPDT = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_FUPDT))
         FUPWEEK = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_FUPWEEK))
+        ISPREG = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_ISPREG))
+
         return this
     }
 
     object FollowUpTable4mm {
-        const val TABLE_NAME = "fupwk4mm"
+        //const val TABLE_NAME = "fupwk4mm"  // actual table
+        const val TABLE_NAME = "vu_motherfup4mm"  // view
+        const val COLUMN_NAME_NULLABLE = "nullColumnHack"
         const val COLUMN_ID = "_id"
         const val COLUMN_DSSID = "dssid"
         const val COLUMN_STUDYID = "studyid"
         const val COLUMN_FUPDT = "fupdt"
         const val COLUMN_FUPWEEK = "fupweek"
+        const val COLUMN_ISPREG = "ispreg"
     }
 
 }

@@ -44,6 +44,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.SyncModel;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
@@ -154,6 +155,7 @@ public class SyncActivity extends AppCompatActivity {
                 downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
                 downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
                 downloadTables.add(new SyncModel(FollowUp21cm.FollowUpTable21cm.TABLE_NAME));
+                downloadTables.add(new SyncModel(FollowUp4mm.FollowUpTable4mm.TABLE_NAME));
 
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);
@@ -182,9 +184,15 @@ public class SyncActivity extends AppCompatActivity {
                     .putString("columns", "convert(varchar(13), fupdt, 103) fupdt")
                     .putString("columns", "fupweek");*/
 
-            if (downloadTables.get(i).gettableName().equals(FollowUp21cm.FollowUpTable21cm.TABLE_NAME)) {
-                data.putString("where", FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT + " between convert(date, dateadd(d, -2, getdate()), 101) and convert(date, dateadd(d, 2, getdate()), 101) ");
-            }
+            /*if (downloadTables.get(i).gettableName().equals(FollowUp21cm.FollowUpTable21cm.TABLE_NAME)) {
+                data.putString("where", FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT +
+                        " between convert(date, dateadd(d, -2, getdate()), 101) and convert(date, dateadd(d, 2, getdate()), 101) and (vstatus is null or vstatus <> 1)  ");
+            }*/
+
+            /*if (downloadTables.get(i).gettableName().equals(FollowUp4mm.FollowUpTable4mm.TABLE_NAME)) {
+                data.putString("where", FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT +
+                        " between convert(date, dateadd(d, -2, getdate()), 101) and convert(date, dateadd(d, 2, getdate()), 101) and (vstatus is null or vstatus <> 1) ");
+            }*/
 
             OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(DataDownWorkerALL.class)
                     .addTag(String.valueOf(i))
@@ -243,6 +251,11 @@ public class SyncActivity extends AppCompatActivity {
                                         case FollowUp21cm.FollowUpTable21cm.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncFollowUp21cm(jsonArray);
+                                            Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
+                                            break;
+                                        case FollowUp4mm.FollowUpTable4mm.TABLE_NAME:
+                                            jsonArray = new JSONArray(result);
+                                            insertCount = db.syncFollowUp4mm(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
                                             break;
                                     }

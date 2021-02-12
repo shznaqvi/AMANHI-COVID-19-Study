@@ -10,37 +10,27 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
-import com.google.gson.JsonArray;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Collection;
 import java.util.List;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
-import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
-import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
-import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySearchRecordBindingImpl;
+import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySearchMoth4mmBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
-import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSecMActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSectionActivity;
 
-public class SearchRecord extends AppCompatActivity {
+public class SearchMoth4mmActivity extends AppCompatActivity {
 
-    ActivitySearchRecordBindingImpl bi;
-
+    ActivitySearchMoth4mmBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_search_record);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_search_moth_4mm);
         bi.setCallback(this);
 
-        bi.cvstudyid.setVisibility(View.GONE);
+        //bi.cvstudyid.setVisibility(View.GONE);
         bi.cvdssid.setVisibility(View.GONE);
         bi.cvfupdt.setVisibility(View.GONE);
         bi.cvfupwk.setVisibility(View.GONE);
@@ -48,7 +38,6 @@ public class SearchRecord extends AppCompatActivity {
 
         SkipPattern();
     }
-
 
     private void SkipPattern() {
         bi.txtStudyid.addTextChangedListener(new TextWatcher() {
@@ -59,7 +48,7 @@ public class SearchRecord extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                bi.cvstudyid.setVisibility(View.GONE);
+                //bi.cvstudyid.setVisibility(View.GONE);
                 bi.cvdssid.setVisibility(View.GONE);
                 bi.cvfupdt.setVisibility(View.GONE);
                 bi.cvfupwk.setVisibility(View.GONE);
@@ -86,27 +75,27 @@ public class SearchRecord extends AppCompatActivity {
                 String[] arr = bi.txtStudyid.getText().toString().split("-");
                 String studyid = arr[0] + arr[1] + arr[2];
 
-                List<FollowUp21cm> followUp21cms = (List<FollowUp21cm>) db.getChildrenByStudyId(studyid);
+                List<FollowUp4mm> followUp4mms = (List<FollowUp4mm>) db.getMotherByStudyId(studyid);
 
-                if (followUp21cms.size() == 0) {
+                if (followUp4mms.size() == 0) {
 
-                    bi.cvstudyid.setVisibility(View.GONE);
+                    //bi.cvstudyid.setVisibility(View.GONE);
                     bi.cvdssid.setVisibility(View.GONE);
                     bi.cvfupdt.setVisibility(View.GONE);
                     bi.cvfupwk.setVisibility(View.GONE);
                     bi.cvnextbutton.setVisibility(View.GONE);
 
-                    Toast.makeText(this, "Child does not exist", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Mother does not exist", Toast.LENGTH_LONG).show();
                     bi.txtStudyid.requestFocus();
 
                 } else {
 
-                    bi.lblstudyid.setText(followUp21cms.get(0).getSTUDYID());
-                    bi.lbldssid.setText(followUp21cms.get(0).getDSSID());
-                    bi.lblfupdt.setText(followUp21cms.get(0).getFUPDT());
-                    bi.lblfupwk.setText(followUp21cms.get(0).getFUPWEEK());
+                    bi.lblstudyid.setText(followUp4mms.get(0).getSTUDYID());
+                    bi.lbldssid.setText(followUp4mms.get(0).getDSSID());
+                    bi.lblfupdt.setText(followUp4mms.get(0).getFUPDT());
+                    bi.lblfupwk.setText(followUp4mms.get(0).getFUPWEEK());
 
-                    bi.cvstudyid.setVisibility(View.VISIBLE);
+                    //bi.cvstudyid.setVisibility(View.VISIBLE);
                     bi.cvdssid.setVisibility(View.VISIBLE);
                     bi.cvfupdt.setVisibility(View.VISIBLE);
                     bi.cvfupwk.setVisibility(View.VISIBLE);
@@ -123,7 +112,7 @@ public class SearchRecord extends AppCompatActivity {
 
     public void BtnCancel() {
         bi.txtStudyid.setText("");
-        bi.cvstudyid.setVisibility(View.GONE);
+        //bi.cvstudyid.setVisibility(View.GONE);
         bi.cvdssid.setVisibility(View.GONE);
         bi.cvfupdt.setVisibility(View.GONE);
         bi.cvfupwk.setVisibility(View.GONE);
@@ -133,7 +122,12 @@ public class SearchRecord extends AppCompatActivity {
     }
 
     public void BtnNext() {
-        Intent intent = new Intent(this, IdentificationSectionActivity.class);
+        Intent intent = new Intent(this, IdentificationSecMActivity.class);
+
+        intent.putExtra("studyid", bi.lblstudyid.getText().toString());
+        intent.putExtra("dssid", bi.lbldssid.getText().toString());
+        intent.putExtra("week", bi.lblfupwk.getText().toString());
+
         startActivity(intent);
     }
 

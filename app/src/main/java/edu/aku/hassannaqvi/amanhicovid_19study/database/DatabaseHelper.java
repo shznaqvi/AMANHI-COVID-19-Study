@@ -20,6 +20,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
@@ -847,6 +848,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public int syncFollowUp4mm(JSONArray fupList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(FollowUp4mm.FollowUpTable4mm.TABLE_NAME, null, null);
+
+        int insertCount = 0;
+
+        try {
+            for (int i = 0; i < fupList.length(); i++) {
+
+                JSONObject jsonObjectUser = fupList.getJSONObject(i);
+
+                FollowUp4mm fup4mm = new FollowUp4mm();
+                fup4mm.sync(jsonObjectUser);
+                ContentValues values = new ContentValues();
+
+                values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_DSSID, fup4mm.getDSSID());
+                values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_STUDYID, fup4mm.getSTUDYID());
+                values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT, fup4mm.getFUPDT());
+                values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK, fup4mm.getFUPWEEK());
+                values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_ISPREG, fup4mm.getISPREG());
+
+                long rowID = db.insert(FollowUp4mm.FollowUpTable4mm.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncFollow21cm(e): " + e);
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
     public int syncUser(JSONArray userList) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(Users.UsersTable.TABLE_NAME, null, null);
@@ -913,6 +948,57 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setDSSID(c.getString(c.getColumnIndex(FollowUp21cm.FollowUpTable21cm.COLUMN_DSSID)));
                 fc.setFUPDT(c.getString(c.getColumnIndex(FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT)));
                 fc.setFUPWEEK(c.getString(c.getColumnIndex(FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK)));
+
+                allFC.add(fc);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+
+    public Collection<FollowUp4mm> getMotherByStudyId(String studyid) {
+
+        // String sysdate =  spDateT.substring(0, 8).trim()
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FollowUp4mm.FollowUpTable4mm.COLUMN_STUDYID,
+                FollowUp4mm.FollowUpTable4mm.COLUMN_DSSID,
+                FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT,
+                FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK
+        };
+
+        String whereClause = FollowUp4mm.FollowUpTable4mm.COLUMN_STUDYID + " = ? ";
+        String[] whereArgs = new String[]{studyid};
+//        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+        String groupBy = null;
+        String having = null;
+        String orderBy = null;
+
+        Collection<FollowUp4mm> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    FollowUp4mm.FollowUpTable4mm.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FollowUp4mm fc = new FollowUp4mm();
+                fc.setSTUDYID(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_STUDYID)));
+                fc.setDSSID(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_DSSID)));
+                fc.setFUPDT(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT)));
+                fc.setFUPWEEK(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK)));
 
                 allFC.add(fc);
             }

@@ -52,6 +52,18 @@ public class IdentificationSectionActivity extends AppCompatActivity {
 
         db = MainApp.appInfo.getDbHelper();
 
+        if (getIntent().getExtras() != null) {
+
+            bi.cmsid.setText(getIntent().getStringExtra("studyid").toString());
+            bi.cm0101.setText(getIntent().getStringExtra("dssid").toString());
+            bi.cm0104.setText(getIntent().getStringExtra("week").toString());
+
+            bi.cmsid.setEnabled(false);
+            bi.cm0101.setEnabled(false);
+            bi.cm0104.setEnabled(false);
+        }
+
+
         /** Line below is the first change you see due to DataBinding **/
         //bi.setForm(MainApp.form);  // Identification section it will be used only for view binding
 
@@ -152,7 +164,7 @@ public class IdentificationSectionActivity extends AppCompatActivity {
     private boolean formValidation() {
 
         if (!bi.cmsid.getText().toString().isEmpty()) {
-            if (bi.cmsid.getText().length() != 10) {
+            if (bi.cmsid.getText().length() != 10 && bi.cmsid.getText().toString().indexOf("-") != -1) {
                 Toast.makeText(this, "Study ID must be 10 digits ", Toast.LENGTH_SHORT).show();
                 return false;
             }
