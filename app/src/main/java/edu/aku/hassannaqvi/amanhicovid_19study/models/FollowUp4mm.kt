@@ -6,7 +6,7 @@ import org.json.JSONObject
 
 class FollowUp4mm {
 
-    var COLID: Long = 0
+    var ID: Long = 0
     var DSSID: String = ""
     var STUDYID: String = ""
     var FUPDT: String = ""
@@ -35,7 +35,7 @@ class FollowUp4mm {
     }
 
     fun hydrate(cursor: Cursor): FollowUp4mm {
-        COLID = cursor.getLong(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_ID))
+        ID = cursor.getLong(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_ID))
         DSSID = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_DSSID))
         STUDYID = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_STUDYID))
         FUPDT = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_FUPDT))

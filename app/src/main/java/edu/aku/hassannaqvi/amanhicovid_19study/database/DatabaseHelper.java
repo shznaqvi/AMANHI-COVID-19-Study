@@ -1014,4 +1014,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public int getChildrenByStudyID(String studyid) {
+        String countQuery = "SELECT  * FROM " + FollowUp21cm.FollowUpTable21cm.TABLE_NAME + " WHERE " + FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + " = '" + studyid + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+
 }

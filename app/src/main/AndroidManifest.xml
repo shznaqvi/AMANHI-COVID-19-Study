@@ -37,7 +37,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="adjustResize">
-        <activity android:name=".ui.SearchMoth4mmActivity"></activity>
+        <activity android:name=".ui.list_activity.FormsReportClusterActivity"></activity>
+        <activity android:name=".ui.SearchMoth4mmActivity" />
         <activity android:name=".ui.EndingActivityForm4mm" />
         <activity android:name=".ui.SearchRecord21cm" />
         <activity

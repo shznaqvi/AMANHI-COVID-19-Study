@@ -15,6 +15,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.list_activity.FormsReportClusterActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSecMActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSectionActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section02cmActivity;
@@ -95,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.searchchild:
-                oF = new Intent(this, SearchRecord21cm.class);
+                oF = new Intent(this, FormsReportClusterActivity.class);
                 break;
 
             case R.id.searchmother:
