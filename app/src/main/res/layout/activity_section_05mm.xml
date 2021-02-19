@@ -651,10 +651,11 @@
                         android:id="@+id/mm05012"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/mm05012"
+                        android:hint="DD-MM-YYYY"
                         android:inputType="date"
                         android:text='@{mm0501101.checked ? mm05012.getText().toString() : ""}'
                         android:visibility='@{mm0501101.checked? View.VISIBLE : View.GONE}'
+                        app:dateFormat="dd-MM-yyyy"
                         app:maxDate="CR_DATE"
                         app:minDate="27/02/2020" />
                 </LinearLayout>

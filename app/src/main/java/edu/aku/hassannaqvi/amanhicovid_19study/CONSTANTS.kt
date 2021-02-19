@@ -37,5 +37,12 @@ class CONSTANTS {
         //Login Result Code
         const val LOGIN_RESULT_CODE = 10101
         const val LOGIN_SPLASH_FLAG = "splash_flag"
+
+
+        //FormAdaptER
+        const val FOLLOWUP_21CM_DATA = "followup21cm_data"
+        const val FOLLOWUP_4MM_DATA = "followup4mm_data"
+
+
     }
 }

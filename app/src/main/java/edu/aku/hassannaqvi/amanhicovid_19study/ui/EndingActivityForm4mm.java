@@ -21,12 +21,17 @@ import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityEndingform4mm
 public class EndingActivityForm4mm extends AppCompatActivity {
 
     ActivityEndingform4mmBinding bi;
+    private String isovertime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_endingform4mm);
         bi.setCallback(this);
+
+        if (getIntent().getExtras() != null) {
+            isovertime = getIntent().getStringExtra("isovertime");
+        }
 
 
         boolean check = getIntent().getBooleanExtra("complete", false);
@@ -84,7 +89,7 @@ public class EndingActivityForm4mm extends AppCompatActivity {
                 : bi.istatusd.isChecked() ? "4"
                 : bi.istatuse.isChecked() ? "5"
                 : bi.istatusf.isChecked() ? "6"
-                : bi.istatus96.isChecked() ? "96"
+                : bi.istatus96.isChecked() ? "77"
                 : "0");
 
         MainApp.form4m.setIStatus96x(bi.istatus96x.getText().toString());

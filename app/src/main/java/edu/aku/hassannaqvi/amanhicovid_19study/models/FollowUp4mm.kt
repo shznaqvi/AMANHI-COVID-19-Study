@@ -3,8 +3,9 @@ package edu.aku.hassannaqvi.amanhicovid_19study.models
 import android.database.Cursor
 import org.json.JSONException
 import org.json.JSONObject
+import java.io.Serializable
 
-class FollowUp4mm {
+class FollowUp4mm : Serializable {
 
     var ID: Long = 0
     var DSSID: String = ""
@@ -12,6 +13,9 @@ class FollowUp4mm {
     var FUPDT: String = ""
     var FUPWEEK: String = ""
     var ISPREG: String = ""
+    var LASTVISITDT: String = ""
+    var VISITSTATUS: String = ""
+    var COLFLAG: String = ""
 
     constructor() {
         // Default Constructor
@@ -30,6 +34,9 @@ class FollowUp4mm {
         FUPDT = jsonObject.getString(FollowUpTable4mm.COLUMN_FUPDT)
         FUPWEEK = jsonObject.getString(FollowUpTable4mm.COLUMN_FUPWEEK)
         ISPREG = jsonObject.getString(FollowUpTable4mm.COLUMN_ISPREG)
+        LASTVISITDT = jsonObject.getString(FollowUpTable4mm.COLUMN_LASTVISITDT)
+        VISITSTATUS = jsonObject.getString(FollowUpTable4mm.COLUMN_VISITSTATUS)
+        COLFLAG = jsonObject.getString(FollowUpTable4mm.COLUMN_COLFLAG)
 
         return this
     }
@@ -41,6 +48,9 @@ class FollowUp4mm {
         FUPDT = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_FUPDT))
         FUPWEEK = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_FUPWEEK))
         ISPREG = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_ISPREG))
+        LASTVISITDT = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_LASTVISITDT))
+        VISITSTATUS = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_VISITSTATUS))
+        COLFLAG = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_COLFLAG))
 
         return this
     }
@@ -55,6 +65,9 @@ class FollowUp4mm {
         const val COLUMN_FUPDT = "fupdt"
         const val COLUMN_FUPWEEK = "fupweek"
         const val COLUMN_ISPREG = "ispreg"
+        const val COLUMN_LASTVISITDT = "lastvisitdt"
+        const val COLUMN_VISITSTATUS = "vstatus"
+        const val COLUMN_COLFLAG = "colflag"
     }
 
 }

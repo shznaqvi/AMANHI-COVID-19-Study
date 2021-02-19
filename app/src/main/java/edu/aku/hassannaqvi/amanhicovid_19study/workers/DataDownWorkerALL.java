@@ -109,7 +109,6 @@ public class DataDownWorkerALL extends Worker {
             //jsonTable.put("select", uploadColumns);
             jsonTable.put("filter", uploadWhere);
             //jsonTable.put("limit", "3");
-            //jsonTable.put("orderby", "rand()");
             //jsonSync.put(uploadData);
             jsonParam
                     .put(jsonTable);

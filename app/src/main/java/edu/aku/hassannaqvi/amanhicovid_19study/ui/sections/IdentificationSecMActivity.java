@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,15 +18,21 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityIdentificationSecMBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm4mm;
+import edu.aku.hassannaqvi.amanhicovid_19study.utils.DateUtilsKt;
 
+import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.FOLLOWUP_4MM_DATA;
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
+
 
 public class IdentificationSecMActivity extends AppCompatActivity {
 
     ActivityIdentificationSecMBinding bi;
     private DatabaseHelper db;
+    private long isovertime;
+    private String fupdt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +40,30 @@ public class IdentificationSecMActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification_sec_m);
         bi.setCallback(this);
 
+        Toast.makeText(this, MainApp.isprevpreg, Toast.LENGTH_SHORT).show();
+
         db = MainApp.appInfo.getDbHelper();
+
+        bi.fldmsg.setVisibility(View.GONE);
+        bi.lblmsg.setText("");
 
         if (getIntent().getExtras() != null) {
 
-            bi.mmsid.setText(getIntent().getStringExtra("studyid").toString());
-            bi.mm0101.setText(getIntent().getStringExtra("dssid").toString());
-            bi.mm0104.setText(getIntent().getStringExtra("week").toString());
+            bi.fldmsg.setVisibility(View.VISIBLE);
+            bi.lblmsg.setText("This form will go to End Activity if follow up is older than 7 days");
+
+            FollowUp4mm fup4mm = (FollowUp4mm) getIntent().getSerializableExtra(FOLLOWUP_4MM_DATA);
+
+            bi.mmsid.setText(fup4mm.getSTUDYID());
+            bi.mm0101.setText(fup4mm.getDSSID());
+            bi.mm0104.setText(fup4mm.getFUPWEEK());
+            fupdt = fup4mm.getFUPDT();
+            MainApp.isprevpreg = fup4mm.getISPREG();
 
             bi.mmsid.setEnabled(false);
             bi.mm0101.setEnabled(false);
             bi.mm0104.setEnabled(false);
+
         }
 
     }
@@ -156,7 +176,18 @@ public class IdentificationSecMActivity extends AppCompatActivity {
         SaveDraft();
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, Section02mmActivity.class));
+
+            isovertime = DateUtilsKt.dateDiffInDays(DateUtilsKt.getDate(bi.mm0103.getText().toString()), DateUtilsKt.getDate(fupdt));
+
+            Toast.makeText(this, String.valueOf(isovertime), Toast.LENGTH_SHORT).show();
+
+            if (isovertime > 7) {
+                Intent intent = new Intent(this, EndingActivityForm4mm.class);
+                intent.putExtra("isovertime", "99");
+                startActivity(intent);
+            } else {
+                startActivity(new Intent(this, Section03mmActivity.class));
+            }
         }
     }
 }

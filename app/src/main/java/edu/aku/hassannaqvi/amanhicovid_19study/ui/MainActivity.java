@@ -15,6 +15,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.list_activity.FormsReport4mmActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.list_activity.FormsReportClusterActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSecMActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSectionActivity;
@@ -100,7 +101,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.searchmother:
-                oF = new Intent(this, SearchMoth4mmActivity.class);
+                //oF = new Intent(this, SearchMoth4mmActivity.class);
+                oF = new Intent(this, FormsReport4mmActivity.class);
                 break;
 
             case R.id.btn01:

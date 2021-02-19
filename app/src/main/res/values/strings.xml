@@ -1710,11 +1710,12 @@
     <string name="mm0201011">Yes</string>
     <string name="mm0201012">NO</string>
     <string name="mm202">If visit is not successful, what was the reason</string>
-    <string name="mm202011">Died (Complete a censorship form21cm)</string>
-    <string name="mm202012">Permanently moved (Complete a censorship form21cm)</string>
-    <string name="mm202013">Withdrawal of participation (Complete a censorship form21cm)</string>
-    <string name="mm202014">Could not be contacted despite trying 3 times</string>
-    <string name="mm202015">Refused of this visit</string>
+    <string name="mm202011">Complete</string>
+    <string name="mm202012">Died (Complete a censorship)</string>
+    <string name="mm202013">Permanently moved (Complete a censorship)</string>
+    <string name="mm202014">Withdrawal of participation (Complete a censorship)</string>
+    <string name="mm202015">Could not be contacted despite trying 3 times</string>
+    <string name="mm202016">Refused of this visit</string>
     <string name="mm202077">Other </string>
 
 
@@ -1798,7 +1799,7 @@
     <string name="mm03026">Diarrhoea</string>
     <string name="mm0302601">YES</string>
     <string name="mm0302602">NO</string>
-    <string name="mm0302608"> DK</string>
+    <string name="mm0302608">DK</string>
     <string name="mm0302609">NA</string>
     <string name="mm03027">If yes, number of days of Diarrhoea (xx, 88=DK, 99=NA)</string>
     <string name="mm03028">Abdominal cramps or pain</string>
@@ -1816,7 +1817,7 @@
     <string name="mm03032">Loss of sense of taste/ageusia</string>
     <string name="mm0303201">YES </string>
     <string name="mm0303202">NO</string>
-    <string name="mm0303208"> DK</string>
+    <string name="mm0303208">DK</string>
     <string name="mm0303209">NA</string>
     <string name="mm03033">If yes, number of days of Loss of sense of taste/ageusia (xx, 88=DK, 99=NA)</string>
     <string name="mm03034">Delirium/confusion </string>
@@ -1845,7 +1846,7 @@
     <string name="mm0304009">NA</string>
     <string name="mm03041">If yes, number of days of Dizziness or fainting (xx, 88=DK, 99=NA)</string>
     <string name="mm03042">Body aches</string>
-    <string name="mm0304201">YES </string>
+    <string name="mm0304201">YES</string>
     <string name="mm0304202">NO</string>
     <string name="mm0304208">DK</string>
     <string name="mm0304209">NA</string>
@@ -1868,12 +1869,12 @@
 
     <string name="section4historyofcontactwithacovid19case_mainheading">Section 4 HISTORY OF CONTACT WITH A COVID-19 CASE: HISTORY OF CONTACT WITH A COVID19 CASE</string>
     <string name="mm0401">Has any member of the household returned from abroad/travel since the last time we contacted you?</string>
-    <string name="mm040101">Yes</string>
-    <string name="mm040102">No</string>
+    <string name="mm040101">YES</string>
+    <string name="mm040102">NO</string>
     <string name="mm040108">DK</string>
     <string name="mm040109">NA</string>
     <string name="mm0402">Has any of the household members who lives somewhere else (for work or other) come back since the last time we contacted you?</string>
-    <string name="mm040201">Yes</string>
+    <string name="mm040201">YES</string>
     <string name="mm040202">NO</string>
     <string name="mm040208">DK</string>
     <string name="mm040209">NA</string>
@@ -1889,8 +1890,8 @@
     <string name="mm040409">NA</string>
     <string name="mm0405">If yes, date of last contact</string>
     <string name="mm0406">Was the person confirmed for coronavirus through a lab-based test?</string>
-    <string name="mm040601">Yes</string>
-    <string name="mm040602">No</string>
+    <string name="mm040601">YES</string>
+    <string name="mm040602">NO</string>
     <string name="mm040608">DK</string>
     <string name="mm040609">NA</string>
     <string name="mm0407">Was the person admitted to a hospital due to illness caused by coronavirus?</string>
@@ -1954,13 +1955,13 @@
     <string name="mm050708">DK</string>
     <string name="mm050709">NA</string>
     <string name="mm0508">What was the source? please specify</string>
-    <string name="mm0508011">community health worker</string>
-    <string name="mm0508012">traditional healer</string>
-    <string name="mm0508013">pharmacy/druggist</string>
+    <string name="mm0508011">Community Health Worker</string>
+    <string name="mm0508012">Traditional Healer</string>
+    <string name="mm0508013">Pharmacy/Druggist</string>
     <string name="mm0508099">NA</string>
     <string name="mm0508015">other</string>
     <string name="mm05010">Did you/your family call the national coronavirus hotline number since the last time we contacted you?</string>
-    <string name="mm0501001">Yes</string>
+    <string name="mm0501001">YES</string>
     <string name="mm0501002">NO</string>
     <string name="mm0501008">DK</string>
     <string name="mm0501009">NA</string>

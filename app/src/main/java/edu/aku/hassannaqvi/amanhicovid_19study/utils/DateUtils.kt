@@ -1,6 +1,8 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.utils
 
 import android.util.Log
+import android.widget.Toast
+import java.math.BigInteger
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -178,6 +180,15 @@ fun ageInDaysByDOB(dateStr: String): Long {
     val diff = today.time - dob.time
     return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS)
 }
+
+fun dateDiffInDays(cal: Calendar, cal1: Calendar): Long {
+    val var_dob = cal.time
+    val var_dov = cal1.time
+
+    val diff = var_dob.time - var_dov.time
+    return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS)
+}
+
 
 fun getCalDate(value: String): Calendar {
     val sdf = SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH)

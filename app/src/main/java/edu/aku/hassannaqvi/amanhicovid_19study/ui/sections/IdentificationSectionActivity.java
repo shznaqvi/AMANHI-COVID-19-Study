@@ -17,10 +17,12 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityIdentificationSectionBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.DateUtilsKt;
 
+import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.FOLLOWUP_21CM_DATA;
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
 
@@ -54,9 +56,11 @@ public class IdentificationSectionActivity extends AppCompatActivity {
 
         if (getIntent().getExtras() != null) {
 
-            bi.cmsid.setText(getIntent().getStringExtra("studyid").toString());
-            bi.cm0101.setText(getIntent().getStringExtra("dssid").toString());
-            bi.cm0104.setText(getIntent().getStringExtra("week").toString());
+            FollowUp21cm fup = (FollowUp21cm) getIntent().getSerializableExtra(FOLLOWUP_21CM_DATA);
+
+            bi.cmsid.setText(fup.getSTUDYID());
+            bi.cm0101.setText(fup.getDSSID());
+            bi.cm0104.setText(fup.getFUPWEEK());
 
             bi.cmsid.setEnabled(false);
             bi.cm0101.setEnabled(false);

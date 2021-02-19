@@ -299,8 +299,9 @@
                         android:id="@+id/mm0405"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/mm0405"
+                        android:hint="DD-MM-YYYY"
                         android:inputType="date"
+                        app:dateFormat="dd-MM-yyyy"
                         app:maxDate="CR_DATE"
                         app:minDate="27/02/2020" />
                 </LinearLayout>

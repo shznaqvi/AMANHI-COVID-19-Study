@@ -66,43 +66,43 @@
                             android:id="@+id/istatusa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2601" />
+                            android:text="@string/mm202011" />
 
                         <RadioButton
                             android:id="@+id/istatusb"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2602" />
+                            android:text="@string/mm202012" />
 
                         <RadioButton
                             android:id="@+id/istatusc"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2603" />
+                            android:text="@string/mm202013" />
 
                         <RadioButton
                             android:id="@+id/istatusd"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2604" />
+                            android:text="@string/mm202014" />
 
                         <RadioButton
                             android:id="@+id/istatuse"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2605" />
+                            android:text="@string/mm202015" />
 
                         <RadioButton
                             android:id="@+id/istatusf"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2606" />
+                            android:text="@string/mm202016" />
 
                         <RadioButton
                             android:id="@+id/istatus96"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2696" />
+                            android:text="@string/mm202077" />
 
                         <EditText
                             android:id="@+id/istatus96x"

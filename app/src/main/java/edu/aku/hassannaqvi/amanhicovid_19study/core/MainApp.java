@@ -42,6 +42,7 @@ public class MainApp extends Application {
     public static String dssid;
     public static String studyid;
     public static String fupwk;
+    public static String isprevpreg;
 
 
     public static void hideSystemUI(View decorView) {

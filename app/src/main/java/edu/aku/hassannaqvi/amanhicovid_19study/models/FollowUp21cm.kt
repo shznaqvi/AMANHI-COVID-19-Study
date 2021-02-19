@@ -3,14 +3,16 @@ package edu.aku.hassannaqvi.amanhicovid_19study.models
 import android.database.Cursor
 import org.json.JSONException
 import org.json.JSONObject
+import java.io.Serializable
 
-class FollowUp21cm {
+class FollowUp21cm : Serializable {
 
     var ID: Long = 0
     var DSSID: String = ""
     var STUDYID: String = ""
     var FUPDT: String = ""
     var FUPWEEK: String = ""
+    var COLFLAG: String = ""
 
     constructor() {
         // Default Constructor
@@ -22,6 +24,8 @@ class FollowUp21cm {
         STUDYID = jsonObject.getString(FollowUpTable21cm.COLUMN_STUDYID)
         FUPDT = jsonObject.getString(FollowUpTable21cm.COLUMN_FUPDT)
         FUPWEEK = jsonObject.getString(FollowUpTable21cm.COLUMN_FUPWEEK)
+        COLFLAG = jsonObject.getString(FollowUpTable21cm.COLUMN_COLFLAG)
+
         return this
     }
 
@@ -31,6 +35,9 @@ class FollowUp21cm {
         STUDYID = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_STUDYID))
         FUPDT = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_FUPDT))
         FUPWEEK = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_FUPWEEK))
+        FUPWEEK = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_FUPWEEK))
+        COLFLAG = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_COLFLAG))
+
         return this
     }
 
@@ -43,5 +50,6 @@ class FollowUp21cm {
         const val COLUMN_DSSID = "dssid"
         const val COLUMN_FUPDT = "fupdt"
         const val COLUMN_FUPWEEK = "fupweek"
+        const val COLUMN_COLFLAG = "colflag"
     }
 }

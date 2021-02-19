@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.list_activity.FormsReportClusterActivity">
+    tools:context=".ui.list_activity.FormsReport4mmActivity">
 
     <androidx.cardview.widget.CardView
         style="@style/cardView"
@@ -29,7 +29,7 @@
                     android:layout_margin="0dp"
                     android:padding="0dp"
                     android:paddingStart="18dp"
-                    android:text="Search Child By Study ID" />
+                    android:text="Search Mother By Study ID" />
 
                 <TextView
                     style="@style/labels"

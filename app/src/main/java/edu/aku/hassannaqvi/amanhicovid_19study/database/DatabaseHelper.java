@@ -868,6 +868,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT, fup4mm.getFUPDT());
                 values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK, fup4mm.getFUPWEEK());
                 values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_ISPREG, fup4mm.getISPREG());
+                values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_LASTVISITDT, fup4mm.getLASTVISITDT());
+                values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_VISITSTATUS, fup4mm.getVISITSTATUS());
 
                 long rowID = db.insert(FollowUp4mm.FollowUpTable4mm.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
@@ -972,7 +974,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FollowUp4mm.FollowUpTable4mm.COLUMN_STUDYID,
                 FollowUp4mm.FollowUpTable4mm.COLUMN_DSSID,
                 FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT,
-                FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK
+                FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK,
+                FollowUp4mm.FollowUpTable4mm.COLUMN_ISPREG,
+                FollowUp4mm.FollowUpTable4mm.COLUMN_VISITSTATUS
         };
 
         String whereClause = FollowUp4mm.FollowUpTable4mm.COLUMN_STUDYID + " = ? ";
@@ -980,7 +984,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
         String having = null;
-        String orderBy = null;
+        String orderBy = FollowUp4mm.FollowUpTable4mm.COLUMN_STUDYID + ", " + FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK;
 
         Collection<FollowUp4mm> allFC = new ArrayList<>();
         try {
@@ -999,6 +1003,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setDSSID(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_DSSID)));
                 fc.setFUPDT(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT)));
                 fc.setFUPWEEK(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK)));
+                fc.setISPREG(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_ISPREG)));
+                fc.setVISITSTATUS(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_VISITSTATUS)));
 
                 allFC.add(fc);
             }
@@ -1023,5 +1029,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
+    public int getMotherByStudyID(String studyid) {
+        String countQuery = "SELECT  * FROM " + FollowUp21cm.FollowUpTable21cm.TABLE_NAME + " WHERE " + FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + " = '" + studyid + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
 
 }

@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,8 +28,23 @@ public class Section06mmActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_06mm);
         bi.setCallback(this);
+        SkipPattern();
+
+        Toast.makeText(this, MainApp.isprevpreg, Toast.LENGTH_SHORT).show();
+
     }
 
+    private void SkipPattern() {
+        if (MainApp.isprevpreg.equals("1")) {
+            bi.fldGrpCVmm0701.setVisibility(View.GONE);
+            bi.fldGrpCVmm0702.setVisibility(View.GONE);
+            bi.fldGrpCVmm0703.setVisibility(View.GONE);
+        } else {
+            bi.fldGrpCVmm0701.setVisibility(View.VISIBLE);
+            bi.fldGrpCVmm0702.setVisibility(View.VISIBLE);
+            bi.fldGrpCVmm0703.setVisibility(View.VISIBLE);
+        }
+    }
 
     private void SaveDraft() {
         form4m.setMm0601(bi.mm060101.isChecked() ? "1"
@@ -66,7 +82,7 @@ public class Section06mmActivity extends AppCompatActivity {
         form4m.setMm0702(bi.mm0702.getText().toString());
 
 
-        form4m.setMm0703(bi.mm070101.isChecked() ? "11"
+        form4m.setMm0703(bi.mm070301.isChecked() ? "11"
                 : bi.mm070302.isChecked() ? "12"
                 : bi.mm070308.isChecked() ? "88"
                 : bi.mm070309.isChecked() ? "99"

@@ -81,7 +81,9 @@ object CreateTable {
             + FollowUp4mm.FollowUpTable4mm.COLUMN_STUDYID + " TEXT,"
             + FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT + " TEXT,"
             + FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK + " TEXT,"
-            + FollowUp4mm.FollowUpTable4mm.COLUMN_ISPREG + " TEXT"
+            + FollowUp4mm.FollowUpTable4mm.COLUMN_ISPREG + " TEXT,"
+            + FollowUp4mm.FollowUpTable4mm.COLUMN_LASTVISITDT + " TEXT,"
+            + FollowUp4mm.FollowUpTable4mm.COLUMN_VISITSTATUS + " TEXT"
             + " );")
 
 
