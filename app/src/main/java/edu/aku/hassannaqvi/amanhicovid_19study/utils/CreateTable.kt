@@ -2,10 +2,7 @@ package edu.aku.hassannaqvi.amanhicovid_19study.utils
 
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract
-import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm
-import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm
-import edu.aku.hassannaqvi.amanhicovid_19study.models.Users
-import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp
+import edu.aku.hassannaqvi.amanhicovid_19study.models.*
 
 object CreateTable {
     const val PROJECT_NAME = "AMANHICOV2020"
@@ -63,7 +60,18 @@ object CreateTable {
             + Users.UsersTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + Users.UsersTable.COLUMN_USERNAME + " TEXT,"
             + Users.UsersTable.COLUMN_PASSWORD + " TEXT,"
-            + Users.UsersTable.COLUMN_FULLNAME + " TEXT"
+            + Users.UsersTable.COLUMN_FULLNAME + " TEXT,"
+            + Users.UsersTable.COLUMN_DESIGNATION + " TEXT,"
+            + Users.UsersTable.COLUMN_EMPNO + " TEXT,"
+            + Users.UsersTable.COLUMN_CODE + " TEXT,"
+            + Users.UsersTable.COLUMN_COLFLAG + " TEXT"
+            + " );")
+
+
+    const val SQL_CREATE_SITE = ("CREATE TABLE " + Sites.SiteTable.TABLE_NAME + "("
+            + Sites.SiteTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + Sites.SiteTable.COLUMN_SITE + " TEXT,"
+            + Sites.SiteTable.COLUMN_COLFLAG + " TEXT"
             + " );")
 
 

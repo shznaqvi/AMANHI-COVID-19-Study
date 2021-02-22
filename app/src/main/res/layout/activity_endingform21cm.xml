@@ -21,6 +21,57 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!-- cm0201  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvcm0201"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_cm0201" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/cm0201" />
+
+                    </LinearLayout>
+
+                    <RadioGroup
+                        android:id="@+id/cm0201"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/cm020111"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cm020111" />
+
+                        <RadioButton
+                            android:id="@+id/cm020112"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cm020112" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <!-- status Radio   -->
             <androidx.cardview.widget.CardView
@@ -45,15 +96,14 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_hh26" />
+                            android:text="@string/Q_cm0202" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_toEndOf="@id/q_status"
                             android:layout_weight="1"
-                            android:text="@string/hh26" />
-
+                            android:text="@string/cm0202" />
 
                     </LinearLayout>
 
@@ -66,43 +116,43 @@
                             android:id="@+id/istatusa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2601" />
+                            android:text="@string/cm020211" />
 
                         <RadioButton
                             android:id="@+id/istatusb"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2602" />
+                            android:text="@string/cm020212" />
 
                         <RadioButton
                             android:id="@+id/istatusc"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2603" />
+                            android:text="@string/cm020213" />
 
                         <RadioButton
                             android:id="@+id/istatusd"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2604" />
+                            android:text="@string/cm020214" />
 
                         <RadioButton
                             android:id="@+id/istatuse"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2605" />
+                            android:text="@string/cm020215" />
 
                         <RadioButton
                             android:id="@+id/istatusf"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2606" />
+                            android:text="@string/cm020216" />
 
                         <RadioButton
                             android:id="@+id/istatus96"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/hh2696" />
+                            android:text="@string/cm020277" />
 
                         <EditText
                             android:id="@+id/istatus96x"

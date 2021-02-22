@@ -63,6 +63,11 @@ dependencies {
     //SDP
     implementation 'com.intuit.sdp:sdp-android:1.0.5'
 
+    //RxJava
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation "io.reactivex.rxjava3:rxjava:3.0.6"
+    implementation 'com.jakewharton.rxbinding3:rxbinding:3.1.0'
+
     //Ali mask
     implementation 'com.github.AliAzaz:Edittext-Library:2.0.0'
     implementation 'com.github.AliAzaz:AndroidValidatorCrawler:1.0.3'

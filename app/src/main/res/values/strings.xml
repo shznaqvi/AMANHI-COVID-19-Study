@@ -1710,12 +1710,11 @@
     <string name="mm0201011">Yes</string>
     <string name="mm0201012">NO</string>
     <string name="mm202">If visit is not successful, what was the reason</string>
-    <string name="mm202011">Complete</string>
-    <string name="mm202012">Died (Complete a censorship)</string>
-    <string name="mm202013">Permanently moved (Complete a censorship)</string>
-    <string name="mm202014">Withdrawal of participation (Complete a censorship)</string>
-    <string name="mm202015">Could not be contacted despite trying 3 times</string>
-    <string name="mm202016">Refused of this visit</string>
+    <string name="mm202011">Died (Complete a censorship)</string>
+    <string name="mm202012">Permanently moved (Complete a censorship)</string>
+    <string name="mm202013">Withdrawal of participation (Complete a censorship)</string>
+    <string name="mm202014">Could not be contacted despite trying 3 times</string>
+    <string name="mm202015">Refused of this visit</string>
     <string name="mm202077">Other </string>
 
 

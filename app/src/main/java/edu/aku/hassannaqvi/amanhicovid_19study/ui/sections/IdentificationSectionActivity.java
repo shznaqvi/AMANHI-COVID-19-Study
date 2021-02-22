@@ -2,6 +2,8 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
 import android.content.Intent;
 import android.text.format.DateUtils;
+import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityIdentificatio
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.DateUtilsKt;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.FOLLOWUP_21CM_DATA;
@@ -40,9 +43,13 @@ import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
 public class IdentificationSectionActivity extends AppCompatActivity {
 
+    private static final String TAG = "";
     static boolean iscomplete = false;
     ActivityIdentificationSectionBinding bi;
     private DatabaseHelper db;
+
+    private long isovertime;
+    private String fupdt;
 
 
     @Override
@@ -56,11 +63,15 @@ public class IdentificationSectionActivity extends AppCompatActivity {
 
         if (getIntent().getExtras() != null) {
 
+            bi.lblmsg.setVisibility(View.VISIBLE);
+            bi.lblmsg.setText("This form will go to End Activity if follow up is older than 7 days");
+
             FollowUp21cm fup = (FollowUp21cm) getIntent().getSerializableExtra(FOLLOWUP_21CM_DATA);
 
             bi.cmsid.setText(fup.getSTUDYID());
             bi.cm0101.setText(fup.getDSSID());
             bi.cm0104.setText(fup.getFUPWEEK());
+            fupdt = fup.getFUPDT();
 
             bi.cmsid.setEnabled(false);
             bi.cm0101.setEnabled(false);
@@ -160,7 +171,16 @@ public class IdentificationSectionActivity extends AppCompatActivity {
         SaveDraft();
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, Section02cmActivity.class));
+
+            isovertime = DateUtilsKt.dateDiffInDays(DateUtilsKt.getDate(bi.cm0103.getText().toString()), DateUtilsKt.getDate(fupdt));
+            Log.d(TAG, "BtnContinue: " + String.valueOf(isovertime));
+
+            if (isovertime > 7) {
+                Intent intent = new Intent(this, EndingActivityForm21cm.class);
+                startActivity(intent);
+            } else {
+                startActivity(new Intent(this, Section03cmActivity.class));
+            }
         }
     }
 

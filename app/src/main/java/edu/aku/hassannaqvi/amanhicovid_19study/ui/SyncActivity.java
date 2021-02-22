@@ -1,16 +1,13 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
@@ -35,7 +32,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS;
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.adapters.SyncListAdapter;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
@@ -45,6 +41,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.Sites;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.SyncModel;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
@@ -156,6 +153,7 @@ public class SyncActivity extends AppCompatActivity {
                 downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
                 downloadTables.add(new SyncModel(FollowUp21cm.FollowUpTable21cm.TABLE_NAME));
                 downloadTables.add(new SyncModel(FollowUp4mm.FollowUpTable4mm.TABLE_NAME));
+                downloadTables.add(new SyncModel(Sites.SiteTable.TABLE_NAME));
 
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);
@@ -243,6 +241,10 @@ public class SyncActivity extends AppCompatActivity {
                                         case Users.UsersTable.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncUser(jsonArray);
+                                            break;
+                                        case Sites.SiteTable.TABLE_NAME:
+                                            jsonArray = new JSONArray(result);
+                                            insertCount = db.syncSite(jsonArray);
                                             break;
                                         case VersionApp.VersionAppTable.TABLE_NAME:
                                             insertCount = db.syncVersionApp(new JSONObject(result));

@@ -98,7 +98,6 @@ public class FormsAdapter4mm extends RecyclerView.Adapter<FormsAdapter4mm.ViewHo
         holder.dssid.setText(fc.get(position).getDSSID());
         holder.duedate.setText("Due Date: " + fc.get(position).getFUPDT());
         holder.fupwk.setText("Follow Up Week: " + fc.get(position).getFUPWEEK());
-        holder.pregid.setText("Preg ID: " + fc.get(position).getISPREG());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,7 +132,6 @@ public class FormsAdapter4mm extends RecyclerView.Adapter<FormsAdapter4mm.ViewHo
         public TextView dssid;
         public TextView duedate;
         public TextView fupwk;
-        public TextView pregid;
         //public TextView istatus;
         // each data item is just a string in this case
 
@@ -144,7 +142,6 @@ public class FormsAdapter4mm extends RecyclerView.Adapter<FormsAdapter4mm.ViewHo
             dssid = v.findViewById(R.id.dssid);
             duedate = v.findViewById(R.id.duedate);
             fupwk = v.findViewById(R.id.fupwk);
-            pregid = v.findViewById(R.id.pregid);
 
             //istatus = v.findViewById(R.id.istatus);
 

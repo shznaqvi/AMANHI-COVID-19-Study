@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
@@ -23,12 +24,12 @@ import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.Sites;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
 /**
  * @author hassan.naqvi on 11/30/2016.
@@ -46,6 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
+        db.execSQL(CreateTable.SQL_CREATE_SITE);
         db.execSQL(CreateTable.SQL_CREATE_FUP21CM);
         db.execSQL(CreateTable.SQL_CREATE_FUP4MM);
         //db.execSQL(CreateTable.SQL_CREATE_DISTRICTS);
@@ -900,7 +902,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(Users.UsersTable.COLUMN_USERNAME, user.getUserName());
                 values.put(Users.UsersTable.COLUMN_PASSWORD, user.getPassword());
                 values.put(Users.UsersTable.COLUMN_FULLNAME, user.getFullname());
+                values.put(Users.UsersTable.COLUMN_DESIGNATION, user.getDesig());
+                values.put(Users.UsersTable.COLUMN_EMPNO, user.getEmpno());
+                values.put(Users.UsersTable.COLUMN_CODE, user.getCode());
+                values.put(Users.UsersTable.COLUMN_COLFLAG, user.getColflag());
+
                 long rowID = db.insert(Users.UsersTable.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncUser(e): " + e.getMessage());
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
+
+    public int syncSite(JSONArray siteList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(Sites.SiteTable.TABLE_NAME, null, null);
+        int insertCount = 0;
+        try {
+            for (int i = 0; i < siteList.length(); i++) {
+
+                JSONObject jsonObjectUser = siteList.getJSONObject(i);
+
+                Sites site = new Sites();
+                site.sync(jsonObjectUser);
+                ContentValues values = new ContentValues();
+
+                values.put(Sites.SiteTable.COLUMN_SITE, site.getSITE());
+                values.put(Sites.SiteTable.COLUMN_COLFLAG, site.getCOLFLAG());
+
+                long rowID = db.insert(Sites.SiteTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
 
@@ -931,7 +968,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
         String groupBy = null;
         String having = null;
-        String orderBy = null;
+        String orderBy = FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + ", " + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK;
 
         Collection<FollowUp21cm> allFC = new ArrayList<>();
         try {
@@ -1037,5 +1074,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return count;
     }
+
+
+    public List<Sites> getSites() {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = Sites.SiteTable.COLUMN_ID + " ASC";
+        List<Sites> allEB = new ArrayList<>();
+        try {
+            c = db.query(
+                    Sites.SiteTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allEB.add(new Sites().hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allEB;
+    }
+
 
 }

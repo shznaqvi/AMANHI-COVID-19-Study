@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
 
 public class IdentificationSecMActivity extends AppCompatActivity {
 
+    private static final String TAG = "";
     ActivityIdentificationSecMBinding bi;
     private DatabaseHelper db;
     private long isovertime;
@@ -40,7 +42,6 @@ public class IdentificationSecMActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification_sec_m);
         bi.setCallback(this);
 
-        Toast.makeText(this, MainApp.isprevpreg, Toast.LENGTH_SHORT).show();
 
         db = MainApp.appInfo.getDbHelper();
 
@@ -60,12 +61,14 @@ public class IdentificationSecMActivity extends AppCompatActivity {
             fupdt = fup4mm.getFUPDT();
             MainApp.isprevpreg = fup4mm.getISPREG();
 
+            //Toast.makeText(this, MainApp.isprevpreg, Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "BtnContinue: " + MainApp.isprevpreg);
+
             bi.mmsid.setEnabled(false);
             bi.mm0101.setEnabled(false);
             bi.mm0104.setEnabled(false);
 
         }
-
     }
 
     @Override
@@ -178,12 +181,12 @@ public class IdentificationSecMActivity extends AppCompatActivity {
             finish();
 
             isovertime = DateUtilsKt.dateDiffInDays(DateUtilsKt.getDate(bi.mm0103.getText().toString()), DateUtilsKt.getDate(fupdt));
+            Log.d(TAG, "BtnContinue: " + String.valueOf(isovertime));
 
-            Toast.makeText(this, String.valueOf(isovertime), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, String.valueOf(isovertime), Toast.LENGTH_SHORT).show();
 
             if (isovertime > 7) {
                 Intent intent = new Intent(this, EndingActivityForm4mm.class);
-                intent.putExtra("isovertime", "99");
                 startActivity(intent);
             } else {
                 startActivity(new Intent(this, Section03mmActivity.class));

@@ -5,6 +5,8 @@ import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.validatorcrawler.aliazaz.Validator;
@@ -14,14 +16,16 @@ import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityEndingform4mmBinding;
 
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
+
 public class EndingActivityForm4mm extends AppCompatActivity {
 
     ActivityEndingform4mmBinding bi;
-    private String isovertime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,29 +33,33 @@ public class EndingActivityForm4mm extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_endingform4mm);
         bi.setCallback(this);
 
-        if (getIntent().getExtras() != null) {
-            isovertime = getIntent().getStringExtra("isovertime");
-        }
-
 
         boolean check = getIntent().getBooleanExtra("complete", false);
 
         if (check) {
-            bi.istatusa.setEnabled(true);
+            bi.mm0201011.setEnabled(true);
+            bi.mm0201012.setEnabled(false);
+
+            bi.cvstatus.setVisibility(View.GONE);
+
+            bi.istatusa.setEnabled(false);
             bi.istatusb.setEnabled(false);
             bi.istatusc.setEnabled(false);
             bi.istatusd.setEnabled(false);
             bi.istatuse.setEnabled(false);
-            bi.istatusf.setEnabled(false);
             bi.istatus96.setEnabled(false);
         } else {
 
-            bi.istatusa.setEnabled(false);
+            bi.mm0201011.setEnabled(false);
+            bi.mm0201012.setEnabled(true);
+
+            bi.cvstatus.setVisibility(View.VISIBLE);
+
+            bi.istatusa.setEnabled(true);
             bi.istatusb.setEnabled(true);
             bi.istatusc.setEnabled(true);
             bi.istatusd.setEnabled(true);
             bi.istatuse.setEnabled(true);
-            bi.istatusf.setEnabled(true);
             bi.istatus96.setEnabled(true);
         }
 
@@ -83,16 +91,37 @@ public class EndingActivityForm4mm extends AppCompatActivity {
 
 
     private void SaveDraft() {
-        MainApp.form4m.setIStatus(bi.istatusa.isChecked() ? "1"
-                : bi.istatusb.isChecked() ? "2"
-                : bi.istatusc.isChecked() ? "3"
-                : bi.istatusd.isChecked() ? "4"
-                : bi.istatuse.isChecked() ? "5"
-                : bi.istatusf.isChecked() ? "6"
+
+        form4m.setMm0201(bi.mm0201011.isChecked() ? "11"
+                : bi.mm0201012.isChecked() ? "12"
+                : "-1");
+
+
+        form4m.setMm202(bi.istatusa.isChecked() ? "11"
+                : bi.istatusb.isChecked() ? "12"
+                : bi.istatusc.isChecked() ? "13"
+                : bi.istatusd.isChecked() ? "14"
+                : bi.istatuse.isChecked() ? "15"
                 : bi.istatus96.isChecked() ? "77"
-                : "0");
+                : "-1");
+
+        form4m.setMm202077x(bi.istatus96x.getText().toString());
+
+
+        if (bi.mm0201011.isChecked()) {
+            MainApp.form4m.setIStatus("1");
+        } else {
+            MainApp.form4m.setIStatus(bi.istatusa.isChecked() ? "11"
+                    : bi.istatusb.isChecked() ? "12"
+                    : bi.istatusc.isChecked() ? "13"
+                    : bi.istatusd.isChecked() ? "14"
+                    : bi.istatuse.isChecked() ? "15"
+                    : bi.istatus96.isChecked() ? "77"
+                    : "0");
+        }
 
         MainApp.form4m.setIStatus96x(bi.istatus96x.getText().toString());
+
         MainApp.form4m.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
 
     }
@@ -100,9 +129,11 @@ public class EndingActivityForm4mm extends AppCompatActivity {
 
     public boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
+
+        int updcount1 = db.updatesForm4MColumn(Forms4mmContract.Forms4MMTable.COLUMN_S02, form4m.s02toString());
         int updcount = db.updateEndingForm4mm();
 
-        if (updcount == 1) {
+        if (updcount == 1 && updcount1 == 1) {
             return true;
         } else {
             Toast.makeText(this, "SORRY! Failed to update DB", Toast.LENGTH_SHORT).show();

@@ -36,6 +36,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/cmtitle" />
+
+                    <TextView
+                        android:id="@+id/lblmsg"
+                        style="@style/quesNum"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="msg" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
