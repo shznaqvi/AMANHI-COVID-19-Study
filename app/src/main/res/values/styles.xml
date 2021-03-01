@@ -59,7 +59,7 @@
         <item name="android:fillAfter">true</item>
         <item name="android:enterFadeDuration">600</item>
         <item name="android:exitFadeDuration">200</item>
-        <item name="android:layoutDirection">ltr</item>
+        <item name="android:layoutDirection">rtl</item>
         <item name="android:animateLayoutChanges">false</item>
         <item name="android:toolbarStyle">@style/topBarStyle</item>
 
@@ -88,6 +88,7 @@
         <item name="android:gravity">bottom</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
 
         <!--
                         <item name="android:background">@color/colorPrimary_overlay</item>

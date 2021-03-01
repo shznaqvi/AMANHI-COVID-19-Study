@@ -44,40 +44,52 @@
         <activity android:name=".ui.SearchRecord21cm" />
         <activity
             android:name=".ui.sections.Section06mmActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section05mmActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section04mmActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section03mmActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section02mmActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.sections.IdentificationSecMActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.IdentificationSectionActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section06cmActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section05cmActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section04cmActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section03cmActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu" />
         <activity
             android:name=".ui.sections.Section02cmActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".core.AndroidDatabaseManager" />
