@@ -263,7 +263,7 @@
     <string name="cm040502">نہیں </string>
     <string name="cm040508">معلوم نہیں </string>
     <string name="cm040509">غیر ضروری</string>
-    <string name="cm0407">اگر آپ  کا بچہ ہسپتال میں نہیں تھا تو کیا آپ نے کسی دوسرے ذرائع سے نگہداشت حاصل کی ؟</string>
+    <string name="cm0407">اگر آپ  کا بچہ ہسپتال / صحت کے مرکز میں نہیں تھا تو کیا آپ نے کسی دوسرے ذرائع سے نگہداشت حاصل کی ؟</string>
     <string name="cm040601">دیکھ بھال نہیں کی</string>
     <string name="cm040701">ہاں</string>
     <string name="cm040602">کہیں اور سے دیکھ بھال لینے کی کوشش کی </string>
@@ -527,7 +527,7 @@
     <string name="mm0303602">نہیں</string>
     <string name="mm0303608">معلوم نہیں</string>
     <string name="mm0303609">غیر ضروری</string>
-    <string name="mm03037">جلد پر دانے</string>
+    <string name="mm03037">ہاں اگر ہاں (دورانیہ) معلوم نہیں 88 غیر ضروری 99</string>
     <string name="mm0303701">ہاں</string>
     <string name="mm0303702">نہیں</string>
     <string name="mm0303708">معلوم نہیں</string>
@@ -537,7 +537,7 @@
     <string name="mm0303802">نہیں</string>
     <string name="mm0303808">معلوم نہیں</string>
     <string name="mm0303809">غیر ضروری</string>
-    <string name="mm03039">ہاں اگر ہاں (دورانیہ) معلوم نہیں88 غیر ضروری99</string>
+    <string name="mm03039"> ہاں اگر ہاں (دورانیہ) معلوم نہیں88 غیر ضروری 99</string>
     <string name="mm03040">چکر آنا / بے ہوش ہونا</string>
     <string name="mm0304001">ہاں </string>
     <string name="mm0304002">نہیں</string>
@@ -643,7 +643,7 @@
     <string name="mm050502">نہیں </string>
     <string name="mm050508">معلوم نہیں </string>
     <string name="mm050509">غیر ضروری</string>
-    <string name="mm0506">ا گر ان علامات کی وجہ سے آپ ہسپتال میں داخل نہیں  ہوئی تو آپ نے کیا کیا ؟</string>
+    <string name="mm0506">ا گر ان علامات کی وجہ سے آپ ہسپتال / صحت کے مرکز میں داخل نہیں  ہوئی تو آپ نے کیا کیا ؟</string>
     <string name="mm050601">دیکھ بھال نہیں کی</string>
     <string name="mm050602">کہیں اورسے دیکھ بھال لینے کی کوشش کی</string>
     <string name="mm050609">غیر ضروری</string>
