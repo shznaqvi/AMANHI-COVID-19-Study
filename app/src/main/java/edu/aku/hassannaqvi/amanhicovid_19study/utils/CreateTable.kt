@@ -80,7 +80,7 @@ object CreateTable {
             + FollowUp21cm.FollowUpTable21cm.COLUMN_DSSID + " TEXT,"
             + FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + " TEXT,"
             + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT + " TEXT,"
-            + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK + " TEXT"
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK + " INTEGER"
             + " );")
 
     const val SQL_CREATE_FUP4MM = ("CREATE TABLE " + FollowUp4mm.FollowUpTable4mm.TABLE_NAME + "("
@@ -88,7 +88,7 @@ object CreateTable {
             + FollowUp4mm.FollowUpTable4mm.COLUMN_DSSID + " TEXT,"
             + FollowUp4mm.FollowUpTable4mm.COLUMN_STUDYID + " TEXT,"
             + FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT + " TEXT,"
-            + FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK + " TEXT,"
+            + FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK + " INTEGER,"
             + FollowUp4mm.FollowUpTable4mm.COLUMN_ISPREG + " TEXT,"
             + FollowUp4mm.FollowUpTable4mm.COLUMN_LASTVISITDT + " TEXT,"
             + FollowUp4mm.FollowUpTable4mm.COLUMN_VISITSTATUS + " TEXT"
