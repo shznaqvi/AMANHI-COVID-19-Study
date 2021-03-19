@@ -69,6 +69,8 @@ public class IdentificationSectionActivity extends AppCompatActivity {
             FollowUp21cm fup = (FollowUp21cm) getIntent().getSerializableExtra(FOLLOWUP_21CM_DATA);
 
             bi.cmsid.setText(fup.getSTUDYID());
+            bi.cm0111.setText(fup.getWOMNAME());
+            bi.cm0112.setText(fup.getHUSNAME());
             bi.cm0101.setText(fup.getDSSID());
             bi.cm0104.setText(fup.getFUPWEEK());
             fupdt = fup.getFUPDT();
@@ -76,6 +78,8 @@ public class IdentificationSectionActivity extends AppCompatActivity {
             bi.cmsid.setEnabled(false);
             bi.cm0101.setEnabled(false);
             bi.cm0104.setEnabled(false);
+            bi.cm0111.setEnabled(false);
+            bi.cm0112.setEnabled(false);
         }
 
 

@@ -643,11 +643,11 @@
     <string name="mm050502">نہیں </string>
     <string name="mm050508">معلوم نہیں </string>
     <string name="mm050509">غیر ضروری</string>
-    <string name="mm0506">ا گر ان علامات کی وجہ سے آپ ہسپتال / صحت کے مرکز میں داخل نہیں  ہوئی تو آپ نے کیا کیا ؟</string>
+    <string name="mm0506">ا گر ان علامات کی وجہ سے آپ ہسپتال میں داخل نہیں  ہوئی تو آپ نے کیا کیا ؟</string>
     <string name="mm050601">دیکھ بھال نہیں کی</string>
     <string name="mm050602">کہیں اورسے دیکھ بھال لینے کی کوشش کی</string>
     <string name="mm050609">غیر ضروری</string>
-    <string name="mm0507">اگر آپ ہسپتال میں نہیں گئی تھی کیا آپ نے کسی دوسرے ذرائع سے نگہداشت حاصل کی ؟</string>
+    <string name="mm0507">اگر آپ ہسپتال / صحت کے مرکز میں نہیں گئی تھی کیا آپ نے کسی دوسرے ذرائع سے نگہداشت حاصل کی ؟</string>
     <string name="mm050701">ہاں</string>
     <string name="mm050702">نہیں </string>
     <string name="mm050708">معلوم نہیں </string>
@@ -680,7 +680,7 @@
     <string name="mm0601">کیا ماں میں کورونا وائرس کے ایک یا اس سے زیادہ علامات موجود ہے؟</string>
     <string name="mm060101">ہاں</string>
     <string name="mm060102">نہیں </string>
-    <string name="mm0602">کیا عورت کو کورونا وائرس کا ٹیسٹ کرانے کراانے کے لئے مناسب سہولت کا انتظام کیا گیا؟</string>
+    <string name="mm0602">کیا عورت کو کورونا وائرس کا ٹیسٹ کراانے کے لئے مناسب سہولت کا انتظام کیا گیا؟</string>
     <string name="mm060201">ہاں</string>
     <string name="mm060202">نہیں </string>
     <string name="mm060208">معلوم نہیں </string>
@@ -701,7 +701,7 @@
 
 
     <string name="section7referralforcovid19symptomsthissectiontobefilledbytheinterviewer_mainheading">سیکشن 7 ہفتہ وار بیماری کی نگرانی کے دوران حمل کی شناخت  </string>
-    <string name="mm0701">کیا آپ کو پچھلے5 ہفتوں میں ماہواری ہوئی ؟</string>
+    <string name="mm0701">کیا آپ کو پچھلے 4 ہفتوں میں ماہواری ہوئی ؟</string>
     <string name="mm070101">ہاں</string>
     <string name="mm070102">نہیں</string>
     <string name="mm070108">معلوم نہیں</string>
@@ -709,7 +709,7 @@
 
 
     <string name="mm0702">آپ کو آخری ماہواری کب  ہوئی ؟</string>
-    <string name="mm0703">کیا آپ اس وقت حاملہ ہیں ؟</string>
+    <string name="mm0703">اگرQ 7.1  میں  نہیں  ہے یا معلوم نہیں ،  کیا آپ اس وقت حاملہ ہیں ؟ </string>
     <string name="mm070301">ہاں، ابھی حاملہ ہے</string>
     <string name="mm070302">نہیں، حاملہ نہیں ہے</string>
     <string name="mm070308">معلوم نہیں</string>

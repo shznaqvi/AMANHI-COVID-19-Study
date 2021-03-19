@@ -15,6 +15,8 @@ class FollowUp4mm : Serializable {
     var ISPREG: String = ""
     var LASTVISITDT: String = ""
     var VISITSTATUS: String = ""
+    var WOMNAME: String = ""
+    var HUSNAME: String = ""
     var COLFLAG: String = ""
 
     constructor() {
@@ -36,6 +38,8 @@ class FollowUp4mm : Serializable {
         ISPREG = jsonObject.getString(FollowUpTable4mm.COLUMN_ISPREG)
         LASTVISITDT = jsonObject.getString(FollowUpTable4mm.COLUMN_LASTVISITDT)
         VISITSTATUS = jsonObject.getString(FollowUpTable4mm.COLUMN_VISITSTATUS)
+        WOMNAME = jsonObject.getString(FollowUpTable4mm.COLUMN_WOMNAME)
+        HUSNAME = jsonObject.getString(FollowUpTable4mm.COLUMN_HUSNAME)
         COLFLAG = jsonObject.getString(FollowUpTable4mm.COLUMN_COLFLAG)
 
         return this
@@ -50,6 +54,8 @@ class FollowUp4mm : Serializable {
         ISPREG = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_ISPREG))
         LASTVISITDT = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_LASTVISITDT))
         VISITSTATUS = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_VISITSTATUS))
+        WOMNAME = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_WOMNAME))
+        HUSNAME = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_HUSNAME))
         COLFLAG = cursor.getString(cursor.getColumnIndex(FollowUpTable4mm.COLUMN_COLFLAG))
 
         return this
@@ -67,6 +73,8 @@ class FollowUp4mm : Serializable {
         const val COLUMN_ISPREG = "ispreg"
         const val COLUMN_LASTVISITDT = "lastvisitdt"
         const val COLUMN_VISITSTATUS = "vstatus"
+        const val COLUMN_WOMNAME = "womname"
+        const val COLUMN_HUSNAME = "husname"
         const val COLUMN_COLFLAG = "colflag"
     }
 

@@ -96,6 +96,8 @@ public class FormsAdapter4mm extends RecyclerView.Adapter<FormsAdapter4mm.ViewHo
         }*/
 
         holder.dssid.setText(fc.get(position).getDSSID());
+        holder.womname.setText("Mother Name: " + fc.get(position).getWOMNAME());
+        holder.husname.setText("Father Name: " + fc.get(position).getHUSNAME());
         holder.duedate.setText("Due Date: " + fc.get(position).getFUPDT());
         holder.fupwk.setText("Follow Up Week: " + fc.get(position).getFUPWEEK());
 
@@ -132,6 +134,9 @@ public class FormsAdapter4mm extends RecyclerView.Adapter<FormsAdapter4mm.ViewHo
         public TextView dssid;
         public TextView duedate;
         public TextView fupwk;
+        public TextView womname;
+        public TextView husname;
+
         //public TextView istatus;
         // each data item is just a string in this case
 
@@ -142,6 +147,8 @@ public class FormsAdapter4mm extends RecyclerView.Adapter<FormsAdapter4mm.ViewHo
             dssid = v.findViewById(R.id.dssid);
             duedate = v.findViewById(R.id.duedate);
             fupwk = v.findViewById(R.id.fupwk);
+            womname = v.findViewById(R.id.womname);
+            husname = v.findViewById(R.id.husname);
 
             //istatus = v.findViewById(R.id.istatus);
 

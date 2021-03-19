@@ -12,6 +12,8 @@ class FollowUp21cm : Serializable {
     var STUDYID: String = ""
     var FUPDT: String = ""
     var FUPWEEK: String = ""
+    var WOMNAME: String = ""
+    var HUSNAME: String = ""
     var COLFLAG: String = ""
 
     constructor() {
@@ -24,6 +26,8 @@ class FollowUp21cm : Serializable {
         STUDYID = jsonObject.getString(FollowUpTable21cm.COLUMN_STUDYID)
         FUPDT = jsonObject.getString(FollowUpTable21cm.COLUMN_FUPDT)
         FUPWEEK = jsonObject.getString(FollowUpTable21cm.COLUMN_FUPWEEK)
+        WOMNAME = jsonObject.getString(FollowUp4mm.FollowUpTable4mm.COLUMN_WOMNAME)
+        HUSNAME = jsonObject.getString(FollowUp4mm.FollowUpTable4mm.COLUMN_HUSNAME)
         COLFLAG = jsonObject.getString(FollowUpTable21cm.COLUMN_COLFLAG)
 
         return this
@@ -35,7 +39,8 @@ class FollowUp21cm : Serializable {
         STUDYID = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_STUDYID))
         FUPDT = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_FUPDT))
         FUPWEEK = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_FUPWEEK))
-        FUPWEEK = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_FUPWEEK))
+        WOMNAME = cursor.getString(cursor.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_WOMNAME))
+        HUSNAME = cursor.getString(cursor.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_HUSNAME))
         COLFLAG = cursor.getString(cursor.getColumnIndex(FollowUpTable21cm.COLUMN_COLFLAG))
 
         return this
@@ -50,6 +55,8 @@ class FollowUp21cm : Serializable {
         const val COLUMN_DSSID = "dssid"
         const val COLUMN_FUPDT = "fupdt"
         const val COLUMN_FUPWEEK = "fupweek"
+        const val COLUMN_WOMNAME = "womname"
+        const val COLUMN_HUSNAME = "husname"
         const val COLUMN_COLFLAG = "colflag"
     }
 }

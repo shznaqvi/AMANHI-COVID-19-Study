@@ -56,6 +56,8 @@ public class IdentificationSecMActivity extends AppCompatActivity {
             FollowUp4mm fup4mm = (FollowUp4mm) getIntent().getSerializableExtra(FOLLOWUP_4MM_DATA);
 
             bi.mmsid.setText(fup4mm.getSTUDYID());
+            bi.mm0108a.setText(fup4mm.getWOMNAME());
+            bi.mm0108b.setText(fup4mm.getHUSNAME());
             bi.mm0101.setText(fup4mm.getDSSID());
             bi.mm0104.setText(fup4mm.getFUPWEEK());
             fupdt = fup4mm.getFUPDT();
@@ -67,6 +69,8 @@ public class IdentificationSecMActivity extends AppCompatActivity {
             bi.mmsid.setEnabled(false);
             bi.mm0101.setEnabled(false);
             bi.mm0104.setEnabled(false);
+            bi.mm0108a.setEnabled(false);
+            bi.mm0108b.setEnabled(false);
 
         }
     }

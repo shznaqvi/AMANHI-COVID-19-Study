@@ -836,6 +836,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID, fup21cm.getSTUDYID());
                 values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT, fup21cm.getFUPDT());
                 values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK, fup21cm.getFUPWEEK());
+                values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_WOMNAME, fup21cm.getWOMNAME());
+                values.put(FollowUp21cm.FollowUpTable21cm.COLUMN_HUSNAME, fup21cm.getHUSNAME());
+
                 long rowID = db.insert(FollowUp21cm.FollowUpTable21cm.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
@@ -872,6 +875,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_ISPREG, fup4mm.getISPREG());
                 values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_LASTVISITDT, fup4mm.getLASTVISITDT());
                 values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_VISITSTATUS, fup4mm.getVISITSTATUS());
+                values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_WOMNAME, fup4mm.getWOMNAME());
+                values.put(FollowUp4mm.FollowUpTable4mm.COLUMN_HUSNAME, fup4mm.getHUSNAME());
 
                 long rowID = db.insert(FollowUp4mm.FollowUpTable4mm.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
@@ -960,7 +965,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID,
                 FollowUp21cm.FollowUpTable21cm.COLUMN_DSSID,
                 FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT,
-                FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK
+                FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK,
+                FollowUp21cm.FollowUpTable21cm.COLUMN_WOMNAME,
+                FollowUp21cm.FollowUpTable21cm.COLUMN_HUSNAME
         };
 
         String whereClause = FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + " = ? ";
@@ -987,6 +994,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setDSSID(c.getString(c.getColumnIndex(FollowUp21cm.FollowUpTable21cm.COLUMN_DSSID)));
                 fc.setFUPDT(c.getString(c.getColumnIndex(FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT)));
                 fc.setFUPWEEK(c.getString(c.getColumnIndex(FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK)));
+                fc.setWOMNAME(c.getString(c.getColumnIndex(FollowUp21cm.FollowUpTable21cm.COLUMN_WOMNAME)));
+                fc.setHUSNAME(c.getString(c.getColumnIndex(FollowUp21cm.FollowUpTable21cm.COLUMN_HUSNAME)));
 
                 allFC.add(fc);
             }
@@ -1013,6 +1022,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FollowUp4mm.FollowUpTable4mm.COLUMN_FUPDT,
                 FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK,
                 FollowUp4mm.FollowUpTable4mm.COLUMN_ISPREG,
+                FollowUp4mm.FollowUpTable4mm.COLUMN_WOMNAME,
+                FollowUp4mm.FollowUpTable4mm.COLUMN_HUSNAME,
                 FollowUp4mm.FollowUpTable4mm.COLUMN_VISITSTATUS
         };
 
@@ -1042,6 +1053,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setFUPWEEK(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_FUPWEEK)));
                 fc.setISPREG(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_ISPREG)));
                 fc.setVISITSTATUS(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_VISITSTATUS)));
+                fc.setWOMNAME(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_WOMNAME)));
+                fc.setHUSNAME(c.getString(c.getColumnIndex(FollowUp4mm.FollowUpTable4mm.COLUMN_HUSNAME)));
 
                 allFC.add(fc);
             }
