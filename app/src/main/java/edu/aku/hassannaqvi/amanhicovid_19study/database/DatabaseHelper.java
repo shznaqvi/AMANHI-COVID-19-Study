@@ -212,7 +212,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Users getLoginUser(String username, String password) {
+    public Boolean getLoginUser(String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -228,28 +228,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy = Users.UsersTable.COLUMN_ID + " ASC";
 
         Users allForms = null;
-        try {
-            c = db.query(
-                    Users.UsersTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                allForms = new Users().hydrate(c);
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
+
+        c = db.query(
+                Users.UsersTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        int cursorCount = c.getCount();
+
+        /*cursor.close();
+        db.close();
+        return cursorCount > 0;*/
+
+        if (cursorCount > 0) {
+            c.moveToFirst();
+            //  MainApp.user = new Users().Hydrate(c);
+            return true;
         }
-        return allForms;
+
+        return false;
     }
 
     public ArrayList<Form21cm> getFormsByDate(String sysdate) {

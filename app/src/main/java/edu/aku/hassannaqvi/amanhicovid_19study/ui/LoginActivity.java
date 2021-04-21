@@ -847,7 +847,7 @@ public class LoginActivity extends AppCompatActivity {
             if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                 DatabaseHelper db = new DatabaseHelper(LoginActivity.this);
                 if ((musername.equals("dmu@aku") && mPassword.equals("aku?dmu")) ||
-                        (musername.equals("guest@aku") && mPassword.equals("aku1234")) /*|| db.Login(musername, mPassword)*/
+                        (musername.equals("guest@aku") && mPassword.equals("aku1234")) || db.getLoginUser(musername, mPassword)
                         || (musername.equals("test1234") && mPassword.equals("test1234"))) {
                     MainApp.userName = musername;
                     MainApp.admin = musername.contains("@");
