@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +45,31 @@ public class Section06mmActivity extends AppCompatActivity {
             bi.fldGrpCVmm0702.setVisibility(View.VISIBLE);
             bi.fldGrpCVmm0703.setVisibility(View.VISIBLE);
         }
+
+
+        bi.mm070101.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b == true) {
+                    bi.fldGrpCVmm0702.setVisibility(View.VISIBLE);
+                } else {
+                    bi.fldGrpCVmm0702.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        bi.chklmp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b == true) {
+                    bi.mm0702.setVisibility(View.GONE);
+                } else {
+                    bi.mm0702.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
     }
 
     private void SaveDraft() {

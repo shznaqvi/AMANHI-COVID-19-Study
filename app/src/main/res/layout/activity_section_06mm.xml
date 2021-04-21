@@ -354,6 +354,14 @@
                         android:hint="DD-MM-YYYY"
                         app:dateFormat="dd-MM-yyyy"
                         app:maxDate="CR_DATE" />
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/chklmp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:text="معلوم نہیں"></androidx.appcompat.widget.AppCompatCheckBox>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

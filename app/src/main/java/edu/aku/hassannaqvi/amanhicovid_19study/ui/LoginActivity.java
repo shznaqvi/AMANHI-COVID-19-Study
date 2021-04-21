@@ -23,6 +23,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -46,9 +47,19 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Objects;
+
+import javax.crypto.Cipher;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS;
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
@@ -325,6 +336,37 @@ public class LoginActivity extends AppCompatActivity {
         //   getLoaderManager().initLoader(0, null, this);
     }
 
+    public static String encrypt(String plain) {
+        try {
+            byte[] iv = new byte[16];
+            new SecureRandom().nextBytes(iv);
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+            cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec("asSa%s|n'$ crEed".getBytes(StandardCharsets.UTF_8), "AES"), new IvParameterSpec(iv));
+            byte[] cipherText = cipher.doFinal(plain.getBytes(StandardCharsets.UTF_8));
+            byte[] ivAndCipherText = new byte[iv.length + cipherText.length];
+            System.arraycopy(iv, 0, ivAndCipherText, 0, iv.length);
+            System.arraycopy(cipherText, 0, ivAndCipherText, iv.length, cipherText.length);
+            return Base64.encodeToString(ivAndCipherText, Base64.NO_WRAP);
+        } catch (Exception e) {
+            e.getMessage();
+            return null;
+        }
+    }
+
+    public static String decrypt(String encoded) {
+        try {
+            byte[] ivAndCipherText = Base64.decode(encoded, Base64.NO_WRAP);
+            byte[] iv = Arrays.copyOfRange(ivAndCipherText, 0, 16);
+            byte[] cipherText = Arrays.copyOfRange(ivAndCipherText, 16, ivAndCipherText.length);
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+            cipher.init(Cipher.DECRYPT_MODE, new SecretKeySpec("asSa%s|n'$ crEed".getBytes(StandardCharsets.UTF_8), "AES"), new IvParameterSpec(iv));
+            return new String(cipher.doFinal(cipherText), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            e.getMessage();
+            return null;
+        }
+    }
+
     private void attemptLogin() {
 
 
@@ -372,12 +414,26 @@ public class LoginActivity extends AppCompatActivity {
                 // perform the user login attempt.
           /*  if (!Validator.emptyCheckingContainer(this, spinners))
                 return;*/
+
                 showProgress(true);
                 mAuthTask = new UserLoginTask(this, username, password);
                 mAuthTask.execute((Void) null);
             }
         }
     }
+
+    public String computeHash(String input) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        digest.reset();
+        byte[] byteData = digest.digest(input.getBytes(StandardCharsets.UTF_8));
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < byteData.length; i++) {
+            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+        }
+        Log.d("TAG", "computeHash: " + sb);
+        return sb.toString();
+    }
+
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
