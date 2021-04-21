@@ -23,7 +23,7 @@ android {
             applicationId "edu.aku.hassannaqvi.amanhicovid_19study"
             minSdkVersion 22
             targetSdkVersion 30
-            versionCode 1
+            versionCode code
             versionName "1.0"
 
             testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
