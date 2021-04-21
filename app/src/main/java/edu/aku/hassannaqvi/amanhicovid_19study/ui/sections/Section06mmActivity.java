@@ -53,6 +53,7 @@ public class Section06mmActivity extends AppCompatActivity {
                 if (b == true) {
                     bi.fldGrpCVmm0702.setVisibility(View.VISIBLE);
                 } else {
+                    bi.mm0702.setText("");
                     bi.fldGrpCVmm0702.setVisibility(View.GONE);
                 }
             }
@@ -106,6 +107,10 @@ public class Section06mmActivity extends AppCompatActivity {
 
 
         form4m.setMm0702(bi.mm0702.getText().toString());
+
+        form4m.setMm0702_chklmp(bi.chklmp.isChecked() ? "1"
+                : bi.chklmp.isChecked() ? "2"
+                : "-1");
 
 
         form4m.setMm0703(bi.mm070301.isChecked() ? "11"

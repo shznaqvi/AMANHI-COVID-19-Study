@@ -42,10 +42,35 @@ public class Form4mm extends BaseObservable {
 
     private String mmsid = "";
     private String mm0101 = "";
+
+    private String mm0702_chklmp = "";
+
+    public String getiStatus96x() {
+        return iStatus96x;
+    }
+
     private String mm0102 = "";
     private String mm0102a = "";
+
+    public void setiStatus96x(String iStatus96x) {
+        this.iStatus96x = iStatus96x;
+    }
+
+    public String getiStatus() {
+        return iStatus;
+    }
+
     private String mm0103 = "";
     private String mm0104 = "";
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
+    }
+
+    public String getMm0702_chklmp() {
+        return mm0702_chklmp;
+    }
+
     private String mm0105 = "";
     private String mm0106 = "";
     private String mm0107 = "";
@@ -135,6 +160,10 @@ public class Form4mm extends BaseObservable {
     private String mm0604 = "";
     private String mm0701 = "";
     private String mm0702 = "";
+
+    public void setMm0702_chklmp(String mm0702_chklmp) {
+        this.mm0702_chklmp = mm0702_chklmp;
+    }
     private String mm0703 = "";
 
     //Not saving in DB
@@ -1209,7 +1238,6 @@ public class Form4mm extends BaseObservable {
         return new GsonBuilder().create().toJson(this, Form4mm.class);
     }
 
-
     public String s02toString() {
         JSONObject json = new JSONObject();
         try {
@@ -1308,6 +1336,7 @@ public class Form4mm extends BaseObservable {
                     .put("mm0604", mm0604)
                     .put("mm0701", mm0701)
                     .put("mm0702", mm0702)
+                    .put("mm0702_chklmp", mm0702_chklmp)
                     .put("mm0703", mm0703);
 
         } catch (JSONException e) {
@@ -1460,6 +1489,7 @@ public class Form4mm extends BaseObservable {
                 this.mm0604 = json.getString("mm0604");
                 this.mm0701 = json.getString("mm0701");
                 this.mm0702 = json.getString("mm0702");
+                this.mm0702_chklmp = json.getString("mm0702_chklmp");
                 this.mm0703 = json.getString("mm0703");
 
             } catch (JSONException e) {
