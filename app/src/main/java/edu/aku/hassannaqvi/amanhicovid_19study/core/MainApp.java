@@ -45,7 +45,6 @@ public class MainApp extends Application {
     public static String isprevpreg;
 
 
-
     public static void hideSystemUI(View decorView) {
         // Enables regular immersive mode.
         // For "lean back" mode, remove SYSTEM_UI_FLAG_IMMERSIVE.
