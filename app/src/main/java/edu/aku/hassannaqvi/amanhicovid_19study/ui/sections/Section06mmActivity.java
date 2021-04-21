@@ -206,7 +206,6 @@ public class Section06mmActivity extends AppCompatActivity {
             return false;
         }
 
-
         return true;
 
     }
