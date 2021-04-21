@@ -352,6 +352,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="DD-MM-YYYY"
+                        android:text='@{chklmp.checked ? mm0702.getText().toString() : ""}'
+                        android:visibility='@{chklmp.checked? View.GONE : View.VISIBLE}'
                         app:dateFormat="dd-MM-yyyy"
                         app:maxDate="CR_DATE" />
 

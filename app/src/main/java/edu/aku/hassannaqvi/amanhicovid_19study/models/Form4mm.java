@@ -34,6 +34,8 @@ public class Form4mm extends BaseObservable {
     private String gps = "";
     private String endTime = "";
     private String iStatus = "";
+
+
     private String iStatus96x = "";
     private String synced = "";
     private String syncDate = "";
@@ -43,33 +45,16 @@ public class Form4mm extends BaseObservable {
     private String mmsid = "";
     private String mm0101 = "";
 
-    private String mm0702_chklmp = "";
+    private String chklmp = "";
 
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
 
     private String mm0102 = "";
     private String mm0102a = "";
 
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-    }
-
-    public String getiStatus() {
-        return iStatus;
-    }
 
     private String mm0103 = "";
     private String mm0104 = "";
 
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getMm0702_chklmp() {
-        return mm0702_chklmp;
-    }
 
     private String mm0105 = "";
     private String mm0106 = "";
@@ -160,11 +145,8 @@ public class Form4mm extends BaseObservable {
     private String mm0604 = "";
     private String mm0701 = "";
     private String mm0702 = "";
-
-    public void setMm0702_chklmp(String mm0702_chklmp) {
-        this.mm0702_chklmp = mm0702_chklmp;
-    }
     private String mm0703 = "";
+
 
     //Not saving in DB
     private LocalDate localDate = null;
@@ -172,6 +154,7 @@ public class Form4mm extends BaseObservable {
     public Form4mm() {
 
     }
+
 
     public LocalDate getLocalDate() {
         return localDate;
@@ -224,6 +207,18 @@ public class Form4mm extends BaseObservable {
         this.studyid = studyid;
     }
 
+    public String getiStatus() {
+        return iStatus;
+    }
+
+    public void setiStatus(String iStatus) {
+        this.iStatus = iStatus;
+    }
+
+    public String getiStatus96x() {
+        return iStatus96x;
+    }
+
 
     @Bindable
     public String getDssID() {
@@ -267,12 +262,25 @@ public class Form4mm extends BaseObservable {
         this.mm0702 = mm0702;
     }
 
+    public void setiStatus96x(String iStatus96x) {
+        this.iStatus96x = iStatus96x;
+    }
+
+    public String getChklmp() {
+        return chklmp;
+    }
+
+
     public String getMm0703() {
         return mm0703;
     }
 
     public void setMm0703(String mm0703) {
         this.mm0703 = mm0703;
+    }
+
+    public void setChklmp(String chklmp) {
+        this.chklmp = chklmp;
     }
 
 
@@ -1336,7 +1344,7 @@ public class Form4mm extends BaseObservable {
                     .put("mm0604", mm0604)
                     .put("mm0701", mm0701)
                     .put("mm0702", mm0702)
-                    .put("mm0702_chklmp", mm0702_chklmp)
+                    .put("chklmp", chklmp)
                     .put("mm0703", mm0703);
 
         } catch (JSONException e) {
@@ -1489,7 +1497,7 @@ public class Form4mm extends BaseObservable {
                 this.mm0604 = json.getString("mm0604");
                 this.mm0701 = json.getString("mm0701");
                 this.mm0702 = json.getString("mm0702");
-                this.mm0702_chklmp = json.getString("mm0702_chklmp");
+                this.chklmp = json.getString("chklmp");
                 this.mm0703 = json.getString("mm0703");
 
             } catch (JSONException e) {

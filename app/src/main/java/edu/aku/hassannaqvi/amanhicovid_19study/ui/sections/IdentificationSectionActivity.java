@@ -166,8 +166,11 @@ public class IdentificationSectionActivity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-        finish();
-        startActivity(new Intent(this, EndingActivityForm21cm.class).putExtra("complete", false));
+        SaveDraft();
+        if (UpdateDB()) {
+            finish();
+            startActivity(new Intent(this, EndingActivityForm21cm.class).putExtra("complete", false));
+        }
     }
 
     public void BtnContinue() {

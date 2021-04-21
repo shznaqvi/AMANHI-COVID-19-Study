@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
@@ -53,7 +54,7 @@ public class Section06mmActivity extends AppCompatActivity {
                 if (b == true) {
                     bi.fldGrpCVmm0702.setVisibility(View.VISIBLE);
                 } else {
-                    bi.mm0702.setText("");
+                    Clear.clearAllFields(bi.fldGrpCVmm0702);
                     bi.fldGrpCVmm0702.setVisibility(View.GONE);
                 }
             }
@@ -64,9 +65,10 @@ public class Section06mmActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b == true) {
-                    bi.mm0702.setVisibility(View.GONE);
+                    Clear.clearAllFields(bi.fldGrpCVmm0702);
+                    bi.fldGrpCVmm0702.setVisibility(View.GONE);
                 } else {
-                    bi.mm0702.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVmm0702.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -108,7 +110,7 @@ public class Section06mmActivity extends AppCompatActivity {
 
         form4m.setMm0702(bi.mm0702.getText().toString());
 
-        form4m.setMm0702_chklmp(bi.chklmp.isChecked() ? "1"
+        form4m.setChklmp(bi.chklmp.isChecked() ? "1"
                 : bi.chklmp.isChecked() ? "2"
                 : "-1");
 
