@@ -148,7 +148,67 @@ public class Section06mmActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+
+        if (!bi.mm060101.isChecked() && !bi.mm060102.isChecked()) {
+            Toast.makeText(this, "CM0601 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (!bi.mm060201.isChecked()
+                && !bi.mm060202.isChecked()
+                && !bi.mm060208.isChecked()
+                && !bi.mm060209.isChecked()) {
+            Toast.makeText(this, "CM0602 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (!bi.mm060301.isChecked()
+                && !bi.mm060302.isChecked()
+                && !bi.mm060308.isChecked()
+                && !bi.mm060309.isChecked()) {
+            Toast.makeText(this, "CM0603 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (!bi.mm060401.isChecked()
+                && !bi.mm060402.isChecked()
+                && !bi.mm060408.isChecked()
+                && !bi.mm060409.isChecked()) {
+            Toast.makeText(this, "CM0604 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (!bi.mm070101.isChecked()
+                && !bi.mm070102.isChecked()
+                && !bi.mm070108.isChecked()
+                && !bi.mm070109.isChecked()) {
+            Toast.makeText(this, "CM0701 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (!bi.chklmp.isChecked()) {
+            if (bi.mm0702.getText().toString().trim().equals("")) {
+                Toast.makeText(this, "CM0702 is required", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
+
+        if (!bi.mm070301.isChecked()
+                && !bi.mm070302.isChecked()
+                && !bi.mm070308.isChecked()
+                && !bi.mm070309.isChecked()) {
+            Toast.makeText(this, "CM0703 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        return true;
+
     }
 
 }
