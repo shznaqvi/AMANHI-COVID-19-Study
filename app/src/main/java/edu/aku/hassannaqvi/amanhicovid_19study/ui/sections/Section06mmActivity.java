@@ -190,10 +190,12 @@ public class Section06mmActivity extends AppCompatActivity {
         }
 
 
-        if (!bi.chklmp.isChecked()) {
-            if (bi.mm0702.getText().toString().trim().equals("")) {
-                Toast.makeText(this, "CM0702 is required", Toast.LENGTH_SHORT).show();
-                return false;
+        if (bi.mm070101.isChecked()) {
+            if (!bi.chklmp.isChecked()) {
+                if (bi.mm0702.getText().toString().trim().equals("")) {
+                    Toast.makeText(this, "CM0702 is required", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
             }
         }
 
