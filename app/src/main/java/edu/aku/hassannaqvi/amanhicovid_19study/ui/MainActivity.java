@@ -46,8 +46,16 @@ public class MainActivity extends AppCompatActivity {
 
         if (MainApp.userName.equals("test1234") || MainApp.userName.equals("dmu@aku")) {
             bi.showdb.setVisibility(View.VISIBLE);
+            bi.admin.setVisibility(View.VISIBLE);
+            bi.admin1.setVisibility(View.VISIBLE);
+            bi.startInterview.setVisibility(View.VISIBLE);
+            bi.btnChildMorb.setVisibility(View.VISIBLE);
         } else {
             bi.showdb.setVisibility(View.GONE);
+            bi.admin.setVisibility(View.GONE);
+            bi.admin1.setVisibility(View.GONE);
+            bi.startInterview.setVisibility(View.GONE);
+            bi.btnChildMorb.setVisibility(View.GONE);
         }
     }
 
