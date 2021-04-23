@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -75,8 +76,15 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case R.id.action_database:
-                startActivity(new Intent(this, AndroidDatabaseManager.class));
+
+                if (MainApp.userName.equals("test1234") || MainApp.userName.equals("dmu@aku")) {
+                    startActivity(new Intent(this, AndroidDatabaseManager.class));
+                } else {
+                    Toast.makeText(this, "You are not authorize for this option", Toast.LENGTH_SHORT).show();
+                }
                 break;
+
+
             case R.id.action_data_sync:
                 startActivity(new Intent(this, SyncActivity.class));
                 break;
