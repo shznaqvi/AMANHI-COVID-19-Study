@@ -9,6 +9,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompatSideChannelService;
 import androidx.databinding.DataBindingUtil;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
@@ -43,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         setTitle(getString(R.string.app_name) + " :: " + getString(R.string.main_menu));
 
+        if (MainApp.userName.equals("test1234") || MainApp.userName.equals("dmu@aku")) {
+            bi.showdb.setVisibility(View.VISIBLE);
+        } else {
+            bi.showdb.setVisibility(View.GONE);
+        }
     }
 
     @Override
