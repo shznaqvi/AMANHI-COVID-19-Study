@@ -837,6 +837,7 @@ public class LoginActivity extends AppCompatActivity {
             return true;
         }
 
+
         @Override
         protected void onPostExecute(final Boolean success) {
             mAuthTask = null;
