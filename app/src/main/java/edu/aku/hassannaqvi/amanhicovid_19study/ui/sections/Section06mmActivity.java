@@ -207,6 +207,7 @@ public class Section06mmActivity extends AppCompatActivity {
         }
 
 
+
         if (bi.fldGrpCVmm0703.getVisibility() == View.VISIBLE) {
 
             if (!bi.mm070301.isChecked()
