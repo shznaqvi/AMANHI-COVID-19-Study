@@ -48,6 +48,35 @@ public class Section06mmActivity extends AppCompatActivity {
         }
 
 
+        bi.mm060402.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b == true) {
+                    bi.fldGrpCVmm0605.setVisibility(View.VISIBLE);
+                } else {
+                    Clear.clearAllFields(bi.fldGrpCVmm0605);
+                    bi.fldGrpCVmm0605.setVisibility(View.GONE);
+
+                    Clear.clearAllFields(bi.fldGrpCVmm0606);
+                    bi.fldGrpCVmm0606.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        bi.mm060501.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b == true) {
+                    bi.fldGrpCVmm0606.setVisibility(View.VISIBLE);
+                } else {
+                    Clear.clearAllFields(bi.fldGrpCVmm0606);
+                    bi.fldGrpCVmm0606.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
         bi.mm070101.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -98,6 +127,16 @@ public class Section06mmActivity extends AppCompatActivity {
                 : bi.mm060402.isChecked() ? "2"
                 : bi.mm060408.isChecked() ? "8"
                 : bi.mm060409.isChecked() ? "9"
+                : "-1");
+
+
+        form4m.setMm0605(bi.mm060501.isChecked() ? "1"
+                : bi.mm060502.isChecked() ? "2"
+                : "-1");
+
+
+        form4m.setMm0606(bi.mm060601.isChecked() ? "11"
+                : bi.mm060602.isChecked() ? "12"
                 : "-1");
 
 
@@ -181,6 +220,24 @@ public class Section06mmActivity extends AppCompatActivity {
         }
 
 
+        if (bi.mm060402.isChecked()) {
+            if (!bi.mm060501.isChecked()
+                    && !bi.mm060502.isChecked()) {
+                Toast.makeText(this, "CM0605 is required", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
+
+        if (bi.mm060501.isChecked()) {
+            if (!bi.mm060601.isChecked()
+                    && !bi.mm060602.isChecked()) {
+                Toast.makeText(this, "CM0606 is required", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
+
         if (bi.fldGrpCVmm0701.getVisibility() == View.VISIBLE) {
 
             if (!bi.mm070101.isChecked()
@@ -205,7 +262,6 @@ public class Section06mmActivity extends AppCompatActivity {
                 }
             }
         }
-
 
 
         if (bi.fldGrpCVmm0703.getVisibility() == View.VISIBLE) {

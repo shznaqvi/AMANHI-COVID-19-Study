@@ -715,6 +715,16 @@
     <string name="mm060409">NA</string>
 
 
+    <string name="mm0605">گرسوال 6.4 میں نہیں ہے تو ، کیا عورت کا کسی اور ذریعہ سے ٹیسٹ تھا جس میں اسٹڈی ٹیم بھی شامل ہے؟</string>
+    <string name="mm060501">YES</string>
+    <string name="mm060502">NO</string>
+
+
+    <string name="mm0606">اگرسوال 6.5 میں ہاں ہے تو، ٹیسٹ کی قسم کیا ہے؟</string>
+    <string name="mm060601">RT-PCR</string>
+    <string name="mm060602">Rapid Antigen Test</string>
+
+
     <string name="section7referralforcovid19symptomsthissectiontobefilledbytheinterviewer_mainheading">سیکشن 7 ہفتہ وار بیماری کی نگرانی کے دوران حمل کی شناخت  </string>
     <string name="mm0701">Did you have menstruel period in last 5 weeks ?</string>
     <string name="mm070101">YES</string>
@@ -881,6 +891,8 @@
     <string name='Q_mm0602'>mm0602</string>
     <string name='Q_mm0603'>mm0603</string>
     <string name='Q_mm0604'>mm0604</string>
+    <string name='Q_mm0605'>mm0605</string>
+    <string name='Q_mm0606'>mm0606</string>
     <string name='Q_mm0701'>mm0701</string>
     <string name='Q_mm0702'>mm0702</string>
     <string name='Q_mm0703'>mm0703</string>

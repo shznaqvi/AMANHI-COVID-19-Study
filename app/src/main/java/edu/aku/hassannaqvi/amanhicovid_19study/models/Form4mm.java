@@ -143,6 +143,8 @@ public class Form4mm extends BaseObservable {
     private String mm0602 = "";
     private String mm0603 = "";
     private String mm0604 = "";
+    private String mm0605 = "";
+    private String mm0606 = "";
     private String mm0701 = "";
     private String mm0702 = "";
     private String mm0703 = "";
@@ -278,6 +280,25 @@ public class Form4mm extends BaseObservable {
     public void setMm0703(String mm0703) {
         this.mm0703 = mm0703;
     }
+
+
+    public String getMm0605() {
+        return mm0605;
+    }
+
+    public void setMm0605(String mm0605) {
+        this.mm0605 = mm0605;
+    }
+
+
+    public String getMm0606() {
+        return mm0606;
+    }
+
+    public void setMm0606(String mm0606) {
+        this.mm0606 = mm0606;
+    }
+
 
     public void setChklmp(String chklmp) {
         this.chklmp = chklmp;
@@ -1342,6 +1363,8 @@ public class Form4mm extends BaseObservable {
                     .put("mm0602", mm0602)
                     .put("mm0603", mm0603)
                     .put("mm0604", mm0604)
+                    .put("mm0605", mm0605)
+                    .put("mm0606", mm0606)
                     .put("mm0701", mm0701)
                     .put("mm0702", mm0702)
                     .put("chklmp", chklmp)
@@ -1495,6 +1518,8 @@ public class Form4mm extends BaseObservable {
                 this.mm0602 = json.getString("mm0602");
                 this.mm0603 = json.getString("mm0603");
                 this.mm0604 = json.getString("mm0604");
+                this.mm0605 = json.getString("mm0605");
+                this.mm0606 = json.getString("mm0606");
                 this.mm0701 = json.getString("mm0701");
                 this.mm0702 = json.getString("mm0702");
                 this.chklmp = json.getString("chklmp");
