@@ -147,6 +147,12 @@ public class Form21cm extends BaseObservable {
     private String cm0602 = "";
     private String cm0603 = "";
     private String cm0604 = "";
+
+    private String cm0606 = "";
+    private String cm0607 = "";
+    private String cm0608 = "";
+    private String cm0609 = "";
+
     private String cm0605 = "";
     // SECTION VARIABLES
     private String s02cm = "";
@@ -1214,6 +1220,43 @@ public class Form21cm extends BaseObservable {
         this.cm0604 = cm0604;
     }
 
+
+    public String getCm0606() {
+        return cm0606;
+    }
+
+    public void setCm0606(String cm0606) {
+        this.cm0606 = cm0606;
+    }
+
+
+    public String getCm0607() {
+        return cm0607;
+    }
+
+    public void setCm0607(String cm0607) {
+        this.cm0607 = cm0607;
+    }
+
+
+    public String getCm0608() {
+        return cm0608;
+    }
+
+    public void setCm0608(String cm0608) {
+        this.cm0608 = cm0608;
+    }
+
+
+    public String getCm0609() {
+        return cm0609;
+    }
+
+    public void setCm0609(String cm0609) {
+        this.cm0609 = cm0609;
+    }
+
+
     public String getCm0605() {
         return cm0605;
     }
@@ -1461,6 +1504,10 @@ public class Form21cm extends BaseObservable {
                     .put("cm0602", cm0602)
                     .put("cm0603", cm0603)
                     .put("cm0604", cm0604)
+                    .put("cm0606", cm0606)
+                    .put("cm0607", cm0607)
+                    .put("cm0608", cm0608)
+                    .put("cm0609", cm0609)
                     .put("cm0605", cm0605);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -1617,6 +1664,10 @@ public class Form21cm extends BaseObservable {
                 this.cm0602 = json.getString("cm0602");
                 this.cm0603 = json.getString("cm0603");
                 this.cm0604 = json.getString("cm0604");
+                this.cm0606 = json.getString("cm0606");
+                this.cm0607 = json.getString("cm0607");
+                this.cm0608 = json.getString("cm0608");
+                this.cm0609 = json.getString("cm0609");
                 this.cm0605 = json.getString("cm0605");
             } catch (JSONException e) {
                 e.printStackTrace();

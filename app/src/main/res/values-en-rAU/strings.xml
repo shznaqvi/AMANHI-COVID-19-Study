@@ -398,6 +398,27 @@
     <string name="cm0604">Was she facilitated to go for the testing for the child?</string>
     <string name="cm060401">Yes</string>
     <string name="cm060402">NO</string>
+
+    <string name="cm0606">کیا ماں بچے کو کورونا وائرس کا ٹیسٹ کرانے کے لیے صحت کی سہولت  لے گئی ؟</string>
+    <string name="cm060601">ہاں</string>
+    <string name="cm060602">نہیں </string>
+    <string name="cm060608">معلوم نہیں </string>
+    <string name="cm060609">غیر ضروری</string>
+
+    <string name="cm0607">کیا صحت کی سہولت  میں  بچے کا کورونا وائرس کا ٹیسٹ کیا گیا ؟</string>
+    <string name="cm060701">ہاں</string>
+    <string name="cm060702">نہیں </string>
+    <string name="cm060708">معلوم نہیں </string>
+    <string name="cm060709">غیر ضروری</string>
+
+    <string name="cm0608">اگرسوال  6.7 میں نہیں ہے تو ، کیا عورت نے بچے کا کسی اور ذریعہ سے ٹیسٹ کروایا تھا جس میں متعلقہ تحقیق کی ٹیم بھی شامل ہے؟</string>
+    <string name="cm060801">ہاں</string>
+    <string name="cm060802">نہیں </string>
+
+    <string name="cm0609">اگرسوال 6.8 میں ہاں ہے تو، ٹیسٹ کی قسم کیا ہے؟</string>
+    <string name="cm060901">RT-PCR</string>
+    <string name="cm060902">Rapid Antigen Test</string>
+
     <string name="cm0605">If COVID symptoms were not communicated to the supervisor, what was the reason?</string>
 
 
@@ -846,6 +867,12 @@
     <string name='Q_cm0602'>cm0602</string>
     <string name='Q_cm0603'>cm0603</string>
     <string name='Q_cm0604'>cm0604</string>
+
+    <string name='Q_cm0606'>cm0606</string>
+    <string name='Q_cm0607'>cm0607</string>
+    <string name='Q_cm0608'>cm0608</string>
+    <string name='Q_cm0609'>cm0609</string>
+
     <string name='Q_cm0605'>cm0605</string>
     <string name='Q_cm5title3'>cm5title3</string>
     <string name='Q_cmsid'>cmsid</string>

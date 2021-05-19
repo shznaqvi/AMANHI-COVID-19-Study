@@ -42,6 +42,35 @@ public class Section06cmActivity extends AppCompatActivity {
     private void setupSkips() {
         //rgListener(bi.cm0601, bi.cm060102, bi.cm060201, bi.cm060209, bi.cvcm0603);
 
+        bi.cm060702.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b == true) {
+                    bi.cvcm0608.setVisibility(View.VISIBLE);
+                } else {
+                    Clear.clearAllFields(bi.cvcm0608);
+                    bi.cvcm0608.setVisibility(View.GONE);
+
+                    Clear.clearAllFields(bi.cvcm0609);
+                    bi.cvcm0609.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        bi.cm060801.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b == true) {
+                    bi.cvcm0609.setVisibility(View.VISIBLE);
+                } else {
+                    Clear.clearAllFields(bi.cvcm0609);
+                    bi.cvcm0609.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
         bi.cm0601.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(bi.cvcm0605);
             bi.cvcm0605.setVisibility(View.VISIBLE);
@@ -141,8 +170,32 @@ public class Section06cmActivity extends AppCompatActivity {
                 : bi.cm060402.isChecked() ? "2"
                 : "-1");
 
-        form21cm.setCm0605(bi.cm0605.getText().toString());
 
+        form21cm.setCm0606(bi.cm060601.isChecked() ? "1"
+                : bi.cm060602.isChecked() ? "2"
+                : bi.cm060608.isChecked() ? "8"
+                : bi.cm060609.isChecked() ? "9"
+                : "-1");
+
+
+        form21cm.setCm0607(bi.cm060701.isChecked() ? "1"
+                : bi.cm060702.isChecked() ? "2"
+                : bi.cm060708.isChecked() ? "8"
+                : bi.cm060709.isChecked() ? "9"
+                : "-1");
+
+
+        form21cm.setCm0608(bi.cm060801.isChecked() ? "1"
+                : bi.cm060802.isChecked() ? "2"
+                : "-1");
+
+
+        form21cm.setCm0609(bi.cm060901.isChecked() ? "11"
+                : bi.cm060902.isChecked() ? "12"
+                : "-1");
+
+
+        form21cm.setCm0605(bi.cm0605.getText().toString());
 
     }
 
