@@ -24,10 +24,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 
-import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
+import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
+
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
 
 
@@ -203,18 +203,13 @@ public class DataUpWorkerALL extends Worker {
 
             //JSONObject jsonObjectCC = jsonArray.getJSONObject(0);
             ///BE CAREFULL DATA.BUILDER CAN HAVE ONLY 1024O BYTES. EACH CHAR HAS 8 BYTES
-            if (result.toString().length() > 10240) {
-                data = new Data.Builder()
-                        .putString("message", String.valueOf(result).substring(0, (10240 - 1) / 8))
-                        .putInt("position", this.position)
-                        .build();
-            } else {
+            MainApp.downloadData[this.position] = String.valueOf(result);
 
-                data = new Data.Builder()
-                        .putString("message", String.valueOf(result))
-                        .putInt("position", this.position)
-                        .build();
-            }
+
+            data = new Data.Builder()
+                    .putString("message", String.valueOf(result))
+                    .putInt("position", this.position).build();
+
 
             displayNotification(nTitle, "Uploaded successfully");
             return Result.success(data);

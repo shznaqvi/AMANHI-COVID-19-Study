@@ -48,8 +48,8 @@ import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.workers.DataDownWorkerALL;
 import edu.aku.hassannaqvi.amanhicovid_19study.workers.DataUpWorkerALL;
 
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.sdDir;
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.sdDir;
 import static edu.aku.hassannaqvi.amanhicovid_19study.utils.AndroidUtilityKt.isNetworkConnected;
 import static edu.aku.hassannaqvi.amanhicovid_19study.utils.AppUtilsKt.dbBackup;
 
@@ -367,7 +367,8 @@ public class SyncActivity extends AppCompatActivity {
                     if (workInfo.getState() != null &&
                             workInfo.getState() == WorkInfo.State.SUCCEEDED) {
 
-                        String result = workInfo.getOutputData().getString("message");
+                        String result = MainApp.downloadData[position];
+
 
                         int sSynced = 0;
                         int sDuplicate = 0;
