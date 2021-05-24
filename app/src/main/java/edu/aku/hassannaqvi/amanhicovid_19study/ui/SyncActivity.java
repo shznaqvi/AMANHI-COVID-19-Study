@@ -327,7 +327,11 @@ public class SyncActivity extends AppCompatActivity {
                     .addTag(String.valueOf(i))
                     .setInputData(data).build();
             workRequests.add(workRequest);
-
+            if (i == 150) {
+                i = uploadTables.size();
+            } else {
+                i = i;
+            }
         }
 
         // FOR SIMULTANEOUS WORKREQUESTS (ALL TABLES DOWNLOAD AT THE SAME TIME)
@@ -368,8 +372,8 @@ public class SyncActivity extends AppCompatActivity {
                             workInfo.getState() == WorkInfo.State.SUCCEEDED) {
 
                         String result = MainApp.downloadData[position];
-
-
+                        JSONArray total = MainApp.uploadData.get(position);
+                        tableName = tableName + " (Total Records to upload: " + total + ")";
                         int sSynced = 0;
                         int sDuplicate = 0;
                         StringBuilder sSyncedError = new StringBuilder();
@@ -418,15 +422,16 @@ public class SyncActivity extends AppCompatActivity {
                                                 sSyncedError.append("\nError: ").append(jsonObject.getString("message"));
                                             }
                                         }
-                                        Toast.makeText(SyncActivity.this, tableName + " synced: " + sSynced + "\r\n\r\n Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(SyncActivity.this, tableName + " synced: " + sSynced + "/" + total.length()
+                                                + " \r\n\r\n Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
                                         if (sSyncedError.toString().equals("")) {
-                                            uploadTables.get(position).setmessage(tableName + " synced: " + sSynced + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
-                                            uploadTables.get(position).setstatus("Completed");
+                                            uploadTables.get(position).setmessage(tableName + " synced: " + sSynced + "/" + total.length() + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
+                                            uploadTables.get(position).setstatus(sSynced == total.length() ? "Completed" : "Complete (upload again!)");
                                             uploadTables.get(position).setstatusID(3);
                                             syncListAdapter.updatesyncList(uploadTables);
                                         } else {
-                                            uploadTables.get(position).setmessage(tableName + " synced: " + sSynced + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
+                                            uploadTables.get(position).setmessage(tableName + " synced: " + sSynced + "/" + total.length() + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
                                             uploadTables.get(position).setstatus("Process Failed");
                                             uploadTables.get(position).setstatusID(1);
                                             syncListAdapter.updatesyncList(uploadTables);
