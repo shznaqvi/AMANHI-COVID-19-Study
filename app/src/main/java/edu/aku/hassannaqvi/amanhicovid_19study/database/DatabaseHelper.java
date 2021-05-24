@@ -8,6 +8,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -39,9 +40,11 @@ import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
 public class DatabaseHelper extends SQLiteOpenHelper {
     private final String TAG = "DatabaseHelper";
     public static String DB_NAME = PROJECT_NAME + "_copy.db";
+    public Context mycontext;
 
     public DatabaseHelper(Context context) {
         super(context, CreateTable.DATABASE_NAME, null, CreateTable.DATABASE_VERSION);
+        mycontext = context;
     }
 
     @Override
@@ -596,6 +599,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     having,                    // don't filter by row groups
                     orderBy                    // The sort order
             );
+
+            //Toast.makeText(mycontext, c.getCount(), Toast.LENGTH_SHORT).show();
+
             while (c.moveToNext()) {
                 /** WorkManager Upload
                  /*Form fc = new Form();

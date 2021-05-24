@@ -134,6 +134,8 @@ public class SyncActivity extends AppCompatActivity {
                 uploadTables.add(new SyncModel(Forms21cmContract.Forms21cmTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedForms21cm());
 
+                Toast.makeText(this, MainApp.uploadData.toString(), Toast.LENGTH_LONG).show();
+
                 uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedForms4mm());
 
@@ -270,7 +272,7 @@ public class SyncActivity extends AppCompatActivity {
 //                    pd.show();
                                 } catch (JSONException e) {
                                     e.printStackTrace();
-                                    downloadTables.get(position).setstatus("Process Failed");
+                                    downloadTables.get(position).setstatus("Process Failed1 -- " + e.getMessage());
                                     downloadTables.get(position).setstatusID(1);
                                     downloadTables.get(position).setmessage(result);
                                     syncListAdapter.updatesyncList(downloadTables);
@@ -283,7 +285,7 @@ public class SyncActivity extends AppCompatActivity {
 //                pd.show();
                             }
                         } else {
-                            downloadTables.get(position).setstatus("Process Failed");
+                            downloadTables.get(position).setstatus("Process Failed2");
                             downloadTables.get(position).setstatusID(1);
                             downloadTables.get(position).setmessage("Server not found!");
                             syncListAdapter.updatesyncList(downloadTables);
@@ -294,7 +296,7 @@ public class SyncActivity extends AppCompatActivity {
                     if (workInfo.getState() != null &&
                             workInfo.getState() == WorkInfo.State.FAILED) {
                         String message = workInfo.getOutputData().getString("error");
-                        downloadTables.get(position).setstatus("Process Failed");
+                        downloadTables.get(position).setstatus("Process Failed3");
                         downloadTables.get(position).setstatusID(1);
                         downloadTables.get(position).setmessage(message);
                         syncListAdapter.updatesyncList(downloadTables);
@@ -327,7 +329,7 @@ public class SyncActivity extends AppCompatActivity {
                     .addTag(String.valueOf(i))
                     .setInputData(data).build();
             workRequests.add(workRequest);
-            if (i == 150) {
+            if (i == 1) {
                 i = uploadTables.size();
             } else {
                 i = i;
@@ -432,13 +434,13 @@ public class SyncActivity extends AppCompatActivity {
                                             syncListAdapter.updatesyncList(uploadTables);
                                         } else {
                                             uploadTables.get(position).setmessage(tableName + " synced: " + sSynced + "/" + total.length() + "\r\n\r\n Duplicates: " + sDuplicate + "\r\n\r\n Errors: " + sSyncedError);
-                                            uploadTables.get(position).setstatus("Process Failed");
+                                            uploadTables.get(position).setstatus("Process Failed4");
                                             uploadTables.get(position).setstatusID(1);
                                             syncListAdapter.updatesyncList(uploadTables);
                                         }
                                     } else {
                                         uploadTables.get(position).setmessage("Method not found: updateSynced" + tableName);
-                                        uploadTables.get(position).setstatus("Process Failed");
+                                        uploadTables.get(position).setstatus("Process Failed5");
                                         uploadTables.get(position).setstatusID(1);
                                         syncListAdapter.updatesyncList(uploadTables);
                                     }
@@ -453,13 +455,13 @@ public class SyncActivity extends AppCompatActivity {
                                         syncListAdapter.updatesyncList(uploadTables);
                                     } else {
                                         uploadTables.get(position).setmessage(result);
-                                        uploadTables.get(position).setstatus("Process Failed");
+                                        uploadTables.get(position).setstatus("Process Failed6");
                                         uploadTables.get(position).setstatusID(1);
                                         syncListAdapter.updatesyncList(uploadTables);
                                     }
                                 } catch (IllegalAccessException | InvocationTargetException e) {
                                     e.printStackTrace();
-                                    uploadTables.get(position).setstatus("Process Failed");
+                                    uploadTables.get(position).setstatus("Process Failed7");
                                     uploadTables.get(position).setstatusID(1);
                                     uploadTables.get(position).setmessage(e.getMessage());
                                     syncListAdapter.updatesyncList(uploadTables);
@@ -472,7 +474,7 @@ public class SyncActivity extends AppCompatActivity {
 //                pd.show();
                             }
                         } else {
-                            uploadTables.get(position).setstatus("Process Failed");
+                            uploadTables.get(position).setstatus("Process Failed8");
                             uploadTables.get(position).setstatusID(1);
                             uploadTables.get(position).setmessage("Server not found!");
                             syncListAdapter.updatesyncList(uploadTables);
@@ -483,7 +485,7 @@ public class SyncActivity extends AppCompatActivity {
                     if (workInfo.getState() != null &&
                             workInfo.getState() == WorkInfo.State.FAILED) {
                         String message = workInfo.getOutputData().getString("error");
-                        uploadTables.get(position).setstatus("Process Failed");
+                        uploadTables.get(position).setstatus("Process Failed9");
                         uploadTables.get(position).setstatusID(1);
                         uploadTables.get(position).setmessage(message);
                         syncListAdapter.updatesyncList(uploadTables);
