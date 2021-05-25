@@ -207,7 +207,7 @@ public class DataUpWorkerALL extends Worker {
 
 
             data = new Data.Builder()
-                    .putString("message", String.valueOf(result))
+                    //.putString("message", String.valueOf(result))
                     .putInt("position", this.position).build();
 
 
@@ -236,11 +236,11 @@ public class DataUpWorkerALL extends Worker {
         NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("scrlog", "BLF", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel channel = new NotificationChannel(String.valueOf(position), PROJECT_NAME, NotificationManager.IMPORTANCE_DEFAULT);
             notificationManager.createNotificationChannel(channel);
         }
 
-        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), String.valueOf(position))
                 .setContentTitle(title)
                 .setContentText(task)
                 .setSmallIcon(R.mipmap.ic_launcher);

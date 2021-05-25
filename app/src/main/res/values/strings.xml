@@ -14,7 +14,7 @@
     <string name="section4careseekingforillness_mainheading"> بیماری کے لیے دیکھ بھال:  بیماری کے لیے دیکھ بھال</string>
     <string name="section5careseekingforchildrenfordiarrhoeachallengeswithfeedingandfever_mainheading">.    بچے کی بیماری دست ، دودھ پینے میں دشواری اور بخار  کے لیے دیکھ بھال: .    بچے کی بیماری دست ، دودھ پینے میں دشواری اور بخار  کے لیے دیکھ بھال</string>
     <string name="section6referralforcovid19symptoms_mainheading">.  کورونا وائرس کی علامات  کے لیے  ریفرل: . ما ں کا کورونا وائرس کے  لیے  ریفرل</string>
-    <string name="app_name"> ا من ہی کورونا وائرس </string>
+    <string name="app_name"> AMANHI - COVID </string>
     <string name="btnSync">Download Data</string>
     <string name="btnUpload">Upload Data</string>
     <string name="prompt_email">Email</string>

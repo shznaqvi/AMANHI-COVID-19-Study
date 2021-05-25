@@ -8,7 +8,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -547,7 +546,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     whereArgs,                 // The values for the WHERE clause
                     groupBy,                   // don't group the rows
                     having,                    // don't filter by row groups
-                    orderBy                    // The sort order
+                    orderBy,                    // The sort order
+                    "140"
             );
             while (c.moveToNext()) {
                 /** WorkManager Upload
@@ -597,7 +597,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     whereArgs,                 // The values for the WHERE clause
                     groupBy,                   // don't group the rows
                     having,                    // don't filter by row groups
-                    orderBy                    // The sort order
+                    orderBy,                    // The sort order
+                    "140"
             );
 
             //Toast.makeText(mycontext, c.getCount(), Toast.LENGTH_SHORT).show();

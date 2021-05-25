@@ -1664,11 +1664,34 @@ public class Form21cm extends BaseObservable {
                 this.cm0602 = json.getString("cm0602");
                 this.cm0603 = json.getString("cm0603");
                 this.cm0604 = json.getString("cm0604");
+                if (json.has("cm0606")) {
+                    this.cm0606 = json.getString("cm0606");
+                } else {
+                    this.cm0606 = "";
+                }
+                if (json.has("cm0605")) {
+                    this.cm0605 = json.getString("cm0605");
+                } else {
+                    this.cm0605 = "";
+                }
+                if (json.has("cm0608")) {
+                    this.cm0608 = json.getString("cm0608");
+                } else {
+                    this.cm0608 = "";
+                }
+                if (json.has("cm0609")) {
+                    this.cm0609 = json.getString("cm0609");
+                } else {
+                    this.cm0609 = "";
+                }
+
+
+              /*
                 this.cm0606 = json.getString("cm0606");
-                this.cm0607 = json.getString("cm0607");
+
                 this.cm0608 = json.getString("cm0608");
                 this.cm0609 = json.getString("cm0609");
-                this.cm0605 = json.getString("cm0605");
+                this.cm0605 = json.getString("cm0605");*/
             } catch (JSONException e) {
                 e.printStackTrace();
             }

@@ -1518,8 +1518,16 @@ public class Form4mm extends BaseObservable {
                 this.mm0602 = json.getString("mm0602");
                 this.mm0603 = json.getString("mm0603");
                 this.mm0604 = json.getString("mm0604");
-                this.mm0605 = json.getString("mm0605");
-                this.mm0606 = json.getString("mm0606");
+                if (json.has("mm0605")) {
+                    this.mm0605 = json.getString("mm0605");
+                } else {
+                    this.mm0605 = "";
+                }
+                if (json.has("mm0606")) {
+                    this.mm0606 = json.getString("mm0606");
+                } else {
+                    this.mm0606 = "";
+                }
                 this.mm0701 = json.getString("mm0701");
                 this.mm0702 = json.getString("mm0702");
                 this.chklmp = json.getString("chklmp");

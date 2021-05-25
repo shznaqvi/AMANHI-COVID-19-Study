@@ -131,13 +131,18 @@ public class SyncActivity extends AppCompatActivity {
                 MainApp.uploadData.clear();
 
 
+                // Forms21cm
                 uploadTables.add(new SyncModel(Forms21cmContract.Forms21cmTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedForms21cm());
 
                 Toast.makeText(this, MainApp.uploadData.toString(), Toast.LENGTH_LONG).show();
 
+                // Forms4mm
                 uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedForms4mm());
+
+                // Initialising downloadData array to capture response from server outside Data (limit:10204)
+                MainApp.downloadData = new String[uploadTables.size()];
 
                 setAdapter(uploadTables);
                 BeginUpload();
@@ -329,11 +334,7 @@ public class SyncActivity extends AppCompatActivity {
                     .addTag(String.valueOf(i))
                     .setInputData(data).build();
             workRequests.add(workRequest);
-            if (i == 1) {
-                i = uploadTables.size();
-            } else {
-                i = i;
-            }
+
         }
 
         // FOR SIMULTANEOUS WORKREQUESTS (ALL TABLES DOWNLOAD AT THE SAME TIME)
@@ -375,7 +376,6 @@ public class SyncActivity extends AppCompatActivity {
 
                         String result = MainApp.downloadData[position];
                         JSONArray total = MainApp.uploadData.get(position);
-                        tableName = tableName + " (Total Records to upload: " + total + ")";
                         int sSynced = 0;
                         int sDuplicate = 0;
                         StringBuilder sSyncedError = new StringBuilder();
