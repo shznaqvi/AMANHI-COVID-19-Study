@@ -6,8 +6,12 @@ android {
     compileSdkVersion 30
     def versionPropsFile = file('version.properties')
     buildToolsVersion "30.0.3"
-    dataBinding {
-        enabled = true
+    buildFeatures {
+
+        dataBinding true
+
+        // for view binding:
+        // viewBinding true
     }
     if (versionPropsFile.canRead()) {
         Properties versionProps = new Properties()

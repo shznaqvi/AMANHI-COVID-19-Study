@@ -156,33 +156,39 @@ public class SyncActivity extends AppCompatActivity {
                     //bi.pBar.setVisibility(View.GONE);
                     downloadTables.clear();
 
-                    String select = " * ";
-                    final String filter = "dssid like '%a%'";
-
-                    bi.sites.setOnCheckedChangeListener((radioGroup, i) -> {
-                        /*if (i == bi.sitesa.getId()) {
-                            filter = "dssid like '%IH%'";
-                        }
-                        if (i == bi.sitesb.getId()) {
-                            filter = "dssid like '%IE%'";
-                        }
-                        if (i == bi.sitesc.getId()) {
-                            filter = "dssid like '%AG%'";
-                        }*/
-                    });
 
                     // Set tables to DOWNLOAD
                     downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
+
+                    String site = "";
+                    switch (bi.sites.getCheckedRadioButtonId()) {
+                        case (R.id.sitesa):
+                            site = "IH";
+                            break;
+                        case (R.id.sitesb):
+                            site = "IE";
+                            break;
+                        case (R.id.sitesc):
+                            site = "AG";
+                            break;
+                        default:
+                            Toast.makeText(this, "Select a Site to download Data", Toast.LENGTH_SHORT).show();
+                            break;
+
+                    }
+
+                    String select = " * ";
+                    final String filter = " dssid like '" + site + "%' ";
                     downloadTables.add(new SyncModel(FollowUp21cm.FollowUpTable21cm.TABLE_NAME, select, filter));
-                    downloadTables.add(new SyncModel(FollowUp4mm.FollowUpTable4mm.TABLE_NAME));
+                    downloadTables.add(new SyncModel(FollowUp4mm.FollowUpTable4mm.TABLE_NAME, select, filter));
                     downloadTables.add(new SyncModel(Sites.SiteTable.TABLE_NAME));
 
                     MainApp.downloadData = new String[downloadTables.size()];
                     setAdapter(downloadTables);
                     BeginDownload();
                 } else {
-                    Toast.makeText(this, "Please Select Site", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Select a Site to download Data", Toast.LENGTH_SHORT).show();
                 }
 
                 break;
