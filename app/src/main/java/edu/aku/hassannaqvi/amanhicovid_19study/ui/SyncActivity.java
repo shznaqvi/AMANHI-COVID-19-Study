@@ -160,7 +160,7 @@ public class SyncActivity extends AppCompatActivity {
                     final String filter = "dssid like '%a%'";
 
                     bi.sites.setOnCheckedChangeListener((radioGroup, i) -> {
-                        if (i == bi.sitesa.getId()) {
+                        /*if (i == bi.sitesa.getId()) {
                             filter = "dssid like '%IH%'";
                         }
                         if (i == bi.sitesb.getId()) {
@@ -168,7 +168,7 @@ public class SyncActivity extends AppCompatActivity {
                         }
                         if (i == bi.sitesc.getId()) {
                             filter = "dssid like '%AG%'";
-                        }
+                        }*/
                     });
 
                     // Set tables to DOWNLOAD
