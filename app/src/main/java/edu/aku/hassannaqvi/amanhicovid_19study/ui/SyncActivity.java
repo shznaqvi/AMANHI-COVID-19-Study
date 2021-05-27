@@ -149,22 +149,42 @@ public class SyncActivity extends AppCompatActivity {
                 break;
 
             case R.id.btnSync:
-                MainApp.downloadData = new String[0];
-                //bi.dataLayout.setVisibility(View.VISIBLE);
-                //bi.mTextViewS.setVisibility(View.GONE);
-                //bi.pBar.setVisibility(View.GONE);
-                downloadTables.clear();
+                if (bi.sites.getCheckedRadioButtonId() != -1) {
+                    MainApp.downloadData = new String[0];
+                    //bi.dataLayout.setVisibility(View.VISIBLE);
+                    //bi.mTextViewS.setVisibility(View.GONE);
+                    //bi.pBar.setVisibility(View.GONE);
+                    downloadTables.clear();
 
-                // Set tables to DOWNLOAD
-                downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
-                downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
-                downloadTables.add(new SyncModel(FollowUp21cm.FollowUpTable21cm.TABLE_NAME));
-                downloadTables.add(new SyncModel(FollowUp4mm.FollowUpTable4mm.TABLE_NAME));
-                downloadTables.add(new SyncModel(Sites.SiteTable.TABLE_NAME));
+                    String select = " * ";
+                    final String filter = "dssid like '%a%'";
 
-                MainApp.downloadData = new String[downloadTables.size()];
-                setAdapter(downloadTables);
-                BeginDownload();
+                    bi.sites.setOnCheckedChangeListener((radioGroup, i) -> {
+                        if (i == bi.sitesa.getId()) {
+                            filter = "dssid like '%IH%'";
+                        }
+                        if (i == bi.sitesb.getId()) {
+                            filter = "dssid like '%IE%'";
+                        }
+                        if (i == bi.sitesc.getId()) {
+                            filter = "dssid like '%AG%'";
+                        }
+                    });
+
+                    // Set tables to DOWNLOAD
+                    downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(FollowUp21cm.FollowUpTable21cm.TABLE_NAME, select, filter));
+                    downloadTables.add(new SyncModel(FollowUp4mm.FollowUpTable4mm.TABLE_NAME));
+                    downloadTables.add(new SyncModel(Sites.SiteTable.TABLE_NAME));
+
+                    MainApp.downloadData = new String[downloadTables.size()];
+                    setAdapter(downloadTables);
+                    BeginDownload();
+                } else {
+                    Toast.makeText(this, "Please Select Site", Toast.LENGTH_SHORT).show();
+                }
+
                 break;
 
             default:

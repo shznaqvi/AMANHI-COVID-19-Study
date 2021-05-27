@@ -5,6 +5,8 @@ public class SyncModel {
     String status;
     int statusID;
     String message;
+    String select = null;
+    String filter = null;
 
     public SyncModel(String tableName) {
 
@@ -12,6 +14,18 @@ public class SyncModel {
         this.status = "";
         this.statusID = 0;
         this.message = "";
+
+
+    }
+
+    public SyncModel(String tableName, String select, String filter) {
+
+        this.tableName = tableName;
+        this.status = "";
+        this.statusID = 0;
+        this.message = "";
+        this.select = select;
+        this.filter = filter;
 
 
     }
