@@ -209,11 +209,10 @@ public class SyncActivity extends AppCompatActivity {
         for (int i = 0; i < downloadTables.size(); i++) {
             Data.Builder data = new Data.Builder()
                     .putString("table", downloadTables.get(i).gettableName())
-                    .putInt("position", i);
-                    /*.putString("columns", "studyid")
-                    .putString("columns", "dssid")
-                    .putString("columns", "convert(varchar(13), fupdt, 103) fupdt")
-                    .putString("columns", "fupweek");*/
+                    .putInt("position", i)
+                    .putString("select", downloadTables.get(i).getSelect() != null ? downloadTables.get(i).getSelect() : " * ")
+                    .putString("filter", downloadTables.get(i).getFilter() != null ? downloadTables.get(i).getFilter() : " 1=1 ");
+
 
             /*if (downloadTables.get(i).gettableName().equals(FollowUp21cm.FollowUpTable21cm.TABLE_NAME)) {
                 data.putString("where", FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT +

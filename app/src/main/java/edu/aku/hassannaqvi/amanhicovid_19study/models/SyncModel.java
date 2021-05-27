@@ -18,15 +18,26 @@ public class SyncModel {
 
     }
 
-    public SyncModel(String tableName, String select, String filter) {
+    public SyncModel(String tableName, String select) {
 
         this.tableName = tableName;
         this.status = "";
         this.statusID = 0;
         this.message = "";
         this.select = select;
-        this.filter = filter;
+    }
 
+
+    public SyncModel(String tableName, String select, String filter) {
+
+        this.tableName = tableName;
+        this.status = "";
+        this.statusID = 0;
+        this.message = "";
+        if (select != null)
+            this.select = select;
+        if (filter != null)
+            this.filter = filter;
 
     }
 
@@ -61,5 +72,18 @@ public class SyncModel {
 
     public void setmessage(String message) {
         this.message = message;
+    }
+
+    public String getFilter() {
+
+        return filter;
+    }
+
+    public void setFilter(String filter) {
+        this.filter = filter;
+    }
+
+    public String getSelect() {
+        return select;
     }
 }

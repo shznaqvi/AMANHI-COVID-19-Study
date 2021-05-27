@@ -34,14 +34,14 @@ import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.PROJECT_
 public class DataDownWorkerALL extends Worker {
 
     private static final Object APP_NAME = PROJECT_NAME;
-    private final String TAG = "DataWorkerEN()";
+    private final String TAG = "DataDownloadWorkerEN()";
 
     // to be initialised by workParams
     private final Context mContext;
     private final int position;
     HttpURLConnection urlConnection;
     private final String uploadTable;
-    private String uploadColumns;
+    private final String uploadColumns;
     private final String uploadWhere;
     private final URL serverURL = null;
     private ProgressDialog pd;
@@ -55,8 +55,8 @@ public class DataDownWorkerALL extends Worker {
         uploadTable = workerParams.getInputData().getString("table");
         position = workerParams.getInputData().getInt("position", -2);
         Log.d(TAG, "DataDownWorkerALL: position " + position);
-        //uploadColumns = workerParams.getInputData().getString("columns");
-        uploadWhere = workerParams.getInputData().getString("where");
+        uploadColumns = workerParams.getInputData().getString("select");
+        uploadWhere = workerParams.getInputData().getString("filter");
     }
 
     /*
@@ -106,7 +106,7 @@ public class DataDownWorkerALL extends Worker {
             JSONArray jsonParam = new JSONArray();
 
             jsonTable.put("table", uploadTable);
-            //jsonTable.put("select", uploadColumns);
+            jsonTable.put("select", uploadColumns);
             jsonTable.put("filter", uploadWhere);
             //jsonTable.put("limit", "3");
             //jsonSync.put(uploadData);
