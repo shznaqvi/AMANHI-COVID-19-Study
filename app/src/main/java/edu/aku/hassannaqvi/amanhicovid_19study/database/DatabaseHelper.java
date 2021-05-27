@@ -547,13 +547,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     groupBy,                   // don't group the rows
                     having,                    // don't filter by row groups
                     orderBy,                    // The sort order
-                    "140"
+                    "100"
             );
             while (c.moveToNext()) {
                 /** WorkManager Upload
                  /*Form fc = new Form();
                  allFC.add(fc.Hydrate(c));*/
-                Log.d(TAG, "getUnsyncedForms: " + c.getCount());
                 Form21cm form = new Form21cm();
                 allForms.put(form.Hydrate(c).toJSONObject());
 
@@ -598,7 +597,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     groupBy,                   // don't group the rows
                     having,                    // don't filter by row groups
                     orderBy,                    // The sort order
-                    "140"
+                    "100"
             );
 
             //Toast.makeText(mycontext, c.getCount(), Toast.LENGTH_SHORT).show();
@@ -607,10 +606,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 /** WorkManager Upload
                  /*Form fc = new Form();
                  allFC.add(fc.Hydrate(c));*/
-                Log.d(TAG, "getUnsyncedForms: " + c.getCount());
                 Form4mm form = new Form4mm();
                 allForms.put(form.Hydrate(c).toJSONObject());
-
 
             }
         } finally {
@@ -621,8 +618,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        Log.d(TAG, "getUnsyncedForms: " + allForms.toString().length());
-        Log.d(TAG, "getUnsyncedForms: " + allForms);
+        Log.d(TAG, "getUnsyncedForms length: " + allForms.toString().length());
+        Log.d(TAG, "getUnsyncedForms all: " + allForms);
 
         return allForms;
     }
