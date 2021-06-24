@@ -210,7 +210,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility='@{mm040301.checked? View.GONE : View.VISIBLE}'>
+                android:visibility='@{mm040301.checked || mm040309.checked ? View.VISIBLE : View.GONE}'>
 
 
                 <!-- mm0404  Radio   -->

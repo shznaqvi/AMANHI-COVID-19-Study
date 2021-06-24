@@ -334,7 +334,6 @@
             <!-- cm0607  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvcm0607"
-                android:visibility="@{cm060602.checked||cm060608.checked||cm060609.checked?View.GONE:View.VISIBLE}"
                 style="@style/cardView">
 
                 <LinearLayout
@@ -365,7 +364,6 @@
                     <RadioGroup
                         android:id="@+id/cm0607"
                         android:layout_width="match_parent"
-                        android:checkedButton="@{cm060602.checked||cm060608.checked||cm060609.checked?-1:0}"
                         android:layout_height="wrap_content">
 
                         <RadioButton

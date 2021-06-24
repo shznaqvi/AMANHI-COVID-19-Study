@@ -116,7 +116,7 @@ public class Section06cmActivity extends AppCompatActivity {
 
         });
 
-//        rgListener(bi.cm0606, new RadioButton[]{bi.cm060602,bi.cm060608,bi.cm060609}, bi.cvcm0607);
+        rgListener(bi.cm0606, new RadioButton[]{bi.cm060602,bi.cm060608,bi.cm060609}, bi.cvcm0607);
 
     }
 
