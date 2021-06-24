@@ -66,6 +66,8 @@ public class Section03cmActivity extends AppCompatActivity {
 
 
     private void setupSkips() {
+        bi.cm0301.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.cvcm030101));
+
         rgListener(bi.cm0302, bi.cm030201, bi.cvcm0303);
         rgListener(bi.cm0304, bi.cm30401, bi.cvcm0305);
         rgListener(bi.cm0306, bi.cm030601, bi.cvcm0307);

@@ -34,11 +34,13 @@ public class Section05mmActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_05mm);
         bi.setCallback(this);
+        setupSkips();
     }
 
 
     private void setupSkips() {
         //rgListener(bi.cm0201, bi.cm020111, bi.cvcm0202);
+        rgListener(bi.mm0507,bi.mm050702, bi.fldGrpCVmm0508);
     }
 
 

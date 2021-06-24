@@ -41,8 +41,10 @@ public class Section04mmActivity extends AppCompatActivity {
 
 
     private void setupSkips() {
-        //rgListener(bi.cm0201, bi.cm020111, bi.cvcm0202);
-        rgListener(bi.mm0403, bi.mm040301, bi.fldGrpCVmm0404, bi.fldGrpCVmm0405);
+//        rgListener(bi.cm0201, bi.cm020111, bi.cvcm0202);
+//        rgListener(bi.mm0403, bi.mm040301, bi.fldGrpCVmm0404, bi.fldGrpCVmm0405);
+        bi.mm0403.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVmm040301));
+        bi.mm0407.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVmm040701));
     }
 
 

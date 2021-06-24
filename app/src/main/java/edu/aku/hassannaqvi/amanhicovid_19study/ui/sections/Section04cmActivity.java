@@ -40,6 +40,8 @@ public class Section04cmActivity extends AppCompatActivity {
 
     private void setupSkips() {
         rgListener(bi.cm0402, bi.cm040201, bi.cvcm0403, bi.cvcm0404, bi.cvcm0405);
+
+        bi.cm0407.setOnCheckedChangeListener((radioGroup, i)-> Clear.clearAllFields(bi.cm0408));
     }
 
 

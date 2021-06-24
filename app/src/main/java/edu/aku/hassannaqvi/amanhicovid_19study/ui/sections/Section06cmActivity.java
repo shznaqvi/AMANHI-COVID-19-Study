@@ -17,6 +17,9 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.Array;
+import java.util.List;
+
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
@@ -113,16 +116,19 @@ public class Section06cmActivity extends AppCompatActivity {
 
         });
 
+//        rgListener(bi.cm0606, new RadioButton[]{bi.cm060602,bi.cm060608,bi.cm060609}, bi.cvcm0607);
+
     }
 
-
-    private void rgListener(@NotNull RadioGroup rg, RadioButton rb1, RadioButton rb2, RadioButton rb3, ViewGroup vg) {
+    private void rgListener(@NotNull RadioGroup rg, RadioButton[] rbs, ViewGroup vg) {
         rg.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(vg);
             vg.setVisibility(View.VISIBLE);
-
-            if (i == rb1.getId() && i == rb3.getId()) {
+            for(RadioButton rb : rbs ){
+            if (i == rb.getId()) {
                 vg.setVisibility(View.GONE);
+                break;
+            }
             }
         });
     }
