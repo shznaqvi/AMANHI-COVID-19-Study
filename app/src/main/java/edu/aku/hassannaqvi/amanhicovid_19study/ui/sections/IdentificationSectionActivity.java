@@ -55,7 +55,6 @@ public class IdentificationSectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(android.os.Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification_section);
         bi.setCallback(this);
 
@@ -93,7 +92,7 @@ public class IdentificationSectionActivity extends AppCompatActivity {
         // getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-    @Override
+    /*@Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
@@ -105,7 +104,7 @@ public class IdentificationSectionActivity extends AppCompatActivity {
         if (hasFocus) {
             MainApp.hideSystemUI(getWindow().getDecorView());
         }
-    }
+    }*/
 
     private void SaveDraft() {
 

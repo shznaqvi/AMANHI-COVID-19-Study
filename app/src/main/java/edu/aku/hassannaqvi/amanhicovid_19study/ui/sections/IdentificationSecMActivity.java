@@ -75,7 +75,7 @@ public class IdentificationSecMActivity extends AppCompatActivity {
         }
     }
 
-    @Override
+    /*@Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
@@ -87,7 +87,7 @@ public class IdentificationSecMActivity extends AppCompatActivity {
         if (hasFocus) {
             MainApp.hideSystemUI(getWindow().getDecorView());
         }
-    }
+    }*/
 
     private boolean formValidation() {
 
