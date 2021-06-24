@@ -487,7 +487,7 @@
                             android:id="@+id/mm0508015x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/mm0508015"
                             android:tag="mm0508015"
                             android:text='@{mm0508015.checked ? mm0508015x.getText().toString() : ""}'

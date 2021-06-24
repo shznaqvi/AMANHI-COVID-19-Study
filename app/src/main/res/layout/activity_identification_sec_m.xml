@@ -487,7 +487,7 @@
                         android:id="@+id/mm0108a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                         android:hint="@string/mm0108a"
                         android:maxLength="80" />
                 </LinearLayout>
@@ -526,7 +526,7 @@
                         android:id="@+id/mm0108b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                         android:hint="@string/mm0108b"
                         android:maxLength="80" />
                 </LinearLayout>

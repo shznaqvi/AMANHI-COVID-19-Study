@@ -144,7 +144,7 @@
                             android:id="@+id/mm202077x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/mm202077"
                             android:tag="mm202077"
                             android:text='@{mm202077.checked ? mm202077x.getText().toString() : ""}'

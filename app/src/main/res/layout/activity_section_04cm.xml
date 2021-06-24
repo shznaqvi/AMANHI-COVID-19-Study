@@ -491,7 +491,7 @@
                             android:id="@+id/cm0408015x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBaCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/cm0408015"
                             android:tag="cm0408015"
                             android:text='@{cm0408015.checked ? cm0408015x.getText().toString() : ""}'
