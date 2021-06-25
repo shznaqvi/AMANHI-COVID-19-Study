@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
 import android.content.Intent;
-import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -22,7 +21,6 @@ import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityIdentificatio
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm;
-import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.DateUtilsKt;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.FOLLOWUP_21CM_DATA;
@@ -176,15 +174,15 @@ public class IdentificationSectionActivity extends AppCompatActivity {
         if (!formValidation()) return;
         SaveDraft();
         if (UpdateDB()) {
-            finish();
-
             isovertime = DateUtilsKt.dateDiffInDays(DateUtilsKt.getDate(bi.cm0103.getText().toString()), DateUtilsKt.getDate(fupdt));
-            Log.d(TAG, "BtnContinue: " + String.valueOf(isovertime));
+            Log.d(TAG, "BtnContinue: " + isovertime);
 
             if (isovertime > 7) {
                 Intent intent = new Intent(this, EndingActivityForm21cm.class);
+                finish();
                 startActivity(intent);
             } else {
+                finish();
                 startActivity(new Intent(this, Section03cmActivity.class));
             }
         }
