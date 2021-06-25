@@ -35,7 +35,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:windowSoftInputMode="adjustResize">
         <activity android:name=".ui.list_activity.FormsReport4mmActivity"></activity>
         <activity android:name=".ui.list_activity.FormsReportClusterActivity" />
         <activity android:name=".ui.SearchMoth4mmActivity" />
@@ -44,53 +45,63 @@
         <activity
             android:name=".ui.sections.Section06mmActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.Section05mmActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.Section04mmActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.Section03mmActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.Section02mmActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.IdentificationSecMActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.IdentificationSectionActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu"/>
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.Section06cmActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.Section05cmActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.Section04cmActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.Section03cmActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeUrdu" />
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.Section02cmActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".core.AndroidDatabaseManager" />
         <activity
             android:name=".ui.SyncActivity"
@@ -99,8 +110,11 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ui.EndingActivityForm21cm"
-            android:theme="@style/AppThemeUrdu" />
-        <activity android:name=".ui.MainActivity" />
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/AppThemeEnglish1" />
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

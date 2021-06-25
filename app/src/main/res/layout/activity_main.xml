@@ -12,47 +12,53 @@
             type="edu.aku.hassannaqvi.amanhicovid_19study.ui.MainActivity" />
     </data>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextColor="#ffff" />
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context=".ui.MainActivity">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/colorPrimary"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:popupTheme="@style/AppTheme.PopupOverlay"
-                app:titleTextColor="#ffff" />
-
-            <TextView
-                android:id="@+id/text1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="24dp"
-                android:fontFamily="@font/roboto"
-                android:gravity="center"
-                android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context=".ui.MainActivity">
 
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="24dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -68,13 +74,13 @@
                         android:layout_weight="1"
                         android:background="@drawable/action_button"
                         android:drawableStart="@drawable/ic_open_form"
-                        android:drawablePadding="12dp"
+                        android:drawablePadding="8dp"
                         android:fontFamily="@font/open_sans_condensed_light"
                         android:letterSpacing="0.2"
                         android:minWidth="170dp"
                         android:minHeight="56dp"
                         android:onClick="openForm"
-                        android:paddingStart="16dp"
+                        android:paddingStart="8dp"
                         android:paddingEnd="8dp"
                         android:shadowRadius="24"
                         android:text="Open New Form (Child Mobidity)"
@@ -91,13 +97,13 @@
                         android:layout_weight="1"
                         android:background="@drawable/action_button"
                         android:drawableStart="@drawable/ic_open_form"
-                        android:drawablePadding="12dp"
+                        android:drawablePadding="8dp"
                         android:fontFamily="@font/open_sans_condensed_light"
                         android:letterSpacing="0.2"
                         android:minWidth="170dp"
                         android:minHeight="56dp"
                         android:onClick="openForm"
-                        android:paddingStart="16dp"
+                        android:paddingStart="8dp"
                         android:paddingEnd="8dp"
                         android:shadowRadius="24"
                         android:text="Open New Form (Mother Mobidity)"
@@ -105,68 +111,68 @@
                         android:textColor="@color/white" />
                 </LinearLayout>
 
-                <Button
-                    android:id="@+id/showdb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/action_button"
-                    android:drawableStart="@drawable/ic_open_form"
-                    android:drawablePadding="12dp"
-                    android:fontFamily="@font/open_sans_condensed_light"
-                    android:letterSpacing="0.2"
-                    android:minWidth="170dp"
-                    android:minHeight="56dp"
-                    android:onClick="openForm"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="8dp"
-                    android:shadowRadius="24"
-                    android:text="Show DB"
-                    android:textAppearance="@style/Widget.AppCompat.ActionButton"
+                    <Button
+                        android:id="@+id/showdb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/action_button"
+                        android:drawableStart="@drawable/database"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/open_sans_condensed_light"
+                        android:letterSpacing="0.2"
+                        android:minWidth="170dp"
+                        android:minHeight="56dp"
+                        android:onClick="openForm"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:shadowRadius="24"
+                        android:text="Show DB"
+                        android:textAppearance="@style/Widget.AppCompat.ActionButton"
                     android:textColor="@color/white" />
 
-                <Button
-                    android:id="@+id/searchchild"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/action_button"
-                    android:drawableStart="@drawable/ic_open_form"
-                    android:drawablePadding="12dp"
-                    android:fontFamily="@font/open_sans_condensed_light"
-                    android:letterSpacing="0.2"
-                    android:minWidth="170dp"
-                    android:minHeight="56dp"
-                    android:onClick="openForm"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="8dp"
-                    android:shadowRadius="24"
-                    android:text="Search Child"
-                    android:textAppearance="@style/Widget.AppCompat.ActionButton"
+                    <Button
+                        android:id="@+id/searchchild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/action_button"
+                        android:drawableStart="@drawable/ic_person_search"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/open_sans_condensed_light"
+                        android:letterSpacing="0.2"
+                        android:minWidth="170dp"
+                        android:minHeight="56dp"
+                        android:onClick="openForm"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:shadowRadius="24"
+                        android:text="Search Child"
+                        android:textAppearance="@style/Widget.AppCompat.ActionButton"
                     android:textColor="@color/white" />
 
 
-                <Button
-                    android:id="@+id/searchmother"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/action_button"
-                    android:drawableStart="@drawable/ic_open_form"
-                    android:drawablePadding="12dp"
-                    android:fontFamily="@font/open_sans_condensed_light"
-                    android:letterSpacing="0.2"
-                    android:minWidth="170dp"
-                    android:minHeight="56dp"
-                    android:onClick="openForm"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="8dp"
-                    android:shadowRadius="24"
-                    android:text="Search Mother"
-                    android:textAppearance="@style/Widget.AppCompat.ActionButton"
+                    <Button
+                        android:id="@+id/searchmother"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/action_button"
+                        android:drawableStart="@drawable/ic_person_search"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/open_sans_condensed_light"
+                        android:letterSpacing="0.2"
+                        android:minWidth="170dp"
+                        android:minHeight="56dp"
+                        android:onClick="openForm"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:shadowRadius="24"
+                        android:text="Search Mother"
+                        android:textAppearance="@style/Widget.AppCompat.ActionButton"
                     android:textColor="@color/white" />
 
                 <LinearLayout
@@ -346,8 +352,9 @@
 
 
                 </LinearLayout>
-            </LinearLayout>
+                </LinearLayout>
 
-        </LinearLayout>
-    </ScrollView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 </layout>

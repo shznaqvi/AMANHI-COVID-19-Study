@@ -5,14 +5,14 @@
     "kind": "Directory"
   },
   "applicationId": "edu.aku.hassannaqvi.amanhicovid_19study",
-  "variantName": "processReleaseResources",
+  "variantName": "processDebugResources",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 77,
+      "versionCode": 97,
       "versionName": "1.0",
-      "outputFile": "app-release.apk"
+      "outputFile": "app-debug.apk"
     }
   ]
 }
