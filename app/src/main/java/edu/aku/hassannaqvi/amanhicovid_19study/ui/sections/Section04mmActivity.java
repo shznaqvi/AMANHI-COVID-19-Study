@@ -45,6 +45,7 @@ public class Section04mmActivity extends AppCompatActivity {
 //        rgListener(bi.mm0403, bi.mm040301, bi.fldGrpCVmm0404, bi.fldGrpCVmm0405);
         bi.mm0403.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVmm040301));
         bi.mm0407.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVmm040701));
+        bi.mm0404.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.fldGrpCVmm0405));
     }
 
 
