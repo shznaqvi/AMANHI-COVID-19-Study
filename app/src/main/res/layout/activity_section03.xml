@@ -16,43 +16,48 @@
     </data>
 
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
-        <LinearLayout
-            android:id="@+id/GrpName"
+        <!-- CUSTOM TOOLBAR -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ToolbarTheme"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:subtitle="@string/seconenote"
+            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="@string/secthreetitle"
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
-            <!-- secthreetitle  Title   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVsecthreetitle"
-                style="@style/cardView">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
-                    <TextView
+            <LinearLayout
+                android:id="@+id/GrpName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!-- cr5006t  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcr5006t"
+                    style="@style/cardView">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/secthreetitle" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- cr5006t  Radio   -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fldGrpCVcr5006t"
-                style="@style/cardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -893,11 +898,13 @@
                     android:textColor="@color/white" />
 
             </LinearLayout>
-            <!--EndButton LinearLayout-->
+                <!--EndButton LinearLayout-->
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </ScrollView>
+        </ScrollView>
+
+    </LinearLayout>
 
 </layout>

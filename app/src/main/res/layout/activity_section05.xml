@@ -11,7 +11,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section01Activity" />
+            type="edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section05Activity" />
 
     </data>
 
@@ -32,9 +32,9 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ToolbarTheme"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:subtitle="@string/seconenote"
+            app:subtitle="@string/secfivenote"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/seconetitle"
+            app:title="@string/secfivetitle"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
@@ -50,9 +50,9 @@
                 android:orientation="vertical">
 
 
-                <!-- crpreg  Radio   -->
+                <!-- symp  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcrpreg"
+                    android:id="@+id/fldGrpCVsymp"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -70,38 +70,50 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_crpreg" />
+                                android:text="@string/Q_symp" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/crpreg" />
+                                android:text="@string/symp" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/crpreg"
+                            android:id="@+id/symp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/crprega"
+                                android:id="@+id/sympa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/crprega" />
+                                android:text="@string/sympa" />
 
                             <RadioButton
-                                android:id="@+id/crpregb"
+                                android:id="@+id/sympb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/crpregb" />
+                                android:text="@string/sympb" />
+
+                            <RadioButton
+                                android:id="@+id/sympc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sympc" />
+
+                            <RadioButton
+                                android:id="@+id/sympd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sympd" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr5002  Title   -->
+                <!-- sympt  Title   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr5002"
+                    android:id="@+id/fldGrpCVsympt"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -112,13 +124,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/cr5002" />
+                            android:text="@string/sympt" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr5002a  Radio   -->
+                <!-- cr5040b  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr5002a"
+                    android:id="@+id/fldGrpCVcr5040b"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -136,52 +148,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr5002a" />
+                                android:text="@string/Q_cr5040b" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr5002a" />
+                                android:text="@string/cr5040b" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr5002a"
+                            android:id="@+id/cr5040b"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr5002aa"
+                                android:id="@+id/cr5040ba"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5002aa" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/cr5002aax"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/cr5002aa"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:tag="cr5002aa"
-                                android:text='@{cr5002aa.checked ? cr5002aax.getText().toString() : ""}'
-                                android:visibility='@{cr5002aa.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="42"
-                                app:minValue="1"
-                                app:type="range" />
+                                android:text="@string/cr5040ba" />
 
                             <RadioButton
-                                android:id="@+id/cr5002a999"
+                                android:id="@+id/cr5040bb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5002a999" />
+                                android:text="@string/cr5040bb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr5002b  Radio   -->
+                <!-- cr5040c  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr5002b"
+                    android:id="@+id/fldGrpCVcr5040c"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -199,69 +197,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr5002b" />
+                                android:text="@string/Q_cr5040c" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr5002b" />
+                                android:text="@string/cr5040c" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr5002b"
+                            android:id="@+id/cr5040c"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr5002ba"
+                                android:id="@+id/cr5040ca"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5002ba" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/cr5002bax"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/cr5002ba"
-                                android:inputType="number"
-                                android:maxLength="1"
-                                android:tag="cr5002ba"
-                                android:text='@{cr5002ba.checked ? cr5002bax.getText().toString() : ""}'
-                                android:visibility='@{cr5002ba.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="6"
-                                app:minValue="1"
-                                app:type="range" />
+                                android:text="@string/cr5040ca" />
 
                             <RadioButton
-                                android:id="@+id/cr5002b999"
+                                android:id="@+id/cr5040cb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5002b999" />
+                                android:text="@string/cr5040cb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr5003  Title   -->
+                <!-- cr5040d  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr5003"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cr5003" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- cr5003a  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr5003a"
+                    android:id="@+id/fldGrpCVcr5040d"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -279,52 +246,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr5003a" />
+                                android:text="@string/Q_cr5040d" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr5003a" />
+                                android:text="@string/cr5040d" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr5003a"
+                            android:id="@+id/cr5040d"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr5003aa"
+                                android:id="@+id/cr5040da"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5003aa" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/cr5003aax"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/cr5003aa"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:tag="cr5003aa"
-                                android:text='@{cr5003aa.checked ? cr5003aax.getText().toString() : ""}'
-                                android:visibility='@{cr5003aa.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="10"
-                                app:minValue="1"
-                                app:type="range" />
+                                android:text="@string/cr5040da" />
 
                             <RadioButton
-                                android:id="@+id/cr5003a999"
+                                android:id="@+id/cr5040db"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5003a999" />
+                                android:text="@string/cr5040db" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr5003b  Radio   -->
+                <!-- cr5040e  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr5003b"
+                    android:id="@+id/fldGrpCVcr5040e"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -342,69 +295,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr5003b" />
+                                android:text="@string/Q_cr5040e" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr5003b" />
+                                android:text="@string/cr5040e" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr5003b"
+                            android:id="@+id/cr5040e"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr5003ba"
+                                android:id="@+id/cr5040ea"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5003ba" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/cr5003bax"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/cr5003ba"
-                                android:inputType="number"
-                                android:maxLength="1"
-                                android:tag="cr5003ba"
-                                android:text='@{cr5003ba.checked ? cr5003bax.getText().toString() : ""}'
-                                android:visibility='@{cr5003ba.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="6"
-                                app:minValue="1"
-                                app:type="range" />
+                                android:text="@string/cr5040ea" />
 
                             <RadioButton
-                                android:id="@+id/cr5003b999"
+                                android:id="@+id/cr5040eb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5003b999" />
+                                android:text="@string/cr5040eb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004  Title   -->
+                <!-- cr5040f  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/cr3004" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- cr3004a  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004a"
+                    android:id="@+id/fldGrpCVcr5040f"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -422,44 +344,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004a" />
+                                android:text="@string/Q_cr5040f" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004a" />
+                                android:text="@string/cr5040f" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004a"
+                            android:id="@+id/cr5040f"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004aa"
+                                android:id="@+id/cr5040fa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004aa" />
+                                android:text="@string/cr5040fa" />
 
                             <RadioButton
-                                android:id="@+id/cr3004ab"
+                                android:id="@+id/cr5040fb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ab" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004a8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004a8" />
+                                android:text="@string/cr5040fb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004b  Radio   -->
+                <!-- cr5040g  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004b"
+                    android:id="@+id/fldGrpCVcr5040g"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -477,44 +393,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004b" />
+                                android:text="@string/Q_cr5040g" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004b" />
+                                android:text="@string/cr5040g" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004b"
+                            android:id="@+id/cr5040g"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004ba"
+                                android:id="@+id/cr5040ga"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ba" />
+                                android:text="@string/cr5040ga" />
 
                             <RadioButton
-                                android:id="@+id/cr3004bb"
+                                android:id="@+id/cr5040gb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004bb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004b8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004b8" />
+                                android:text="@string/cr5040gb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004bi  Radio   -->
+                <!-- cr5040h  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004bi"
+                    android:id="@+id/fldGrpCVcr5040h"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -532,44 +442,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004bi" />
+                                android:text="@string/Q_cr5040h" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004bi" />
+                                android:text="@string/cr5040h" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004bi"
+                            android:id="@+id/cr5040h"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004bia"
+                                android:id="@+id/cr5040ha"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004bia" />
+                                android:text="@string/cr5040ha" />
 
                             <RadioButton
-                                android:id="@+id/cr3004bib"
+                                android:id="@+id/cr5040hb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004bib" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004bi8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004bi8" />
+                                android:text="@string/cr5040hb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004bii  Radio   -->
+                <!-- cr5040i  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004bii"
+                    android:id="@+id/fldGrpCVcr5040i"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -587,44 +491,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004bii" />
+                                android:text="@string/Q_cr5040i" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004bii" />
+                                android:text="@string/cr5040i" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004bii"
+                            android:id="@+id/cr5040i"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004biia"
+                                android:id="@+id/cr5040ia"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004biia" />
+                                android:text="@string/cr5040ia" />
 
                             <RadioButton
-                                android:id="@+id/cr3004biib"
+                                android:id="@+id/cr5040ib"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004biib" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004bii8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004bii8" />
+                                android:text="@string/cr5040ib" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004biii  Radio   -->
+                <!-- cr5040j  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004biii"
+                    android:id="@+id/fldGrpCVcr5040j"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -642,44 +540,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004biii" />
+                                android:text="@string/Q_cr5040j" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004biii" />
+                                android:text="@string/cr5040j" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004biii"
+                            android:id="@+id/cr5040j"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004biiia"
+                                android:id="@+id/cr5040ja"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004biiia" />
+                                android:text="@string/cr5040ja" />
 
                             <RadioButton
-                                android:id="@+id/cr3004biiib"
+                                android:id="@+id/cr5040jb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004biiib" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004biii8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004biii8" />
+                                android:text="@string/cr5040jb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004c  Radio   -->
+                <!-- cr5040k  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004c"
+                    android:id="@+id/fldGrpCVcr5040k"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -697,44 +589,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004c" />
+                                android:text="@string/Q_cr5040k" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004c" />
+                                android:text="@string/cr5040k" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004c"
+                            android:id="@+id/cr5040k"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004ca"
+                                android:id="@+id/cr5040ka"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ca" />
+                                android:text="@string/cr5040ka" />
 
                             <RadioButton
-                                android:id="@+id/cr3004cb"
+                                android:id="@+id/cr5040kb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004cb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004c8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004c8" />
+                                android:text="@string/cr5040kb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004d  Radio   -->
+                <!-- cr5040l  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004d"
+                    android:id="@+id/fldGrpCVcr5040l"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -752,44 +638,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004d" />
+                                android:text="@string/Q_cr5040l" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004d" />
+                                android:text="@string/cr5040l" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004d"
+                            android:id="@+id/cr5040l"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004da"
+                                android:id="@+id/cr5040la"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004da" />
+                                android:text="@string/cr5040la" />
 
                             <RadioButton
-                                android:id="@+id/cr3004db"
+                                android:id="@+id/cr5040lb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004db" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004d8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004d8" />
+                                android:text="@string/cr5040lb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004e  Radio   -->
+                <!-- cr5040m  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004e"
+                    android:id="@+id/fldGrpCVcr5040m"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -807,44 +687,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004e" />
+                                android:text="@string/Q_cr5040m" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004e" />
+                                android:text="@string/cr5040m" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004e"
+                            android:id="@+id/cr5040m"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004ea"
+                                android:id="@+id/cr5040ma"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ea" />
+                                android:text="@string/cr5040ma" />
 
                             <RadioButton
-                                android:id="@+id/cr3004eb"
+                                android:id="@+id/cr5040mb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004eb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004e8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004e8" />
+                                android:text="@string/cr5040mb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004f  Radio   -->
+                <!-- cr5040n  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004f"
+                    android:id="@+id/fldGrpCVcr5040n"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -862,44 +736,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004f" />
+                                android:text="@string/Q_cr5040n" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004f" />
+                                android:text="@string/cr5040n" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004f"
+                            android:id="@+id/cr5040n"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004fa"
+                                android:id="@+id/cr5040na"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004fa" />
+                                android:text="@string/cr5040na" />
 
                             <RadioButton
-                                android:id="@+id/cr3004fb"
+                                android:id="@+id/cr5040nb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004fb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004f8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004f8" />
+                                android:text="@string/cr5040nb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004g  Radio   -->
+                <!-- cr5040o  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004g"
+                    android:id="@+id/fldGrpCVcr5040o"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -917,44 +785,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004g" />
+                                android:text="@string/Q_cr5040o" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004g" />
+                                android:text="@string/cr5040o" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004g"
+                            android:id="@+id/cr5040o"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004ga"
+                                android:id="@+id/cr5040oa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ga" />
+                                android:text="@string/cr5040oa" />
 
                             <RadioButton
-                                android:id="@+id/cr3004gb"
+                                android:id="@+id/cr5040ob"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004gb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004g8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004g8" />
+                                android:text="@string/cr5040ob" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004h  Radio   -->
+                <!-- cr5040p  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004h"
+                    android:id="@+id/fldGrpCVcr5040p"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -972,44 +834,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004h" />
+                                android:text="@string/Q_cr5040p" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004h" />
+                                android:text="@string/cr5040p" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004h"
+                            android:id="@+id/cr5040p"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004ha"
+                                android:id="@+id/cr5040pa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ha" />
+                                android:text="@string/cr5040pa" />
 
                             <RadioButton
-                                android:id="@+id/cr3004hb"
+                                android:id="@+id/cr5040pb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004hb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004h8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004h8" />
+                                android:text="@string/cr5040pb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004i  Radio   -->
+                <!-- cr5040q  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004i"
+                    android:id="@+id/fldGrpCVcr5040q"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1027,44 +883,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004i" />
+                                android:text="@string/Q_cr5040q" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004i" />
+                                android:text="@string/cr5040q" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004i"
+                            android:id="@+id/cr5040q"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004ia"
+                                android:id="@+id/cr5040qa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ia" />
+                                android:text="@string/cr5040qa" />
 
                             <RadioButton
-                                android:id="@+id/cr3004ib"
+                                android:id="@+id/cr5040qb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ib" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004i8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004i8" />
+                                android:text="@string/cr5040qb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004j  Radio   -->
+                <!-- cr5040r  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004j"
+                    android:id="@+id/fldGrpCVcr5040r"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1082,44 +932,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004j" />
+                                android:text="@string/Q_cr5040r" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004j" />
+                                android:text="@string/cr5040r" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004j"
+                            android:id="@+id/cr5040r"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004ja"
+                                android:id="@+id/cr5040ra"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ja" />
+                                android:text="@string/cr5040ra" />
 
                             <RadioButton
-                                android:id="@+id/cr3004jb"
+                                android:id="@+id/cr5040rb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004jb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004j8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004j8" />
+                                android:text="@string/cr5040rb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004k  Radio   -->
+                <!-- cr5040s  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004k"
+                    android:id="@+id/fldGrpCVcr5040s"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1137,44 +981,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004k" />
+                                android:text="@string/Q_cr5040s" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004k" />
+                                android:text="@string/cr5040s" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004k"
+                            android:id="@+id/cr5040s"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004ka"
+                                android:id="@+id/cr5040sa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ka" />
+                                android:text="@string/cr5040sa" />
 
                             <RadioButton
-                                android:id="@+id/cr3004kb"
+                                android:id="@+id/cr5040sb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004kb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004k8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004k8" />
+                                android:text="@string/cr5040sb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004l  Radio   -->
+                <!-- cr5040t  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004l"
+                    android:id="@+id/fldGrpCVcr5040t"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1192,44 +1030,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004l" />
+                                android:text="@string/Q_cr5040t" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004l" />
+                                android:text="@string/cr5040t" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004l"
+                            android:id="@+id/cr5040t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004la"
+                                android:id="@+id/cr5040ta"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004la" />
+                                android:text="@string/cr5040ta" />
 
                             <RadioButton
-                                android:id="@+id/cr3004lb"
+                                android:id="@+id/cr5040tb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004lb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004l8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004l8" />
+                                android:text="@string/cr5040tb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004m  Radio   -->
+                <!-- cr5040u  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004m"
+                    android:id="@+id/fldGrpCVcr5040u"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1247,44 +1079,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004m" />
+                                android:text="@string/Q_cr5040u" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004m" />
+                                android:text="@string/cr5040u" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004m"
+                            android:id="@+id/cr5040u"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004ma"
+                                android:id="@+id/cr5040ua"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ma" />
+                                android:text="@string/cr5040ua" />
 
                             <RadioButton
-                                android:id="@+id/cr3004mb"
+                                android:id="@+id/cr5040ub"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004mb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004m8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004m8" />
+                                android:text="@string/cr5040ub" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004n  Radio   -->
+                <!-- cr5040v  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004n"
+                    android:id="@+id/fldGrpCVcr5040v"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1302,44 +1128,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004n" />
+                                android:text="@string/Q_cr5040v" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004n" />
+                                android:text="@string/cr5040v" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004n"
+                            android:id="@+id/cr5040v"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004na"
+                                android:id="@+id/cr5040va"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004na" />
+                                android:text="@string/cr5040va" />
 
                             <RadioButton
-                                android:id="@+id/cr3004nb"
+                                android:id="@+id/cr5040vb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004nb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004n8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004n8" />
+                                android:text="@string/cr5040vb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004o  Radio   -->
+                <!-- cr5040w  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004o"
+                    android:id="@+id/fldGrpCVcr5040w"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1357,44 +1177,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004o" />
+                                android:text="@string/Q_cr5040w" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004o" />
+                                android:text="@string/cr5040w" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004o"
+                            android:id="@+id/cr5040w"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004oa"
+                                android:id="@+id/cr5040wa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004oa" />
+                                android:text="@string/cr5040wa" />
 
                             <RadioButton
-                                android:id="@+id/cr3004ob"
+                                android:id="@+id/cr5040wb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ob" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004o8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004o8" />
+                                android:text="@string/cr5040wb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004p  Radio   -->
+                <!-- cr5040x  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004p"
+                    android:id="@+id/fldGrpCVcr5040x"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1412,44 +1226,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004p" />
+                                android:text="@string/Q_cr5040x" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004p" />
+                                android:text="@string/cr5040x" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004p"
+                            android:id="@+id/cr5040x"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004pa"
+                                android:id="@+id/cr5040xa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004pa" />
+                                android:text="@string/cr5040xa" />
 
                             <RadioButton
-                                android:id="@+id/cr3004pb"
+                                android:id="@+id/cr5040xb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004pb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004p8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004p8" />
+                                android:text="@string/cr5040xb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004q  Radio   -->
+                <!-- cr5040y  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004q"
+                    android:id="@+id/fldGrpCVcr5040y"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1467,44 +1275,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004q" />
+                                android:text="@string/Q_cr5040y" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004q" />
+                                android:text="@string/cr5040y" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004q"
+                            android:id="@+id/cr5040y"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004qa"
+                                android:id="@+id/cr5040ya"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004qa" />
+                                android:text="@string/cr5040ya" />
 
                             <RadioButton
-                                android:id="@+id/cr3004qb"
+                                android:id="@+id/cr5040yb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004qb" />
-
-                            <RadioButton
-                                android:id="@+id/cr3004q8"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr3004q8" />
+                                android:text="@string/cr5040yb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004si  Radio   -->
+                <!-- cr5040a  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004si"
+                    android:id="@+id/fldGrpCVcr5040a"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1522,38 +1324,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004si" />
+                                android:text="@string/Q_cr5040a" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004si" />
+                                android:text="@string/cr5040a" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004si"
+                            android:id="@+id/cr5040a"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004sia"
+                                android:id="@+id/cr5040aa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004sia" />
+                                android:text="@string/cr5040aa" />
 
                             <RadioButton
-                                android:id="@+id/cr3004sib"
+                                android:id="@+id/cr5040ab"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004sib" />
+                                android:text="@string/cr5040ab" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004sia  Radio   -->
+                <!-- cr5040aa  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004sia"
+                    android:id="@+id/fldGrpCVcr5040aa"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1571,38 +1373,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004sia" />
+                                android:text="@string/Q_cr5040aa" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004sia" />
+                                android:text="@string/cr5040aa" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004sia"
+                            android:id="@+id/cr5040aa"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004siaa"
+                                android:id="@+id/cr5040aaa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004siaa" />
+                                android:text="@string/cr5040aaa" />
 
                             <RadioButton
-                                android:id="@+id/cr3004siab"
+                                android:id="@+id/cr5040aab"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004siab" />
+                                android:text="@string/cr5040aab" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004qsii  Radio   -->
+                <!-- cr5040ab  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004qsii"
+                    android:id="@+id/fldGrpCVcr5040ab"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1620,38 +1422,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004qsii" />
+                                android:text="@string/Q_cr5040ab" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004qsii" />
+                                android:text="@string/cr5040ab" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004qsii"
+                            android:id="@+id/cr5040ab"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004qsiia"
+                                android:id="@+id/cr5040aba"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004qsiia" />
+                                android:text="@string/cr5040aba" />
 
                             <RadioButton
-                                android:id="@+id/cr3004qsiib"
+                                android:id="@+id/cr5040abb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004qsiib" />
+                                android:text="@string/cr5040abb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004qsiii  Radio   -->
+                <!-- cr5040ac  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004qsiii"
+                    android:id="@+id/fldGrpCVcr5040ac"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1669,38 +1471,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004qsiii" />
+                                android:text="@string/Q_cr5040ac" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004qsiii" />
+                                android:text="@string/cr5040ac" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004qsiii"
+                            android:id="@+id/cr5040ac"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004qsiiia"
+                                android:id="@+id/cr5040aca"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004qsiiia" />
+                                android:text="@string/cr5040aca" />
 
                             <RadioButton
-                                android:id="@+id/cr3004qsiiib"
+                                android:id="@+id/cr5040acb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004qsiiib" />
+                                android:text="@string/cr5040acb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004r  Radio   -->
+                <!-- cr5040ad  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004r"
+                    android:id="@+id/fldGrpCVcr5040ad"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1718,38 +1520,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004r" />
+                                android:text="@string/Q_cr5040ad" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004r" />
+                                android:text="@string/cr5040ad" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004r"
+                            android:id="@+id/cr5040ad"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004ra"
+                                android:id="@+id/cr5040ada"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004ra" />
+                                android:text="@string/cr5040ada" />
 
                             <RadioButton
-                                android:id="@+id/cr3004rb"
+                                android:id="@+id/cr5040adb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004rb" />
+                                android:text="@string/cr5040adb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004rsi  Radio   -->
+                <!-- cr5040ae  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004rsi"
+                    android:id="@+id/fldGrpCVcr5040ae"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1767,38 +1569,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004rsi" />
+                                android:text="@string/Q_cr5040ae" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004rsi" />
+                                android:text="@string/cr5040ae" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004rsi"
+                            android:id="@+id/cr5040ae"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004rsia"
+                                android:id="@+id/cr5040aea"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004rsia" />
+                                android:text="@string/cr5040aea" />
 
                             <RadioButton
-                                android:id="@+id/cr3004rsib"
+                                android:id="@+id/cr5040aeb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004rsib" />
+                                android:text="@string/cr5040aeb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004qrsii  Radio   -->
+                <!-- cr5040es  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004qrsii"
+                    android:id="@+id/fldGrpCVcr5040es"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1816,38 +1618,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004qrsii" />
+                                android:text="@string/Q_cr5040es" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004qrsii" />
+                                android:text="@string/cr5040es" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004qrsii"
+                            android:id="@+id/cr5040es"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004qrsiia"
+                                android:id="@+id/cr5040esa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004qrsiia" />
+                                android:text="@string/cr5040esa" />
 
                             <RadioButton
-                                android:id="@+id/cr3004qrsiib"
+                                android:id="@+id/cr5040esb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004qrsiib" />
+                                android:text="@string/cr5040esb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004qrsiii  Input   -->
+                <!-- cr5040aesi  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004qrsiii"
+                    android:id="@+id/fldGrpCVcr5040aesi"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1865,26 +1667,173 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004qrsiii" />
+                                android:text="@string/Q_cr5040aesi" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004qrsiii" />
+                                android:text="@string/cr5040aesi" />
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/cr5040aesi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/cr5040aesia"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cr5040aesia" />
+
+                            <RadioButton
+                                android:id="@+id/cr5040aesib"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cr5040aesib" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- cr5040aesii  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcr5040aesii"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_cr5040aesii" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/cr5040aesii" />
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/cr5040aesii"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/cr5040aesiia"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cr5040aesiia" />
+
+                            <RadioButton
+                                android:id="@+id/cr5040aesiib"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cr5040aesiib" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- cr5040af  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcr5040af"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_cr5040af" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/cr5040af" />
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/cr5040af"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/cr5040afa"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cr5040afa" />
+
+                            <RadioButton
+                                android:id="@+id/cr5040afb"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cr5040afb" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- cr5040afs  Input   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcr5040afs"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_cr5040afs" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/cr5040afs" />
                         </LinearLayout>
 
                         <EditText
-                            android:id="@+id/cr3004qrsiii"
+                            android:id="@+id/cr5040afs"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/cr3004qrsiii" />
+                            android:hint="@string/cr5040afs" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004s  Radio   -->
+                <!-- cr5040ag  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004s"
+                    android:id="@+id/fldGrpCVcr5040ag"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1902,38 +1851,38 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004s" />
+                                android:text="@string/Q_cr5040ag" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004s" />
+                                android:text="@string/cr5040ag" />
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/cr3004s"
+                            android:id="@+id/cr5040ag"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr3004sa"
+                                android:id="@+id/cr5040aga"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004sa" />
+                                android:text="@string/cr5040aga" />
 
                             <RadioButton
-                                android:id="@+id/cr3004sb"
+                                android:id="@+id/cr5040agb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr3004sb" />
+                                android:text="@string/cr5040agb" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- cr3004ss  Input   -->
+                <!-- cr5040ags  Input   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3004ss"
+                    android:id="@+id/fldGrpCVcr5040ags"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1951,21 +1900,114 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cr3004ss" />
+                                android:text="@string/Q_cr5040ags" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004ss" />
+                                android:text="@string/cr5040ags" />
                         </LinearLayout>
 
                         <EditText
-                            android:id="@+id/cr3004ss"
+                            android:id="@+id/cr5040ags"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/cr3004ss" />
+                            android:hint="@string/cr5040ags" />
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- cr5041a  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcr5041a"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_cr5041a" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/cr5041a" />
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/cr5041a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/cr5041aa"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cr5041aa" />
+
+                            <RadioButton
+                                android:id="@+id/cr5041ab"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cr5041ab" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- cr5041b  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVcr5041b"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_cr5041b" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/cr5041b" />
+                        </LinearLayout>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/cr5041b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/cr5041b"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            app:maxValue="6"
+                            app:minValue="1"
+                            app:type="range" />
+
+                    </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -2006,6 +2048,7 @@
             </LinearLayout>
 
         </ScrollView>
+
 
     </LinearLayout>
 
