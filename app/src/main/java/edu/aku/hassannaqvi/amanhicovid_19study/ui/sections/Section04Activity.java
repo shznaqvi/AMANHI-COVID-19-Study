@@ -14,19 +14,20 @@ import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
-import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection01Binding;
+import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection04Binding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
-public class Section01Activity extends AppCompatActivity {
-    ActivitySection01Binding bi;
+
+public class Section04Activity extends AppCompatActivity {
+    ActivitySection04Binding bi;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section01);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section04);
         bi.setCallback(this);
         setupSkips();
     }

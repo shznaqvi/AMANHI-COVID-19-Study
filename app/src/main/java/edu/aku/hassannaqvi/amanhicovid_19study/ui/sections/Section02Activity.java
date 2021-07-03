@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,7 +49,7 @@ public class Section02Activity extends AppCompatActivity {
     }
 
 
-    public void BtnContinue() {
+    public void BtnContinue(View view) {
         if (!formValidation()) return;
         SaveDraft();
         if (UpdateDB()) {
@@ -63,7 +64,7 @@ public class Section02Activity extends AppCompatActivity {
     }
 
 
-    public void BtnEnd() {
+    public void BtnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivityForm21cm.class).putExtra("complete", false));
     }
