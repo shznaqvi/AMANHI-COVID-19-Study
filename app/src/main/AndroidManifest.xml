@@ -62,7 +62,7 @@
 
 
         <activity
-            android:name=".ui.sections.DemoInfo"
+            android:name=".ui.sections.SectionDemoInfoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeUrdu"
             android:windowSoftInputMode="adjustResize|stateHidden" />

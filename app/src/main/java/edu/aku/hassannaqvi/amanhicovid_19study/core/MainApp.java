@@ -12,6 +12,7 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.Forms;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
 
 
@@ -33,6 +34,7 @@ public class MainApp extends Application {
     public static Form21cm form21cm;
     public static File sdDir;
     public static String[] downloadData;
+    public static Forms form;
     public static Form4mm form4m;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
