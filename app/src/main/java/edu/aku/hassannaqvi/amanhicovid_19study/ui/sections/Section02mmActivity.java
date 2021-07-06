@@ -89,6 +89,11 @@ public class Section02mmActivity extends AppCompatActivity {
         startActivity(new Intent(this, EndingActivityForm4mm.class).putExtra("complete", false));
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
+
     public void BtnContinue() {
         if (!formValidation()) return;
         SaveDraft();

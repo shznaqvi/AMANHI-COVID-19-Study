@@ -41,7 +41,7 @@ public class Section04cmActivity extends AppCompatActivity {
     private void setupSkips() {
         rgListener(bi.cm0402, bi.cm040201, bi.cvcm0403, bi.cvcm0404, bi.cvcm0405);
 
-        bi.cm0407.setOnCheckedChangeListener((radioGroup, i)-> Clear.clearAllFields(bi.cm0408));
+        bi.cm0407.setOnCheckedChangeListener((radioGroup, i) -> Clear.clearAllFields(bi.cm0408));
     }
 
 
@@ -164,6 +164,11 @@ public class Section04cmActivity extends AppCompatActivity {
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
     }
 
 

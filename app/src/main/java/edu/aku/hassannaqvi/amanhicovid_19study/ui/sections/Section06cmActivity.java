@@ -116,7 +116,7 @@ public class Section06cmActivity extends AppCompatActivity {
 
         });
 
-        rgListener(bi.cm0606, new RadioButton[]{bi.cm060602,bi.cm060608,bi.cm060609}, bi.cvcm0607);
+        rgListener(bi.cm0606, new RadioButton[]{bi.cm060602, bi.cm060608, bi.cm060609}, bi.cvcm0607);
 
     }
 
@@ -124,11 +124,11 @@ public class Section06cmActivity extends AppCompatActivity {
         rg.setOnCheckedChangeListener((radioGroup, i) -> {
             Clear.clearAllFields(vg);
             vg.setVisibility(View.VISIBLE);
-            for(RadioButton rb : rbs ){
-            if (i == rb.getId()) {
-                vg.setVisibility(View.GONE);
-                break;
-            }
+            for (RadioButton rb : rbs) {
+                if (i == rb.getId()) {
+                    vg.setVisibility(View.GONE);
+                    break;
+                }
             }
         });
     }
@@ -216,5 +216,9 @@ public class Section06cmActivity extends AppCompatActivity {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
 
 }
