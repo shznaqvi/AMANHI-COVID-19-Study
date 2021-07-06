@@ -1749,18 +1749,18 @@
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:id="@+id/cr3004sia"
+                                android:id="@+id/cr3004siy"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004sia" />
+                                android:text="@string/cr3004siy" />
 
                             <RadioButton
-                                android:id="@+id/cr3004sib"
+                                android:id="@+id/cr3004sin"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004sib" />
+                                android:text="@string/cr3004sin" />
 
                         </RadioGroup>
 
@@ -1805,18 +1805,18 @@
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:id="@+id/cr3004siaa"
+                                android:id="@+id/cr3004siay"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004siaa" />
+                                android:text="@string/cr3004siay" />
 
                             <RadioButton
-                                android:id="@+id/cr3004siab"
+                                android:id="@+id/cr3004sian"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="@string/cr3004siab" />
+                                android:text="@string/cr3004sian" />
 
                         </RadioGroup>
 
