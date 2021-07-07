@@ -118,6 +118,27 @@ public class Section06cmActivity extends AppCompatActivity {
 
         rgListener(bi.cm0606, new RadioButton[]{bi.cm060602, bi.cm060608, bi.cm060609}, bi.cvcm0607);
 
+
+        bi.cm0701.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (bi.cm070101.isChecked()) {
+                    bi.cvcm0702.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcm0703a.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcm0703b.setVisibility(View.VISIBLE);
+                } else {
+
+                    Clear.clearAllFields(bi.cvcm0702);
+                    Clear.clearAllFields(bi.fldGrpCVcm0703a);
+                    Clear.clearAllFields(bi.fldGrpCVcm0703b);
+
+                    bi.cvcm0702.setVisibility(View.GONE);
+                    bi.fldGrpCVcm0703a.setVisibility(View.GONE);
+                    bi.fldGrpCVcm0703b.setVisibility(View.GONE);
+                }
+            }
+        });
+
     }
 
     private void rgListener(@NotNull RadioGroup rg, RadioButton[] rbs, ViewGroup vg) {
@@ -203,6 +224,28 @@ public class Section06cmActivity extends AppCompatActivity {
 
         form21cm.setCm0605(bi.cm0605.getText().toString());
 
+
+        form21cm.setCm0701(bi.cm070101.isChecked() ? "1"
+                : bi.cm070102.isChecked() ? "2"
+                : "-1");
+
+
+        form21cm.setCm0702(bi.cm070201.isChecked() ? "1"
+                : bi.cm070202.isChecked() ? "2"
+                : bi.cm070203.isChecked() ? "3"
+                : bi.cm070204.isChecked() ? "4"
+                : bi.cm070277.isChecked() ? "77"
+                : "-1");
+
+
+        form21cm.setCm070277x(bi.cm070277x.getText().toString());
+
+        form21cm.setCm0703a(bi.cm0703a.getText().toString());
+        form21cm.setChkvaccdta(bi.chkdt1.isChecked() ? "1" : "-1");
+
+        form21cm.setCm0703b(bi.cm0703b.getText().toString());
+        form21cm.setChkvaccdtb(bi.chkdt2.isChecked() ? "1" : "-1");
+
     }
 
 
@@ -213,7 +256,117 @@ public class Section06cmActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+
+        if (!bi.cm060101.isChecked() && !bi.cm060102.isChecked()) {
+            Toast.makeText(this, "CM0601 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (!bi.cm060201.isChecked()
+                && !bi.cm060202.isChecked()
+                && !bi.cm060208.isChecked()
+                && !bi.cm060209.isChecked()) {
+            Toast.makeText(this, "CM0602 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (bi.cm0605.getText().toString().equals("")) {
+            Toast.makeText(this, "CM0605 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (!bi.cm060301.isChecked() && !bi.cm060302.isChecked()) {
+            Toast.makeText(this, "CM0603 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (!bi.cm060401.isChecked() && !bi.cm060402.isChecked()) {
+            Toast.makeText(this, "CM0604 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (!bi.cm060601.isChecked()
+                && !bi.cm060602.isChecked()
+                && !bi.cm060608.isChecked()
+                && !bi.cm060609.isChecked()) {
+            Toast.makeText(this, "CM0606 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (!bi.cm060701.isChecked()
+                && !bi.cm060702.isChecked()
+                && !bi.cm060708.isChecked()
+                && !bi.cm060709.isChecked()) {
+            Toast.makeText(this, "CM0607 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (!bi.cm060801.isChecked() && !bi.cm060802.isChecked()) {
+            Toast.makeText(this, "CM0608 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (!bi.cm060901.isChecked() && !bi.cm060902.isChecked()) {
+            Toast.makeText(this, "CM0609 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (!bi.cm070101.isChecked() && !bi.cm070102.isChecked()) {
+            Toast.makeText(this, "CM0701 is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        if (bi.cvcm0702.getVisibility() == View.VISIBLE) {
+
+            if (!bi.cm070201.isChecked()
+                    && !bi.cm070202.isChecked()
+                    && !bi.cm070203.isChecked()
+                    && !bi.cm070204.isChecked()
+                    && !bi.cm070277.isChecked()) {
+                Toast.makeText(this, "CM0702 is required", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+
+            if (bi.cm070277.isChecked()) {
+                if (bi.cm070277x.getText().toString().equals("")) {
+                    Toast.makeText(this, "CM0702 others is required", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            }
+
+
+            if (!bi.chkdt1.isChecked()) {
+                if (bi.cm0703a.getText().toString().equals("")) {
+                    Toast.makeText(this, "CM0703a is required", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            }
+
+
+            if (!bi.chkdt2.isChecked()) {
+                if (bi.cm0703b.getText().toString().equals("")) {
+                    Toast.makeText(this, "CM0703b is required", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            }
+
+        }
+
+
+        return true;
+
+        //return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
     @Override

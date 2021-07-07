@@ -762,6 +762,21 @@
     <string name="mm070309">NA</string>
 
 
+    <string name="mm0801"> کیا آپ کو کوڈ 19 کے خلاف ٹیکے لگائے گئے ہیں؟ </string>
+    <string name="mm080101">ہاں</string>
+    <string name="mm080102">نہیں</string>
+
+
+    <string name="mm0802"> آپ کو کون سی ویکسین ملی ہے؟ (ویکسینیشن کارڈ  چیک کریں) </string>
+    <string name="mm080201">Sinopharm</string>
+    <string name="mm080202">CanSinoBio</string>
+    <string name="mm080203">Oxford-Astrazeneca</string>
+    <string name="mm080204">Sputnik V</string>
+
+    <string name="mm0803a"> براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟  (پہلی خوراک کی تاریخ) </string>
+    <string name="mm0803b"> براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟  (دوسری خوراک کی تاریخ) </string>
+
+
     <!-- END MOTHER MOBIDITY  !-->
 
 
@@ -874,6 +889,12 @@
     <string name='Q_cm0609'>cm0609</string>
 
     <string name='Q_cm0605'>cm0605</string>
+
+    <string name='Q_cm0701'>cm0701</string>
+    <string name='Q_cm0702'>cm0702</string>
+    <string name='Q_cm0703a'>cm0703a</string>
+    <string name='Q_cm0703b'>cm0703b</string>
+
     <string name='Q_cm5title3'>cm5title3</string>
     <string name='Q_cmsid'>cmsid</string>
     <string name='Q_cmtitle'>cmtitle</string>
@@ -923,6 +944,12 @@
     <string name='Q_mm0701'>mm0701</string>
     <string name='Q_mm0702'>mm0702</string>
     <string name='Q_mm0703'>mm0703</string>
+
+    <string name='Q_mm0801'>mm0801</string>
+    <string name='Q_mm0802'>mm0802</string>
+    <string name='Q_mm0803a'>mm0803a</string>
+    <string name='Q_mm0803b'>mm0803b</string>
+
     <string name='Q_mm202'>mm202</string>
     <string name='Q_mmsid'>mmsid</string>
     <string name='Q_s3q1'>s3q1</string>
