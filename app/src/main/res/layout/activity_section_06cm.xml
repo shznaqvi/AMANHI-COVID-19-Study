@@ -649,7 +649,7 @@
                             style="@style/quesNum"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_mm0803a" />
+                            android:text="@string/Q_cm0703a" />
 
                         <TextView
                             android:layout_width="0dp"
