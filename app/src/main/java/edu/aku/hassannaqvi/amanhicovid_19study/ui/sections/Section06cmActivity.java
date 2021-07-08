@@ -54,6 +54,7 @@ public class Section06cmActivity extends AppCompatActivity {
                     Clear.clearAllFields(bi.cvcm0608);
                     bi.cvcm0608.setVisibility(View.GONE);
 
+
                     Clear.clearAllFields(bi.cvcm0609);
                     bi.cvcm0609.setVisibility(View.GONE);
                 }
