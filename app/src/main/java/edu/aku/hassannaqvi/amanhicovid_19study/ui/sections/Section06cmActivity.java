@@ -140,6 +140,22 @@ public class Section06cmActivity extends AppCompatActivity {
             }
         });
 
+
+        bi.chkdt3ch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b == true) {
+                    bi.cm0703b.setText("");
+                    bi.cm0703b.setVisibility(View.GONE);
+
+                    bi.chkdt2.setChecked(false);
+                    bi.chkdt2.setVisibility(View.GONE);
+                } else {
+                    bi.cm0703b.setVisibility(View.VISIBLE);
+                    bi.chkdt2.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
     private void rgListener(@NotNull RadioGroup rg, RadioButton[] rbs, ViewGroup vg) {
@@ -246,6 +262,7 @@ public class Section06cmActivity extends AppCompatActivity {
 
         form21cm.setCm0703b(bi.cm0703b.getText().toString());
         form21cm.setChkvaccdtb(bi.chkdt2.isChecked() ? "1" : "-1");
+        form21cm.setChkdt3ch(bi.chkdt3ch.isChecked() ? "1" : "-1");
 
     }
 
@@ -363,7 +380,7 @@ public class Section06cmActivity extends AppCompatActivity {
             }
 
 
-            if (!bi.chkdt2.isChecked()) {
+            if (!bi.chkdt2.isChecked() && !bi.chkdt3ch.isChecked()) {
                 if (bi.cm0703b.getText().toString().equals("")) {
                     Toast.makeText(this, "CM0703b is required", Toast.LENGTH_SHORT).show();
                     return false;

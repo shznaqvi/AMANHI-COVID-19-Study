@@ -160,6 +160,7 @@ public class Form21cm extends BaseObservable {
     private String cm0703b = "";
     private String chkvaccdta = "";
     private String chkvaccdtb = "";
+    private String chkdt3ch = "";
 
 
     // SECTION VARIABLES
@@ -236,6 +237,14 @@ public class Form21cm extends BaseObservable {
         this.dssid = dssid;
     }
 
+
+    public String getChkdt3ch() {
+        return chkdt3ch;
+    }
+
+    public void setChkdt3ch(String chkdt3ch) {
+        this.chkdt3ch = chkdt3ch;
+    }
 
     @Bindable
     public String getWeek() {
@@ -1595,8 +1604,8 @@ public class Form21cm extends BaseObservable {
                     .put("cm0703a", cm0703a)
                     .put("cm0703b", cm0703b)
                     .put("chkvaccdta", chkvaccdta)
-                    .put("chkvaccdtb", chkvaccdtb);
-
+                    .put("chkvaccdtb", chkvaccdtb)
+                    .put("chkdt3ch", chkdt3ch);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -1821,6 +1830,13 @@ public class Form21cm extends BaseObservable {
                     this.chkvaccdtb = json.getString("chkvaccdtb");
                 } else {
                     this.chkvaccdtb = "";
+                }
+
+
+                if (json.has("chkdt3ch")) {
+                    this.chkdt3ch = json.getString("chkdt3ch");
+                } else {
+                    this.chkdt3ch = "";
                 }
 
 

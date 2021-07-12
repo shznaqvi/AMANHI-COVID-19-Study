@@ -1,0 +1,261 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="edu.aku.hassannaqvi.amanhicovid_19study.ui.ShowSummaryActivity" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/GrpName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/summaryHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Mother Summary" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/valIHFUP"
+                        style="@style/summaryValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total No. of forms IH: 0" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/valAGFUP"
+                        style="@style/summaryValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total No. of forms AG: 0" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/valIEFUP"
+                        style="@style/summaryValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total No. of forms IE: 0" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/valIHNotSynced"
+                        style="@style/summaryValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total No. of forms IE not synced: 0" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/valAGNotSynced"
+                        style="@style/summaryValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total No. of forms AG not synced: 0" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/valIENotSynced"
+                        style="@style/summaryValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total No. of forms IE not synced: 0" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/GrpName1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="70dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            style="@style/summaryHeading"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Child Summary" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/valIHFUPCH"
+                            style="@style/summaryValues"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total No. of forms IH: 0" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/valAGFUPCH"
+                            style="@style/summaryValues"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total No. of forms AG: 0" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/valIEFUPCH"
+                            style="@style/summaryValues"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total No. of forms IE: 0" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/valIHNotSyncedCH"
+                            style="@style/summaryValues"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total No. of forms IE not synced: 0" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/valAGNotSyncedCH"
+                            style="@style/summaryValues"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total No. of forms AG not synced: 0" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/valIENotSyncedCH"
+                            style="@style/summaryValues"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total No. of forms IE not synced: 0" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!--EndButton LinearLayout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_Continue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@color/green_overlay"
+                    android:onClick="gotoMain"
+                    android:text="Main Menu"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+            <!--EndButton LinearLayout-->
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</layout>

@@ -148,6 +148,8 @@ public class Form4mm extends BaseObservable {
     private String mm0701 = "";
     private String mm0702 = "";
     private String mm0703 = "";
+    private String mm0704 = "";
+    private String mm070477x = "";
 
     private String mm0801 = "";
     private String mm0802 = "";
@@ -156,6 +158,7 @@ public class Form4mm extends BaseObservable {
     private String mm0803b = "";
     private String chkvaccdta = "";
     private String chkvaccdtb = "";
+    private String chkvaccdtc = "";
 
 
     //Not saving in DB
@@ -239,6 +242,31 @@ public class Form4mm extends BaseObservable {
         this.dssid = dssid;
     }
 
+
+    public String getMm0704() {
+        return mm0704;
+    }
+
+    public void setMm0704(String mm0704) {
+        this.mm0704 = mm0704;
+    }
+
+
+    public String getMm070477x() {
+        return mm070477x;
+    }
+
+    public void setMm070477x(String mm070477x) {
+        this.mm070477x = mm070477x;
+    }
+
+    public String getChkvaccdtc() {
+        return chkvaccdtc;
+    }
+
+    public void setChkvaccdtc(String chkvaccdtc) {
+        this.chkvaccdtc = chkvaccdtc;
+    }
 
     public String getMm0801() {
         return mm0801;
@@ -1433,13 +1461,16 @@ public class Form4mm extends BaseObservable {
                     .put("mm0702", mm0702)
                     .put("chklmp", chklmp)
                     .put("mm0703", mm0703)
+                    .put("mm0704", mm0704)
+                    .put("mm070477x", mm070477x)
                     .put("mm0801", mm0801)
                     .put("mm0802", mm0802)
                     .put("mm080277x", mm080277x)
                     .put("mm0803a", mm0803a)
                     .put("mm0803b", mm0803b)
                     .put("chkvaccdta", chkvaccdta)
-                    .put("chkvaccdtb", chkvaccdta);
+                    .put("chkvaccdtb", chkvaccdta)
+                    .put("chkvaccdtc", chkvaccdtc);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -1603,6 +1634,8 @@ public class Form4mm extends BaseObservable {
                 this.mm0702 = json.getString("mm0702");
                 this.chklmp = json.getString("chklmp");
                 this.mm0703 = json.getString("mm0703");
+                this.mm0704 = json.getString("mm0704");
+                this.mm070477x = json.getString("mm070477x");
 
                 this.mm0801 = json.getString("mm0801");
                 this.mm0802 = json.getString("mm0802");
@@ -1611,6 +1644,7 @@ public class Form4mm extends BaseObservable {
                 this.mm0803b = json.getString("mm0803b");
                 this.chkvaccdta = json.getString("chkvaccdta");
                 this.chkvaccdtb = json.getString("chkvaccdtb");
+                this.chkvaccdtc = json.getString("chkvaccdtc");
 
             } catch (JSONException e) {
                 e.printStackTrace();

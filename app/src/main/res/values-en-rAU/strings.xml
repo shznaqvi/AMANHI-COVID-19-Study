@@ -421,6 +421,20 @@
 
     <string name="cm0605">If COVID symptoms were not communicated to the supervisor, what was the reason?</string>
 
+    <string name="cm0701">کیا آپ کے بچے کو  کو ڈ 19 کے خلاف ٹیکے لگائے گئے ہیں؟</string>
+    <string name="cm070101">ہاں</string>
+    <string name="cm070102">نہیں </string>
+
+
+    <string name="cm0702">آپ کے بچے  کو کون سی ویکسین ملی ہے؟ (ویکسینیشن کارڈ چیک کریں)</string>
+    <string name="cm070201">Sinopharm</string>
+    <string name="cm070202">CanSinoBio</string>
+    <string name="cm070203">Oxford-Astrazeneca</string>
+    <string name="cm070204">Sputnik V</string>
+
+    <string name="cm0703a">براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟ پہلی خوراک کی تاریخ</string>
+    <string name="cm0703b">براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟ دوسری خوراک کی تاریخ</string>
+    <string name="chkdt3ch"> دوسری خوراک ملنے میں وقت باقی ہے </string>
 
     <!-- START MOTHER MOBIDITY  !-->
 
@@ -762,6 +776,14 @@
     <string name="mm070309">NA</string>
 
 
+    <string name="mm0704">اگر حاملہ تھی تو حمل کا نتیجہ کیا نکلا </string>
+    <string name="mm070401">ہاں، ابھی حاملہ ہے</string>
+    <string name="mm070402">زندہ بچہ پیدا  ہوا</string>
+    <string name="mm070403">مردہ بچہ پیدا ہوا</string>
+    <string name="mm070404">حمل ضائع ہو گیا</string>
+    <string name="mm070405">حمل غلط بتایا گیا</string>
+
+
     <string name="mm0801"> کیا آپ کو کوڈ 19 کے خلاف ٹیکے لگائے گئے ہیں؟ </string>
     <string name="mm080101">ہاں</string>
     <string name="mm080102">نہیں</string>
@@ -775,7 +797,7 @@
 
     <string name="mm0803a"> براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟  (پہلی خوراک کی تاریخ) </string>
     <string name="mm0803b"> براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟  (دوسری خوراک کی تاریخ) </string>
-
+    <string name="chkdt3"> (دوسری خوراک ملنے میں وقت باقی ہے تو 77/77/7777 لکھیں) </string>
 
     <!-- END MOTHER MOBIDITY  !-->
 
@@ -944,6 +966,7 @@
     <string name='Q_mm0701'>mm0701</string>
     <string name='Q_mm0702'>mm0702</string>
     <string name='Q_mm0703'>mm0703</string>
+    <string name='Q_mm0704'>mm0704</string>
 
     <string name='Q_mm0801'>mm0801</string>
     <string name='Q_mm0802'>mm0802</string>

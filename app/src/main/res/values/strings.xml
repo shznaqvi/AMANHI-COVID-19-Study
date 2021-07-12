@@ -424,6 +424,7 @@
 
     <string name="cm0703a">براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟ پہلی خوراک کی تاریخ</string>
     <string name="cm0703b">براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟ دوسری خوراک کی تاریخ</string>
+    <string name="chkdt3ch"> دوسری خوراک ملنے میں وقت باقی ہے </string>
 
 
     <!-- START MOTHER MOBIDITY  !-->
@@ -761,6 +762,14 @@
     <string name="mm070309">غیر ضروری</string>
 
 
+    <string name="mm0704">اگر حاملہ تھی تو حمل کا نتیجہ کیا نکلا </string>
+    <string name="mm070401">ہاں، ابھی حاملہ ہے</string>
+    <string name="mm070402">زندہ بچہ پیدا  ہوا</string>
+    <string name="mm070403">مردہ بچہ پیدا ہوا</string>
+    <string name="mm070404">حمل ضائع ہو گیا</string>
+    <string name="mm070405">حمل غلط بتایا گیا</string>
+
+
     <string name="mm0801"> کیا آپ کو کوڈ 19 کے خلاف ٹیکے لگائے گئے ہیں؟ </string>
     <string name="mm080101">ہاں</string>
     <string name="mm080102">نہیں</string>
@@ -774,6 +783,7 @@
 
     <string name="mm0803a"> براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟  (پہلی خوراک کی تاریخ) </string>
     <string name="mm0803b"> براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟  (دوسری خوراک کی تاریخ) </string>
+    <string name="chkdt3"> دوسری خوراک ملنے میں وقت باقی ہے </string>
 
 
     <!-- END MOTHER MOBIDITY  !-->
@@ -942,6 +952,7 @@
     <string name='Q_mm0701'>mm0701</string>
     <string name='Q_mm0702'>mm0702</string>
     <string name='Q_mm0703'>mm0703</string>
+    <string name='Q_mm0704'>mm0704</string>
 
     <string name='Q_mm0801'>mm0801</string>
     <string name='Q_mm0802'>mm0802</string>

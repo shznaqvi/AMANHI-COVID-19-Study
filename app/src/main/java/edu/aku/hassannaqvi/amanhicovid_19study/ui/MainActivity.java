@@ -102,6 +102,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void showSummary() {
+        startActivity(new Intent(this, ShowSummaryActivity.class));
+    }
+
+
     public void openForm(View view) {
         Intent oF = null;
         switch (view.getId()) {

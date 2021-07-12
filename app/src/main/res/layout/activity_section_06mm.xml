@@ -534,6 +534,91 @@
             </androidx.cardview.widget.CardView>
 
 
+            <!-- mm0704  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fldGrpCVmm0704"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_mm0704" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/mm0704" />
+                    </LinearLayout>
+
+                    <RadioGroup
+                        android:id="@+id/mm0704"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/mm070401"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mm070401" />
+
+                        <RadioButton
+                            android:id="@+id/mm070402"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mm070402" />
+
+                        <RadioButton
+                            android:id="@+id/mm070403"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mm070403" />
+
+                        <RadioButton
+                            android:id="@+id/mm070404"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mm070404" />
+
+                        <RadioButton
+                            android:id="@+id/mm070405"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mm070405" />
+
+                        <RadioButton
+                            android:id="@+id/mm070477"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/other" />
+
+                        <EditText
+                            android:id="@+id/mm070477x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/other"
+                            android:tag="mm070477"
+                            android:text='@{mm070477.checked ? mm070477x.getText().toString() : ""}'
+                            android:visibility='@{mm070477.checked? View.VISIBLE : View.GONE}' />
+
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
             <!-- mm0801  Radio   -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/fldGrpCVmm0801"
@@ -762,6 +847,13 @@
                         android:layout_height="wrap_content"
                         android:layoutDirection="rtl"
                         android:text="معلوم نہیں"></androidx.appcompat.widget.AppCompatCheckBox>
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/chkdt3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:text="@string/chkdt3"></androidx.appcompat.widget.AppCompatCheckBox>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
