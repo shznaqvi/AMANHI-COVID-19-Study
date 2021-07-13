@@ -853,7 +853,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layoutDirection="rtl"
-                        android:text="@string/chkdt3"></androidx.appcompat.widget.AppCompatCheckBox>
+                        android:text="@string/chkdt3"
+                        android:visibility='@{chkdt2.checked? View.GONE : View.VISIBLE}'></androidx.appcompat.widget.AppCompatCheckBox>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
