@@ -41,12 +41,12 @@ public class Section06mmActivity extends AppCompatActivity {
             bi.fldGrpCVmm0701.setVisibility(View.GONE);
             bi.fldGrpCVmm0702.setVisibility(View.GONE);
             bi.fldGrpCVmm0703.setVisibility(View.GONE);
-            bi.fldGrpCVmm0704.setVisibility(View.GONE);
+            //bi.fldGrpCVmm0704.setVisibility(View.GONE);
         } else {
             bi.fldGrpCVmm0701.setVisibility(View.VISIBLE);
             bi.fldGrpCVmm0702.setVisibility(View.VISIBLE);
             bi.fldGrpCVmm0703.setVisibility(View.VISIBLE);
-            bi.fldGrpCVmm0704.setVisibility(View.VISIBLE);
+            //bi.fldGrpCVmm0704.setVisibility(View.VISIBLE);
         }
 
 
@@ -88,6 +88,38 @@ public class Section06mmActivity extends AppCompatActivity {
                     Clear.clearAllFields(bi.fldGrpCVmm0702);
                     bi.fldGrpCVmm0702.setVisibility(View.GONE);
                 }
+            }
+        });
+
+
+        bi.mm0703.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                /*if (bi.mm070301.isChecked()) {
+                    bi.mm070401.setEnabled(true);
+
+                    bi.mm070402.setChecked(false);
+                    bi.mm070403.setChecked(false);
+                    bi.mm070404.setChecked(false);
+                    bi.mm070405.setChecked(false);
+                    bi.mm070477.setChecked(false);
+
+                    bi.mm070402.setEnabled(false);
+                    bi.mm070403.setEnabled(false);
+                    bi.mm070404.setEnabled(false);
+                    bi.mm070405.setEnabled(false);
+                    bi.mm070477.setEnabled(false);
+                    bi.mm070477x.setVisibility(View.GONE);
+                } else {
+                    bi.mm070401.setEnabled(false);
+                    bi.mm070401.setChecked(false);
+
+                    bi.mm070402.setEnabled(true);
+                    bi.mm070403.setEnabled(true);
+                    bi.mm070404.setEnabled(true);
+                    bi.mm070405.setEnabled(true);
+                    bi.mm070477.setEnabled(true);
+                }*/
             }
         });
 
@@ -201,7 +233,7 @@ public class Section06mmActivity extends AppCompatActivity {
                 : "-1");
 
 
-        form4m.setMm0704(bi.mm070401.isChecked() ? "1"
+        /*form4m.setMm0704(bi.mm070401.isChecked() ? "1"
                 : bi.mm070402.isChecked() ? "2"
                 : bi.mm070403.isChecked() ? "3"
                 : bi.mm070404.isChecked() ? "4"
@@ -210,7 +242,7 @@ public class Section06mmActivity extends AppCompatActivity {
                 : "-1");
 
 
-        form4m.setMm070477x(bi.mm070477x.getText().toString());
+        form4m.setMm070477x(bi.mm070477x.getText().toString());*/
 
 
         form4m.setMm0801(bi.mm080101.isChecked() ? "1"
@@ -357,7 +389,7 @@ public class Section06mmActivity extends AppCompatActivity {
             }
 
 
-            if (!bi.mm070401.isChecked()
+            /*if (!bi.mm070401.isChecked()
                     && !bi.mm070402.isChecked()
                     && !bi.mm070403.isChecked()
                     && !bi.mm070404.isChecked()
@@ -373,7 +405,7 @@ public class Section06mmActivity extends AppCompatActivity {
                     Toast.makeText(this, "MM0704 others is required", Toast.LENGTH_SHORT).show();
                     return false;
                 }
-            }
+            }*/
 
         }
 

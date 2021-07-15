@@ -130,7 +130,7 @@
                                     android:paddingBottom="8dp"
                                     android:radius="2dp"
                                     android:singleLine="true"
-                                    android:text="dmu@aku"
+                                    android:text=""
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="18sp" />
 
@@ -171,7 +171,7 @@
                                         android:paddingBottom="8dp"
                                         android:radius="2dp"
                                         android:singleLine="true"
-                                        android:text="aku?dmu"
+                                        android:text=""
                                         android:textColor="@color/colorPrimary"
                                         android:textSize="18sp" />
 
