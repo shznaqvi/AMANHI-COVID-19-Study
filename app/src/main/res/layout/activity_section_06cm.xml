@@ -608,6 +608,18 @@
                             android:text="@string/cm070204" />
 
                         <RadioButton
+                            android:id="@+id/cm070205"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cm070205" />
+
+                        <RadioButton
+                            android:id="@+id/cm070288"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dkn" />
+
+                        <RadioButton
                             android:id="@+id/cm070277"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

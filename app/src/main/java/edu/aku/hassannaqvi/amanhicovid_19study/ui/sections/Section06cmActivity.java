@@ -251,6 +251,8 @@ public class Section06cmActivity extends AppCompatActivity {
                 : bi.cm070202.isChecked() ? "2"
                 : bi.cm070203.isChecked() ? "3"
                 : bi.cm070204.isChecked() ? "4"
+                : bi.cm070205.isChecked() ? "5"
+                : bi.cm070288.isChecked() ? "88"
                 : bi.cm070277.isChecked() ? "77"
                 : "-1");
 
@@ -358,6 +360,8 @@ public class Section06cmActivity extends AppCompatActivity {
                     && !bi.cm070202.isChecked()
                     && !bi.cm070203.isChecked()
                     && !bi.cm070204.isChecked()
+                    && !bi.cm070205.isChecked()
+                    && !bi.cm070288.isChecked()
                     && !bi.cm070277.isChecked()) {
                 Toast.makeText(this, "CM0702 is required", Toast.LENGTH_SHORT).show();
                 return false;

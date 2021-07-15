@@ -421,6 +421,7 @@
     <string name="cm070202">CanSinoBio</string>
     <string name="cm070203">Oxford-Astrazeneca</string>
     <string name="cm070204">Sputnik V</string>
+    <string name="cm070205">Sinovac</string>
 
     <string name="cm0703a">براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟ پہلی خوراک کی تاریخ</string>
     <string name="cm0703b">براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟ دوسری خوراک کی تاریخ</string>
@@ -780,6 +781,8 @@
     <string name="mm080202">CanSinoBio</string>
     <string name="mm080203">Oxford-Astrazeneca</string>
     <string name="mm080204">Sputnik V</string>
+    <string name="mm080205">Sinovac</string>
+
 
     <string name="mm0803a"> براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟  (پہلی خوراک کی تاریخ) </string>
     <string name="mm0803b"> براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟  (دوسری خوراک کی تاریخ) </string>

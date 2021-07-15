@@ -224,6 +224,8 @@ public class Section06mmActivity extends AppCompatActivity {
                     : bi.mm080202.isChecked() ? "2"
                     : bi.mm080203.isChecked() ? "3"
                     : bi.mm080204.isChecked() ? "4"
+                    : bi.mm080205.isChecked() ? "5"
+                    : bi.mm080288.isChecked() ? "88"
                     : bi.mm080277.isChecked() ? "77"
                     : "-1");
 
@@ -389,6 +391,8 @@ public class Section06mmActivity extends AppCompatActivity {
                     && !bi.mm080202.isChecked()
                     && !bi.mm080203.isChecked()
                     && !bi.mm080204.isChecked()
+                    && !bi.mm080205.isChecked()
+                    && !bi.mm080288.isChecked()
                     && !bi.mm080277.isChecked()) {
                 Toast.makeText(this, "MM0802 is required", Toast.LENGTH_SHORT).show();
                 return false;
