@@ -50,6 +50,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.workers.DataUpWorkerALL;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.sdDir;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.uploadData;
 import static edu.aku.hassannaqvi.amanhicovid_19study.utils.AndroidUtilityKt.isNetworkConnected;
 import static edu.aku.hassannaqvi.amanhicovid_19study.utils.AppUtilsKt.dbBackup;
 
@@ -132,14 +133,14 @@ public class SyncActivity extends AppCompatActivity {
 
 
                 // Forms21cm
-                uploadTables.add(new SyncModel(Forms21cmContract.Forms21cmTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedForms21cm());
+                uploadTables.add(new SyncModel(Forms21cmContract.Forms21cmTable.TABLE_NAME, uploadData.get(0).length()));
 
                 Toast.makeText(this, MainApp.uploadData.toString(), Toast.LENGTH_LONG).show();
 
                 // Forms4mm
-                uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedForms4mm());
+                uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME, uploadData.get(1).length()));
 
                 // Initialising downloadData array to capture response from server outside Data (limit:10204)
                 MainApp.downloadData = new String[uploadTables.size()];
@@ -158,8 +159,8 @@ public class SyncActivity extends AppCompatActivity {
 
 
                     // Set tables to DOWNLOAD
-                    downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(Users.UsersTable.TABLE_NAME, uploadData.size()));
+                    downloadTables.add(new SyncModel(VersionApp.VersionAppTable.TABLE_NAME, uploadData.size()));
 
                     String site = "";
                     switch (bi.sites.getCheckedRadioButtonId()) {
@@ -182,7 +183,7 @@ public class SyncActivity extends AppCompatActivity {
                     final String filter = " dssid like '" + site + "%' ";
                     downloadTables.add(new SyncModel(FollowUp21cm.FollowUpTable21cm.TABLE_NAME, select, filter));
                     downloadTables.add(new SyncModel(FollowUp4mm.FollowUpTable4mm.TABLE_NAME, select, filter));
-                    downloadTables.add(new SyncModel(Sites.SiteTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(Sites.SiteTable.TABLE_NAME, uploadData.size()));
 
                     MainApp.downloadData = new String[downloadTables.size()];
                     setAdapter(downloadTables);
