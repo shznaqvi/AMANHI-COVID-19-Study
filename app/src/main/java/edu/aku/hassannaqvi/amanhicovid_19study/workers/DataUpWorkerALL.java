@@ -110,7 +110,9 @@ public class DataUpWorkerALL extends Worker {
             urlConnection.setRequestProperty("charset", "utf-8");
             urlConnection.setUseCaches(false);
             urlConnection.connect();
-            Log.d(TAG, "downloadURL: " + url);
+
+
+            Log.d(TAG, "downloadURL: (" + uploadData.length() + ")" + url);
 
             JSONArray jsonSync = new JSONArray();
 

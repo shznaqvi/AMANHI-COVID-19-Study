@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.amanhicovid_19study.models;
 
 public class SyncModel {
     String tableName;
+    int unSynced;
     String status;
     int statusID;
     String message;
@@ -14,6 +15,7 @@ public class SyncModel {
         this.status = "";
         this.statusID = 0;
         this.message = "";
+        this.unSynced = 0;
 
 
     }
@@ -34,6 +36,7 @@ public class SyncModel {
         this.status = "";
         this.statusID = 0;
         this.message = "";
+        this.unSynced = 0;
         if (select != null)
             this.select = select;
         if (filter != null)

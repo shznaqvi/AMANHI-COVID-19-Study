@@ -30,7 +30,6 @@ import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
 
 /**
  * @author hassan.naqvi on 11/30/2016.
@@ -598,7 +597,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     groupBy,                   // don't group the rows
                     having,                    // don't filter by row groups
                     orderBy,                    // The sort order
-                    "100"
+                    "80"
             );
 
             //Toast.makeText(mycontext, c.getCount(), Toast.LENGTH_SHORT).show();
