@@ -1,0 +1,292 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="edu.aku.hassannaqvi.amanhicovid_19study.ui.SearchRecord21cm" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/GrpName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- cm0201  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvcm"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNumFUP"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="50dp"
+                            android:text="Search Child" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNumFUP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Study ID" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/txtStudyid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="17-#####-#"
+                            android:inputType="number"
+                            app:mask="17-#####-#" />
+
+                    </LinearLayout>
+
+                    <!--EndButton LinearLayout-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="24dp"
+                        android:layoutDirection="rtl"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_End"
+                            style="@style/btnEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginBottom="30dp"
+                            android:onClick="@{() -> callback.BtnCancel()}"
+                            android:text="Cancel" />
+
+                        <Button
+                            android:id="@+id/btn_Continue"
+                            style="@style/btnSave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:onClick="@{() -> callback.BtnSearch()}"
+                            android:text="Search" />
+
+                    </LinearLayout>
+                    <!--EndButton LinearLayout-->
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- cvstudyid  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvstudyid"
+                style="@style/cardView"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNumFUP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Study ID : " />
+
+                        <TextView
+                            android:id="@+id/lblstudyid"
+                            style="@style/quesNumVal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Study ID:" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- cvdssid  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvdssid"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNumFUP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="DSS ID : " />
+
+                        <TextView
+                            android:id="@+id/lbldssid"
+                            style="@style/quesNumVal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="DSS ID" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- cvfupdt  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvfupdt"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNumFUP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Due Date : " />
+
+                        <TextView
+                            android:id="@+id/lblfupdt"
+                            style="@style/quesNumVal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Due Date" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- cvfupdt  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvfupwk"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNumFUP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Follow Week : " />
+
+                        <TextView
+                            android:id="@+id/lblfupwk"
+                            style="@style/quesNumVal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Follow Week" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- cvnext  Radio   -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvnextbutton"
+                style="@style/cardView">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bottom"
+                        android:layoutDirection="rtl"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_Next"
+                            style="@style/btnSave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:onClick="@{() -> callback.BtnNext()}"
+                            android:text="Fill Child Form"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

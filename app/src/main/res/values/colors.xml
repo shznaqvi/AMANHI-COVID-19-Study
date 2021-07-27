@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF6F00</color>
+    <color name="colorPrimaryLight">#FFC107</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#D50000</color>
+    <color name="colorAccentLight">#FF1744</color>
+
+    <color name="colorPrimaryOverlay">#7fFF6F00</color>
+    <color name="colorPrimaryLightOverlay">#7fFFC107</color>
+    <color name="colorPrimaryDarkOverlay">#7f000000</color>
+    <color name="colorAccentOverlay">#7fD50000</color>
+    <color name="colorAccentLightOverlay">#7fFF1744</color>
+
+
+    <!-- Standard App Colors -->
+    <color name="whiteOverlay">#7fffffff</color>
+    <color name="grayDark">#5e5e5e</color>
+    <color name="grayLight">#efefef</color>
+    <color name="greenOverlay">#d600ef00</color>
+    <color name="redOverlay">#d6ef0000</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#7f7f7f</color>
+    <color name="green">#009900</color>
+    <color name="green_overlay">#7f009900</color>
+    <color name="red">#990000</color>
+    <color name="red_overlay">#7f990000</color>
+    <color name="black_overlay">#7f000000</color>
+    <color name="white_overlay">#7fffffff</color>
+    <color name="gray_overlay">#7f7f7f7f</color>
+    <color name="ltgray">#f7f7f7f7</color>
+    <color name="ltgray_overlay">#f7f7f7</color>
+</resources>
