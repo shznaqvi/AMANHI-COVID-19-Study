@@ -12,7 +12,6 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
-import edu.aku.hassannaqvi.amanhicovid_19study.models.Forms;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
 
 
@@ -22,7 +21,7 @@ public class MainApp extends Application {
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
     public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
-    //public static final String _IP = "http://f38158";// .TEST server
+    //public static final String _IP = "http://F38158";// .TEST server
 
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
     public static final String _HOST_URL = MainApp._IP + "/amanhicovid_19study/api/";// .TEST server;
@@ -34,7 +33,6 @@ public class MainApp extends Application {
     public static Form21cm form21cm;
     public static File sdDir;
     public static String[] downloadData;
-    public static Forms form;
     public static Form4mm form4m;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;

@@ -2,18 +2,20 @@ package edu.aku.hassannaqvi.amanhicovid_19study.models;
 
 public class SyncModel {
     String tableName;
+    int upLoadsize;
     String status;
     int statusID;
     String message;
     String select = null;
     String filter = null;
 
-    public SyncModel(String tableName) {
+    public SyncModel(String tableName, int upLoadsize) {
 
         this.tableName = tableName;
         this.status = "";
         this.statusID = 0;
         this.message = "";
+        this.upLoadsize = upLoadsize;
 
 
     }
@@ -41,6 +43,19 @@ public class SyncModel {
 
     }
 
+    public SyncModel(String tableName, String select, String filter, int toSync) {
+
+        this.tableName = tableName;
+        this.status = "";
+        this.statusID = 0;
+        this.message = "";
+        this.upLoadsize = 0;
+        if (select != null)
+            this.select = select;
+        if (filter != null)
+            this.filter = filter;
+
+    }
 
     public String gettableName() {
         return tableName;
@@ -85,5 +100,13 @@ public class SyncModel {
 
     public String getSelect() {
         return select;
+    }
+
+    public int getUpLoadsize() {
+        return upLoadsize;
+    }
+
+    public void setUpLoadsize(int upLoadsize) {
+        this.upLoadsize = upLoadsize;
     }
 }
