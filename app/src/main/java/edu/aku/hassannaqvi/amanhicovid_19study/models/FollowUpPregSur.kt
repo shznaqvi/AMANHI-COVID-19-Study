@@ -16,6 +16,7 @@ class FollowUpPregSur : Serializable {
     var HUSNAME: String = ""
     var COLFLAG: String = ""
 
+
     constructor() {
         // Default Constructor
     }
