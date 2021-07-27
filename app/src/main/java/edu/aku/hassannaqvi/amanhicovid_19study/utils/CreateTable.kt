@@ -85,6 +85,18 @@ object CreateTable {
             + FollowUp21cm.FollowUpTable21cm.COLUMN_HUSNAME + " TEXT"
             + " );")
 
+
+    const val SQL_CREATE_FUP_PREGSUR = ("CREATE TABLE " + FollowUp21cm.FollowUpTable21cm.TABLE_NAME + "("
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_DSSID + " TEXT,"
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + " TEXT,"
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT + " TEXT,"
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK + " INTEGER,"
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_WOMNAME + " TEXT,"
+            + FollowUp21cm.FollowUpTable21cm.COLUMN_HUSNAME + " TEXT"
+            + " );")
+
+
     const val SQL_CREATE_FUP4MM = ("CREATE TABLE " + FollowUp4mm.FollowUpTable4mm.TABLE_NAME + "("
             + FollowUp4mm.FollowUpTable4mm.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FollowUp4mm.FollowUpTable4mm.COLUMN_DSSID + " TEXT,"

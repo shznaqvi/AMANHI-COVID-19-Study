@@ -51,6 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
         db.execSQL(CreateTable.SQL_CREATE_SITE);
         db.execSQL(CreateTable.SQL_CREATE_FUP21CM);
+        db.execSQL(CreateTable.SQL_CREATE_FUP_PREGSUR);
         db.execSQL(CreateTable.SQL_CREATE_FUP4MM);
         //db.execSQL(CreateTable.SQL_CREATE_DISTRICTS);
         ///db.execSQL(CreateTable.SQL_CREATE_UCS);
