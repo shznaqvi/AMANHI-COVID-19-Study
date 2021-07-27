@@ -34,6 +34,7 @@ public class Section06mmActivity extends AppCompatActivity {
         SkipPattern();
 
         Toast.makeText(this, MainApp.isprevpreg, Toast.LENGTH_SHORT).show();
+
     }
 
     private void SkipPattern() {
