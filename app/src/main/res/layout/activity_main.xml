@@ -195,6 +195,7 @@
                         android:textAppearance="@style/Widget.AppCompat.ActionButton"
                         android:textColor="@color/white" />
 
+
                     <Button
                         android:id="@+id/btnsummary"
                         android:layout_width="match_parent"
@@ -304,7 +305,7 @@
 
                         </LinearLayout>
 
-                    </LinearLayout>
+                        </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/admin1"
@@ -393,7 +394,7 @@
 
 
                     </LinearLayout>
-                </LinearLayout>
+                    </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
