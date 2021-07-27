@@ -147,13 +147,22 @@ public class Form21cm extends BaseObservable {
     private String cm0602 = "";
     private String cm0603 = "";
     private String cm0604 = "";
-
+    private String cm0605 = "";
     private String cm0606 = "";
     private String cm0607 = "";
     private String cm0608 = "";
     private String cm0609 = "";
 
-    private String cm0605 = "";
+    private String cm0701 = "";
+    private String cm0702 = "";
+    private String cm070277x = "";
+    private String cm0703a = "";
+    private String cm0703b = "";
+    private String chkvaccdta = "";
+    private String chkvaccdtb = "";
+    private String chkdt3ch = "";
+
+
     // SECTION VARIABLES
     private String s02cm = "";
     private String s03cm = "";
@@ -228,6 +237,14 @@ public class Form21cm extends BaseObservable {
         this.dssid = dssid;
     }
 
+
+    public String getChkdt3ch() {
+        return chkdt3ch;
+    }
+
+    public void setChkdt3ch(String chkdt3ch) {
+        this.chkdt3ch = chkdt3ch;
+    }
 
     @Bindable
     public String getWeek() {
@@ -321,6 +338,78 @@ public class Form21cm extends BaseObservable {
         return this;
     }
 
+
+    public String getStudyid() {
+        return studyid;
+    }
+
+    public void setStudyid(String studyid) {
+        this.studyid = studyid;
+    }
+
+    public String getDssid() {
+        return dssid;
+    }
+
+    public void setDssid(String dssid) {
+        this.dssid = dssid;
+    }
+
+    public String getCm0701() {
+        return cm0701;
+    }
+
+    public void setCm0701(String cm0701) {
+        this.cm0701 = cm0701;
+    }
+
+    public String getCm0702() {
+        return cm0702;
+    }
+
+    public void setCm0702(String cm0702) {
+        this.cm0702 = cm0702;
+    }
+
+    public String getCm070277x() {
+        return cm070277x;
+    }
+
+    public void setCm070277x(String cm070277x) {
+        this.cm070277x = cm070277x;
+    }
+
+    public String getCm0703a() {
+        return cm0703a;
+    }
+
+    public void setCm0703a(String cm0703a) {
+        this.cm0703a = cm0703a;
+    }
+
+    public String getCm0703b() {
+        return cm0703b;
+    }
+
+    public void setCm0703b(String cm0703b) {
+        this.cm0703b = cm0703b;
+    }
+
+    public String getChkvaccdta() {
+        return chkvaccdta;
+    }
+
+    public void setChkvaccdta(String chkvaccdta) {
+        this.chkvaccdta = chkvaccdta;
+    }
+
+    public String getChkvaccdtb() {
+        return chkvaccdtb;
+    }
+
+    public void setChkvaccdtb(String chkvaccdtb) {
+        this.chkvaccdtb = chkvaccdtb;
+    }
 
     @Bindable
     public String getSynced() {
@@ -1508,7 +1597,16 @@ public class Form21cm extends BaseObservable {
                     .put("cm0607", cm0607)
                     .put("cm0608", cm0608)
                     .put("cm0609", cm0609)
-                    .put("cm0605", cm0605);
+                    .put("cm0605", cm0605)
+                    .put("cm0701", cm0701)
+                    .put("cm0702", cm0702)
+                    .put("cm070277x", cm070277x)
+                    .put("cm0703a", cm0703a)
+                    .put("cm0703b", cm0703b)
+                    .put("chkvaccdta", chkvaccdta)
+                    .put("chkvaccdtb", chkvaccdtb)
+                    .put("chkdt3ch", chkdt3ch);
+
         } catch (JSONException e) {
             e.printStackTrace();
             return "\"error\":, \"" + e.getMessage() + "\"";
@@ -1683,6 +1781,510 @@ public class Form21cm extends BaseObservable {
                     this.cm0609 = json.getString("cm0609");
                 } else {
                     this.cm0609 = "";
+                }
+
+
+                if (json.has("cm0701")) {
+                    this.cm0701 = json.getString("cm0701");
+                } else {
+                    this.cm0701 = "";
+                }
+
+
+                if (json.has("cm0702")) {
+                    this.cm0702 = json.getString("cm0702");
+                } else {
+                    this.cm0702 = "";
+                }
+
+
+                if (json.has("cm070277x")) {
+                    this.cm070277x = json.getString("cm070277x");
+                } else {
+                    this.cm070277x = "";
+                }
+
+
+                if (json.has("cm0703a")) {
+                    this.cm0703a = json.getString("cm0703a");
+                } else {
+                    this.cm0703a = "";
+                }
+
+
+                if (json.has("cm0703b")) {
+                    this.cm0703b = json.getString("cm0703b");
+                } else {
+                    this.cm0703b = "";
+                }
+
+
+                if (json.has("chkvaccdta")) {
+                    this.chkvaccdta = json.getString("chkvaccdta");
+                } else {
+                    this.chkvaccdta = "";
+                }
+
+
+                if (json.has("chkvaccdtb")) {
+                    this.chkvaccdtb = json.getString("chkvaccdtb");
+                } else {
+                    this.chkvaccdtb = "";
+                }
+
+
+                if (json.has("chkdt3ch")) {
+                    this.chkdt3ch = json.getString("chkdt3ch");
+                } else {
+                    this.chkdt3ch = "";
+                }
+
+
+                if (json.has("cm0701")) {
+                    this.cm0701 = json.getString("cm0701");
+                } else {
+                    this.cm0701 = "";
+                }
+
+
+                if (json.has("cm0702")) {
+                    this.cm0702 = json.getString("cm0702");
+                } else {
+                    this.cm0702 = "";
+                }
+
+
+                if (json.has("cm070277x")) {
+                    this.cm070277x = json.getString("cm070277x");
+                } else {
+                    this.cm070277x = "";
+                }
+
+
+                if (json.has("cm0703a")) {
+                    this.cm0703a = json.getString("cm0703a");
+                } else {
+                    this.cm0703a = "";
+                }
+
+
+                if (json.has("cm0703b")) {
+                    this.cm0703b = json.getString("cm0703b");
+                } else {
+                    this.cm0703b = "";
+                }
+
+
+                if (json.has("chkvaccdta")) {
+                    this.chkvaccdta = json.getString("chkvaccdta");
+                } else {
+                    this.chkvaccdta = "";
+                }
+
+
+                if (json.has("chkvaccdtb")) {
+                    this.chkvaccdtb = json.getString("chkvaccdtb");
+                } else {
+                    this.chkvaccdtb = "";
+                }
+
+
+                if (json.has("chkdt3ch")) {
+                    this.chkdt3ch = json.getString("chkdt3ch");
+                } else {
+                    this.chkdt3ch = "";
+                }
+
+
+                if (json.has("cm0701")) {
+                    this.cm0701 = json.getString("cm0701");
+                } else {
+                    this.cm0701 = "";
+                }
+
+
+                if (json.has("cm0702")) {
+                    this.cm0702 = json.getString("cm0702");
+                } else {
+                    this.cm0702 = "";
+                }
+
+
+                if (json.has("cm070277x")) {
+                    this.cm070277x = json.getString("cm070277x");
+                } else {
+                    this.cm070277x = "";
+                }
+
+
+                if (json.has("cm0703a")) {
+                    this.cm0703a = json.getString("cm0703a");
+                } else {
+                    this.cm0703a = "";
+                }
+
+
+                if (json.has("cm0703b")) {
+                    this.cm0703b = json.getString("cm0703b");
+                } else {
+                    this.cm0703b = "";
+                }
+
+
+                if (json.has("chkvaccdta")) {
+                    this.chkvaccdta = json.getString("chkvaccdta");
+                } else {
+                    this.chkvaccdta = "";
+                }
+
+
+                if (json.has("chkvaccdtb")) {
+                    this.chkvaccdtb = json.getString("chkvaccdtb");
+                } else {
+                    this.chkvaccdtb = "";
+                }
+
+
+                if (json.has("chkdt3ch")) {
+                    this.chkdt3ch = json.getString("chkdt3ch");
+                } else {
+                    this.chkdt3ch = "";
+                }
+
+
+                if (json.has("cm0701")) {
+                    this.cm0701 = json.getString("cm0701");
+                } else {
+                    this.cm0701 = "";
+                }
+
+
+                if (json.has("cm0702")) {
+                    this.cm0702 = json.getString("cm0702");
+                } else {
+                    this.cm0702 = "";
+                }
+
+
+                if (json.has("cm070277x")) {
+                    this.cm070277x = json.getString("cm070277x");
+                } else {
+                    this.cm070277x = "";
+                }
+
+
+                if (json.has("cm0703a")) {
+                    this.cm0703a = json.getString("cm0703a");
+                } else {
+                    this.cm0703a = "";
+                }
+
+
+                if (json.has("cm0703b")) {
+                    this.cm0703b = json.getString("cm0703b");
+                } else {
+                    this.cm0703b = "";
+                }
+
+
+                if (json.has("chkvaccdta")) {
+                    this.chkvaccdta = json.getString("chkvaccdta");
+                } else {
+                    this.chkvaccdta = "";
+                }
+
+
+                if (json.has("chkvaccdtb")) {
+                    this.chkvaccdtb = json.getString("chkvaccdtb");
+                } else {
+                    this.chkvaccdtb = "";
+                }
+
+
+                if (json.has("chkdt3ch")) {
+                    this.chkdt3ch = json.getString("chkdt3ch");
+                } else {
+                    this.chkdt3ch = "";
+                }
+
+
+                if (json.has("cm0701")) {
+                    this.cm0701 = json.getString("cm0701");
+                } else {
+                    this.cm0701 = "";
+                }
+
+
+                if (json.has("cm0702")) {
+                    this.cm0702 = json.getString("cm0702");
+                } else {
+                    this.cm0702 = "";
+                }
+
+
+                if (json.has("cm070277x")) {
+                    this.cm070277x = json.getString("cm070277x");
+                } else {
+                    this.cm070277x = "";
+                }
+
+
+                if (json.has("cm0703a")) {
+                    this.cm0703a = json.getString("cm0703a");
+                } else {
+                    this.cm0703a = "";
+                }
+
+
+                if (json.has("cm0703b")) {
+                    this.cm0703b = json.getString("cm0703b");
+                } else {
+                    this.cm0703b = "";
+                }
+
+
+                if (json.has("chkvaccdta")) {
+                    this.chkvaccdta = json.getString("chkvaccdta");
+                } else {
+                    this.chkvaccdta = "";
+                }
+
+
+                if (json.has("chkvaccdtb")) {
+                    this.chkvaccdtb = json.getString("chkvaccdtb");
+                } else {
+                    this.chkvaccdtb = "";
+                }
+
+
+                if (json.has("chkdt3ch")) {
+                    this.chkdt3ch = json.getString("chkdt3ch");
+                } else {
+                    this.chkdt3ch = "";
+                }
+
+
+                if (json.has("cm0701")) {
+                    this.cm0701 = json.getString("cm0701");
+                } else {
+                    this.cm0701 = "";
+                }
+
+
+                if (json.has("cm0702")) {
+                    this.cm0702 = json.getString("cm0702");
+                } else {
+                    this.cm0702 = "";
+                }
+
+
+                if (json.has("cm070277x")) {
+                    this.cm070277x = json.getString("cm070277x");
+                } else {
+                    this.cm070277x = "";
+                }
+
+
+                if (json.has("cm0703a")) {
+                    this.cm0703a = json.getString("cm0703a");
+                } else {
+                    this.cm0703a = "";
+                }
+
+
+                if (json.has("cm0703b")) {
+                    this.cm0703b = json.getString("cm0703b");
+                } else {
+                    this.cm0703b = "";
+                }
+
+
+                if (json.has("chkvaccdta")) {
+                    this.chkvaccdta = json.getString("chkvaccdta");
+                } else {
+                    this.chkvaccdta = "";
+                }
+
+
+                if (json.has("chkvaccdtb")) {
+                    this.chkvaccdtb = json.getString("chkvaccdtb");
+                } else {
+                    this.chkvaccdtb = "";
+                }
+
+
+                if (json.has("chkdt3ch")) {
+                    this.chkdt3ch = json.getString("chkdt3ch");
+                } else {
+                    this.chkdt3ch = "";
+                }
+
+
+                if (json.has("cm0701")) {
+                    this.cm0701 = json.getString("cm0701");
+                } else {
+                    this.cm0701 = "";
+                }
+
+
+                if (json.has("cm0702")) {
+                    this.cm0702 = json.getString("cm0702");
+                } else {
+                    this.cm0702 = "";
+                }
+
+
+                if (json.has("cm070277x")) {
+                    this.cm070277x = json.getString("cm070277x");
+                } else {
+                    this.cm070277x = "";
+                }
+
+
+                if (json.has("cm0703a")) {
+                    this.cm0703a = json.getString("cm0703a");
+                } else {
+                    this.cm0703a = "";
+                }
+
+
+                if (json.has("cm0703b")) {
+                    this.cm0703b = json.getString("cm0703b");
+                } else {
+                    this.cm0703b = "";
+                }
+
+
+                if (json.has("chkvaccdta")) {
+                    this.chkvaccdta = json.getString("chkvaccdta");
+                } else {
+                    this.chkvaccdta = "";
+                }
+
+
+                if (json.has("chkvaccdtb")) {
+                    this.chkvaccdtb = json.getString("chkvaccdtb");
+                } else {
+                    this.chkvaccdtb = "";
+                }
+
+
+                if (json.has("chkdt3ch")) {
+                    this.chkdt3ch = json.getString("chkdt3ch");
+                } else {
+                    this.chkdt3ch = "";
+                }
+
+
+                if (json.has("cm0701")) {
+                    this.cm0701 = json.getString("cm0701");
+                } else {
+                    this.cm0701 = "";
+                }
+
+
+                if (json.has("cm0702")) {
+                    this.cm0702 = json.getString("cm0702");
+                } else {
+                    this.cm0702 = "";
+                }
+
+
+                if (json.has("cm070277x")) {
+                    this.cm070277x = json.getString("cm070277x");
+                } else {
+                    this.cm070277x = "";
+                }
+
+
+                if (json.has("cm0703a")) {
+                    this.cm0703a = json.getString("cm0703a");
+                } else {
+                    this.cm0703a = "";
+                }
+
+
+                if (json.has("cm0703b")) {
+                    this.cm0703b = json.getString("cm0703b");
+                } else {
+                    this.cm0703b = "";
+                }
+
+
+                if (json.has("chkvaccdta")) {
+                    this.chkvaccdta = json.getString("chkvaccdta");
+                } else {
+                    this.chkvaccdta = "";
+                }
+
+
+                if (json.has("chkvaccdtb")) {
+                    this.chkvaccdtb = json.getString("chkvaccdtb");
+                } else {
+                    this.chkvaccdtb = "";
+                }
+
+
+                if (json.has("chkdt3ch")) {
+                    this.chkdt3ch = json.getString("chkdt3ch");
+                } else {
+                    this.chkdt3ch = "";
+                }
+
+
+                if (json.has("cm0701")) {
+                    this.cm0701 = json.getString("cm0701");
+                } else {
+                    this.cm0701 = "";
+                }
+
+
+                if (json.has("cm0702")) {
+                    this.cm0702 = json.getString("cm0702");
+                } else {
+                    this.cm0702 = "";
+                }
+
+
+                if (json.has("cm070277x")) {
+                    this.cm070277x = json.getString("cm070277x");
+                } else {
+                    this.cm070277x = "";
+                }
+
+
+                if (json.has("cm0703a")) {
+                    this.cm0703a = json.getString("cm0703a");
+                } else {
+                    this.cm0703a = "";
+                }
+
+
+                if (json.has("cm0703b")) {
+                    this.cm0703b = json.getString("cm0703b");
+                } else {
+                    this.cm0703b = "";
+                }
+
+
+                if (json.has("chkvaccdta")) {
+                    this.chkvaccdta = json.getString("chkvaccdta");
+                } else {
+                    this.chkvaccdta = "";
+                }
+
+
+                if (json.has("chkvaccdtb")) {
+                    this.chkvaccdtb = json.getString("chkvaccdtb");
+                } else {
+                    this.chkvaccdtb = "";
+                }
+
+
+                if (json.has("chkdt3ch")) {
+                    this.chkdt3ch = json.getString("chkdt3ch");
+                } else {
+                    this.chkdt3ch = "";
                 }
 
 

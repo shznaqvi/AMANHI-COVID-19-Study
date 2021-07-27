@@ -597,7 +597,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     groupBy,                   // don't group the rows
                     having,                    // don't filter by row groups
                     orderBy,                    // The sort order
-                    "100"
+                    "80"
             );
 
             //Toast.makeText(mycontext, c.getCount(), Toast.LENGTH_SHORT).show();
@@ -1086,6 +1086,85 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public int getMotherByStudyID(String studyid) {
         String countQuery = "SELECT  * FROM " + FollowUp21cm.FollowUpTable21cm.TABLE_NAME + " WHERE " + FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + " = '" + studyid + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+
+    public int getData(String siteid, String dt) {
+        String countQuery = "SELECT  * FROM Forms4mm WHERE substr(studyid, 2, 1) = '" + siteid + "' and substr(sysdate, 1, 8) = '" + dt + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+
+    public int getDataChild(String siteid, String dt) {
+        String countQuery = "SELECT  * FROM Forms21cm WHERE substr(studyid, 2, 1) = '" + siteid + "' and substr(sysdate, 1, 8) = '" + dt + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+
+    public int getDataNotSynced(String siteid, String dt) {
+        String countQuery = "SELECT  * FROM Forms4mm WHERE substr(studyid, 2, 1) = '" + siteid + "' and substr(sysdate, 1, 8) = '" + dt + "' and synced is null or synced=''";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public int getDataNotSyncedChild(String siteid, String dt) {
+        String countQuery = "SELECT  * FROM Forms21cm WHERE substr(studyid, 2, 1) = '" + siteid + "' and substr(sysdate, 1, 8) = '" + dt + "' and synced is null or synced=''";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+
+    public int getData1(String dt) {
+        String countQuery = "SELECT  * FROM Forms4mm WHERE substr(studyid, 2, 1) = '7' or substr(studyid, 2, 1) = '3' and substr(sysdate, 1, 8) = '" + dt + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+
+    public int getData1Child(String dt) {
+        String countQuery = "SELECT  * FROM Forms21cm WHERE substr(studyid, 2, 1) = '7' or substr(studyid, 2, 1) = '3' and substr(sysdate, 1, 8) = '" + dt + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+
+    public int getData1NotSynced(String dt) {
+        String countQuery = "SELECT  * FROM Forms4mm WHERE substr(studyid, 2, 1) = '7' or substr(studyid, 2, 1) = '3' and substr(sysdate, 1, 8) = '" + dt + "' and synced is null or synced=''";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+
+    public int getData1NotSyncedChild(String dt) {
+        String countQuery = "SELECT  * FROM Forms21cm WHERE substr(studyid, 2, 1) = '7' or substr(studyid, 2, 1) = '3' and substr(sysdate, 1, 8) = '" + dt + "' and synced is null or synced=''";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
         int count = cursor.getCount();
