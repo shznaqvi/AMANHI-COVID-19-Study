@@ -58,8 +58,8 @@ public class Section06mmActivity extends AppCompatActivity {
                 } else {
                     Clear.clearAllFields(bi.fldGrpCVmm0605);
                     bi.fldGrpCVmm0605.setVisibility(View.GONE);
-
                     Clear.clearAllFields(bi.fldGrpCVmm0606);
+
                     bi.fldGrpCVmm0606.setVisibility(View.GONE);
                 }
             }
