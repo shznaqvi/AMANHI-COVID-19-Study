@@ -1339,16 +1339,16 @@
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr5040aa"
+                                android:id="@+id/cr5040ay"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5040aa" />
+                                android:text="@string/cr5040ay" />
 
                             <RadioButton
-                                android:id="@+id/cr5040ab"
+                                android:id="@+id/cr5040an"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5040ab" />
+                                android:text="@string/cr5040an" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1388,16 +1388,16 @@
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr5040aaa"
+                                android:id="@+id/cr5040aay"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5040aaa" />
+                                android:text="@string/cr5040aay" />
 
                             <RadioButton
-                                android:id="@+id/cr5040aab"
+                                android:id="@+id/cr5040aan"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5040aab" />
+                                android:text="@string/cr5040aan" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1437,16 +1437,16 @@
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr5040aba"
+                                android:id="@+id/cr5040aby"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5040aba" />
+                                android:text="@string/cr5040aby" />
 
                             <RadioButton
-                                android:id="@+id/cr5040abb"
+                                android:id="@+id/cr5040abn"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5040abb" />
+                                android:text="@string/cr5040abn" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

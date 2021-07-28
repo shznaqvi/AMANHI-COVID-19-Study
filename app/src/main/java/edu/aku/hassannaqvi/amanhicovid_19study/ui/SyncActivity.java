@@ -41,6 +41,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSur;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Sites;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.SyncModel;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
@@ -286,6 +287,11 @@ public class SyncActivity extends AppCompatActivity {
                                         case FollowUp21cm.FollowUpTable21cm.TABLE_NAME:
                                             jsonArray = new JSONArray(result);
                                             insertCount = db.syncFollowUp21cm(jsonArray);
+                                            Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
+                                            break;
+                                        case FollowUpPregSur.FollowUpTablePregSur.TABLE_NAME:
+                                            jsonArray = new JSONArray(result);
+                                            insertCount = db.syncFollowUpPregSur(jsonArray);
                                             Log.d(TAG, "onChanged: " + tableName + " " + workInfo.getOutputData().getInt("position", 0));
                                             break;
                                         case FollowUp4mm.FollowUpTable4mm.TABLE_NAME:

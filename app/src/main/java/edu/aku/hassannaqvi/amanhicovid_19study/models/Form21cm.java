@@ -439,7 +439,6 @@ public class Form21cm extends BaseObservable {
 
     public void setIStatus(String iStatus) {
         this.iStatus = iStatus;
-        notifyPropertyChanged(BR.iStatus);
     }
 
     @Bindable
@@ -449,7 +448,6 @@ public class Form21cm extends BaseObservable {
 
     public void setIStatus96x(String iStatus96x) {
         this.iStatus96x = iStatus96x;
-        notifyPropertyChanged(BR.iStatus96x);
     }
 
     public String getS02() {

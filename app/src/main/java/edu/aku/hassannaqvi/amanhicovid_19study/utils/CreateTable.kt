@@ -86,14 +86,14 @@ object CreateTable {
             + " );")
 
 
-    const val SQL_CREATE_FUP_PREGSUR = ("CREATE TABLE " + FollowUp21cm.FollowUpTable21cm.TABLE_NAME + "("
-            + FollowUp21cm.FollowUpTable21cm.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + FollowUp21cm.FollowUpTable21cm.COLUMN_DSSID + " TEXT,"
-            + FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + " TEXT,"
-            + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPDT + " TEXT,"
-            + FollowUp21cm.FollowUpTable21cm.COLUMN_FUPWEEK + " INTEGER,"
-            + FollowUp21cm.FollowUpTable21cm.COLUMN_WOMNAME + " TEXT,"
-            + FollowUp21cm.FollowUpTable21cm.COLUMN_HUSNAME + " TEXT"
+    const val SQL_CREATE_FUP_PREGSUR = ("CREATE TABLE " + FollowUpPregSur.FollowUpTablePregSur.TABLE_NAME + "("
+            + FollowUpPregSur.FollowUpTablePregSur.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + FollowUpPregSur.FollowUpTablePregSur.COLUMN_DSSID + " TEXT,"
+            + FollowUpPregSur.FollowUpTablePregSur.COLUMN_STUDYID + " TEXT,"
+            + FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPDT + " TEXT,"
+            + FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPMONTH + " INTEGER,"
+            + FollowUpPregSur.FollowUpTablePregSur.COLUMN_WOMNAME + " TEXT,"
+            + FollowUpPregSur.FollowUpTablePregSur.COLUMN_HUSNAME + " TEXT"
             + " );")
 
 

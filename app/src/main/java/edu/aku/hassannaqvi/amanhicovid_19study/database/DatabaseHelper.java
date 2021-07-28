@@ -22,6 +22,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSur;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Sites;
@@ -851,6 +852,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         } catch (Exception e) {
             Log.d(TAG, "syncFollow21cm(e): " + e);
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
+
+    public int syncFollowUpPregSur(JSONArray fupList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(FollowUpPregSur.FollowUpTablePregSur.TABLE_NAME, null, null);
+        int insertCount = 0;
+        try {
+            for (int i = 0; i < fupList.length(); i++) {
+
+                JSONObject jsonObjectUser = fupList.getJSONObject(i);
+
+                FollowUpPregSur fuppregsur = new FollowUpPregSur();
+                fuppregsur.sync(jsonObjectUser);
+                ContentValues values = new ContentValues();
+
+                values.put(FollowUpPregSur.FollowUpTablePregSur.COLUMN_DSSID, fuppregsur.getDSSID());
+                values.put(FollowUpPregSur.FollowUpTablePregSur.COLUMN_STUDYID, fuppregsur.getSTUDYID());
+                values.put(FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPDT, fuppregsur.getFUPDT());
+                values.put(FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPMONTH, fuppregsur.getFUPMONTH());
+                values.put(FollowUpPregSur.FollowUpTablePregSur.COLUMN_WOMNAME, fuppregsur.getWOMNAME());
+                values.put(FollowUpPregSur.FollowUpTablePregSur.COLUMN_HUSNAME, fuppregsur.getHUSNAME());
+
+                long rowID = db.insert(FollowUpPregSur.FollowUpTablePregSur.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncFollowPregSur(e): " + e);
             db.close();
         } finally {
             db.close();

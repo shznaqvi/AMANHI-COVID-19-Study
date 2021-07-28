@@ -659,36 +659,35 @@
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr5013"
+                                android:id="@+id/cr5013a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5013" />
+                                android:text="@string/cr5013a" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/cr5013x"
+                                android:id="@+id/cr5013ax"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/cr5013"
+                                android:hint="@string/cr5013a"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="cr5013"
-                                android:text='@{cr5013.checked ? cr5013x.getText().toString() : ""}'
-
-                                android:visibility='@{cr5013.checked? View.VISIBLE : View.GONE}'
+                                android:text='@{cr5013a.checked ? cr5013ax.getText().toString() : ""}'
+                                android:visibility='@{cr5013a.checked? View.VISIBLE : View.GONE}'
                                 app:maxValue="100"
                                 app:type="range" />
 
                             <RadioButton
-                                android:id="@+id/cr5013888"
+                                android:id="@+id/cr5013a888"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5013888" />
+                                android:text="@string/cr5013a888" />
 
                             <RadioButton
-                                android:id="@+id/cr5013999"
+                                android:id="@+id/cr5013a999"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5013999" />
+                                android:text="@string/cr5013a999" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -728,36 +727,35 @@
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/cr5013"
+                                android:id="@+id/cr5013b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5013" />
+                                android:text="@string/cr5013bt" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/cr5013x"
+                                android:id="@+id/cr5013bx"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/cr5013"
+                                android:hint="@string/cr5013b"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:tag="cr5013"
-                                android:text='@{cr5013.checked ? cr5013x.getText().toString() : ""}'
-
-                                android:visibility='@{cr5013.checked? View.VISIBLE : View.GONE}'
+                                android:text='@{cr5013b.checked ? cr5013bx.getText().toString() : ""}'
+                                android:visibility='@{cr5013b.checked? View.VISIBLE : View.GONE}'
                                 app:maxValue="100"
                                 app:type="range" />
 
                             <RadioButton
-                                android:id="@+id/cr5013888"
+                                android:id="@+id/cr5013b888"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5013888" />
+                                android:text="@string/cr5013b888" />
 
                             <RadioButton
-                                android:id="@+id/cr5013999"
+                                android:id="@+id/cr501b3999"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/cr5013999" />
+                                android:text="@string/cr501b3999" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -811,7 +809,6 @@
                                 android:maxLength="3"
                                 android:tag="cr5014"
                                 android:text='@{cr5014.checked ? cr5014x.getText().toString() : ""}'
-
                                 android:visibility='@{cr5014.checked? View.VISIBLE : View.GONE}'
                                 app:maxValue="100"
                                 app:type="range" />
