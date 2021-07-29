@@ -1,12 +1,12 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -15,24 +15,22 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection02Binding;
-import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm;
+import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection02bBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingPregsurvActivity;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
+public class Section02bActivity extends AppCompatActivity {
 
-public class Section02Activity extends AppCompatActivity {
-    ActivitySection02Binding bi;
-
+    ActivitySection02bBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section02);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section02b);
         bi.setCallback(this);
         setupSkips();
     }
-
 
     private void setupSkips() {
     }
@@ -53,7 +51,7 @@ public class Section02Activity extends AppCompatActivity {
     public void BtnContinue(View view) {
         if (!formValidation()) return;
 
-        startActivity(new Intent(this, Section02bActivity.class));
+        startActivity(new Intent(this, Section03Activity.class));
 
         /*SaveDraft();
         if (UpdateDB()) {
@@ -77,5 +75,4 @@ public class Section02Activity extends AppCompatActivity {
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
-
 }
