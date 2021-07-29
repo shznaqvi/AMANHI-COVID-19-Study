@@ -794,6 +794,45 @@
 
     <!-- START PREG SURV  !-->
 
+
+    <string name="identitle">اندراج سے لے کر حمل کے نتائج کے وقت تک ہر ماہ ایک بار معلومات اکٹھی کی جائیں گی</string>
+    <string name="site"> اسٹیڈی سائٹ </string>
+    <string name="mm0101a">پاڑہ کوڈ</string>
+    <string name="mm0101b">بلاک نمبر</string>
+    <string name="mm0101c">گھرکا نمبر /Structure</string>
+    <string name="mm0101d"> خاندان کا نمبر </string>
+    <string name="mm0103d"> تاریخ </string>
+    <string name="mm0103m">مہینہ</string>
+    <string name="mm0103y">سال</string>
+    <string name="mm0103a">پہلا وزٹ</string>
+    <string name="mm0103ad">تاریخ</string>
+    <string name="mm0103am">مہینہ</string>
+    <string name="mm0103ay">سال</string>
+    <string name="mm0103b">دوسرا وزٹ</string>
+    <string name="mm0103bd">تاریخ</string>
+    <string name="mm0103bm">مہینہ</string>
+    <string name="mm0103by">سال</string>
+    <string name="mm0103c">تیسرا وزٹ</string>
+    <string name="mm0103cd">تاریخ</string>
+    <string name="mm0103cm">مہینہ</string>
+    <string name="mm0103cy">سال</string>
+    <string name="mm0103t"> گھر پر وزٹ </string>
+    <string name="mm0103dd"> تاریخ </string>
+    <string name="mm0103dm"> مہینہ </string>
+    <string name="mm0103dy"> سال </string>
+    <string name="whowid">عورت کا موجودہ شناخت نمبر</string>
+    <string name="pregid1">عورت کےمطالعہ میں  اس حمل کی شناخت نمبر</string>
+    <string name="pregid2">عورت کےامن ہی مطالعہ   پہلے حمل کی شناخت نمبر</string>
+    <string name="pregid3">عورت کےامن ہی مطالعہ    دوسرے حمل کی شناخت نمبر</string>
+    <string name="mm0106t">عورت کے مطالعہ میں اندراج کے وقت حمل کے ہفتے</string>
+    <string name="mm0106w">ہفتے</string>
+    <string name="mm0106888">معلوم نہیں</string>
+    <string name="mm0106999">غیر ضروری           </string>
+    <string name="mm0107t">عورت کے مطالعہ میں اندراج کے وقت حمل کے دن</string>
+    <string name="mm0107888">معلوم نہیں</string>
+    <string name="mm0107999">غیر ضروری           </string>
+
+
     <string name="whyvisitfail">کیا       وزٹ    کا       نتیجہ         کا میاب  نہیں  ہوا؟</string>
     <string name="visitfail_oth">وضاحت ــ</string>
     <string name="seconetitle">سیکشن  1   .موجودہ حمل</string>
