@@ -184,6 +184,7 @@ public class SyncActivity extends AppCompatActivity {
                     final String filter = " dssid like '" + site + "%' ";
                     downloadTables.add(new SyncModel(FollowUp21cm.FollowUpTable21cm.TABLE_NAME, select, filter));
                     downloadTables.add(new SyncModel(FollowUp4mm.FollowUpTable4mm.TABLE_NAME, select, filter));
+                    downloadTables.add(new SyncModel(FollowUpPregSur.FollowUpTablePregSur.TABLE_NAME, select, filter));
                     downloadTables.add(new SyncModel(Sites.SiteTable.TABLE_NAME, uploadData.size()));
 
                     MainApp.downloadData = new String[downloadTables.size()];

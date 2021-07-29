@@ -60,11 +60,14 @@ public class SectionDemoInfoActivity extends AppCompatActivity {
 
     public void BtnContinue() {
         if (!formValidation()) return;
-        SaveDraft();
+
+        startActivity(new Intent(this, Section01Activity.class).putExtra("complete", true));
+
+        /*SaveDraft();
         if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, EndingActivityForm21cm.class).putExtra("complete", true));
-        }
+        }*/
     }
 
 

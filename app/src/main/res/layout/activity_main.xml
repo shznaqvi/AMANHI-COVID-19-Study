@@ -221,7 +221,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="24dp"
-                        android:background="@color/whiteOverlay"
                         android:orientation="vertical">
 
                         <TextView
@@ -393,6 +392,96 @@
 
 
                     </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/admin2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="24dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtview1"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Antenatal Care"></TextView>
+
+                        <LinearLayout
+                            style="?android:attr/buttonBarStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/btn13"
+                                style="?android:attr/buttonBarButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:onClick="openForm"
+                                android:text="Sec 01" />
+
+                            <Button
+                                android:id="@+id/btn14"
+                                style="?android:attr/buttonBarButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:onClick="openForm"
+                                android:text="Sec 02" />
+
+                            <Button
+                                android:id="@+id/btn15"
+                                style="?android:attr/buttonBarButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:onClick="openForm"
+                                android:text="Sec 03" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="?android:attr/buttonBarStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/btn16"
+                                style="?android:attr/buttonBarButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:onClick="openForm"
+                                android:text="Sec 04" />
+
+                            <Button
+                                android:id="@+id/btn17"
+                                style="?android:attr/buttonBarButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:onClick="openForm"
+                                android:text="Sec 05" />
+
+                            <Button
+                                android:id="@+id/btn18"
+                                style="?android:attr/buttonBarButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:onClick="openForm"
+                                android:text="Sec 06" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>

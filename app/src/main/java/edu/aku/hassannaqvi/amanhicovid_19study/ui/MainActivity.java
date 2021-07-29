@@ -22,6 +22,12 @@ import edu.aku.hassannaqvi.amanhicovid_19study.ui.list_activity.FormsReportClust
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.list_activity.FormsReportPregsurvActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSecMActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.IdentificationSectionActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section01Activity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section02Activity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section03Activity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section04Activity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section05Activity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section06Activity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section02cmActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section02mmActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section03cmActivity;
@@ -32,6 +38,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section05cmActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section05mmActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section06cmActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.Section06mmActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.sections.SectionDemoInfoActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,12 +57,14 @@ public class MainActivity extends AppCompatActivity {
             bi.showdb.setVisibility(View.VISIBLE);
             bi.admin.setVisibility(View.VISIBLE);
             bi.admin1.setVisibility(View.VISIBLE);
+            bi.admin2.setVisibility(View.VISIBLE);
             bi.startInterview.setVisibility(View.VISIBLE);
             bi.btnChildMorb.setVisibility(View.VISIBLE);
         } else {
             bi.showdb.setVisibility(View.GONE);
             bi.admin.setVisibility(View.GONE);
             bi.admin1.setVisibility(View.GONE);
+            bi.admin2.setVisibility(View.GONE);
             bi.startInterview.setVisibility(View.GONE);
             bi.btnChildMorb.setVisibility(View.GONE);
         }
@@ -186,6 +195,29 @@ public class MainActivity extends AppCompatActivity {
                 oF = new Intent(this, Section06mmActivity.class);
                 break;
 
+            case R.id.btn13:
+                oF = new Intent(this, SectionDemoInfoActivity.class);
+                break;
+
+            case R.id.btn14:
+                oF = new Intent(this, Section01Activity.class);
+                break;
+
+            case R.id.btn15:
+                oF = new Intent(this, Section02Activity.class);
+                break;
+
+            case R.id.btn16:
+                oF = new Intent(this, Section03Activity.class);
+                break;
+
+            case R.id.btn17:
+                oF = new Intent(this, Section04Activity.class);
+                break;
+
+            case R.id.btn18:
+                oF = new Intent(this, Section06Activity.class);
+                break;
 
             /*case R.id.startInterview:
                 oF = new Intent(this, Section01HHActivity.class);

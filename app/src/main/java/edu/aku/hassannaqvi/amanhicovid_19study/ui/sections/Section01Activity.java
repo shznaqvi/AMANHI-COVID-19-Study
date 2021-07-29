@@ -16,6 +16,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection01Binding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm;
+import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingPregsurvActivity;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
@@ -50,11 +51,14 @@ public class Section01Activity extends AppCompatActivity {
 
     public void BtnContinue(View view) {
         if (!formValidation()) return;
-        SaveDraft();
+
+        startActivity(new Intent(this, Section02Activity.class));
+
+        /*SaveDraft();
         if (UpdateDB()) {
             finish();
             startActivity(new Intent(this, EndingActivityForm21cm.class).putExtra("complete", true));
-        }
+        }*/
     }
 
 
@@ -226,7 +230,7 @@ public class Section01Activity extends AppCompatActivity {
 
     public void BtnEnd(View view) {
         finish();
-        startActivity(new Intent(this, EndingActivityForm21cm.class).putExtra("complete", false));
+        startActivity(new Intent(this, EndingPregsurvActivity.class).putExtra("complete", false));
     }
 
 
