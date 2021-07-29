@@ -4658,7 +4658,7 @@
 
 
                 <!-- cr3005y  Radio   -->
-                <androidx.cardview.widget.CardView
+               <!-- <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcr3005y"
                     style="@style/cardView">
 
@@ -4720,7 +4720,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- cr5005ysi  Title   -->
+                &lt;!&ndash; cr5005ysi  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcr5005ysi"
                     style="@style/cardView">
@@ -4828,7 +4828,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- cr3005z  Radio   -->
+                &lt;!&ndash; cr3005z  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcr3005z"
                     style="@style/cardView">
@@ -4891,7 +4891,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- cr5005zsi  Title   -->
+                &lt;!&ndash; cr5005zsi  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcr5005zsi"
                     style="@style/cardView">
@@ -4999,7 +4999,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- cr3005aa  Radio   -->
+                &lt;!&ndash; cr3005aa  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcr3005aa"
                     style="@style/cardView">
@@ -5062,7 +5062,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- cr5005aasi  Title   -->
+                &lt;!&ndash; cr5005aasi  Title   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcr5005aasi"
                     style="@style/cardView">
@@ -5167,218 +5167,218 @@
 
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
 
                 <!-- cr3005ab  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3005ab"
-                    style="@style/cardView">
+                <!-- <androidx.cardview.widget.CardView
+                     android:id="@+id/fldGrpCVcr3005ab"
+                     style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:background="@drawable/bottom"
+                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_cr3005ab" />
+                             <TextView
+                                 style="@style/quesNum"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:text="@string/Q_cr3005ab" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/cr3005ab" />
+                             <TextView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 android:text="@string/cr3005ab" />
 
-                        </LinearLayout>
+                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/cr3005ab"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                         <RadioGroup
+                             android:id="@+id/cr3005ab"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal">
 
-                            <RadioButton
-                                android:id="@+id/cr3005aba"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/cr3005aba" />
+                             <RadioButton
+                                 android:id="@+id/cr3005aba"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:text="@string/cr3005aba" />
 
-                            <RadioButton
-                                android:id="@+id/cr3005abb"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/cr3005abb" />
+                             <RadioButton
+                                 android:id="@+id/cr3005abb"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:text="@string/cr3005abb" />
 
-                            <RadioButton
-                                android:id="@+id/cr3005ab8"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/cr3005ab8" />
+                             <RadioButton
+                                 android:id="@+id/cr3005ab8"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:text="@string/cr3005ab8" />
 
-                        </RadioGroup>
+                         </RadioGroup>
 
-                    </LinearLayout>
+                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- cr3005abs  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr3005abs"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_cr3005abs" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/cr3005abs" />
-
-                        </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/cr3005abs"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/cr3005abs" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                 </androidx.cardview.widget.CardView>
 
 
-                <!-- cr5005absi  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVcr5005absi"
-                    style="@style/cardView">
+                 &lt;!&ndash; cr3005abs  Input   &ndash;&gt;
+                 <androidx.cardview.widget.CardView
+                     android:id="@+id/fldGrpCVcr3005abs"
+                     style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:background="@drawable/bottom"
+                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_cr5005absi" />
+                             <TextView
+                                 style="@style/quesNum"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:text="@string/Q_cr3005abs" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/cr5005absi" />
+                             <TextView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 android:text="@string/cr3005abs" />
 
-                        </LinearLayout>
+                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                         <EditText
+                             android:id="@+id/cr3005abs"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:hint="@string/cr3005abs" />
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/cr5005absid" />
+                     </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/cr5005absim" />
+                 </androidx.cardview.widget.CardView>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/cr5005absiy" />
 
-                        </LinearLayout>
+                 &lt;!&ndash; cr5005absi  Title   &ndash;&gt;
+                 <androidx.cardview.widget.CardView
+                     android:id="@+id/fldGrpCVcr5005absi"
+                     style="@style/cardView">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="vertical">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/cr5005absid"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                app:maxValue="29"
-                                app:minValue="1"
-                                app:type="range" />
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:background="@drawable/bottom"
+                             android:orientation="horizontal">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/cr5005absim"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                app:maxValue="12"
-                                app:minValue="1"
-                                app:type="range" />
+                             <TextView
+                                 style="@style/quesNum"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:text="@string/Q_cr5005absi" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/cr5005absiy"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="####"
-                                android:inputType="number"
-                                android:maxLength="4"
-                                app:maxValue="2021"
-                                app:minValue="2021"
-                                app:type="range" />
+                             <TextView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 android:text="@string/cr5005absi" />
 
-                        </LinearLayout>
+                         </LinearLayout>
 
-                    </LinearLayout>
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal">
 
-                </androidx.cardview.widget.CardView>
+                             <TextView
+                                 style="@style/sub_labels"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:text="@string/cr5005absid" />
+
+                             <TextView
+                                 style="@style/sub_labels"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:text="@string/cr5005absim" />
+
+                             <TextView
+                                 style="@style/sub_labels"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:text="@string/cr5005absiy" />
+
+                         </LinearLayout>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal">
+
+                             <com.edittextpicker.aliazaz.EditTextPicker
+                                 android:id="@+id/cr5005absid"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:gravity="center"
+                                 android:hint="##"
+                                 android:inputType="number"
+                                 android:maxLength="2"
+                                 app:maxValue="29"
+                                 app:minValue="1"
+                                 app:type="range" />
+
+                             <com.edittextpicker.aliazaz.EditTextPicker
+                                 android:id="@+id/cr5005absim"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:gravity="center"
+                                 android:hint="##"
+                                 android:inputType="number"
+                                 android:maxLength="2"
+                                 app:maxValue="12"
+                                 app:minValue="1"
+                                 app:type="range" />
+
+                             <com.edittextpicker.aliazaz.EditTextPicker
+                                 android:id="@+id/cr5005absiy"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:gravity="center"
+                                 android:hint="####"
+                                 android:inputType="number"
+                                 android:maxLength="4"
+                                 app:maxValue="2021"
+                                 app:minValue="2021"
+                                 app:type="range" />
+
+                         </LinearLayout>
+
+                     </LinearLayout>
+
+                 </androidx.cardview.widget.CardView>-->
 
 
                 <!--EndButton LinearLayout-->
