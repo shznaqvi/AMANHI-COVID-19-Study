@@ -191,7 +191,7 @@
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
                         android:shadowRadius="24"
-                        android:text="Search Pregnant Woman (Surveillance)"
+                        android:text="Search Pregnant Woman (Antenatal Followup)"
                         android:textAppearance="@style/Widget.AppCompat.ActionButton"
                         android:textColor="@color/white" />
 
@@ -479,6 +479,23 @@
 
                         </LinearLayout>
 
+                        <LinearLayout
+                            style="?android:attr/buttonBarStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/btn19"
+                                style="?android:attr/buttonBarButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:onClick="openForm"
+                                android:text="Sec 06" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 

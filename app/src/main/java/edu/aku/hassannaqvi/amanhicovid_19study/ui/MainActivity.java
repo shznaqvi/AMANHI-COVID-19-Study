@@ -216,6 +216,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.btn18:
+                oF = new Intent(this, Section05Activity.class);
+                break;
+
+            case R.id.btn19:
                 oF = new Intent(this, Section06Activity.class);
                 break;
 

@@ -17,6 +17,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection04Binding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingPregsurvActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.utils.ValidateEditTextKt;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
 
@@ -31,6 +32,32 @@ public class Section04Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section04);
         bi.setCallback(this);
         setupSkips();
+
+        ValidateEditTextKt.txtWatch(bi.cr5016x);
+        ValidateEditTextKt.txtWatch(bi.cr5017x);
+        ValidateEditTextKt.txtWatch(bi.cr5018x);
+        ValidateEditTextKt.txtWatch(bi.cr5019x);
+        ValidateEditTextKt.txtWatch(bi.cr5020x);
+        ValidateEditTextKt.txtWatch(bi.cr5021x);
+        ValidateEditTextKt.txtWatch(bi.cr5022x);
+        ValidateEditTextKt.txtWatch(bi.cr5023x);
+        ValidateEditTextKt.txtWatch(bi.cr5024x);
+        ValidateEditTextKt.txtWatch(bi.cr5025x);
+        ValidateEditTextKt.txtWatch(bi.cr5026x);
+        ValidateEditTextKt.txtWatch(bi.cr5027x);
+        ValidateEditTextKt.txtWatch(bi.cr5028x);
+        ValidateEditTextKt.txtWatch(bi.cr5029x);
+        ValidateEditTextKt.txtWatch(bi.cr5030x);
+        ValidateEditTextKt.txtWatch(bi.cr5031x);
+        ValidateEditTextKt.txtWatch(bi.cr5032x);
+        ValidateEditTextKt.txtWatch(bi.cr5033x);
+        ValidateEditTextKt.txtWatch(bi.cr5034x);
+        ValidateEditTextKt.txtWatch(bi.cr5035x);
+        ValidateEditTextKt.txtWatch(bi.cr5036x);
+        ValidateEditTextKt.txtWatch(bi.cr5037x);
+        ValidateEditTextKt.txtWatch(bi.cr5038x);
+        ValidateEditTextKt.txtWatch(bi.cr5039x);
+
     }
 
 

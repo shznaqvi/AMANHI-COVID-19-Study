@@ -2138,7 +2138,9 @@
                             android:id="@+id/cr3004qrsiii"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/cr3004qrsiii" />
+                            android:hint="@string/cr3004qrsiii"
+                            android:text='@{cr3004qrsiia.checked ? cr3004qrsiii.getText().toString() : ""}'
+                            android:visibility='@{cr3004qrsiia.checked? View.VISIBLE : View.GONE}' />
 
                     </LinearLayout>
 
@@ -2234,7 +2236,9 @@
                             android:id="@+id/cr3004ss"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/cr3004ss" />
+                            android:hint="@string/cr3004ss"
+                            android:text='@{cr3004sa.checked ? cr3004ss.getText().toString() : ""}'
+                            android:visibility='@{cr3004sa.checked? View.VISIBLE : View.GONE}' />
 
                     </LinearLayout>
 

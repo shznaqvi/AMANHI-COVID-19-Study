@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,10 +32,23 @@ public class Section06Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section06);
         bi.setCallback(this);
         setupSkips();
+
     }
 
 
     private void setupSkips() {
+
+        bi.test.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (bi.testa.isChecked()) {
+
+                } else {
+
+                }
+            }
+        });
+
     }
 
 

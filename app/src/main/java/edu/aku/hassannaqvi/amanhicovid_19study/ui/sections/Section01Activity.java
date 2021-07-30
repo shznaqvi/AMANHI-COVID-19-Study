@@ -3,11 +3,14 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
@@ -15,7 +18,6 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection01Binding;
-import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingPregsurvActivity;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
@@ -34,6 +36,26 @@ public class Section01Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
+
+        bi.crpreg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (bi.crprega.isChecked()) {
+                    Clear.clearAllFields(bi.fldGrpCVcr5002b);
+
+                    bi.fldGrpCVcr5002a.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5002b.setVisibility(View.GONE);
+                } else {
+                    Clear.clearAllFields(bi.fldGrpCVcr5002a);
+
+                    bi.fldGrpCVcr5002a.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5002b.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+
     }
 
 
