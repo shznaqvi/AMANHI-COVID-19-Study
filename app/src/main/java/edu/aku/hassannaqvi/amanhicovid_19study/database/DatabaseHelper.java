@@ -23,6 +23,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSur;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSurv;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Sites;

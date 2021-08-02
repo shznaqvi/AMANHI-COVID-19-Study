@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
@@ -42,8 +43,29 @@ public class Section06Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (bi.testa.isChecked()) {
+                    bi.fldGrpCVteatavail.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5042a.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5042b.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5042c.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5024d.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5042g.setVisibility(View.VISIBLE);
 
                 } else {
+
+                    Clear.clearAllFields(bi.fldGrpCVteatavail);
+                    Clear.clearAllFields(bi.fldGrpCVcr5042a);
+                    Clear.clearAllFields(bi.fldGrpCVcr5042b);
+                    Clear.clearAllFields(bi.fldGrpCVcr5042c);
+                    Clear.clearAllFields(bi.fldGrpCVcr5024d);
+                    Clear.clearAllFields(bi.fldGrpCVcr5042g);
+
+
+                    bi.fldGrpCVteatavail.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5042a.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5042b.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5042c.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5024d.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5042g.setVisibility(View.GONE);
 
                 }
             }

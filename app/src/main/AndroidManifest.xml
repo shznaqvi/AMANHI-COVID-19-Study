@@ -37,9 +37,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="adjustResize">
-        <activity android:name=".ui.sections.Section02bActivity"></activity>
+        <activity
+            android:name=".ui.sections.Section02bActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu"
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
         <activity android:name=".ui.EndingPregsurvActivity" />
-        <activity android:name=".ui.LoginActivity$EndingPregsurvActivity" />
         <activity android:name=".ui.list_activity.FormsReportPregsurvActivity" />
         <activity
             android:name=".ui.sections.Section06Activity"

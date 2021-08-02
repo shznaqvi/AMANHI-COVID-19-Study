@@ -6,9 +6,15 @@ import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
+
+import org.jetbrains.annotations.NotNull;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
@@ -33,6 +39,28 @@ public class Section02bActivity extends AppCompatActivity {
     }
 
     private void setupSkips() {
+
+        rgListener(bi.cr3005y, bi.cr3005ya, bi.fldGrpCVcr5005ysi, bi.fldGrpCVcr5005ysi);
+        rgListener(bi.cr3005z, bi.cr3005za, bi.fldGrpCVcr5005zsi, bi.fldGrpCVcr5005zsi);
+        rgListener(bi.cr3005aa, bi.cr3005aaa, bi.fldGrpCVcr5005aasi, bi.fldGrpCVcr5005aasi);
+        rgListener(bi.cr3005ab, bi.cr3005aba, bi.fldGrpCVcr3005abs, bi.fldGrpCVcr5005absi);
+
+    }
+
+
+    private void rgListener(@NotNull RadioGroup rg, RadioButton rb, ViewGroup vg, ViewGroup vg1) {
+        rg.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(vg);
+            vg.setVisibility(View.GONE);
+
+            Clear.clearAllFields(vg1);
+            vg1.setVisibility(View.GONE);
+
+            if (i == rb.getId()) {
+                vg.setVisibility(View.VISIBLE);
+                vg1.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
 
