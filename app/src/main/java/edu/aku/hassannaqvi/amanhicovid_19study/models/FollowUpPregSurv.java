@@ -3700,7 +3700,6 @@ public class FollowUpPregSurv extends BaseObservable {
                 this.cr5005bsid = json.getString("cr5005bsid");
                 this.cr5005bsim = json.getString("cr5005bsim");
                 this.cr5005bsiy = json.getString("cr5005bsiy");
-
                 this.cr3005c = json.getString("cr3005c");
                 this.cr3005cs = json.getString("cr3005cs");
                 this.cr5005csid = json.getString("cr5005csid");
