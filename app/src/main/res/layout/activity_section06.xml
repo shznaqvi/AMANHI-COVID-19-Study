@@ -150,14 +150,14 @@
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:id="@+id/teat_availa"
+                                android:id="@+id/teatavaila"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/teat_availa" />
 
                             <RadioButton
-                                android:id="@+id/teat_availb"
+                                android:id="@+id/teatavailb"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"

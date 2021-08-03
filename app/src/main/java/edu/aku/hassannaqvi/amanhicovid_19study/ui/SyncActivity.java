@@ -36,6 +36,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.adapters.SyncListAdapter;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsPregSurvContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySyncBinding;
@@ -138,11 +139,16 @@ public class SyncActivity extends AppCompatActivity {
                 MainApp.uploadData.add(db.getUnsyncedForms21cm());
                 uploadTables.add(new SyncModel(Forms21cmContract.Forms21cmTable.TABLE_NAME, uploadData.get(0).length()));
 
-                Toast.makeText(this, MainApp.uploadData.toString(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(this, MainApp.uploadData.toString(), Toast.LENGTH_LONG).show();
 
                 // Forms4mm
                 MainApp.uploadData.add(db.getUnsyncedForms4mm());
                 uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME, uploadData.get(1).length()));
+
+
+                // Forms Pregnancy Surveilance
+                MainApp.uploadData.add(db.getUnsyncedFormsPregSurv());
+                uploadTables.add(new SyncModel(FormsPregSurvContract.FormsPregSurvTable.TABLE_NAME, uploadData.get(2).length()));
 
                 // Initialising downloadData array to capture response from server outside Data (limit:10204)
                 MainApp.downloadData = new String[uploadTables.size()];

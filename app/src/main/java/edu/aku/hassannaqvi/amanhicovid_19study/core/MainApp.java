@@ -10,6 +10,9 @@ import org.json.JSONArray;
 import java.io.File;
 import java.util.List;
 
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsPregSurvContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSur;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSurv;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
@@ -34,6 +37,7 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form4mm form4m;
+    public static FollowUpPregSurv formpregsurv;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
     public static List<JSONArray> uploadData;

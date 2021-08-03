@@ -387,7 +387,6 @@ public class FollowUpPregSurv extends BaseObservable {
     private LocalDate localDate = null;
 
     public FollowUpPregSurv() {
-
     }
 
 
@@ -549,6 +548,47 @@ public class FollowUpPregSurv extends BaseObservable {
 
     public void setS02(String s02) {
         this.s02 = s02;
+    }
+
+
+    public String getMmsid() {
+        return mmsid;
+    }
+
+    public void setMmsid(String mmsid) {
+        this.mmsid = mmsid;
+    }
+
+    public String getMm0103() {
+        return mm0103;
+    }
+
+    public void setMm0103(String mm0103) {
+        this.mm0103 = mm0103;
+    }
+
+    public String getMm0106() {
+        return mm0106;
+    }
+
+    public void setMm0106(String mm0106) {
+        this.mm0106 = mm0106;
+    }
+
+    public String getMm0107() {
+        return mm0107;
+    }
+
+    public void setMm0107(String mm0107) {
+        this.mm0107 = mm0107;
+    }
+
+    public String getMm0108() {
+        return mm0108;
+    }
+
+    public void setMm0108(String mm0108) {
+        this.mm0108 = mm0108;
     }
 
     public String getMm0101() {

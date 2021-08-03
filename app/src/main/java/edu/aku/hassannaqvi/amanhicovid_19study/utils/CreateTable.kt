@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.amanhicovid_19study.utils
 
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsPregSurvContract
 import edu.aku.hassannaqvi.amanhicovid_19study.models.*
 
 object CreateTable {
@@ -53,6 +54,29 @@ object CreateTable {
             + Forms4mmContract.Forms4MMTable.COLUMN_DSSID + " TEXT,"
             + Forms4mmContract.Forms4MMTable.COLUMN_WEEK + " TEXT,"
             + Forms4mmContract.Forms4MMTable.COLUMN_S02 + " TEXT"
+            + " );")
+
+
+    const val SQL_CREATE_FORMS_PREG_SURV = ("CREATE TABLE "
+            + FormsPregSurvContract.FormsPregSurvTable.TABLE_NAME + "("
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_UID + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_USERNAME + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_SYSDATE + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_ISTATUS + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_ISTATUS96x + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_ENDINGDATETIME + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_GPS + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_DEVICEID + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_DEVICETAGID + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_SYNCED + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_APPVERSION + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_STUDYID + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_DSSID + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_WEEK + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_S02 + " TEXT"
             + " );")
 
 

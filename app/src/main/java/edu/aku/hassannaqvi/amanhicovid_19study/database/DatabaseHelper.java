@@ -19,6 +19,7 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsPregSurvContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
@@ -60,6 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //db.execSQL(CreateTable.SQL_CREATE_CLUSTERS);
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
         db.execSQL(CreateTable.SQL_CREATE_FORMS4M);
+        db.execSQL(CreateTable.SQL_CREATE_FORMS_PREG_SURV);
         //db.execSQL(CreateTable.SQL_CREATE_CHILD_INFO);
         //db.execSQL(CreateTable.SQL_CREATE_CHILD);
         //db.execSQL(CreateTable.SQL_CREATE_IMMUNIZATION);
@@ -166,6 +168,51 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 Forms4mmContract.Forms4MMTable.TABLE_NAME,
                 Forms4mmContract.Forms4MMTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+
+    public Long addFormPregSurv(FollowUpPregSurv form) {
+
+        // Gets the data repository in write mode
+        SQLiteDatabase db = this.getWritableDatabase();
+
+// Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_PROJECT_NAME, form.getProjectName());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_UID, form.getUid());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_USERNAME, form.getUserName());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_SYSDATE, form.getSysDate());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_STUDYID, form.getStudyid());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_DSSID, form.getDssid());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_WEEK, form.getWeek());
+
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_S02, form.getS02());
+
+        /*values.put(FormsContract.FormsTable.COLUMN_S01HH, form.getS01HH());
+        values.put(FormsContract.FormsTable.COLUMN_S02CB, form.getS02CB());
+        values.put(FormsContract.FormsTable.COLUMN_S03CS, form.getS03CS());
+        values.put(FormsContract.FormsTable.COLUMN_S04IM, form.getS04IM());
+        values.put(FormsContract.FormsTable.COLUMN_S05PD, form.getS05PD());
+        values.put(FormsContract.FormsTable.COLUMN_S06BF, form.getS06BF());
+        values.put(FormsContract.FormsTable.COLUMN_S07CV, form.getS07CV());
+        values.put(FormsContract.FormsTable.COLUMN_S08SE, form.getS08SE());*/
+
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_ISTATUS, form.getiStatus());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_ISTATUS96x, form.getiStatus96x());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_ENDINGDATETIME, form.getEndTime());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_GPS, form.getGps());
+
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_DEVICETAGID, form.getDeviceTag());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_DEVICEID, form.getDeviceId());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_APPVERSION, form.getAppver());
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                FormsPregSurvContract.FormsPregSurvTable.TABLE_NAME,
+                FormsPregSurvContract.FormsPregSurvTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -495,6 +542,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public int updatesFormColumnPregSurv(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = FormsPregSurvContract.FormsPregSurvTable.COLUMN_ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.formpregsurv.getId())};
+
+        return db.update(FormsPregSurvContract.FormsPregSurvTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+
     public int updateSyncedtest21cm(String column, String value) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -628,6 +691,60 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    //Synced functions
+    public JSONArray getUnsyncedFormsPregSurv() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = FormsPregSurvContract.FormsPregSurvTable.COLUMN_SYNCED + " is null ";
+
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsPregSurvContract.FormsPregSurvTable.COLUMN_ID + " ASC";
+
+        JSONArray allForms = new JSONArray();
+        try {
+            c = db.query(
+                    FormsPregSurvContract.FormsPregSurvTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy,                    // The sort order
+                    "80"
+            );
+
+            //Toast.makeText(mycontext, c.getCount(), Toast.LENGTH_SHORT).show();
+
+            while (c.moveToNext()) {
+                /** WorkManager Upload
+                 /*Form fc = new Form();
+                 allFC.add(fc.Hydrate(c));*/
+                FollowUpPregSurv form = new FollowUpPregSurv();
+                allForms.put(form.Hydrate(c).toJSONObject());
+
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        Log.d(TAG, "getUnsyncedForms length: " + allForms.toString().length());
+        Log.d(TAG, "getUnsyncedForms all: " + allForms);
+
+        return allForms;
+    }
+
+
+
     public void updateSyncedForms4mm(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -646,6 +763,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 where,
                 whereArgs);
     }
+
+
+    public void updateSyncedFormsPregSurv(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_SYNCED, true);
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = FormsPregSurvContract.FormsPregSurvTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                FormsPregSurvContract.FormsPregSurvTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
 
 
     public void updateSyncedForms21cm(String id) {

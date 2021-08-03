@@ -13,14 +13,13 @@ import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
-import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsPregSurvContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection06Binding;
-import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingActivityForm21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingPregsurvActivity;
 
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form21cm;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.formpregsurv;
 
 
 public class Section06Activity extends AppCompatActivity {
@@ -76,7 +75,7 @@ public class Section06Activity extends AppCompatActivity {
 
     private boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(Forms21cmContract.Forms21cmTable.COLUMN_S02, form21cm.s02toString());
+        int updcount = db.updatesFormColumnPregSurv(FormsPregSurvContract.FormsPregSurvTable.COLUMN_S02, formpregsurv.s02toString());
         if (updcount == 1) {
             return true;
         } else {
@@ -89,17 +88,43 @@ public class Section06Activity extends AppCompatActivity {
     public void BtnContinue(View view) {
         if (!formValidation()) return;
 
-        startActivity(new Intent(this, EndingPregsurvActivity.class).putExtra("complete", true));
-
-        /*SaveDraft();
+        SaveDraft();
         if (UpdateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivityForm21cm.class).putExtra("complete", true));
-        }*/
+            startActivity(new Intent(this, EndingPregsurvActivity.class).putExtra("complete", true));
+        }
     }
 
 
     private void SaveDraft() {
+
+        formpregsurv.setTest(bi.testa.isChecked() ? "1"
+                : bi.testb.isChecked() ? "2"
+                : bi.testc.isChecked() ? "8"
+                : "-1");
+
+        formpregsurv.setTeat_avail(bi.teatavaila.isChecked() ? "1"
+                : bi.teatavailb.isChecked() ? "2"
+                : "-1");
+
+        formpregsurv.setCr5042a(bi.cr5042aa.isChecked() ? "1"
+                : bi.cr5042ab.isChecked() ? "2"
+                : bi.cr5042ac.isChecked() ? "3"
+                : bi.cr5042ad.isChecked() ? "4"
+                : "-1");
+
+        formpregsurv.setCr5042b(bi.cr5042b.getText().toString());
+
+        formpregsurv.setCr5042cd(bi.cr5042c.getText().toString());
+
+        formpregsurv.setCr5024d(bi.cr5024da.isChecked() ? "1"
+                : bi.cr5024db.isChecked() ? "2"
+                : bi.cr5024d8.isChecked() ? "8"
+                : "-1");
+
+        formpregsurv.setCr5042g(bi.cr5042ga.isChecked() ? "1"
+                : bi.cr5042gb.isChecked() ? "2"
+                : "-1");
 
     }
 
@@ -114,5 +139,10 @@ public class Section06Activity extends AppCompatActivity {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+    }
 
 }
