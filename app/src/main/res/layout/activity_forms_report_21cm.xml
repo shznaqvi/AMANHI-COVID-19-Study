@@ -7,6 +7,33 @@
     android:orientation="vertical"
     tools:context=".ui.list_activity.FormsReportClusterActivity">
 
+    <LinearLayout
+        android:id="@+id/fldGrpna11"
+        style="@style/vlinearlayout"
+        android:layout_margin="10dp">
+
+        <!--region-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- CUSTOM TOOLBAR -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/ToolbarTheme"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+                app:title="MORBIDITY CHILDREN"
+                app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
     <!-- SPINNERS -->
     <LinearLayout
         android:id="@+id/fldGrpna10"
@@ -28,10 +55,11 @@
                     style="@style/labels"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_margin="0dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:padding="0dp"
-                    android:paddingStart="18dp"
+                    android:paddingStart="10dp"
                     android:text="Sites" />
 
                 <Spinner
