@@ -116,6 +116,7 @@ object CreateTable {
             + FollowUpPregSur.FollowUpTablePregSur.COLUMN_STUDYID + " TEXT,"
             + FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPDT + " TEXT,"
             + FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPMONTH + " INTEGER,"
+            + FollowUpPregSur.FollowUpTablePregSur.COLUMN_VISITSTATUS + " INTEGER,"
             + FollowUpPregSur.FollowUpTablePregSur.COLUMN_WOMNAME + " TEXT,"
             + FollowUpPregSur.FollowUpTablePregSur.COLUMN_HUSNAME + " TEXT"
             + " );")

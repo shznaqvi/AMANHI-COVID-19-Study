@@ -1250,6 +1250,65 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+
+    public Collection<FollowUpPregSur> getMotherByStudyIdPregSurv(String studyid) {
+
+        // String sysdate =  spDateT.substring(0, 8).trim()
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                FollowUpPregSur.FollowUpTablePregSur.COLUMN_STUDYID,
+                FollowUpPregSur.FollowUpTablePregSur.COLUMN_DSSID,
+                FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPDT,
+                FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPMONTH,
+                FollowUpPregSur.FollowUpTablePregSur.COLUMN_WOMNAME,
+                FollowUpPregSur.FollowUpTablePregSur.COLUMN_HUSNAME,
+                FollowUpPregSur.FollowUpTablePregSur.COLUMN_VISITSTATUS
+        };
+
+        String whereClause = FollowUpPregSur.FollowUpTablePregSur.COLUMN_STUDYID + " = ? ";
+        String[] whereArgs = new String[]{studyid};
+//        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+        String groupBy = null;
+        String having = null;
+        String orderBy = FollowUpPregSur.FollowUpTablePregSur.COLUMN_STUDYID + ", " + FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPMONTH;
+
+        Collection<FollowUpPregSur> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    FollowUpPregSur.FollowUpTablePregSur.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FollowUpPregSur fc = new FollowUpPregSur();
+                fc.setSTUDYID(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_STUDYID)));
+                fc.setDSSID(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_DSSID)));
+                fc.setFUPDT(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPDT)));
+                fc.setFUPMONTH(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPMONTH)));
+                fc.setVISITSTATUS(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_VISITSTATUS)));
+                fc.setWOMNAME(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_WOMNAME)));
+                fc.setHUSNAME(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_HUSNAME)));
+
+                allFC.add(fc);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+
+
     public int getChildrenByStudyID(String studyid) {
         String countQuery = "SELECT  * FROM " + FollowUp21cm.FollowUpTable21cm.TABLE_NAME + " WHERE " + FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + " = '" + studyid + "'";
         SQLiteDatabase db = this.getReadableDatabase();
@@ -1261,6 +1320,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public int getMotherByStudyID(String studyid) {
         String countQuery = "SELECT  * FROM " + FollowUp21cm.FollowUpTable21cm.TABLE_NAME + " WHERE " + FollowUp21cm.FollowUpTable21cm.COLUMN_STUDYID + " = '" + studyid + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+
+    public int getMotherByStudyID_PregSurv(String studyid) {
+        String countQuery = "SELECT  * FROM " + FollowUpPregSur.FollowUpTablePregSur.TABLE_NAME + " WHERE " + FollowUpPregSur.FollowUpTablePregSur.COLUMN_STUDYID + " = '" + studyid + "'";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
         int count = cursor.getCount();

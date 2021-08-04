@@ -42,6 +42,7 @@ class CONSTANTS {
         //FormAdaptER
         const val FOLLOWUP_21CM_DATA = "followup21cm_data"
         const val FOLLOWUP_4MM_DATA = "followup4mm_data"
+        const val FOLLOWUP_PREG_DATA = "followup_preg_data"
 
 
     }

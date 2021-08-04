@@ -22,8 +22,10 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.adapters.FormsAdapter4mm;
+import edu.aku.hassannaqvi.amanhicovid_19study.adapters.FormsPregSurAdapter;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSur;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Sites;
 
 public class FormsReportPregsurvActivity extends AppCompatActivity {
@@ -134,13 +136,13 @@ public class FormsReportPregsurvActivity extends AppCompatActivity {
                             || spSites.getSelectedItem().equals("IE") && arr[1].substring(0, 1).equals("6")
                     ) {
 
-                        List<FollowUp4mm> followUp4mm = (List<FollowUp4mm>) db.getMotherByStudyId(studyid);
+                        List<FollowUpPregSur> followUpPregSur = (List<FollowUpPregSur>) db.getMotherByStudyIdPregSurv(studyid);
 
-                        if (followUp4mm.size() == 0) {
+                        if (followUpPregSur.size() == 0) {
                             Toast.makeText(this, "Mother does not exist", Toast.LENGTH_LONG).show();
                             dtFilter.requestFocus();
                         } else {
-                            formsAdapter = new FormsAdapter4mm(followUp4mm, this);
+                            formsAdapter = new FormsPregSurAdapter(followUpPregSur, this);
                             formsAdapter.notifyDataSetChanged();
                             recyclerView.setAdapter(formsAdapter);
                         }
