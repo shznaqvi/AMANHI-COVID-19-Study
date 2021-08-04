@@ -2,6 +2,8 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,9 +19,13 @@ import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsPregSurvContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySectionDemoInfoBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSur;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSurv;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingPregsurvActivity;
 
+import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.FOLLOWUP_4MM_DATA;
+import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.FOLLOWUP_PREG_DATA;
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.formpregsurv;
 
 public class SectionDemoInfoActivity extends AppCompatActivity {
@@ -38,6 +44,25 @@ public class SectionDemoInfoActivity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
 
         setupSkips();
+
+        if (getIntent().getExtras() != null) {
+
+            FollowUpPregSur fup4mm = (FollowUpPregSur) getIntent().getSerializableExtra(FOLLOWUP_PREG_DATA);
+
+            bi.mmsid.setText(fup4mm.getSTUDYID());
+            bi.mm0108a.setText(fup4mm.getWOMNAME());
+            bi.mm0108b.setText(fup4mm.getHUSNAME());
+            bi.mm0101.setText(fup4mm.getDSSID());
+            bi.mm0104.setText(fup4mm.getFUPMONTH());
+            fupdt = fup4mm.getFUPDT();
+
+            bi.mmsid.setEnabled(false);
+            bi.mm0101.setEnabled(false);
+            bi.mm0104.setEnabled(false);
+            bi.mm0108a.setEnabled(false);
+            bi.mm0108b.setEnabled(false);
+
+        }
     }
 
 
