@@ -773,11 +773,13 @@
 
 
     <string name="mm0704">اگر حاملہ تھی تو حمل کا نتیجہ کیا نکلا </string>
-    <string name="mm070401">ہاں، ابھی حاملہ ہے</string>
-    <string name="mm070402">زندہ بچہ پیدا  ہوا</string>
-    <string name="mm070403">مردہ بچہ پیدا ہوا</string>
-    <string name="mm070404">حمل ضائع ہو گیا</string>
-    <string name="mm070405">حمل غلط بتایا گیا</string>
+    <!--<string name="mm070401">ہاں، ابھی حاملہ ہے</string>-->
+    <string name="mm070401">زندہ بچہ پیدا  ہوا</string>
+    <string name="mm070402">مردہ بچہ پیدا ہوا</string>
+    <string name="mm070403">حمل ضائع ہو گیا</string>
+    <string name="mm070404">حمل غلط بتایا گیا</string>
+    <string name="mm070409">غیر ضروری (اگر عورت ابھی بھی حاملہ ہے یا اگر سوال نمبر 7.1 میں ہاں ہو)</string>
+
 
     <string name="mm0801"> کیا آپ کو کوڈ 19 کے خلاف ٹیکے لگائے گئے ہیں؟ </string>
     <string name="mm080101">ہاں</string>
@@ -786,10 +788,11 @@
 
     <string name="mm0802"> آپ کو کون سی ویکسین ملی ہے؟ (ویکسینیشن کارڈ  چیک کریں) </string>
     <string name="mm080201">Sinopharm</string>
-    <string name="mm080202">CanSinoBio</string>
+    <string name="mm080202">CanSinoBio (single dose vaccine)</string>
     <string name="mm080203">Oxford-Astrazeneca</string>
     <string name="mm080204">Sputnik V</string>
     <string name="mm080205">Sinovac</string>
+
 
     <string name="mm0803a"> براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟  (پہلی خوراک کی تاریخ) </string>
     <string name="mm0803b"> براہ کرم بتائیں کہ آپ کو ویکسین کی کتنی خوراکیں ملی؟  (دوسری خوراک کی تاریخ) </string>

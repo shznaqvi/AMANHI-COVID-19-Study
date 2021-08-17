@@ -593,10 +593,10 @@
                             android:text="@string/mm070404" />
 
                         <RadioButton
-                            android:id="@+id/mm070405"
+                            android:id="@+id/mm070409"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/mm070405" />
+                            android:text="@string/dkn" />
 
                         <RadioButton
                             android:id="@+id/mm070477"

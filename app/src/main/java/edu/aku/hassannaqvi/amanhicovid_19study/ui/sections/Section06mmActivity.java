@@ -36,6 +36,7 @@ public class Section06mmActivity extends AppCompatActivity {
         Toast.makeText(this, MainApp.isprevpreg, Toast.LENGTH_SHORT).show();
     }
 
+
     private void SkipPattern() {
         if (MainApp.isprevpreg.equals("1")) {
             bi.fldGrpCVmm0701.setVisibility(View.GONE);
@@ -237,7 +238,7 @@ public class Section06mmActivity extends AppCompatActivity {
                 : bi.mm070402.isChecked() ? "2"
                 : bi.mm070403.isChecked() ? "3"
                 : bi.mm070404.isChecked() ? "4"
-                : bi.mm070405.isChecked() ? "5"
+                : bi.mm070409.isChecked() ? "99"
                 : bi.mm070477.isChecked() ? "77"
                 : "-1");
 
@@ -393,7 +394,7 @@ public class Section06mmActivity extends AppCompatActivity {
                     && !bi.mm070402.isChecked()
                     && !bi.mm070403.isChecked()
                     && !bi.mm070404.isChecked()
-                    && !bi.mm070405.isChecked()
+                    && !bi.mm070409.isChecked()
                     && !bi.mm070477.isChecked()) {
                 Toast.makeText(this, "MM0704 is required", Toast.LENGTH_SHORT).show();
                 return false;
