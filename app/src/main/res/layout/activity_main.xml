@@ -190,6 +190,7 @@
                         android:onClick="openForm"
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
+                        android:visibility="gone"
                         android:shadowRadius="24"
                         android:text="Search Pregnant Woman (Antenatal Followup)"
                         android:textAppearance="@style/Widget.AppCompat.ActionButton"
