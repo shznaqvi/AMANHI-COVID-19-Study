@@ -11,7 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Clear;
-import com.validatorcrawler.aliazaz.Validator;
+
+import org.json.JSONException;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
@@ -25,15 +26,58 @@ import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
 public class Section06mmActivity extends AppCompatActivity {
 
     ActivitySection06mmBinding bi;
+    private DatabaseHelper db;
+    private int isvaccinated;
+    private int isfullvaccinated;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_06mm);
         bi.setCallback(this);
+
+        db = MainApp.appInfo.getDbHelper();
+
         SkipPattern();
 
+        try {
+            IsWomanVaccinated();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         Toast.makeText(this, MainApp.isprevpreg, Toast.LENGTH_SHORT).show();
+    }
+
+
+    private void IsWomanVaccinated() throws JSONException {
+
+        int wcount1 = db.isWomanFullyVaccinated(form4m.getStudyID());
+
+        if (wcount1 == 0) {
+
+            int wcount = db.isWomanVaccinated(form4m.getStudyid());
+
+            if (wcount > 0) {
+                bi.fldGrpCVmm0803a.setVisibility(View.VISIBLE);
+            } else {
+                Clear.clearAllFields(bi.fldGrpCVmm0803a);
+                bi.fldGrpCVmm0803a.setVisibility(View.GONE);
+            }
+        } else {
+
+            Clear.clearAllFields(bi.fldGrpCVmm0801);
+            bi.fldGrpCVmm0801.setVisibility(View.GONE);
+
+            Clear.clearAllFields(bi.fldGrpCVmm0802);
+            bi.fldGrpCVmm0802.setVisibility(View.GONE);
+
+            Clear.clearAllFields(bi.fldGrpCVmm0803a);
+            bi.fldGrpCVmm0803a.setVisibility(View.GONE);
+
+            Clear.clearAllFields(bi.fldGrpCVmm0803b);
+            bi.fldGrpCVmm0803b.setVisibility(View.GONE);
+        }
     }
 
 
@@ -170,6 +214,19 @@ public class Section06mmActivity extends AppCompatActivity {
                 } else {
                     bi.mm0803b.setVisibility(View.VISIBLE);
                     bi.chkdt2.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        bi.mm0802.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (bi.mm080202.isChecked()) {
+                    Clear.clearAllFields(bi.fldGrpCVmm0803b);
+                    bi.fldGrpCVmm0803b.setVisibility(View.GONE);
+                } else {
+                    bi.fldGrpCVmm0803b.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -448,12 +505,18 @@ public class Section06mmActivity extends AppCompatActivity {
             }
 
 
-            if (!bi.chkdt2.isChecked() && !bi.chkdt3.isChecked()) {
-                if (bi.mm0803b.getText().toString().trim().equals("")) {
-                    Toast.makeText(this, "MM0803b is required", Toast.LENGTH_SHORT).show();
-                    return false;
+            if (bi.fldGrpCVmm0803b.getVisibility() == View.VISIBLE) {
+
+                if (!bi.chkdt2.isChecked() && !bi.chkdt3.isChecked()) {
+                    if (bi.mm0803b.getText().toString().trim().equals("")) {
+                        Toast.makeText(this, "MM0803b is required", Toast.LENGTH_SHORT).show();
+                        return false;
+                    }
                 }
+
             }
+
+
         }
 
         return true;

@@ -18,6 +18,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection01Binding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingPregsurvActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.utils.ValidateEditTextKt;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.formpregsurv;
 
@@ -36,6 +37,9 @@ public class Section01Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
 
         setupSkips();
+
+        ValidateEditTextKt.txtWatch(bi.cr5002aax);
+        ValidateEditTextKt.txtWatch(bi.cr5002bax);
     }
 
 
@@ -45,15 +49,14 @@ public class Section01Activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (bi.crprega.isChecked()) {
-                    Clear.clearAllFields(bi.fldGrpCVcr5002b);
-
                     bi.fldGrpCVcr5002a.setVisibility(View.VISIBLE);
-                    bi.fldGrpCVcr5002b.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5002b.setVisibility(View.VISIBLE);
                 } else {
                     Clear.clearAllFields(bi.fldGrpCVcr5002a);
+                    Clear.clearAllFields(bi.fldGrpCVcr5002b);
 
                     bi.fldGrpCVcr5002a.setVisibility(View.GONE);
-                    bi.fldGrpCVcr5002b.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5002b.setVisibility(View.GONE);
                 }
             }
         });

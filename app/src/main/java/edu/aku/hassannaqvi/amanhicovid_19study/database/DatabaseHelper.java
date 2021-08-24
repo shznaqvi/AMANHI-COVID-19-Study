@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -72,7 +73,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         switch (oldVersion) {
             case 1:
-            case 2:
+                db.execSQL(CreateTable.SQL_CREATE_FUP_PREGSUR);
+                db.execSQL(CreateTable.SQL_CREATE_FORMS_PREG_SURV);
         }
     }
 
@@ -744,7 +746,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
     public void updateSyncedForms4mm(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -783,7 +784,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 where,
                 whereArgs);
     }
-
 
 
     public void updateSyncedForms21cm(String id) {
@@ -1250,7 +1250,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
     public Collection<FollowUpPregSur> getMotherByStudyIdPregSurv(String studyid) {
 
         // String sysdate =  spDateT.substring(0, 8).trim()
@@ -1306,7 +1305,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allFC;
     }
-
 
 
     public int getChildrenByStudyID(String studyid) {
@@ -1414,6 +1412,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         int count = cursor.getCount();
         cursor.close();
         return count;
+    }
+
+
+    public int isWomanVaccinated(String studyid) {
+        String countQuery = "SELECT * FROM Forms4mm WHERE studyid = '" + studyid + "' and (mm0803a is not null) OR (mm0803a = '') ";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+
+    public int isWomanFullyVaccinated(String studyid) throws JSONException {
+        String countQuery = "SELECT s02 FROM Forms4mm WHERE studyid = '" + studyid + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+
+        
+
+        return 0;
     }
 
 
