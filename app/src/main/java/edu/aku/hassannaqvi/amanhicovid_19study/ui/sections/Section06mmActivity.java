@@ -27,8 +27,8 @@ public class Section06mmActivity extends AppCompatActivity {
 
     ActivitySection06mmBinding bi;
     private DatabaseHelper db;
-    private int isvaccinated;
-    private int isfullvaccinated;
+    private static String isvaccinated_1st;
+    private static String isvaccinated_2nd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,31 +52,20 @@ public class Section06mmActivity extends AppCompatActivity {
 
     private void IsWomanVaccinated() throws JSONException {
 
-        int wcount1 = db.isWomanFullyVaccinated(form4m.getStudyID());
+        isvaccinated_1st = db.isWomanVaccinated(form4m.getStudyID(), "mm0803a");
+        isvaccinated_2nd = db.isWomanVaccinated(form4m.getStudyID(), "mm0803b");
 
-        if (wcount1 == 0) {
+        Toast.makeText(this, " i m var - " + isvaccinated_1st + " - " + isvaccinated_2nd, Toast.LENGTH_LONG).show();
 
-            int wcount = db.isWomanVaccinated(form4m.getStudyid());
-
-            if (wcount > 0) {
-                bi.fldGrpCVmm0803a.setVisibility(View.VISIBLE);
-            } else {
-                Clear.clearAllFields(bi.fldGrpCVmm0803a);
-                bi.fldGrpCVmm0803a.setVisibility(View.GONE);
-            }
-        } else {
-
-            Clear.clearAllFields(bi.fldGrpCVmm0801);
+        if (isvaccinated_1st.equals("") && isvaccinated_2nd.equals("")) {
+            bi.fldGrpCVmm0801.setVisibility(View.VISIBLE);
+        } else if (!isvaccinated_1st.equals("") && !isvaccinated_2nd.equals("")) {
             bi.fldGrpCVmm0801.setVisibility(View.GONE);
-
-            Clear.clearAllFields(bi.fldGrpCVmm0802);
             bi.fldGrpCVmm0802.setVisibility(View.GONE);
-
-            Clear.clearAllFields(bi.fldGrpCVmm0803a);
             bi.fldGrpCVmm0803a.setVisibility(View.GONE);
-
-            Clear.clearAllFields(bi.fldGrpCVmm0803b);
             bi.fldGrpCVmm0803b.setVisibility(View.GONE);
+        } else {
+            bi.fldGrpCVmm0801.setVisibility(View.VISIBLE);
         }
     }
 
@@ -186,9 +175,26 @@ public class Section06mmActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (bi.mm080101.isChecked()) {
-                    bi.fldGrpCVmm0802.setVisibility(View.VISIBLE);
-                    bi.fldGrpCVmm0803a.setVisibility(View.VISIBLE);
-                    bi.fldGrpCVmm0803b.setVisibility(View.VISIBLE);
+
+                    if (!isvaccinated_1st.equals("") && !isvaccinated_2nd.equals("")) {
+                        bi.fldGrpCVmm0801.setVisibility(View.GONE);
+                        bi.fldGrpCVmm0802.setVisibility(View.GONE);
+                        bi.fldGrpCVmm0803a.setVisibility(View.GONE);
+                        bi.fldGrpCVmm0803b.setVisibility(View.GONE);
+                    } else if (isvaccinated_1st.equals("") && isvaccinated_2nd.equals("")) {
+                        bi.fldGrpCVmm0802.setVisibility(View.VISIBLE);
+                        bi.fldGrpCVmm0803a.setVisibility(View.VISIBLE);
+                        bi.fldGrpCVmm0803b.setVisibility(View.VISIBLE);
+                    } else if (isvaccinated_2nd.equals("")) {
+                        bi.fldGrpCVmm0803b.setVisibility(View.VISIBLE);
+                    } else if (!isvaccinated_2nd.equals("")) {
+                        bi.fldGrpCVmm0803b.setVisibility(View.GONE);
+                    } else if (isvaccinated_1st.equals("")) {
+                        bi.fldGrpCVmm0803a.setVisibility(View.VISIBLE);
+                    } else if (!isvaccinated_1st.equals("")) {
+                        bi.fldGrpCVmm0803a.setVisibility(View.GONE);
+                    }
+
                 } else {
                     Clear.clearAllFields(bi.fldGrpCVmm0802);
                     Clear.clearAllFields(bi.fldGrpCVmm0803a);
@@ -468,10 +474,14 @@ public class Section06mmActivity extends AppCompatActivity {
         }
 
 
-        if (!bi.mm080101.isChecked()
-                && !bi.mm080102.isChecked()) {
-            Toast.makeText(this, "MM0801 is required", Toast.LENGTH_SHORT).show();
-            return false;
+        if (bi.fldGrpCVmm0801.getVisibility() == View.VISIBLE) {
+
+            if (!bi.mm080101.isChecked()
+                    && !bi.mm080102.isChecked()) {
+                Toast.makeText(this, "MM0801 is required", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
         }
 
 

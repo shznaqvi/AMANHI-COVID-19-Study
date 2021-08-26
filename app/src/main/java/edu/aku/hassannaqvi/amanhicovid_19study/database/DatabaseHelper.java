@@ -1415,25 +1415,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public int isWomanVaccinated(String studyid) {
-        String countQuery = "SELECT * FROM Forms4mm WHERE studyid = '" + studyid + "' and (mm0803a is not null) OR (mm0803a = '') ";
+    public String isWomanVaccinated(String studyid, String fldname) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, null);
-        int count = cursor.getCount();
-        cursor.close();
-        return count;
+        String val = "";
+
+        try {
+
+            Cursor cursor = db.rawQuery("select s02 from Forms4mm where studyid = '" + studyid + "'", null);
+
+            if (cursor != null) {
+                if (cursor.moveToFirst()) {
+                    do {
+
+                        int cur_count = cursor.getCount();
+
+                        JSONObject json = new JSONObject(cursor.getString(0));
+                        val = json.getString(fldname);
+
+                        if (!val.equals("")) {
+                            return val;
+                        }
+
+
+                    } while (cursor.moveToNext());
+                }
+            }
+
+        } catch (Exception ex) {
+            val = "-1";
+        }
+
+        return val;
     }
 
-
-    public int isWomanFullyVaccinated(String studyid) throws JSONException {
-        String countQuery = "SELECT s02 FROM Forms4mm WHERE studyid = '" + studyid + "'";
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, null);
-
-        
-
-        return 0;
-    }
 
 
     public List<Sites> getSites() {
