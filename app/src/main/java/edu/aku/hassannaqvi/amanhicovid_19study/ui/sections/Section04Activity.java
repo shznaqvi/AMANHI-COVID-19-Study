@@ -3,11 +3,13 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
@@ -61,6 +63,19 @@ public class Section04Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
+
+        bi.crlablw.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (bi.crlablwa.isChecked()) {
+                    bi.fldGrpCVcrlabab.setVisibility(View.VISIBLE);
+                } else {
+                    Clear.clearAllFields(bi.fldGrpCVcrlabab);
+                    bi.fldGrpCVcrlabab.setVisibility(View.GONE);
+                }
+            }
+        });
+
     }
 
 

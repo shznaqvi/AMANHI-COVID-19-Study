@@ -3,12 +3,18 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
+
+import org.jetbrains.annotations.NotNull;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsPregSurvContract;
@@ -34,6 +40,179 @@ public class Section05Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
+
+        bi.symp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (bi.sympa.isChecked()) {
+                    bi.fldGrpCVsympt.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040b.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040c.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040d.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040e.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040f.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040g.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040h.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040i.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040j.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040k.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040l.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040m.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040n.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040o.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040p.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040q.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040r.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040s.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040t.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040u.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040v.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040w.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040x.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040y.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040a.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040aa.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040ab.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040ac.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040ad.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040ae.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040es.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040aesi.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040aesii.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040af.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040afs.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040ag.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5040ags.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5041a.setVisibility(View.VISIBLE);
+                    bi.fldGrpCVcr5041b.setVisibility(View.VISIBLE);
+
+                } else {
+
+                    Clear.clearAllFields(bi.fldGrpCVsympt);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040b);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040c);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040d);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040e);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040f);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040g);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040h);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040i);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040j);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040k);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040l);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040m);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040n);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040o);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040p);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040q);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040r);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040s);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040t);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040u);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040v);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040w);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040x);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040y);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040a);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040aa);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040ab);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040ac);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040ad);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040ae);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040es);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040aesi);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040aesii);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040af);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040afs);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040ag);
+                    Clear.clearAllFields(bi.fldGrpCVcr5040ags);
+                    Clear.clearAllFields(bi.fldGrpCVcr5041a);
+                    Clear.clearAllFields(bi.fldGrpCVcr5041b);
+
+
+                    bi.fldGrpCVsympt.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040b.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040c.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040d.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040e.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040f.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040g.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040h.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040i.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040j.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040k.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040l.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040m.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040n.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040o.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040p.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040q.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040r.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040s.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040t.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040u.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040v.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040w.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040x.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040y.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040a.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040aa.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040ab.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040ac.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040ad.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040ae.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040es.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040aesi.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040aesii.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040af.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040afs.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040ag.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5040ags.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5041a.setVisibility(View.GONE);
+                    bi.fldGrpCVcr5041b.setVisibility(View.GONE);
+
+                }
+            }
+        });
+
+        bi.cr5040af.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (bi.cr5040afa.isChecked()) {
+                    bi.fldGrpCVcr5040afs.setVisibility(View.VISIBLE);
+                } else {
+                    Clear.clearAllFields(bi.fldGrpCVcr5040afs);
+                    bi.fldGrpCVcr5040afs.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        bi.cr5040ag.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (bi.cr5040aga.isChecked()) {
+                    bi.fldGrpCVcr5040ags.setVisibility(View.VISIBLE);
+                } else {
+                    Clear.clearAllFields(bi.fldGrpCVcr5040ags);
+                    bi.fldGrpCVcr5040ags.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        bi.cr5041a.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (bi.cr5041aa.isChecked()) {
+                    bi.fldGrpCVcr5041b.setVisibility(View.VISIBLE);
+                } else {
+                    Clear.clearAllFields(bi.fldGrpCVcr5041b);
+                    bi.fldGrpCVcr5041b.setVisibility(View.GONE);
+                }
+            }
+        });
+
     }
 
 

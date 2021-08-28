@@ -113,9 +113,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
+                            android:hint="###.#"
+                            android:inputType="numberDecimal"
+                            android:maxLength="5"
                             android:tag="cr5006"
                             android:text='@{cr5006.checked ? cr5006x.getText().toString() : ""}'
                             android:visibility='@{cr5006.checked? View.VISIBLE : View.GONE}'
@@ -191,9 +191,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
+                            android:hint="##.#"
+                            android:inputType="numberDecimal"
+                            android:maxLength="4"
                             android:tag="cr5007"
                             android:text='@{cr5007.checked ? cr5007x.getText().toString() : ""}'
                             android:visibility='@{cr5007.checked? View.VISIBLE : View.GONE}'
@@ -325,9 +325,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
+                            android:hint="##.#"
+                            android:inputType="numberDecimal"
+                            android:maxLength="4"
                             android:tag="cr5008u"
                             android:text='@{cr5008u.checked ? cr5008ux.getText().toString() : ""}'
                             android:visibility='@{cr5008u.checked? View.VISIBLE : View.GONE}'
@@ -390,8 +390,8 @@
                                 android:tag="cr5009"
                                 android:text='@{cr5009.checked ? cr5009x.getText().toString() : ""}'
                                 android:visibility='@{cr5009.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="100"
-                                app:minValue="0"
+                                app:maxValue="40"
+                                app:minValue="10"
                                 app:type="range" />
 
                             <RadioButton
@@ -459,8 +459,8 @@
                                 android:tag="cr5010"
                                 android:text='@{cr5010.checked ? cr5010x.getText().toString() : ""}'
                                 android:visibility='@{cr5010.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="100"
-                                app:minValue="0"
+                                app:maxValue="120"
+                                app:minValue="60"
                                 app:type="range" />
 
                             <RadioButton
@@ -813,7 +813,7 @@
                                 android:text='@{cr5014.checked ? cr5014x.getText().toString() : ""}'
                                 android:visibility='@{cr5014.checked? View.VISIBLE : View.GONE}'
                                 app:maxValue="100"
-                                app:minValue="0"
+                                app:minValue="60"
                                 app:type="range" />
 
                             <RadioButton
@@ -882,7 +882,7 @@
                                 android:text='@{cr5015.checked ? cr5015x.getText().toString() : ""}'
                                 android:visibility='@{cr5015.checked? View.VISIBLE : View.GONE}'
                                 app:maxValue="100"
-                                app:minValue="0"
+                                app:minValue="95"
                                 app:type="range" />
 
                             <RadioButton
