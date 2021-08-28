@@ -186,12 +186,16 @@ public class Section06mmActivity extends AppCompatActivity {
                         bi.fldGrpCVmm0803a.setVisibility(View.VISIBLE);
                         bi.fldGrpCVmm0803b.setVisibility(View.VISIBLE);
                     } else if (isvaccinated_2nd.equals("")) {
+                        bi.fldGrpCVmm0802.setVisibility(View.VISIBLE);
                         bi.fldGrpCVmm0803b.setVisibility(View.VISIBLE);
                     } else if (!isvaccinated_2nd.equals("")) {
+                        bi.fldGrpCVmm0802.setVisibility(View.GONE);
                         bi.fldGrpCVmm0803b.setVisibility(View.GONE);
                     } else if (isvaccinated_1st.equals("")) {
+                        bi.fldGrpCVmm0802.setVisibility(View.VISIBLE);
                         bi.fldGrpCVmm0803a.setVisibility(View.VISIBLE);
                     } else if (!isvaccinated_1st.equals("")) {
+                        bi.fldGrpCVmm0802.setVisibility(View.GONE);
                         bi.fldGrpCVmm0803a.setVisibility(View.GONE);
                     }
 
@@ -507,11 +511,15 @@ public class Section06mmActivity extends AppCompatActivity {
             }
 
 
-            if (!bi.chkdt1.isChecked()) {
-                if (bi.mm0803a.getText().toString().trim().equals("")) {
-                    Toast.makeText(this, "MM0803a is required", Toast.LENGTH_SHORT).show();
-                    return false;
+            if (bi.fldGrpCVmm0803a.getVisibility() == View.VISIBLE) {
+
+                if (!bi.chkdt1.isChecked()) {
+                    if (bi.mm0803a.getText().toString().trim().equals("")) {
+                        Toast.makeText(this, "MM0803a is required", Toast.LENGTH_SHORT).show();
+                        return false;
+                    }
                 }
+
             }
 
 
