@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.database;
 
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -32,8 +34,6 @@ import edu.aku.hassannaqvi.amanhicovid_19study.models.Sites;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable;
-
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
 
 /**
  * @author hassan.naqvi on 11/30/2016.
@@ -591,7 +591,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Synced functions
-    public JSONArray getUnsyncedForms21cm() {
+    public JSONArray getUnsyncedForms21cm(String limitCount) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -604,6 +604,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy = Forms21cmContract.Forms21cmTable.COLUMN_ID + " ASC";
+        String limit = limitCount;
 
         JSONArray allForms = new JSONArray();
         try {
@@ -615,7 +616,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     groupBy,                   // don't group the rows
                     having,                    // don't filter by row groups
                     orderBy,                    // The sort order
-                    "100"
+                    limit
             );
             while (c.moveToNext()) {
                 /** WorkManager Upload
@@ -641,7 +642,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //Synced functions
-    public JSONArray getUnsyncedForms4mm() {
+    public JSONArray getUnsyncedForms4mm(String limitCount) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -654,6 +655,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy = Forms4mmContract.Forms4MMTable.COLUMN_ID + " ASC";
+        String limit = limitCount;
 
         JSONArray allForms = new JSONArray();
         try {
@@ -665,7 +667,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     groupBy,                   // don't group the rows
                     having,                    // don't filter by row groups
                     orderBy,                    // The sort order
-                    "20"
+                    limit
             );
 
             //Toast.makeText(mycontext, c.getCount(), Toast.LENGTH_SHORT).show();
@@ -694,7 +696,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //Synced functions
-    public JSONArray getUnsyncedFormsPregSurv() {
+    public JSONArray getUnsyncedFormsPregSurv(String limitCount) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -707,7 +709,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
 
         String orderBy = FormsPregSurvContract.FormsPregSurvTable.COLUMN_ID + " ASC";
-
+        String limit = limitCount;
         JSONArray allForms = new JSONArray();
         try {
             c = db.query(
@@ -718,7 +720,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     groupBy,                   // don't group the rows
                     having,                    // don't filter by row groups
                     orderBy,                    // The sort order
-                    "80"
+                    limit
             );
 
             //Toast.makeText(mycontext, c.getCount(), Toast.LENGTH_SHORT).show();

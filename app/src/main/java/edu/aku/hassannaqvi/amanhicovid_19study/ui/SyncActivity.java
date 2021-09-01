@@ -1,5 +1,11 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui;
 
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.sdDir;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.uploadData;
+import static edu.aku.hassannaqvi.amanhicovid_19study.utils.AndroidUtilityKt.isNetworkConnected;
+import static edu.aku.hassannaqvi.amanhicovid_19study.utils.AppUtilsKt.dbBackup;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Environment;
@@ -43,19 +49,12 @@ import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySyncBinding;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSur;
-import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSurv;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Sites;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.SyncModel;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Users;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.VersionApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.workers.DataDownWorkerALL;
 import edu.aku.hassannaqvi.amanhicovid_19study.workers.DataUpWorkerALL;
-
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.PROJECT_NAME;
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.sdDir;
-import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.uploadData;
-import static edu.aku.hassannaqvi.amanhicovid_19study.utils.AndroidUtilityKt.isNetworkConnected;
-import static edu.aku.hassannaqvi.amanhicovid_19study.utils.AppUtilsKt.dbBackup;
 
 
 public class SyncActivity extends AppCompatActivity {
@@ -136,18 +135,18 @@ public class SyncActivity extends AppCompatActivity {
 
 
                 // Forms21cm
-                MainApp.uploadData.add(db.getUnsyncedForms21cm());
+                MainApp.uploadData.add(db.getUnsyncedForms21cm("80"));
                 uploadTables.add(new SyncModel(Forms21cmContract.Forms21cmTable.TABLE_NAME, uploadData.get(0).length()));
 
-                //Toast.makeText(this, MainApp.uploadData.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, MainApp.uploadData.toString(), Toast.LENGTH_LONG).show();
 
                 // Forms4mm
-                MainApp.uploadData.add(db.getUnsyncedForms4mm());
+                MainApp.uploadData.add(db.getUnsyncedForms4mm("80"));
                 uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME, uploadData.get(1).length()));
 
 
                 // Forms Pregnancy Surveilance
-                MainApp.uploadData.add(db.getUnsyncedFormsPregSurv());
+                MainApp.uploadData.add(db.getUnsyncedFormsPregSurv("80"));
                 uploadTables.add(new SyncModel(FormsPregSurvContract.FormsPregSurvTable.TABLE_NAME, uploadData.get(2).length()));
 
                 // Initialising downloadData array to capture response from server outside Data (limit:10204)

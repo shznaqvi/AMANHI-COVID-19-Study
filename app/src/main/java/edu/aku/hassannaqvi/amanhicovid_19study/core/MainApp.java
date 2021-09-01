@@ -10,8 +10,6 @@ import org.json.JSONArray;
 import java.io.File;
 import java.util.List;
 
-import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsPregSurvContract;
-import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSur;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSurv;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form21cm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.Form4mm;
@@ -42,6 +40,7 @@ public class MainApp extends Application {
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
     public static List<JSONArray> uploadData;
+    public static List<JSONArray> uploadDataP;
     public static Users user;
     public static Boolean admin = false;
     public static String userName;

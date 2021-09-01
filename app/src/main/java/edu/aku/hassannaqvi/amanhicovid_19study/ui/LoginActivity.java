@@ -1,5 +1,13 @@
 package edu.aku.hassannaqvi.amanhicovid_19study.ui;
 
+import static java.lang.Thread.sleep;
+import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_PHONE_STATE;
+import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.TWO_MINUTES;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.uploadData;
+import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.DATABASE_COPY;
+import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.DATABASE_NAME;
+import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.PROJECT_NAME;
+
 import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -37,8 +45,11 @@ import androidx.core.app.ActivityCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.work.Constraints;
+import androidx.work.Data;
+import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.NetworkType;
 import androidx.work.OneTimeWorkRequest;
+import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkInfo;
 import androidx.work.WorkManager;
 
@@ -53,9 +64,12 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
@@ -63,21 +77,20 @@ import javax.crypto.spec.SecretKeySpec;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS;
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms21cmContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsPregSurvContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.AppInfo;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityLoginBinding;
+import edu.aku.hassannaqvi.amanhicovid_19study.models.SyncModel;
 import edu.aku.hassannaqvi.amanhicovid_19study.workers.DataDownWorkerALL;
-
-import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.MY_PERMISSIONS_REQUEST_READ_PHONE_STATE;
-import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.TWO_MINUTES;
-import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.DATABASE_COPY;
-import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.DATABASE_NAME;
-import static edu.aku.hassannaqvi.amanhicovid_19study.utils.CreateTable.PROJECT_NAME;
-import static java.lang.Thread.sleep;
+import edu.aku.hassannaqvi.amanhicovid_19study.workers.DataUpWorkerALLPeriodic;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private static final String TAG = "LoginActivity";
     protected static LocationManager locationManager;
 
     // UI references.
@@ -88,9 +101,12 @@ public class LoginActivity extends AppCompatActivity {
     SharedPreferences.Editor editor;
     String DirectoryName;
     DatabaseHelper db;
+
     ArrayAdapter<String> provinceAdapter;
     int attemptCounter = 0;
     private UserLoginTask mAuthTask = null;
+    List<SyncModel> uploadTables;
+
 
     public static String getDeviceId(Context context) {
         String deviceId;
@@ -236,7 +252,7 @@ public class LoginActivity extends AppCompatActivity {
         bi.setCallback(this);
         MainApp.appInfo = new AppInfo(this);
 
-        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        db = MainApp.appInfo.getDbHelper();
 
         bi.txtinstalldate.setText(MainApp.appInfo.getAppInfo());
 
@@ -253,6 +269,9 @@ public class LoginActivity extends AppCompatActivity {
 
         // populateAutoComplete();
         gettingDeviceIMEI();
+        this.uploadTables = new ArrayList<>();
+        MainApp.uploadDataP = new ArrayList<>();
+        BeginUpload();
 
 /*        new ShowcaseView.Builder(this)
                 .setTarget(viewTarget)
@@ -890,4 +909,69 @@ public class LoginActivity extends AppCompatActivity {
             showProgress(false);
         }
     }
+
+    private void BeginUpload() {
+        Log.d(TAG, "BeginUpload: starting");
+     /*   PeriodicWorkRequest saveRequest =
+                new PeriodicWorkRequest.Builder(SaveImageToFileWorker.class, 1, TimeUnit.HOURS)
+                        // Constraints
+                        .build();*/
+
+        this.uploadTables.clear();
+        MainApp.uploadDataP.clear();
+
+
+        // Forms21cm
+        MainApp.uploadDataP.add(db.getUnsyncedForms21cm("15"));
+        this.uploadTables.add(new SyncModel(Forms21cmContract.Forms21cmTable.TABLE_NAME, MainApp.uploadDataP.get(0).length()));
+
+        Toast.makeText(this, MainApp.uploadDataP.toString(), Toast.LENGTH_LONG).show();
+
+        // Forms4mm
+        MainApp.uploadDataP.add(db.getUnsyncedForms4mm("15"));
+        this.uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME, MainApp.uploadDataP.get(1).length()));
+
+        // Forms Pregnancy Surveilance
+        MainApp.uploadData.add(db.getUnsyncedFormsPregSurv("15"));
+        uploadTables.add(new SyncModel(FormsPregSurvContract.FormsPregSurvTable.TABLE_NAME, uploadData.get(2).length()));
+
+
+        Constraints constraints = new Constraints.Builder()
+                .setRequiredNetworkType(NetworkType.CONNECTED)
+                .build();
+        List<PeriodicWorkRequest> workRequests = new ArrayList<>();
+
+        for (int i = 0; i < this.uploadTables.size(); i++) {
+            Data data = new Data.Builder()
+                    .putString("table", this.uploadTables.get(i).gettableName())
+                    .putInt("position", i)
+                    //    .putString("data", uploadData.get(i).toString())
+
+                    //.putString("columns", "_id, sysdate")
+                    // .putString("where", where)
+                    .build();
+            PeriodicWorkRequest workRequest = new PeriodicWorkRequest.Builder(DataUpWorkerALLPeriodic.class, 15, TimeUnit.MINUTES)
+                    .addTag(String.valueOf(i))
+                    .setConstraints(constraints)
+                    .setInputData(data).build();
+            workRequests.add(workRequest);
+
+        }
+
+        // FOR SIMULTANEOUS WORKREQUESTS (ALL TABLES DOWNLOAD AT THE SAME TIME)
+/*        WorkManager wm = WorkManager.getInstance(this);
+        WorkContinuation wc = wm.beginWith(Arrays.<PeriodicWorkRequest>asList(workRequests));
+        wc.enqueue();*/
+
+        // FOR WORKREQUESTS CHAIN (ONE TABLE DOWNLOADS AT A TIME)
+        WorkManager wm = WorkManager.getInstance(this);
+        // WorkContinuation wc = wm.beginWith(workRequests.get(0));
+        for (int i = 0; i < workRequests.size(); i++) {
+            wm.enqueueUniquePeriodicWork(String.valueOf(i), ExistingPeriodicWorkPolicy.KEEP, workRequests.get(i));
+            Log.d(TAG, "BeginUpload (workchain): " + i);
+        }
+
+
+    }
+
 }
