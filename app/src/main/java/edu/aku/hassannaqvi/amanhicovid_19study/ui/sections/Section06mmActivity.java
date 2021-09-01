@@ -29,6 +29,7 @@ public class Section06mmActivity extends AppCompatActivity {
     private DatabaseHelper db;
     private static String isvaccinated_1st;
     private static String isvaccinated_2nd;
+    private static String iscansino;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +55,17 @@ public class Section06mmActivity extends AppCompatActivity {
 
         isvaccinated_1st = db.isWomanVaccinated(form4m.getStudyID(), "mm0803a");
         isvaccinated_2nd = db.isWomanVaccinated(form4m.getStudyID(), "mm0803b");
+        iscansino = db.isWomanVaccinated(form4m.getStudyID(), "mm0802");
 
-        Toast.makeText(this, " i m var - " + isvaccinated_1st + " - " + isvaccinated_2nd, Toast.LENGTH_LONG).show();
 
         if (isvaccinated_1st.equals("") && isvaccinated_2nd.equals("")) {
             bi.fldGrpCVmm0801.setVisibility(View.VISIBLE);
         } else if (!isvaccinated_1st.equals("") && !isvaccinated_2nd.equals("")) {
+            bi.fldGrpCVmm0801.setVisibility(View.GONE);
+            bi.fldGrpCVmm0802.setVisibility(View.GONE);
+            bi.fldGrpCVmm0803a.setVisibility(View.GONE);
+            bi.fldGrpCVmm0803b.setVisibility(View.GONE);
+        } else if (!isvaccinated_1st.equals("") && iscansino.equals("2")) {
             bi.fldGrpCVmm0801.setVisibility(View.GONE);
             bi.fldGrpCVmm0802.setVisibility(View.GONE);
             bi.fldGrpCVmm0803a.setVisibility(View.GONE);
