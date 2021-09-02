@@ -932,8 +932,8 @@ public class LoginActivity extends AppCompatActivity {
         this.uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME, MainApp.uploadDataP.get(1).length()));
 
         // Forms Pregnancy Surveilance
-        MainApp.uploadData.add(db.getUnsyncedFormsPregSurv("15"));
-        uploadTables.add(new SyncModel(FormsPregSurvContract.FormsPregSurvTable.TABLE_NAME, uploadData.get(2).length()));
+        MainApp.uploadDataP.add(db.getUnsyncedFormsPregSurv("15"));
+        this.uploadTables.add(new SyncModel(FormsPregSurvContract.FormsPregSurvTable.TABLE_NAME, MainApp.uploadDataP.get(2).length()));
 
 
         Constraints constraints = new Constraints.Builder()
