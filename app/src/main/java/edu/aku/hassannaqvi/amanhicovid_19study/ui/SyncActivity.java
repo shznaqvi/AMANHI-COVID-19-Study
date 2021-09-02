@@ -130,23 +130,26 @@ public class SyncActivity extends AppCompatActivity {
                 //bi.dataLayout.setVisibility(View.VISIBLE);
                 //bi.mTextViewS.setVisibility(View.GONE);
                 ///bi.pBar.setVisibility(View.GONE);
+
+                bi.activityTitle.setText("Upload Data");
+
                 uploadTables.clear();
                 MainApp.uploadData.clear();
 
 
                 // Forms21cm
-                MainApp.uploadData.add(db.getUnsyncedForms21cm("80"));
+                MainApp.uploadData.add(db.getUnsyncedForms21cm("15"));
                 uploadTables.add(new SyncModel(Forms21cmContract.Forms21cmTable.TABLE_NAME, uploadData.get(0).length()));
 
                 Toast.makeText(this, MainApp.uploadData.toString(), Toast.LENGTH_LONG).show();
 
                 // Forms4mm
-                MainApp.uploadData.add(db.getUnsyncedForms4mm("80"));
+                MainApp.uploadData.add(db.getUnsyncedForms4mm("15"));
                 uploadTables.add(new SyncModel(Forms4mmContract.Forms4MMTable.TABLE_NAME, uploadData.get(1).length()));
 
 
                 // Forms Pregnancy Surveilance
-                MainApp.uploadData.add(db.getUnsyncedFormsPregSurv("80"));
+                MainApp.uploadData.add(db.getUnsyncedFormsPregSurv("15"));
                 uploadTables.add(new SyncModel(FormsPregSurvContract.FormsPregSurvTable.TABLE_NAME, uploadData.get(2).length()));
 
                 // Initialising downloadData array to capture response from server outside Data (limit:10204)
@@ -157,6 +160,8 @@ public class SyncActivity extends AppCompatActivity {
                 break;
 
             case R.id.btnSync:
+                bi.activityTitle.setText("Download Data");
+
                 if (bi.sites.getCheckedRadioButtonId() != -1) {
                     MainApp.downloadData = new String[0];
                     //bi.dataLayout.setVisibility(View.VISIBLE);
