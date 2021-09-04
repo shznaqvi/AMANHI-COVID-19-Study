@@ -1432,12 +1432,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                         int cur_count = cursor.getCount();
 
                         JSONObject json = new JSONObject(cursor.getString(0));
-                        val = json.getString(fldname);
 
-                        if (!val.equals("")) {
-                            return val;
+                        if (json.has(fldname)) {
+                            val = json.getString(fldname);
+
+                            if (!val.equals("")) {
+                                return val;
+                            }
                         }
-
 
                     } while (cursor.moveToNext());
                 }
@@ -1449,7 +1451,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return val;
     }
-
 
 
     public List<Sites> getSites() {
