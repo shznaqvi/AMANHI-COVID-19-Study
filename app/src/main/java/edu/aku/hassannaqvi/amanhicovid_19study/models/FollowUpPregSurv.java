@@ -83,6 +83,9 @@ public class FollowUpPregSurv extends BaseObservable {
     public String mm0107t = "";
     public String mm0107x = "";
     public String mm0201 = "";
+    public String mm0202 = "";
+    public String mm020277x = "";
+
     public String whyvisitfail = "";
     public String visitfail_oth = "";
     public String crpreg = "";
@@ -862,6 +865,25 @@ public class FollowUpPregSurv extends BaseObservable {
     public void setMm0201(String mm0201) {
         this.mm0201 = mm0201;
     }
+
+
+    public String getMm0202() {
+        return mm0202;
+    }
+
+    public void setMm0202(String mm0202) {
+        this.mm0202 = mm0202;
+    }
+
+
+    public String getMm020277x() {
+        return mm020277x;
+    }
+
+    public void setMm020277x(String mm020277x) {
+        this.mm020277x = mm020277x;
+    }
+
 
     public String getWhyvisitfail() {
         return whyvisitfail;

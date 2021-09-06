@@ -127,6 +127,21 @@ public class FormsReportPregsurvActivity extends AppCompatActivity {
                     String[] arr = dtFilter.getText().toString().split("-");
                     String studyid = arr[0] + arr[1] + arr[2];
 
+                    List<FollowUpPregSur> followUpPregSur = (List<FollowUpPregSur>) db.getMotherByStudyIdPregSurv(studyid);
+
+                    if (followUpPregSur.size() == 0) {
+                        Toast.makeText(this, "Mother does not exist", Toast.LENGTH_LONG).show();
+                        dtFilter.requestFocus();
+                    } else {
+                        formsAdapter = new FormsPregSurAdapter(followUpPregSur, this);
+                        formsAdapter.notifyDataSetChanged();
+                        recyclerView.setAdapter(formsAdapter);
+                    }
+
+
+                    /*String[] arr = dtFilter.getText().toString().split("-");
+                    String studyid = arr[0] + arr[1] + arr[2];
+
                     if (spSites.getSelectedItem().equals("IH") && arr[1].substring(0, 1).equals("3")
                             || spSites.getSelectedItem().equals("IH") && arr[1].substring(0, 1).equals("7")
 
@@ -149,7 +164,7 @@ public class FormsReportPregsurvActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(this, "You have selected wrong site", Toast.LENGTH_LONG).show();
                         dtFilter.requestFocus();
-                    }
+                    }*/
                 }
 
             } else {

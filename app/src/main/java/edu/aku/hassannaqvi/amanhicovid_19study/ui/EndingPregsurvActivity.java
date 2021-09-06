@@ -16,11 +16,13 @@ import java.util.Locale;
 
 import edu.aku.hassannaqvi.amanhicovid_19study.R;
 import edu.aku.hassannaqvi.amanhicovid_19study.contracts.Forms4mmContract;
+import edu.aku.hassannaqvi.amanhicovid_19study.contracts.FormsPregSurvContract;
 import edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp;
 import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivityEndingPregsurvBinding;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.form4m;
+import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.formpregsurv;
 
 public class EndingPregsurvActivity extends AppCompatActivity {
 
@@ -67,10 +69,7 @@ public class EndingPregsurvActivity extends AppCompatActivity {
 
     public void BtnEnd() {
         if (!formValidation()) return;
-
-        startActivity(new Intent(this, MainActivity.class));
-
-        /*SaveDraft();
+        SaveDraft();
 
         finish();
         startActivity(new Intent(this, MainActivity.class));
@@ -81,18 +80,18 @@ public class EndingPregsurvActivity extends AppCompatActivity {
             startActivity(new Intent(this, MainActivity.class));
         } else {
             Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
-        }*/
+        }
     }
 
 
     private void SaveDraft() {
 
-        form4m.setMm0201(bi.mm0201011.isChecked() ? "11"
+        formpregsurv.setMm0201(bi.mm0201011.isChecked() ? "11"
                 : bi.mm0201012.isChecked() ? "12"
                 : "-1");
 
 
-        form4m.setMm202(bi.istatusa.isChecked() ? "11"
+        formpregsurv.setMm0202(bi.istatusa.isChecked() ? "11"
                 : bi.istatusb.isChecked() ? "12"
                 : bi.istatusc.isChecked() ? "13"
                 : bi.istatusd.isChecked() ? "14"
@@ -100,13 +99,13 @@ public class EndingPregsurvActivity extends AppCompatActivity {
                 : bi.istatus96.isChecked() ? "77"
                 : "-1");
 
-        form4m.setMm202077x(bi.istatus96x.getText().toString());
+        formpregsurv.setMm020277x(bi.istatus96x.getText().toString());
 
 
         if (bi.mm0201011.isChecked()) {
-            MainApp.form4m.setIStatus("1");
+            MainApp.formpregsurv.setiStatus("1");
         } else {
-            MainApp.form4m.setIStatus(bi.istatusa.isChecked() ? "11"
+            MainApp.formpregsurv.setiStatus(bi.istatusa.isChecked() ? "11"
                     : bi.istatusb.isChecked() ? "12"
                     : bi.istatusc.isChecked() ? "13"
                     : bi.istatusd.isChecked() ? "14"
@@ -115,9 +114,9 @@ public class EndingPregsurvActivity extends AppCompatActivity {
                     : "0");
         }
 
-        MainApp.form4m.setIStatus96x(bi.istatus96x.getText().toString());
+        MainApp.formpregsurv.setiStatus96x(bi.istatus96x.getText().toString());
 
-        MainApp.form4m.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
+        MainApp.formpregsurv.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
 
     }
 
@@ -125,8 +124,8 @@ public class EndingPregsurvActivity extends AppCompatActivity {
     public boolean UpdateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
 
-        int updcount1 = db.updatesForm4MColumn(Forms4mmContract.Forms4MMTable.COLUMN_S02, form4m.s02toString());
-        int updcount = db.updateEndingForm4mm();
+        int updcount1 = db.updatesFormColumnPregSurv(FormsPregSurvContract.FormsPregSurvTable.COLUMN_S02, formpregsurv.s02toString());
+        int updcount = db.updateEndingFormPregSurv();
 
         if (updcount == 1 && updcount1 == 1) {
             return true;

@@ -12,7 +12,6 @@ class FollowUpPregSur : Serializable {
     var STUDYID: String = ""
     var FUPDT: String = ""
     var FUPMONTH: String = ""
-    var VISITSTATUS: String = ""
     var WOMNAME: String = ""
     var HUSNAME: String = ""
     var COLFLAG: String = ""
@@ -28,7 +27,6 @@ class FollowUpPregSur : Serializable {
         STUDYID = jsonObject.getString(FollowUpTablePregSur.COLUMN_STUDYID)
         FUPDT = jsonObject.getString(FollowUpTablePregSur.COLUMN_FUPDT)
         FUPMONTH = jsonObject.getString(FollowUpTablePregSur.COLUMN_FUPMONTH)
-        VISITSTATUS = jsonObject.getString(FollowUpTablePregSur.COLUMN_VISITSTATUS)
         WOMNAME = jsonObject.getString(FollowUpTablePregSur.COLUMN_WOMNAME)
         HUSNAME = jsonObject.getString(FollowUpTablePregSur.COLUMN_HUSNAME)
         COLFLAG = jsonObject.getString(FollowUpTablePregSur.COLUMN_COLFLAG)
@@ -42,7 +40,6 @@ class FollowUpPregSur : Serializable {
         STUDYID = cursor.getString(cursor.getColumnIndex(FollowUpTablePregSur.COLUMN_STUDYID))
         FUPDT = cursor.getString(cursor.getColumnIndex(FollowUpTablePregSur.COLUMN_FUPDT))
         FUPMONTH = cursor.getString(cursor.getColumnIndex(FollowUpTablePregSur.COLUMN_FUPMONTH))
-        VISITSTATUS = cursor.getString(cursor.getColumnIndex(FollowUpTablePregSur.COLUMN_VISITSTATUS))
         WOMNAME = cursor.getString(cursor.getColumnIndex(FollowUpTablePregSur.COLUMN_WOMNAME))
         HUSNAME = cursor.getString(cursor.getColumnIndex(FollowUpTablePregSur.COLUMN_HUSNAME))
         COLFLAG = cursor.getString(cursor.getColumnIndex(FollowUpTablePregSur.COLUMN_COLFLAG))
@@ -59,7 +56,6 @@ class FollowUpPregSur : Serializable {
         const val COLUMN_STUDYID = "studyid"
         const val COLUMN_FUPDT = "fupdt"
         const val COLUMN_FUPMONTH = "fupmonth"
-        const val COLUMN_VISITSTATUS = "vstatus"
         const val COLUMN_WOMNAME = "womname"
         const val COLUMN_HUSNAME = "husname"
         const val COLUMN_COLFLAG = "colflag"

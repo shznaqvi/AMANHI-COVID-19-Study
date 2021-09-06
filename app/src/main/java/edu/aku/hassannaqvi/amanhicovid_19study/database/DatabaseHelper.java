@@ -848,6 +848,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public int updateEndingFormPregSurv() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_ISTATUS, MainApp.formpregsurv.getiStatus());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_ISTATUS96x, MainApp.formpregsurv.getiStatus96x());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_ENDINGDATETIME, MainApp.formpregsurv.getEndTime());
+
+        // Which row to update, based on the ID
+        String selection = FormsPregSurvContract.FormsPregSurvTable.COLUMN_ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.formpregsurv.getId())};
+
+        return db.update(FormsPregSurvContract.FormsPregSurvTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+
     /*
 
      * *//*
@@ -1263,8 +1283,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPDT,
                 FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPMONTH,
                 FollowUpPregSur.FollowUpTablePregSur.COLUMN_WOMNAME,
-                FollowUpPregSur.FollowUpTablePregSur.COLUMN_HUSNAME,
-                FollowUpPregSur.FollowUpTablePregSur.COLUMN_VISITSTATUS
+                FollowUpPregSur.FollowUpTablePregSur.COLUMN_HUSNAME
         };
 
         String whereClause = FollowUpPregSur.FollowUpTablePregSur.COLUMN_STUDYID + " = ? ";
@@ -1291,7 +1310,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setDSSID(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_DSSID)));
                 fc.setFUPDT(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPDT)));
                 fc.setFUPMONTH(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_FUPMONTH)));
-                fc.setVISITSTATUS(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_VISITSTATUS)));
                 fc.setWOMNAME(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_WOMNAME)));
                 fc.setHUSNAME(c.getString(c.getColumnIndex(FollowUpPregSur.FollowUpTablePregSur.COLUMN_HUSNAME)));
 
