@@ -193,7 +193,8 @@
                         android:shadowRadius="24"
                         android:text="Search Pregnant Woman (Antenatal Followup)"
                         android:textAppearance="@style/Widget.AppCompat.ActionButton"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
 
                     <Button
                         android:id="@+id/btnsummary"

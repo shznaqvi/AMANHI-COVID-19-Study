@@ -101,23 +101,7 @@ public class EndingPregsurvActivity extends AppCompatActivity {
 
         formpregsurv.setMm020277x(bi.istatus96x.getText().toString());
 
-
-        if (bi.mm0201011.isChecked()) {
-            MainApp.formpregsurv.setiStatus("1");
-        } else {
-            MainApp.formpregsurv.setiStatus(bi.istatusa.isChecked() ? "11"
-                    : bi.istatusb.isChecked() ? "12"
-                    : bi.istatusc.isChecked() ? "13"
-                    : bi.istatusd.isChecked() ? "14"
-                    : bi.istatuse.isChecked() ? "15"
-                    : bi.istatus96.isChecked() ? "77"
-                    : "0");
-        }
-
-        MainApp.formpregsurv.setiStatus96x(bi.istatus96x.getText().toString());
-
         MainApp.formpregsurv.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
-
     }
 
 
