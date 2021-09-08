@@ -390,8 +390,8 @@
                                 android:tag="cr5009"
                                 android:text='@{cr5009.checked ? cr5009x.getText().toString() : ""}'
                                 android:visibility='@{cr5009.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="40"
-                                app:minValue="10"
+                                app:maxValue="100"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
@@ -460,7 +460,7 @@
                                 android:text='@{cr5010.checked ? cr5010x.getText().toString() : ""}'
                                 android:visibility='@{cr5010.checked? View.VISIBLE : View.GONE}'
                                 app:maxValue="120"
-                                app:minValue="60"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
@@ -813,7 +813,7 @@
                                 android:text='@{cr5014.checked ? cr5014x.getText().toString() : ""}'
                                 android:visibility='@{cr5014.checked? View.VISIBLE : View.GONE}'
                                 app:maxValue="100"
-                                app:minValue="60"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
@@ -882,7 +882,7 @@
                                 android:text='@{cr5015.checked ? cr5015x.getText().toString() : ""}'
                                 android:visibility='@{cr5015.checked? View.VISIBLE : View.GONE}'
                                 app:maxValue="100"
-                                app:minValue="95"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <RadioButton
