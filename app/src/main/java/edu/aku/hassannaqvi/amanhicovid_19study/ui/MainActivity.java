@@ -60,6 +60,20 @@ public class MainActivity extends AppCompatActivity {
             bi.admin2.setVisibility(View.VISIBLE);
             bi.startInterview.setVisibility(View.VISIBLE);
             bi.btnChildMorb.setVisibility(View.VISIBLE);
+            bi.searchpregsurv.setVisibility(View.VISIBLE);
+            bi.searchchild.setVisibility(View.VISIBLE);
+            bi.searchmother.setVisibility(View.VISIBLE);
+        } else if (MainApp.userName.equals("dawar") || MainApp.userName.equals("usman")
+                || MainApp.userName.equals("abrar")) {
+            bi.showdb.setVisibility(View.GONE);
+            bi.admin.setVisibility(View.GONE);
+            bi.admin1.setVisibility(View.GONE);
+            bi.admin2.setVisibility(View.GONE);
+            bi.startInterview.setVisibility(View.GONE);
+            bi.btnChildMorb.setVisibility(View.GONE);
+            bi.searchpregsurv.setVisibility(View.VISIBLE);
+            bi.searchchild.setVisibility(View.GONE);
+            bi.searchmother.setVisibility(View.GONE);
         } else {
             bi.showdb.setVisibility(View.GONE);
             bi.admin.setVisibility(View.GONE);
@@ -67,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
             bi.admin2.setVisibility(View.GONE);
             bi.startInterview.setVisibility(View.GONE);
             bi.btnChildMorb.setVisibility(View.GONE);
+            bi.searchpregsurv.setVisibility(View.GONE);
+            bi.searchchild.setVisibility(View.VISIBLE);
+            bi.searchmother.setVisibility(View.VISIBLE);
         }
     }
 
