@@ -148,15 +148,6 @@ public class Section03Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-
-        /*if (Double.parseDouble(bi.cr5006x.getText().toString()) != 888.8 && Double.parseDouble(bi.cr5006x.getText().toString()) != 999.9) {
-            if (Double.parseDouble(bi.cr5006x.getText().toString()) <= 0 && Double.parseDouble(bi.cr5006x.getText().toString()) > 100) {
-                Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-                bi.cr5006x.requestFocus();
-                return false;
-            }
-        }*/
-
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 

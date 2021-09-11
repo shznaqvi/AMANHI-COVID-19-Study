@@ -331,8 +331,8 @@
                             android:tag="cr5008u"
                             android:text='@{cr5008u.checked ? cr5008ux.getText().toString() : ""}'
                             android:visibility='@{cr5008u.checked? View.VISIBLE : View.GONE}'
-                            app:maxValue="100"
-                            app:minValue="0"
+                            app:maxValue="108"
+                            app:minValue="1"
                             app:type="range" />
 
                     </LinearLayout>

@@ -324,6 +324,12 @@
                             android:layout_height="wrap_content">
 
                             <RadioButton
+                                android:id="@+id/cr5017ua"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cr5017ua" />
+
+                            <RadioButton
                                 android:id="@+id/cr5017ub"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -391,12 +397,6 @@
                                 app:maxValue="100"
                                 app:minValue="0"
                                 app:type="range" />
-
-                            <RadioButton
-                                android:id="@+id/cr5017ua"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cr5017ua" />
 
                             <RadioButton
                                 android:id="@+id/cr5017888"
