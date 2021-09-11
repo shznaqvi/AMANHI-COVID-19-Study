@@ -325,9 +325,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:hint="##.#"
+                            android:hint="###.#"
                             android:inputType="numberDecimal"
-                            android:maxLength="4"
+                            android:maxLength="5"
                             android:tag="cr5008u"
                             android:text='@{cr5008u.checked ? cr5008ux.getText().toString() : ""}'
                             android:visibility='@{cr5008u.checked? View.VISIBLE : View.GONE}'
@@ -390,7 +390,7 @@
                                 android:tag="cr5009"
                                 android:text='@{cr5009.checked ? cr5009x.getText().toString() : ""}'
                                 android:visibility='@{cr5009.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="100"
+                                app:maxValue="140"
                                 app:minValue="1"
                                 app:type="range" />
 
@@ -459,7 +459,7 @@
                                 android:tag="cr5010"
                                 android:text='@{cr5010.checked ? cr5010x.getText().toString() : ""}'
                                 android:visibility='@{cr5010.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="120"
+                                app:maxValue="150"
                                 app:minValue="1"
                                 app:type="range" />
 
@@ -674,7 +674,7 @@
                                 android:tag="cr5013"
                                 android:text='@{cr5013a.checked ? cr5013ax.getText().toString() : ""}'
                                 android:visibility='@{cr5013a.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="100"
+                                app:maxValue="290"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -743,7 +743,7 @@
                                 android:tag="cr5013"
                                 android:text='@{cr5013b.checked ? cr5013bx.getText().toString() : ""}'
                                 android:visibility='@{cr5013b.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="100"
+                                app:maxValue="290"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -812,7 +812,7 @@
                                 android:tag="cr5014"
                                 android:text='@{cr5014.checked ? cr5014x.getText().toString() : ""}'
                                 android:visibility='@{cr5014.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="100"
+                                app:maxValue="200"
                                 app:minValue="1"
                                 app:type="range" />
 
@@ -881,7 +881,7 @@
                                 android:tag="cr5015"
                                 android:text='@{cr5015.checked ? cr5015x.getText().toString() : ""}'
                                 android:visibility='@{cr5015.checked? View.VISIBLE : View.GONE}'
-                                app:maxValue="100"
+                                app:maxValue="150"
                                 app:minValue="1"
                                 app:type="range" />
 
