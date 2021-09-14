@@ -129,6 +129,25 @@ public class Section02bActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
+
+        String var_cr30051 = MainApp.cr30051;
+
+        if (var_cr30051.equals("1") && (!bi.cr3005ya.isChecked()
+                || !bi.cr3005za.isChecked()
+                || !bi.cr3005aaa.isChecked()
+                || !bi.cr3005aba.isChecked()
+                || !bi.cr3005aba.isChecked())) {
+            Toast.makeText(this, "if CR3005 is Yes then question from CR3005A till CR3005X at least 1 option should be 1 - Yes ", Toast.LENGTH_LONG).show();
+            return false;
+        } else if (!var_cr30051.equals("1") && (bi.cr3005ya.isChecked()
+                || bi.cr3005za.isChecked()
+                || bi.cr3005aaa.isChecked()
+                || bi.cr3005aba.isChecked()
+                || bi.cr3005aba.isChecked())) {
+            Toast.makeText(this, "if CR3005 is No then question from CR3005A till CR3005X All cannot be 1 - Yes ", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 

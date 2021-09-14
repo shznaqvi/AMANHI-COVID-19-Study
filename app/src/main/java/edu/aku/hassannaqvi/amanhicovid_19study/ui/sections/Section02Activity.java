@@ -116,6 +116,12 @@ public class Section02Activity extends AppCompatActivity {
                 : bi.cr30058.isChecked() ? "8"
                 : "-1");
 
+        MainApp.cr30051 = bi.cr30051y.isChecked() ? "1"
+                : bi.cr30051n.isChecked() ? "2"
+                : bi.cr30058.isChecked() ? "8"
+                : "-1";
+
+
         formpregsurv.setCr3005a(bi.cr3005ay.isChecked() ? "1"
                 : bi.cr3005an.isChecked() ? "2"
                 : bi.cr3005a8.isChecked() ? "8"
@@ -307,7 +313,6 @@ public class Section02Activity extends AppCompatActivity {
         formpregsurv.setCr5005xsid(bi.cr5005xsi.getText().toString());
 
 
-
     }
 
 
@@ -318,6 +323,61 @@ public class Section02Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
+
+        if (bi.cr30051y.isChecked() && (!bi.cr3005ay.isChecked()
+                || !bi.cr3005ba.isChecked()
+                || !bi.cr3005ca.isChecked()
+                || !bi.cr3005da.isChecked()
+                || !bi.cr3005ea.isChecked()
+                || !bi.cr3005fa.isChecked()
+                || !bi.cr3005ga.isChecked()
+                || !bi.cr3005ha.isChecked()
+                || !bi.cr3005ia.isChecked()
+                || !bi.cr3005ja.isChecked()
+                || !bi.cr3005ka.isChecked()
+                || !bi.cr3005la.isChecked()
+                || !bi.cr3005ma.isChecked()
+                || !bi.cr3005na.isChecked()
+                || !bi.cr3005oa.isChecked()
+                || !bi.cr3005pa.isChecked()
+                || !bi.cr3005qa.isChecked()
+                || !bi.cr3005ra.isChecked()
+                || !bi.cr3005sa.isChecked()
+                || !bi.cr3005ta.isChecked()
+                || !bi.cr3005ua.isChecked()
+                || !bi.cr3005va.isChecked()
+                || !bi.cr3005wa.isChecked()
+                || !bi.cr3005xa.isChecked())) {
+            Toast.makeText(this, "if CR3005 is Yes then question from CR3005A till CR3005X at least 1 option should be 1 - Yes ", Toast.LENGTH_LONG).show();
+            return false;
+        } else if (!bi.cr30051y.isChecked() && (bi.cr3005ay.isChecked()
+                || bi.cr3005ba.isChecked()
+                || bi.cr3005ca.isChecked()
+                || bi.cr3005da.isChecked()
+                || bi.cr3005ea.isChecked()
+                || bi.cr3005fa.isChecked()
+                || bi.cr3005ga.isChecked()
+                || bi.cr3005ha.isChecked()
+                || bi.cr3005ia.isChecked()
+                || bi.cr3005ja.isChecked()
+                || bi.cr3005ka.isChecked()
+                || bi.cr3005la.isChecked()
+                || bi.cr3005ma.isChecked()
+                || bi.cr3005na.isChecked()
+                || bi.cr3005oa.isChecked()
+                || bi.cr3005pa.isChecked()
+                || bi.cr3005qa.isChecked()
+                || bi.cr3005ra.isChecked()
+                || bi.cr3005sa.isChecked()
+                || bi.cr3005ta.isChecked()
+                || bi.cr3005ua.isChecked()
+                || bi.cr3005va.isChecked()
+                || bi.cr3005wa.isChecked()
+                || bi.cr3005xa.isChecked())) {
+            Toast.makeText(this, "if CR3005 is No then question from CR3005A till CR3005X All cannot be 1 - Yes ", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
