@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.amanhicovid_19study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -20,8 +21,12 @@ import edu.aku.hassannaqvi.amanhicovid_19study.utils.ValidateEditTextKt;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.formpregsurv;
 
+import java.util.concurrent.BlockingDeque;
+
 
 public class Section03Activity extends AppCompatActivity {
+    private String TAG = "";
+
     ActivitySection03Binding bi;
 
 
@@ -77,6 +82,7 @@ public class Section03Activity extends AppCompatActivity {
         formpregsurv.setCr5007x(bi.cr5007x.getText().toString());
         formpregsurv.setCr5008(bi.cr5008f.isChecked() ? "1"
                 : bi.cr5008c.isChecked() ? "2"
+                : bi.cr50089.isChecked() ? "99"
                 : "-1");
 
         formpregsurv.setCr5008ut(bi.cr5008u.isChecked() ? ""
@@ -148,6 +154,35 @@ public class Section03Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
+
+        if (!bi.cr5006x.equals("")) {
+
+
+            if (bi.cr5006x.getText().toString().indexOf(".") == -1) {
+                Toast.makeText(this, "Invalid weight. Correct format ###.#", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+        }
+
+        if (!bi.cr5007x.equals("")) {
+
+            if (bi.cr5007x.getText().toString().indexOf(".") == -1) {
+                Toast.makeText(this, "Invalid height. Correct format ##.#", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
+
+        if (!bi.cr5008ux.equals("")) {
+
+            if (bi.cr5008ux.getText().toString().indexOf(".") == -1) {
+                Toast.makeText(this, "Invalid temperature. Correct format ###.#", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
+
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
