@@ -155,18 +155,14 @@ public class Section03Activity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-        if (!bi.cr5006x.equals("")) {
-
-
+        if (!bi.cr5006x.getText().toString().equals("")) {
             if (bi.cr5006x.getText().toString().indexOf(".") == -1) {
                 Toast.makeText(this, "Invalid weight. Correct format ###.#", Toast.LENGTH_SHORT).show();
                 return false;
             }
-
         }
 
-        if (!bi.cr5007x.equals("")) {
-
+        if (!bi.cr5007x.getText().toString().equals("")) {
             if (bi.cr5007x.getText().toString().indexOf(".") == -1) {
                 Toast.makeText(this, "Invalid height. Correct format ##.#", Toast.LENGTH_SHORT).show();
                 return false;
@@ -174,8 +170,7 @@ public class Section03Activity extends AppCompatActivity {
         }
 
 
-        if (!bi.cr5008ux.equals("")) {
-
+        if (!bi.cr5008ux.getText().toString().equals("")) {
             if (bi.cr5008ux.getText().toString().indexOf(".") == -1) {
                 Toast.makeText(this, "Invalid temperature. Correct format ###.#", Toast.LENGTH_SHORT).show();
                 return false;

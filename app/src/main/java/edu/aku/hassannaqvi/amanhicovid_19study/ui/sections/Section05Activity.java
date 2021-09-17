@@ -41,7 +41,7 @@ public class Section05Activity extends AppCompatActivity {
 
     private void setupSkips() {
 
-        bi.symp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        /*bi.symp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (bi.sympa.isChecked()) {
@@ -173,7 +173,7 @@ public class Section05Activity extends AppCompatActivity {
 
                 }
             }
-        });
+        });*/
 
         bi.cr5040af.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -407,6 +407,85 @@ public class Section05Activity extends AppCompatActivity {
 
 
     private boolean formValidation() {
+
+        if (bi.sympa.isChecked() && (!bi.cr5040ba.isChecked()
+                || !bi.cr5040ca.isChecked()
+                || !bi.cr5040da.isChecked()
+                || !bi.cr5040ea.isChecked()
+                || !bi.cr5040fa.isChecked()
+                || !bi.cr5040ga.isChecked()
+                || !bi.cr5040ha.isChecked()
+                || !bi.cr5040ia.isChecked()
+                || !bi.cr5040ja.isChecked()
+                || !bi.cr5040ka.isChecked()
+                || !bi.cr5040la.isChecked()
+                || !bi.cr5040ma.isChecked()
+                || !bi.cr5040na.isChecked()
+                || !bi.cr5040oa.isChecked()
+                || !bi.cr5040pa.isChecked()
+                || !bi.cr5040qa.isChecked()
+                || !bi.cr5040ra.isChecked()
+                || !bi.cr5040sa.isChecked()
+                || !bi.cr5040ta.isChecked()
+                || !bi.cr5040ua.isChecked()
+                || !bi.cr5040va.isChecked()
+                || !bi.cr5040wa.isChecked()
+                || !bi.cr5040xa.isChecked()
+                || !bi.cr5040ya.isChecked()
+                || !bi.cr5040ay.isChecked()
+                || !bi.cr5040aay.isChecked()
+                || !bi.cr5040aby.isChecked()
+                || !bi.cr5040aca.isChecked()
+                || !bi.cr5040ada.isChecked()
+                || !bi.cr5040aea.isChecked()
+                || !bi.cr5040esa.isChecked()
+                || !bi.cr5040aesia.isChecked()
+                || !bi.cr5040aesiia.isChecked()
+                || !bi.cr5040afa.isChecked()
+                || !bi.cr5040aga.isChecked()
+                || !bi.cr5041aa.isChecked())) {
+            Toast.makeText(this, "if SYMP is 1 - Yes then any of the response must be 1 - Yes ", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (!bi.sympa.isChecked() && (bi.cr5040ba.isChecked()
+                || bi.cr5040ca.isChecked()
+                || bi.cr5040da.isChecked()
+                || bi.cr5040ea.isChecked()
+                || bi.cr5040fa.isChecked()
+                || bi.cr5040ga.isChecked()
+                || bi.cr5040ha.isChecked()
+                || bi.cr5040ia.isChecked()
+                || bi.cr5040ja.isChecked()
+                || bi.cr5040ka.isChecked()
+                || bi.cr5040la.isChecked()
+                || bi.cr5040ma.isChecked()
+                || bi.cr5040na.isChecked()
+                || bi.cr5040oa.isChecked()
+                || bi.cr5040pa.isChecked()
+                || bi.cr5040qa.isChecked()
+                || bi.cr5040ra.isChecked()
+                || bi.cr5040sa.isChecked()
+                || bi.cr5040ta.isChecked()
+                || bi.cr5040ua.isChecked()
+                || bi.cr5040va.isChecked()
+                || bi.cr5040wa.isChecked()
+                || bi.cr5040xa.isChecked()
+                || bi.cr5040ya.isChecked()
+                || bi.cr5040ay.isChecked()
+                || bi.cr5040aay.isChecked()
+                || bi.cr5040aby.isChecked()
+                || bi.cr5040aca.isChecked()
+                || bi.cr5040ada.isChecked()
+                || bi.cr5040aea.isChecked()
+                || bi.cr5040esa.isChecked()
+                || bi.cr5040aesia.isChecked()
+                || bi.cr5040aesiia.isChecked()
+                || bi.cr5040afa.isChecked()
+                || bi.cr5040aga.isChecked()
+                || bi.cr5041aa.isChecked())) {
+            Toast.makeText(this, "if SYMP is 2 - No then any of the response must be 2 - No ", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
