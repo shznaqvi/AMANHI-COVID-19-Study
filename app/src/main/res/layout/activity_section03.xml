@@ -119,8 +119,8 @@
                             android:tag="cr5006"
                             android:text='@{cr5006.checked ? cr5006x.getText().toString() : ""}'
                             android:visibility='@{cr5006.checked? View.VISIBLE : View.GONE}'
-                            app:maxValue="100"
-                            app:minValue="0"
+                            app:maxValue="140"
+                            app:minValue="20"
                             app:type="range" />
 
                     </LinearLayout>
@@ -191,14 +191,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:hint="##.#"
+                            android:hint="###.#"
                             android:inputType="numberDecimal"
-                            android:maxLength="4"
+                            android:maxLength="5"
                             android:tag="cr5007"
                             android:text='@{cr5007.checked ? cr5007x.getText().toString() : ""}'
                             android:visibility='@{cr5007.checked? View.VISIBLE : View.GONE}'
-                            app:maxValue="100"
-                            app:minValue="0"
+                            app:maxValue="210"
+                            app:minValue="80"
                             app:type="range" />
 
                     </LinearLayout>
