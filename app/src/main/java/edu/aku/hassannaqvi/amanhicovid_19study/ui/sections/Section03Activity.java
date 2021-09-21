@@ -175,15 +175,15 @@ public class Section03Activity extends AppCompatActivity {
                 Toast.makeText(this, "Invalid temperature. Correct format ###.#", Toast.LENGTH_SHORT).show();
                 return false;
             } else {
-                if (!bi.cr5008ux.getText().toString().equals("88.8") && !bi.cr5008ux.getText().toString().equals("99.9")) {
+                if (!bi.cr5008ux.getText().toString().equals("888.8") && !bi.cr5008ux.getText().toString().equals("999.9")) {
 
                     if (bi.cr5008f.isChecked()) {
-                        if (Double.parseDouble(bi.cr5008ux.getText().toString()) < 35.5 || Double.parseDouble(bi.cr5008ux.getText().toString()) > 38.5) {
+                        if (Double.parseDouble(bi.cr5008ux.getText().toString()) < 98.0 || Double.parseDouble(bi.cr5008ux.getText().toString()) >= 108.0) {
                             Toast.makeText(this, "Incorrect range of temperature", Toast.LENGTH_SHORT).show();
                             return false;
                         }
                     } else if (bi.cr5008c.isChecked()) {
-                        if (Double.parseDouble(bi.cr5008ux.getText().toString()) < 98.0 || Double.parseDouble(bi.cr5008ux.getText().toString()) >= 108.0) {
+                        if (Double.parseDouble(bi.cr5008ux.getText().toString()) < 35.5 || Double.parseDouble(bi.cr5008ux.getText().toString()) > 38.5) {
                             Toast.makeText(this, "Incorrect range of temperature", Toast.LENGTH_SHORT).show();
                             return false;
                         }
