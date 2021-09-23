@@ -19,8 +19,11 @@ import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection04Binding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingPregsurvActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.ValidateEditTextKt;
+import edu.aku.hassannaqvi.amanhicovid_19study.utils.ValidateValuesKt;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.formpregsurv;
+
+import java.util.ArrayList;
 
 
 public class Section04Activity extends AppCompatActivity {
@@ -34,7 +37,7 @@ public class Section04Activity extends AppCompatActivity {
         bi.setCallback(this);
         setupSkips();
 
-        ValidateEditTextKt.txtWatch(bi.cr5016x);
+        /*ValidateEditTextKt.txtWatch(bi.cr5016x);
         ValidateEditTextKt.txtWatch(bi.cr5017x);
         ValidateEditTextKt.txtWatch(bi.cr5018x);
         ValidateEditTextKt.txtWatch(bi.cr5019x);
@@ -57,7 +60,7 @@ public class Section04Activity extends AppCompatActivity {
         ValidateEditTextKt.txtWatch(bi.cr5036x);
         ValidateEditTextKt.txtWatch(bi.cr5037x);
         ValidateEditTextKt.txtWatch(bi.cr5038x);
-        ValidateEditTextKt.txtWatch(bi.cr5039x);
+        ValidateEditTextKt.txtWatch(bi.cr5039x);*/
 
     }
 
