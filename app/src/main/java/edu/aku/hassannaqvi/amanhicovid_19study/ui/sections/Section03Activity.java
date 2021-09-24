@@ -18,9 +18,12 @@ import edu.aku.hassannaqvi.amanhicovid_19study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.amanhicovid_19study.databinding.ActivitySection03Binding;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingPregsurvActivity;
 import edu.aku.hassannaqvi.amanhicovid_19study.utils.ValidateEditTextKt;
+import edu.aku.hassannaqvi.amanhicovid_19study.utils.ValidateValuesKt;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.core.MainApp.formpregsurv;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.concurrent.BlockingDeque;
 
 
@@ -36,6 +39,8 @@ public class Section03Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section03);
         bi.setCallback(this);
         setupSkips();
+
+        //ValidateValuesKt.chkValues(bi.cr5006x, new Double[]{888.8, 999.9});
     }
 
 
