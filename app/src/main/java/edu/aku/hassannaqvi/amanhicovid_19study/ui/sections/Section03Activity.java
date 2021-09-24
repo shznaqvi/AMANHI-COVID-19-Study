@@ -40,7 +40,7 @@ public class Section03Activity extends AppCompatActivity {
         bi.setCallback(this);
         setupSkips();
 
-        //ValidateValuesKt.chkValues(bi.cr5006x, new Double[]{888.8, 999.9});
+        //ValidateValuesKt.chkValues(bi.cr5006x, new Double[]{888.8, 999.9, 777.7});
     }
 
 
