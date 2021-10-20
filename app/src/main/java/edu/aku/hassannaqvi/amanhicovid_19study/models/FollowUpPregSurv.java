@@ -27,7 +27,7 @@ public class FollowUpPregSurv extends BaseObservable {
     private String sysDate = "";
     private String studyid = "";
     private String dssid = "";
-    private String week = "";
+    private String month = "";
     private String deviceId = "";
     private String deviceTag = "";
     private String appver = "";
@@ -465,12 +465,12 @@ public class FollowUpPregSurv extends BaseObservable {
         this.dssid = dssid;
     }
 
-    public String getWeek() {
-        return week;
+    public String getMonth() {
+        return month;
     }
 
-    public void setWeek(String week) {
-        this.week = week;
+    public void setMonth(String month) {
+        this.month = month;
     }
 
     public String getDeviceId() {
@@ -3281,7 +3281,7 @@ public class FollowUpPregSurv extends BaseObservable {
 
         this.studyid = jsonObject.getString(FormsPregSurvContract.FormsPregSurvTable.COLUMN_STUDYID);
         this.dssid = jsonObject.getString(FormsPregSurvContract.FormsPregSurvTable.COLUMN_DSSID);
-        this.week = jsonObject.getString(FormsPregSurvContract.FormsPregSurvTable.COLUMN_WEEK);
+        this.month = jsonObject.getString(FormsPregSurvContract.FormsPregSurvTable.COLUMN_MONTH);
 
 
         this.appver = jsonObject.getString(FormsPregSurvContract.FormsPregSurvTable.COLUMN_APPVERSION);
@@ -3308,7 +3308,7 @@ public class FollowUpPregSurv extends BaseObservable {
 
         this.studyid = cursor.getString(cursor.getColumnIndex(FormsPregSurvContract.FormsPregSurvTable.COLUMN_STUDYID));
         this.dssid = cursor.getString(cursor.getColumnIndex(FormsPregSurvContract.FormsPregSurvTable.COLUMN_DSSID));
-        this.week = cursor.getString(cursor.getColumnIndex(FormsPregSurvContract.FormsPregSurvTable.COLUMN_WEEK));
+        this.month = cursor.getString(cursor.getColumnIndex(FormsPregSurvContract.FormsPregSurvTable.COLUMN_MONTH));
 
 
         this.deviceId = cursor.getString(cursor.getColumnIndex(FormsPregSurvContract.FormsPregSurvTable.COLUMN_DEVICEID));
@@ -3669,7 +3669,7 @@ public class FollowUpPregSurv extends BaseObservable {
 
             json.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_STUDYID, this.studyid == null ? JSONObject.NULL : this.studyid);
             json.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_DSSID, this.dssid == null ? JSONObject.NULL : this.dssid);
-            json.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_WEEK, this.week == null ? JSONObject.NULL : this.week);
+            json.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_MONTH, this.month == null ? JSONObject.NULL : this.month);
 
 
             json.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_APPVERSION, this.appver == null ? JSONObject.NULL : this.appver);

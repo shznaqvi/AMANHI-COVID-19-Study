@@ -102,7 +102,7 @@ public class SectionDemoInfoActivity extends AppCompatActivity {
 
         MainApp.formpregsurv.setStudyid(bi.mmsid.getText().toString());
         MainApp.formpregsurv.setDssid(bi.mm0101.getText().toString());
-        MainApp.formpregsurv.setWeek(bi.mm0104.getText().toString());
+        MainApp.formpregsurv.setMonth(bi.mm0104.getText().toString());
         MainApp.formpregsurv.setUid(MainApp.formpregsurv.getUid());
         MainApp.formpregsurv.setDeviceId(MainApp.appInfo.getDeviceID());
         MainApp.formpregsurv.setAppver(MainApp.appInfo.getAppVersion());

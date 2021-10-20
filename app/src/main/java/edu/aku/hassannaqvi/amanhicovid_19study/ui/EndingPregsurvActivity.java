@@ -101,6 +101,12 @@ public class EndingPregsurvActivity extends AppCompatActivity {
 
         formpregsurv.setMm020277x(bi.istatus96x.getText().toString());
 
+        formpregsurv.setiStatus(bi.mm0201011.isChecked() ? "11"
+                : bi.mm0201012.isChecked() ? "12"
+                : "-1");
+
+        formpregsurv.setiStatus96x(bi.istatus96x.getText().toString());
+
         MainApp.formpregsurv.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
     }
 

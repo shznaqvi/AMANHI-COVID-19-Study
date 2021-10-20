@@ -19,7 +19,7 @@ public class FormsPregSurvContract {
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_DSSID = "dssid";
         public static final String COLUMN_STUDYID = "studyid";
-        public static final String COLUMN_WEEK = "week";
+        public static final String COLUMN_MONTH = "month";
         public static final String COLUMN_S02 = "s02";
 
         public static final String COLUMN_ISTATUS = "istatus";

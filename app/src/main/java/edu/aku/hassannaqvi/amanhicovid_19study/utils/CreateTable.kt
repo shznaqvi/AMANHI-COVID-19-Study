@@ -75,7 +75,7 @@ object CreateTable {
             + FormsPregSurvContract.FormsPregSurvTable.COLUMN_APPVERSION + " TEXT,"
             + FormsPregSurvContract.FormsPregSurvTable.COLUMN_STUDYID + " TEXT,"
             + FormsPregSurvContract.FormsPregSurvTable.COLUMN_DSSID + " TEXT,"
-            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_WEEK + " TEXT,"
+            + FormsPregSurvContract.FormsPregSurvTable.COLUMN_MONTH + " TEXT,"
             + FormsPregSurvContract.FormsPregSurvTable.COLUMN_S02 + " TEXT"
             + " );")
 

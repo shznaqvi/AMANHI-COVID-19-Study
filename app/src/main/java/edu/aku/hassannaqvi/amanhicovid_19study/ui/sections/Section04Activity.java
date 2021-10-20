@@ -81,7 +81,7 @@ public class Section04Activity extends AppCompatActivity {
         });
 
 
-        /*bi.cr5016u.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi.cr5016u.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (bi.cr5016u9.isChecked()) {
@@ -180,7 +180,47 @@ public class Section04Activity extends AppCompatActivity {
                     bi.fldGrpCVcr5035t.setVisibility(View.VISIBLE);
                 }
             }
-        });*/
+        });
+
+
+        bi.cr5036u.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (bi.cr5036u9.isChecked()) {
+                    Clear.clearAllFields(bi.fldGrpCVcr5036t);
+                    bi.fldGrpCVcr5036t.setVisibility(View.GONE);
+                } else {
+                    bi.fldGrpCVcr5036t.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        bi.cr5037u.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (bi.cr5037u9.isChecked()) {
+                    Clear.clearAllFields(bi.fldGrpCVcr5037t);
+                    bi.fldGrpCVcr5037t.setVisibility(View.GONE);
+                } else {
+                    bi.fldGrpCVcr5037t.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
+        bi.cr5038u.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (bi.cr5038u9.isChecked()) {
+                    Clear.clearAllFields(bi.fldGrpCVcr5038t);
+                    bi.fldGrpCVcr5038t.setVisibility(View.GONE);
+                } else {
+                    bi.fldGrpCVcr5038t.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
 
     }
 

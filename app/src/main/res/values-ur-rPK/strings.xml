@@ -1391,6 +1391,7 @@
     <string name="cr5036ua">g/L</string>
     <string name="cr5036ub">mg/dL</string>
     <string name="cr5036uc">mmol/L</string>
+    <string name="cr5036u9">غیر ضروری</string>
     <string name="cr5036t">Urea (BUN)</string>
     <string name="cr5036">Urea (BUN)</string>
     <string name="cr5036888">معلوم نہیں</string>
@@ -1398,6 +1399,7 @@
     <string name="cr5037u">unit - Ferritin</string>
     <string name="cr5037ua">ng/mL</string>
     <string name="cr5037ub">μg/L</string>
+    <string name="cr5037u9">غیر ضروری</string>
     <string name="cr5037t">Ferritin</string>
     <string name="cr5037">Ferritin</string>
     <string name="cr5037888">معلوم نہیں</string>
@@ -1405,6 +1407,7 @@
     <string name="cr5038u">unit - Lactate</string>
     <string name="cr5038ua">mg/dL</string>
     <string name="cr5038ub">mmol/L</string>
+    <string name="cr5038u9">غیر ضروری</string>
     <string name="cr5038t">Lactate</string>
     <string name="cr5038">Lactate</string>
     <string name="cr5038888">معلوم نہیں</string>

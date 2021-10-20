@@ -188,7 +188,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_STUDYID, form.getStudyid());
         values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_DSSID, form.getDssid());
-        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_WEEK, form.getWeek());
+        values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_MONTH, form.getMonth());
 
         values.put(FormsPregSurvContract.FormsPregSurvTable.COLUMN_S02, form.getS02());
 

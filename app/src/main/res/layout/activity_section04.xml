@@ -2090,6 +2090,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr5036uc" />
+
+                            <RadioButton
+                                android:id="@+id/cr5036u9"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cr5036u9" />
+
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -2208,6 +2215,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr5037ub" />
+
+                            <RadioButton
+                                android:id="@+id/cr5037u9"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cr5037u9" />
+
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -2326,6 +2340,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/cr5038ub" />
+
+                            <RadioButton
+                                android:id="@+id/cr5038u9"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cr5038u9" />
+
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
