@@ -45,7 +45,7 @@ public class SectionDemoInfoActivity extends AppCompatActivity {
 
         setupSkips();
 
-        if (getIntent().getExtras() != null) {
+        /*if (getIntent().getExtras() != null) {
 
             FollowUpPregSur fup4mm = (FollowUpPregSur) getIntent().getSerializableExtra(FOLLOWUP_PREG_DATA);
 
@@ -62,7 +62,7 @@ public class SectionDemoInfoActivity extends AppCompatActivity {
             bi.mm0108a.setEnabled(false);
             bi.mm0108b.setEnabled(false);
 
-        }
+        }*/
     }
 
 

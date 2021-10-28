@@ -44,6 +44,7 @@ public class MainApp extends Application {
     public static Users user;
     public static Boolean admin = false;
     public static String userName;
+    public static String ispreguserentry;
     public static String dssid;
     public static String studyid;
     public static String fupwk;

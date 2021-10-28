@@ -63,8 +63,13 @@ public class MainActivity extends AppCompatActivity {
             bi.searchpregsurv.setVisibility(View.VISIBLE);
             bi.searchchild.setVisibility(View.VISIBLE);
             bi.searchmother.setVisibility(View.VISIBLE);
-        } else if (MainApp.userName.equals("dawar") || MainApp.userName.equals("usman")
-                || MainApp.userName.equals("abrar")) {
+        } else if (MainApp.userName.equals("usman")
+                || MainApp.userName.equals("abrar")
+                || MainApp.userName.equals("dawar")
+                || MainApp.userName.equals("philip")
+                || MainApp.userName.equals("fareeda")
+                || MainApp.userName.equals("alianees")
+        ) {
             bi.showdb.setVisibility(View.GONE);
             bi.admin.setVisibility(View.GONE);
             bi.admin1.setVisibility(View.GONE);
@@ -160,7 +165,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.searchpregsurv:
-                oF = new Intent(this, FormsReportPregsurvActivity.class);
+                oF = new Intent(this, SectionDemoInfoActivity.class);
+                //oF = new Intent(this, FormsReportPregsurvActivity.class);
                 break;
 
             case R.id.btn01:
