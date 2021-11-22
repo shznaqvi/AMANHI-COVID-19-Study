@@ -436,7 +436,9 @@
     <string name="mm0102">انٹرویو لینے والے کانام /کوڈ</string>
     <string name="mm0102a">انٹرویو لینے والے کا کوڈ</string>
     <string name="mm0103">وزٹ کی تاریخ</string>
-    <string name="mm0104">مطالعہ میں ہفتہ وار وزٹ (لازمی )</string>
+    <string name="mm0104">مطالعہ میں  وزٹ (لازمی )</string>
+    <string name="mm0104w">عورت کے مطالعہ میں اندراج کے وقت حمل کے ہفتے</string>
+    <string name="mm0104d">معورت کے مطالعہ میں اندراج کے وقت حمل کے دن</string>
     <string name="mm0105">عورت کا موجودہ شناخت نمبر</string>
     <string name="mm0106">عورت کے مطالعے میں پہلے حمل کی شناخت نمبر</string>
     <string name="mm0107">عورت کے مطالعے میں دوسرے حمل کی شناخت نمبر(اگر ضروری ہو)</string>
@@ -1682,6 +1684,8 @@
     <string name='Q_mm0102a'>mm0102a</string>
     <string name='Q_mm0103'>mm0103</string>
     <string name='Q_mm0104'>mm0104</string>
+    <string name='Q_mm0104w'>mm0104w</string>
+    <string name='Q_mm0104d'>mm0104d</string>
     <string name='Q_mm0105'>mm0105</string>
     <string name='Q_mm0106'>mm0106</string>
     <string name='Q_mm0107'>mm0107</string>

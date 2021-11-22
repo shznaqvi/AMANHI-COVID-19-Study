@@ -23,6 +23,7 @@ import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUp4mm;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSur;
 import edu.aku.hassannaqvi.amanhicovid_19study.models.FollowUpPregSurv;
 import edu.aku.hassannaqvi.amanhicovid_19study.ui.EndingPregsurvActivity;
+import edu.aku.hassannaqvi.amanhicovid_19study.utils.ValidateValuesKt;
 
 import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.FOLLOWUP_4MM_DATA;
 import static edu.aku.hassannaqvi.amanhicovid_19study.CONSTANTS.FOLLOWUP_PREG_DATA;
@@ -67,6 +68,8 @@ public class SectionDemoInfoActivity extends AppCompatActivity {
 
 
     private void setupSkips() {
+        ValidateValuesKt.chkValues(bi.mm0104w, new Double[]{88.0, 99.0});
+        ValidateValuesKt.chkValues(bi.mm0104d, new Double[]{888.0, 999.0});
     }
 
 
@@ -100,7 +103,14 @@ public class SectionDemoInfoActivity extends AppCompatActivity {
 
         MainApp.formpregsurv = new FollowUpPregSurv();
 
-        MainApp.formpregsurv.setStudyid(bi.mmsid.getText().toString());
+        if (bi.mmsid.getText().toString().indexOf('-') != -1) {
+            String[] str = bi.mmsid.getText().toString().split("-");
+            MainApp.formpregsurv.setStudyid(str[0] + str[1] + str[2]);
+        } else {
+            MainApp.formpregsurv.setStudyid(bi.mmsid.getText().toString());
+        }
+
+
         MainApp.formpregsurv.setDssid(bi.mm0101.getText().toString());
         MainApp.formpregsurv.setMonth(bi.mm0104.getText().toString());
         MainApp.formpregsurv.setUid(MainApp.formpregsurv.getUid());
@@ -116,6 +126,12 @@ public class SectionDemoInfoActivity extends AppCompatActivity {
         formpregsurv.setMm0101(bi.mm0101.getText().toString());
         formpregsurv.setMm0103(bi.mm0103.getText().toString());
         formpregsurv.setMm0104(bi.mm0104.getText().toString());
+
+
+        formpregsurv.setMm0104w(bi.mm0104w.getText().toString());
+        formpregsurv.setMm0104d(bi.mm0104d.getText().toString());
+
+
         //form4m.setMm0105(bi.mm0105.getText().toString());
         formpregsurv.setMm0106(bi.mm0106.getText().toString());
         formpregsurv.setMm0107(bi.mm0107.getText().toString());

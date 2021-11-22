@@ -134,7 +134,13 @@ public class IdentificationSecMActivity extends AppCompatActivity {
 
         MainApp.form4m = new Form4mm();
 
-        MainApp.form4m.setStudyID(bi.mmsid.getText().toString());
+        if (bi.mmsid.getText().toString().indexOf('-') != -1) {
+            String[] str = bi.mmsid.getText().toString().split("-");
+            MainApp.form4m.setStudyID(str[0] + str[1] + str[2]);
+        } else {
+            MainApp.form4m.setStudyID(bi.mmsid.getText().toString());
+        }
+
         MainApp.form4m.setDssID(bi.mm0101.getText().toString());
         MainApp.form4m.setWeek(bi.mm0104.getText().toString());
         MainApp.form4m.setUid(MainApp.form4m.getUid());

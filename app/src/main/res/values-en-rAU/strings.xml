@@ -445,7 +445,9 @@
     <string name="mm0102">INTERVIEWER NAME</string>
     <string name="mm0102a">INTERVIEWER CODE</string>
     <string name="mm0103"> DATE OF VISIT </string>
-    <string name="mm0104">Study (Follow-up) Week (mandatory)</string>
+    <string name="mm0104">Study (Follow-up) No</string>
+    <string name="mm0104w">Study (Follow-up) Week (mandatory)</string>
+    <string name="mm0104d">Study (Follow-up) Days (mandatory)</string>
     <string name="mm0105">AMANHI Woman ID (unique for every woman)</string>
     <string name="mm0106">Woman’s Pregnancy ID – 1 (Mandatory)</string>
     <string name="mm0107">Woman’s Pregnancy ID – 2 (if applicable) (99-99999-9 - NA)</string>
@@ -1693,6 +1695,8 @@
     <string name='Q_mm0102a'>mm0102a</string>
     <string name='Q_mm0103'>mm0103</string>
     <string name='Q_mm0104'>mm0104</string>
+    <string name='Q_mm0104w'>mm0104w</string>
+    <string name='Q_mm0104d'>mm0104d</string>
     <string name='Q_mm0105'>mm0105</string>
     <string name='Q_mm0106'>mm0106</string>
     <string name='Q_mm0107'>mm0107</string>

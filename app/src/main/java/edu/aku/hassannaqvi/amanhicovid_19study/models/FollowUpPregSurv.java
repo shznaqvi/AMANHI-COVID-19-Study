@@ -46,6 +46,11 @@ public class FollowUpPregSurv extends BaseObservable {
     public String mm0101 = "";
     public String mm0103 = "";
     public String mm0104 = "";
+
+    public String mm0104w = "";
+    public String mm0104d = "";
+
+
     public String mm0106 = "";
     public String mm0107 = "";
     public String mm0108 = "";
@@ -777,6 +782,25 @@ public class FollowUpPregSurv extends BaseObservable {
     public void setMm0104(String mm0104) {
         this.mm0104 = mm0104;
     }
+
+
+    public String getMm0104w() {
+        return mm0104w;
+    }
+
+    public void setMm0104w(String mm0104w) {
+        this.mm0104w = mm0104w;
+    }
+
+
+    public String getMm0104d() {
+        return mm0104d;
+    }
+
+    public void setMm0104d(String mm0104d) {
+        this.mm0104d = mm0104d;
+    }
+
 
     public String getWhowid() {
         return whowid;
@@ -3344,6 +3368,8 @@ public class FollowUpPregSurv extends BaseObservable {
                     .put("mm0102", mm0102)
                     .put("mm0103", mm0103)
                     .put("mm0104", mm0104)
+                    .put("mm0104w", mm0104w)
+                    .put("mm0104d", mm0104d)
                     .put("mm0106", mm0106)
                     .put("mm0107", mm0107)
                     .put("mm0108", mm0108)
@@ -3706,6 +3732,11 @@ public class FollowUpPregSurv extends BaseObservable {
                 this.mm0101 = json.getString("mm0101");
                 this.mm0103 = json.getString("mm0103");
                 this.mm0104 = json.getString("mm0104");
+
+                this.mm0104w = json.getString("mm0104w");
+                this.mm0104d = json.getString("mm0104d");
+
+
                 this.mm0106 = json.getString("mm0106");
                 this.mm0107 = json.getString("mm0107");
                 this.mm0108 = json.getString("mm0108");
